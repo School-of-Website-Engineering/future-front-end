@@ -65,7 +65,7 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
                 '/api': {
                     target      : 'http://localhost:3001',
                     changeOrigin: true,
-                    rewrite: (path: string) => path.replace(/^\/api/, '')
+                    rewrite     : (path: string) => path.replace(/^\/api/, '')
                 }
             }
         },
