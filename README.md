@@ -76,6 +76,16 @@ Progressive-Tune 遵循 [Contributor Covenant](http://contributor-covenant.org/v
 ### 贡献者
 
 <!-- readme: collaborators,contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/mason369">
+            <img src="https://avatars.githubusercontent.com/u/93964390?v=4" width="100;" alt="mason369"/>
+            <br />
+            <sub><b>Mason</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: collaborators,contributors -end -->
 
 **_感谢以上参与项目前端开发的人_**
