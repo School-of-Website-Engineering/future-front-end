@@ -12,7 +12,7 @@
         "lib"                    : ["ESNext", "DOM"],
         "skipLibCheck"           : true,
         "noEmit"                 : true,
-        "types"                  : ["element-plus/global"],
+        "types"                  : ["element-plus/global", "vite/client"],
         "allowJs"                : true, // 允许编译器编译JS，JSX文件
         "baseUrl"                : "./",
         // "paths"是相对于"baseUrl"进行解析的

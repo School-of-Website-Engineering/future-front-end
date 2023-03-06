@@ -6,12 +6,15 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver, NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import viteCompression from 'vite-plugin-compression';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 // 接口定义
 interface ViteConfigOptions {
   command: 'build' | 'serve';
   mode: string;
 }
+
 interface DefineConfigOptions {
   command: 'build' | 'serve';
   mode: string;
@@ -21,6 +24,8 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
     // 获取环境变量
     // 以下env配置是为了在代码中可以直接使用process.env.NODE_ENV,loadEnv是vite提供的一个方法，可以获取到环境变量
     const env: Partial<Record<string, string>> = loadEnv(mode, process.cwd());
+    const isProduction: boolean = mode === 'production';
+    console.log('env', env);
     return {
         plugins: [
             vue(),
@@ -44,9 +49,16 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
             }),
             // 默认会向 index.html 注入 .env 文件的内容，类似 vite 的 loadEnv函数
             // 还可配置entry入口文件， inject自定义注入数据等
-            createHtmlPlugin()
+            createHtmlPlugin(),
+            // 开启gzip压缩
+            viteCompression({
+                // 配置压缩文件的大小>1kb
+                threshold: 1024
+            }),
+            // 打包分析
+            visualizer()
         ],
-        base: '/Vue3-project-template/',
+        base: '/future/',
         css : {
             preprocessorOptions: {
                 // 配置全局scss变量
@@ -80,15 +92,26 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
             // minify默认esbuild，esbuild模式下terserOptions将失效
             // vite3变化：Terser 现在是一个可选依赖，如果你使用的是 build.minify: 'terser'，你需要手动安装它 `npm add -D terser`
             minify       : 'terser',
+            rollupOptions: {
+                output: {
+                    manualChunks: (id: string) => {
+                        // 将 node_modules 中的代码单独打包成一个 JS 文件
+                        if (id.includes('node_modules')) {
+                            return 'vendor';
+                        }
+                    }
+                }
+            },
             terserOptions: {
                 compress: {
                     keep_infinity: true, // 防止 Infinity 被压缩成 1/0，这可能会导致 Chrome 上的性能问题
-                    drop_console : env.VITE_BUILD_DROP_CONSOLE === 'true', // 去除 console
-                    drop_debugger: true // 去除 debugger
+                    drop_console : isProduction && env.VITE_BUILD_DROP_CONSOLE === 'true', // 去除 console
+                    drop_debugger: isProduction // 去除 debugger
                 }
             },
             chunkSizeWarningLimit: 1500 // chunk 大小警告的限制（以 kbs 为单位）
         }
     };
 }
+
 export default ({ command, mode }: ViteConfigOptions) => defineConfig({ command, mode });
