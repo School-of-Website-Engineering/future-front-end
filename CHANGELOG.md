@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.0.0...v1.1.0) (2023-03-06)
+
+
+### Features
+
+* 性能优化、添加哈士奇 ([df16be1](https://github.com/School-of-Website-Engineering/future-front-end/commit/df16be13859aaef6621940409cb34315c30c42e3))
+
 ## 1.0.0 (2023-03-05)
 
 
