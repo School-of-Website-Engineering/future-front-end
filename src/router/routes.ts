@@ -4,5 +4,11 @@ export const routes: { path: string; component: () => Promise<unknown>; name: st
         path     : '/',
         name     : 'login',
         component: () => import('../views/Login/index.vue')
+    },
+    //     404
+    {
+        path     : '/:pathMatch(.*)*',
+        name     : 'not-found',
+        component: () => import('../components/NotFound.vue')
     }
 ];
