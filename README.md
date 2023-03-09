@@ -65,6 +65,7 @@
 ## 维护者
 
 [@mason369](https://github.com/mason369)
+[@liuliu66](https://github.com/liusxs)
 
 ## 如何贡献
 
