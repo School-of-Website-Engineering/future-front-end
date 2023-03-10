@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.0...v1.1.1) (2023-03-10)
+
+
+### update
+
+* 优化axios ([a819cc8](https://github.com/School-of-Website-Engineering/future-front-end/commit/a819cc8c44d778ac19e4452a1489c24f338ba014))
+
 ## [1.1.0](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.0.0...v1.1.0) (2023-03-06)
 
 
