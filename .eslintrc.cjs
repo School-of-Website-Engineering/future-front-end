@@ -50,7 +50,7 @@ module.exports = {
 
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
 
-        indent                       : [2, 4, { SwitchCase: 1 }],
+        indent                       : [1, 4, { SwitchCase: 1 }],
         "space-before-function-paren": ["warn", "never"],
         "no-constant-condition"      : ["warn"],
         "no-empty"                   : ["off"],

@@ -1,9 +1,32 @@
 // 路由模块
-export const routes: { path: string; component: () => Promise<unknown>; name: string }[] = [
+import { RouteRecordRaw } from 'vue-router';
+
+export const routes: Array<RouteRecordRaw> = [
+    // 重定向
+    // {
+    //     path    : '/',
+    //     redirect: '/login'
+    // },
+    // 登录
+    // 登录
     {
-        path     : '/',
+        path     : '/login',
         name     : 'login',
         component: () => import('../views/Login/index.vue')
+    },
+    {
+        // 主页
+        path     : '/home',
+        name     : 'home',
+        component: () => import('../components/Home/index.vue'),
+        children : [
+            // 首页
+            {
+                path     : '/index',
+                name     : 'index',
+                component: () => import('../components/Home/index.vue')
+            }
+        ]
     },
     //     404
     {

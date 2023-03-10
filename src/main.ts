@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import { createPinia } from 'pinia';
+import store from '@/store';
 import { cloneDeep } from 'lodash-es';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 import router from './router';
@@ -19,5 +20,6 @@ console.log('Base URL:', base);
 pinia.use(piniaPluginPersistedstate);
 app.use(ElementPlus);
 app.use(pinia);
+app.use(store);
 app.use(router);
 app.mount('#app');

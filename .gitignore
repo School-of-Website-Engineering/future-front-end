@@ -23,3 +23,4 @@ stats
 *.njsproj
 *.sln
 *.sw?
+stats.html
