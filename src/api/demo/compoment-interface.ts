@@ -33,11 +33,12 @@ userService
 // });
 //使用async/await
 // 获取用户address
-async function getAddress() {
+async function getAddress(userId: number) {
     try {
-        const addressInfo = await userService.getAddress(1);
+        const addressInfo = await userService.getAddress(userId);
         console.log('用户地址：', addressInfo);
     } catch (error) {
         console.error('获取用户地址失败：', error);
     }
 }
+getAddress(1);

@@ -1,7 +1,8 @@
+# future-front-end
 <!-- ![](https://img.shields.io/badge/%E7%8A%B6%E6%80%81-%E7%BB%B4%E6%8A%A4%E4%B8%AD-brightgreen) -->
 <!--![](https://img.shields.io/badge/%E7%8A%B6%E6%80%81-%E5%B0%B1%E7%BB%AA-orange)-->
 
-![](https://img.shields.io/badge/%E7%8A%B6%E6%80%81-%E7%BB%B4%E6%8A%A4%E4%B8%AD-brightgreen)
+![](https://img.shields.io/badge/%E7%8A%B6%E6%80%81-%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E4%B8%AD-green)<!--![](https://img.shields.io/badge/%E7%8A%B6%E6%80%81-%E5%B0%B1%E7%BB%AA-orange)-->
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![](https://img.shields.io/crates/l/s)](https://img.shields.io/crates/l/s)
 ![](https://img.shields.io/badge/Vue-%5E3.2.47-success)
@@ -9,20 +10,25 @@
 ![](https://img.shields.io/badge/Vite-%20%5E4.1.4-brightgreen)
 ![](https://img.shields.io/badge/npm-%5E9.5.1-blue)
 
+## 项目简介
+future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似discord交友聊天项目，使用了 Vue Router、Vuex、Element Plus 等主流框架和库，项目采用了模块化、组件化、工程化的开发模式。
+
  <h2>内容列表</h2>
 
-- [Git 规范](#git-规范)
-  - [Git 分支命名](#git-分支命名)
-- [Git Commit Message 格式](#git-commit-message-格式)
-  - [type 提交类型：](#type-提交类型)
-  - [subject 提交描述](#subject-提交描述)
-- [相关仓库](#相关仓库)
-- [维护者](#维护者)
-- [如何贡献](#如何贡献)
-  - [贡献者](#贡献者)
-- [快速上手](#快速上手)
-  - [特别感谢：](#特别感谢)
-- [使用许可](#使用许可)
+- [future-front-end](#future-front-end)
+  - [项目简介](#项目简介)
+  - [Git 规范](#git-规范)
+    - [Git 分支命名](#git-分支命名)
+  - [Git Commit Message 格式](#git-commit-message-格式)
+    - [type 提交类型：](#type-提交类型)
+    - [subject 提交描述](#subject-提交描述)
+  - [相关仓库](#相关仓库)
+  - [维护者](#维护者)
+  - [如何贡献](#如何贡献)
+    - [贡献者](#贡献者)
+  - [快速上手](#快速上手)
+    - [特别感谢：](#特别感谢)
+  - [使用许可](#使用许可)
 
 ## Git 规范
 

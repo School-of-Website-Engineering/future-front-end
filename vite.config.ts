@@ -67,7 +67,7 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
             }
         },
         server: {
-            host      : 'localhost',
+            host      : '0.0.0.0',
             port      : 3000,
             // 设为 true 时若端口已会被占用直接退出，而不是尝试下一个可用端口。
             strictPort: false,

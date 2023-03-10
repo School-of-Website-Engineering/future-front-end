@@ -23,7 +23,7 @@ class UserService implements UserApi {
         return http.post(USER_LOGOUT);
     }
     getAddress(userId: number): Promise<AddressInfo> {
-        return http.get(USER_ADDRESS);
+        return http.get(USER_ADDRESS, { params: { userId } });
     }
 }
 
