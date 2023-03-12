@@ -8,6 +8,7 @@ import { ElementPlusResolver, NaiveUiResolver } from 'unplugin-vue-components/re
 import { createHtmlPlugin } from 'vite-plugin-html';
 import viteCompression from 'vite-plugin-compression';
 import { visualizer } from 'rollup-plugin-visualizer';
+import { viteMockServe } from 'vite-plugin-mock';
 
 // 接口定义
 interface ViteConfigOptions {
@@ -55,7 +56,18 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
                 threshold: 1024
             }),
             // 打包分析
-            visualizer()
+            visualizer(),
+            // mock
+            viteMockServe({
+                //是否支持ts
+                supportTs   : true,
+                //是否打印日志
+                logger      : false,
+                //mock文件夹路径
+                mockPath    : './src/mock',
+                //是否开启本地mock
+                localEnabled: true
+            })
         ],
         base: '/future/',
         css : {
@@ -74,7 +86,7 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
             open      : true,
             proxy     : {
                 '/api-dev': {
-                    target      : 'http://www.weather.com.cn',
+                    target      : 'http://localhost:3000/',
                     changeOrigin: true,
                     rewrite     : (path: string) => path.replace(/^\/api-dev/, '')
                 },

@@ -8,7 +8,7 @@
 ![](https://img.shields.io/badge/Vue-%5E3.2.47-success)
 ![](https://img.shields.io/badge/Node-%20%5E16.18.0-brightgreen)
 ![](https://img.shields.io/badge/Vite-%20%5E4.1.4-brightgreen)
-![](https://img.shields.io/badge/npm-%5E9.5.1-blue)
+![](https://img.shields.io/badge/pnpm-%5E7.29.0-orange)
 
 ## 项目简介
 future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似discord交友聊天项目，使用了 Vue Router、Vuex、Element Plus 等主流框架和库，项目采用了模块化、组件化、工程化的开发模式。
@@ -106,23 +106,30 @@ Progressive-Tune 遵循 [Contributor Covenant](http://contributor-covenant.org/v
 安装依赖：
 
 ```
-npm install
+pnpm install
 ```
 
 启动：
 
 ```
-npm run dev
+pnpm run dev
 ```
 
 部署：
 
 ```
-npm run build
+pnpm run build
 ```
 
 执行命令后会得到 dist 目录，可以放到自己的 web 服务器指定的路径下，然后访问即可。
 
+或者运行:
+```
+pnpm run preview
+```
+进行生产预览
+
+---
 ---
 
 ### 特别感谢：
