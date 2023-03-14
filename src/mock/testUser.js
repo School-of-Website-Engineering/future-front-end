@@ -11,7 +11,7 @@ export default [
                 code   : 0,
                 message: 'success',
                 data   : {
-                    token: 'Tokenasdfasdfasdfasdfasdfasd'
+                    token: 'cHDKfiyfuyHKHsdfkfuykfiyr6y46e3JEdtyr64sfder'
                 }
             };
         }

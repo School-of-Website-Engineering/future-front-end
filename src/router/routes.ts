@@ -17,7 +17,7 @@ export const routes: Array<RouteRecordRaw> = [
     {
         path     : '/main',
         name     : 'main',
-        component: () => import('../views/Index/index.vue')
+        component: () => import('../views/Main/index.vue')
     },
     //     404
     {
