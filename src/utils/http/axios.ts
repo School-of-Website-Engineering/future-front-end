@@ -10,6 +10,7 @@ const service = axios.create({
     baseURL          : import.meta.env.VITE_APP_API_BASE_URL,
     timeout          : 15000,
     responseType     : 'json',
+    headers          : { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
     transformResponse: [
         function(data) {
             try {
