@@ -8,9 +8,15 @@ export const routes: Array<RouteRecordRaw> = [
         redirect: '/home'
     },
     {
-        // 主页
+        // 首页
         path     : '/home',
         name     : 'home',
+        component: () => import('../views/Home/index.vue')
+    },
+    // 主页
+    {
+        path     : '/main',
+        name     : 'main',
         component: () => import('../views/Index/index.vue')
     },
     //     404
