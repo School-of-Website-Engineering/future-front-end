@@ -11,7 +11,7 @@ export const routes: Array<RouteRecordRaw> = [
         // 主页
         path     : '/home',
         name     : 'home',
-        component: () => import('../views/Home/index.vue')
+        component: () => import('../views/Index/index.vue')
     },
     //     404
     {
