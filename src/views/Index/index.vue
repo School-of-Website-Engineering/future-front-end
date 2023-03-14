@@ -1,6 +1,7 @@
 <template>
     <el-container class="main-box">
-        <el-aside width="90px" class="main-aside">Aside</el-aside>
+        <!--频道侧边栏-->
+        <ChannelSidebar />
         <el-row class="main-box-right">
             <el-col :span="4">
                 <el-container>
@@ -29,7 +30,9 @@
     </el-container>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ChannelSidebar from '@/components/common/ChannelSidebar.vue';
+</script>
 
 <style lang="scss" scoped>
 .main-box {

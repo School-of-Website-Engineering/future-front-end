@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ChannelSidebar: typeof import('./components/common/ChannelSidebar.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElContainer: typeof import('element-plus/es')['ElContainer']
