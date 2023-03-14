@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.1...v1.1.2) (2023-03-14)
+
+
+### update
+
+* 添加mock登录接口 ([e4aadd6](https://github.com/School-of-Website-Engineering/future-front-end/commit/e4aadd6593ceee4907da5f38ac3dc0ed6109bbb7))
+
 ## [1.1.1](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.0...v1.1.1) (2023-03-10)
 
 
