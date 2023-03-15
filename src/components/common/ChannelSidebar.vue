@@ -1,9 +1,9 @@
 <template>
 	<!--频道侧边栏,Collapse 折叠面板-->
 	<el-aside width="90px" class="main-aside">
-		<el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" collapse>
+		<el-menu default-active="2" class="el-menu-vertical-demo">
 			<el-menu-item index="2">
-				<img class="channel-img" src="src/assets/vue.svg" />
+				<img class="channel-img" src="../../assets/vue.svg" />
 				<template #title>sdcfsdfsdf</template>
 			</el-menu-item>
 			<el-menu-item index="4">
