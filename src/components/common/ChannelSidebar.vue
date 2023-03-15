@@ -1,15 +1,10 @@
 <template>
     <!--频道侧边栏,Collapse 折叠面板-->
     <el-aside width="90px" class="main-aside">
-        <el-menu
-            default-active="2"
-            class="el-menu-vertical-demo"
-            :collapse="isCollapse"
-            @open="handleOpen"
-            @close="handleClose"
-        >
+        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" collapse>
             <el-menu-item index="2">
-                <template #title><img class="channel-img" src="src/assets/future_ico.png" /></template>
+                <img class="channel-img" src="src/assets/vue.svg" />
+                <template #title>sdcfsdfsdf</template>
             </el-menu-item>
             <el-menu-item index="4">
                 <template #title>Navigator Four</template>
@@ -22,6 +17,12 @@
 
 <style lang="scss" scoped>
 .main-aside {
+    .el-menu {
+        //透明背景色
+        background-color: transparent;
+        border-right: none;
+        width: 90px;
+    }
     .el-menu-item {
         display: unset;
         width: 90px;
@@ -37,6 +38,18 @@
     .channel-img {
         width: 40px;
         height: 40px;
+    }
+}
+.el-menu-vertical-demo {
+    .el-menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .channel-img {
+            width: 40px;
+            height: 40px;
+        }
     }
 }
 </style>
