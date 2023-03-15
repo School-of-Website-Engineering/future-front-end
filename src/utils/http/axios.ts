@@ -41,7 +41,7 @@ service.interceptors.request.use(
 // axios实例拦截响应
 // 错误处理器(ErrorHandler)接口
 interface ErrorHandler {
-    handle(response: AxiosResponse<Response>): void;
+	handle(response: AxiosResponse<Response>): void;
 }
 
 // 实现不同的错误处理器

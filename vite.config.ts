@@ -12,13 +12,13 @@ import { viteMockServe } from 'vite-plugin-mock';
 
 // 接口定义
 interface ViteConfigOptions {
-    command: 'build' | 'serve';
-    mode: string;
+	command: 'build' | 'serve';
+	mode: string;
 }
 
 interface DefineConfigOptions {
-    command: 'build' | 'serve';
-    mode: string;
+	command: 'build' | 'serve';
+	mode: string;
 }
 
 function defineConfig({ command, mode }: DefineConfigOptions) {
