@@ -5,6 +5,8 @@ specifiers:
   '@babel/core': ^7.21.0
   '@babel/eslint-parser': ^7.12.16
   '@babel/preset-env': ^7.20.2
+  '@element-plus/icons-vue': ^2.1.0
+  '@jridgewell/sourcemap-codec': ^1.4.14
   '@types/node': ^18.14.6
   '@typescript-eslint/eslint-plugin': ^5.54.0
   '@typescript-eslint/parser': ^5.54.0
@@ -24,6 +26,7 @@ specifiers:
   pinia: ^2.0.32
   pinia-plugin-persistedstate: ^3.1.0
   prettier: ^2.8.4
+  rollup: '>=2.42.0 <3.0.0'
   rollup-plugin-visualizer: ^5.9.0
   sass: ^1.58.3
   terser: ^5.16.5
@@ -39,6 +42,8 @@ specifiers:
   vue-tsc: ^1.0.24
 
 dependencies:
+  '@element-plus/icons-vue': 2.1.0_vue@3.2.47
+  '@jridgewell/sourcemap-codec': 1.4.14
   axios: 1.3.4
   element-plus: 2.2.36_vue@3.2.47
   lodash-es: 4.17.21
@@ -68,14 +73,15 @@ devDependencies:
   lint-staged: 13.2.0
   mockjs: 1.1.0
   prettier: 2.8.4
-  rollup-plugin-visualizer: 5.9.0
+  rollup: 2.79.1
+  rollup-plugin-visualizer: 5.9.0_rollup@2.79.1
   terser: 5.16.6
   typescript: 4.9.5
-  unplugin-auto-import: 0.15.1
-  unplugin-vue-components: 0.24.1_vue@3.2.47
+  unplugin-auto-import: 0.15.1_rollup@2.79.1
+  unplugin-vue-components: 0.24.1_rollup@2.79.1+vue@3.2.47
   vite: 4.1.4_srm76ajzbcgmtvblgqqgy47ila
   vite-plugin-html: 3.2.0_vite@4.1.4
-  vite-plugin-mock: 2.9.6_mockjs@1.1.0+vite@4.1.4
+  vite-plugin-mock: 2.9.6_srfwvdzpkmutd7dlgxqotruvdm
   vue-tsc: 1.2.0_typescript@4.9.5
 
 packages:
@@ -1630,21 +1636,22 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@rollup/plugin-node-resolve/13.3.0:
+  /@rollup/plugin-node-resolve/13.3.0_rollup@2.79.1:
     resolution: {integrity: sha512-Lus8rbUo1eEcnS4yTFKLZrVumLPY+YayBdWXgFSHYhTT2iJbMhoaaBL3xl5NCdeRytErGr8tZ0L71BMRmnlwSw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.42.0
     dependencies:
-      '@rollup/pluginutils': 3.1.0
+      '@rollup/pluginutils': 3.1.0_rollup@2.79.1
       '@types/resolve': 1.17.1
       deepmerge: 4.3.0
       is-builtin-module: 3.2.1
       is-module: 1.0.0
       resolve: 1.22.1
+      rollup: 2.79.1
     dev: true
 
-  /@rollup/pluginutils/3.1.0:
+  /@rollup/pluginutils/3.1.0_rollup@2.79.1:
     resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
@@ -1653,6 +1660,7 @@ packages:
       '@types/estree': 0.0.39
       estree-walker: 1.0.1
       picomatch: 2.3.1
+      rollup: 2.79.1
     dev: true
 
   /@rollup/pluginutils/4.2.1:
@@ -1663,7 +1671,7 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@rollup/pluginutils/5.0.2:
+  /@rollup/pluginutils/5.0.2_rollup@2.79.1:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -1675,6 +1683,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
+      rollup: 2.79.1
     dev: true
 
   /@sxzz/popperjs-es/2.11.7:
@@ -3929,7 +3938,7 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-visualizer/5.9.0:
+  /rollup-plugin-visualizer/5.9.0_rollup@2.79.1:
     resolution: {integrity: sha512-bbDOv47+Bw4C/cgs0czZqfm8L82xOZssk4ayZjG40y9zbXclNk7YikrZTDao6p7+HDiGxrN0b65SgZiVm9k1Cg==}
     engines: {node: '>=14'}
     hasBin: true
@@ -3941,8 +3950,17 @@ packages:
     dependencies:
       open: 8.4.2
       picomatch: 2.3.1
+      rollup: 2.79.1
       source-map: 0.7.4
       yargs: 17.7.1
+    dev: true
+
+  /rollup/2.79.1:
+    resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /rollup/3.19.1:
@@ -4244,10 +4262,10 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /unimport/3.0.2:
+  /unimport/3.0.2_rollup@2.79.1:
     resolution: {integrity: sha512-OQ0hShpcerS1PSsISsyn/NV2dGe5xfdUn4p5nwOodq0iqq5xxYQrTidHqlFGjxIliPDtDJp80OeySzyPTjYHmA==}
     dependencies:
-      '@rollup/pluginutils': 5.0.2
+      '@rollup/pluginutils': 5.0.2_rollup@2.79.1
       escape-string-regexp: 5.0.0
       fast-glob: 3.2.12
       local-pkg: 0.4.3
@@ -4271,7 +4289,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /unplugin-auto-import/0.15.1:
+  /unplugin-auto-import/0.15.1_rollup@2.79.1:
     resolution: {integrity: sha512-xLS+BfVNy00Y3IkqBmEd0IThvjx8kSGIgSuf/1kETttiENK8sHrDA+poKkQxRCPTKYH4yWM6txGQANPTzwpUWQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4284,17 +4302,17 @@ packages:
         optional: true
     dependencies:
       '@antfu/utils': 0.7.2
-      '@rollup/pluginutils': 5.0.2
+      '@rollup/pluginutils': 5.0.2_rollup@2.79.1
       local-pkg: 0.4.3
       magic-string: 0.30.0
       minimatch: 7.4.2
-      unimport: 3.0.2
+      unimport: 3.0.2_rollup@2.79.1
       unplugin: 1.3.0
     transitivePeerDependencies:
       - rollup
     dev: true
 
-  /unplugin-vue-components/0.24.1_vue@3.2.47:
+  /unplugin-vue-components/0.24.1_rollup@2.79.1+vue@3.2.47:
     resolution: {integrity: sha512-T3A8HkZoIE1Cja95xNqolwza0yD5IVlgZZ1PVAGvVCx8xthmjsv38xWRCtHtwl+rvZyL9uif42SRkDGw9aCfMA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4308,7 +4326,7 @@ packages:
         optional: true
     dependencies:
       '@antfu/utils': 0.7.2
-      '@rollup/pluginutils': 5.0.2
+      '@rollup/pluginutils': 5.0.2_rollup@2.79.1
       chokidar: 3.5.3
       debug: 4.3.4
       fast-glob: 3.2.12
@@ -4391,14 +4409,14 @@ packages:
       vite: 4.1.4_srm76ajzbcgmtvblgqqgy47ila
     dev: true
 
-  /vite-plugin-mock/2.9.6_mockjs@1.1.0+vite@4.1.4:
+  /vite-plugin-mock/2.9.6_srfwvdzpkmutd7dlgxqotruvdm:
     resolution: {integrity: sha512-/Rm59oPppe/ncbkSrUuAxIQihlI2YcBmnbR4ST1RA2VzM1C0tEQc1KlbQvnUGhXECAGTaQN2JyasiwXP6EtKgg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       mockjs: '>=1.1.0'
       vite: '>=2.0.0'
     dependencies:
-      '@rollup/plugin-node-resolve': 13.3.0
+      '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.1
       '@types/mockjs': 1.0.7
       chalk: 4.1.2
       chokidar: 3.5.3
