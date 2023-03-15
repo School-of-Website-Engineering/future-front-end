@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.2...v1.1.3) (2023-03-15)
+
+
+### update
+
+* 更新主页 ([62f30b7](https://github.com/School-of-Website-Engineering/future-front-end/commit/62f30b77dd8dbeba665372e62d3be54e7eac14d1))
+
 ## [1.1.2](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.1...v1.1.2) (2023-03-14)
 
 
