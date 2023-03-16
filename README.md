@@ -130,6 +130,10 @@ pnpm run preview
 进行生产预览
 
 ---
+**注意事项：**
+
+如果出现`"cygpath: command not found" when commiting to branch`错误，请添加你的Path环境变量:`C:\Program Files\Git\usr\bin`，更多信息请参考["cygpath: command not found" when commiting to branch #10326](https://github.com/desktop/desktop/issues/10326)
+
 ---
 
 ### 特别感谢：
