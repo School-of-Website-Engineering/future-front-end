@@ -8,7 +8,7 @@
 ![](https://img.shields.io/badge/Vue-%5E3.2.47-success)
 ![](https://img.shields.io/badge/Node-%20%5E16.18.0-brightgreen)
 ![](https://img.shields.io/badge/Vite-%20%5E4.1.4-brightgreen)
-![](https://img.shields.io/badge/pnpm-%5E7.29.0-orange)
+![](https://img.shields.io/badge/npm-%5E9.5.1-orange)
 
 ## 项目简介
 future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似discord交友聊天项目，使用了 Vue Router、Vuex、Element Plus 等主流框架和库，项目采用了模块化、组件化、工程化的开发模式。
@@ -130,6 +130,10 @@ pnpm run preview
 进行生产预览
 
 ---
+**注意事项：**
+
+如果出现`"cygpath: command not found" when commiting to branch`错误，请添加你的Path环境变量:`C:\Program Files\Git\usr\bin`，更多信息请参考["cygpath: command not found" when commiting to branch #10326](https://github.com/desktop/desktop/issues/10326)
+
 ---
 
 ### 特别感谢：

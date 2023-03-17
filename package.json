@@ -1,3 +1,4 @@
+
 {
   "name": "future",
   "private": true,
@@ -11,7 +12,8 @@
     "preview": "vite preview",
     "lint": "eslint --fix  vite.config.ts tsconfig.json .eslintrc.cjs --ext .cjs,.js,.vue,.ts,.html, src",
     "prettier": "prettier --write ./**/*.{js,ts,vue,json,html,css,scss}",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
@@ -71,3 +73,4 @@
     ]
   }
 }
+
