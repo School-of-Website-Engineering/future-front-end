@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.4](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.3...v1.1.4) (2023-03-17)
+
+
+### update
+
+* utils工具添加TsDoc ([f22aee1](https://github.com/School-of-Website-Engineering/future-front-end/commit/f22aee1c353874b40ee3636a0243e42b4f3df70b))
+
+
+### Docs
+
+* **contributor:** contrib-readme-action has updated readme ([5320057](https://github.com/School-of-Website-Engineering/future-front-end/commit/5320057b1eb19e1ec8ce526e1999cbba460af8a3))
+
 ## [1.1.3](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.2...v1.1.3) (2023-03-15)
 
 
