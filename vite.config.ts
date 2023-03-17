@@ -69,7 +69,7 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
                 localEnabled: true
             })
         ],
-        base: '/future/',
+        base: '/future-front-end/',
         css : {
             preprocessorOptions: {
                 // 配置全局scss变量

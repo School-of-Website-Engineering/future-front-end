@@ -113,26 +113,26 @@ Progressive-Tune 遵循 [Contributor Covenant](http://contributor-covenant.org/v
 安装依赖：
 
 ```
-pnpm install
+npm install
 ```
 
 启动：
 
 ```
-pnpm run dev
+npm run dev
 ```
 
 部署：
 
 ```
-pnpm run build
+npm run build
 ```
 
 执行命令后会得到 dist 目录，可以放到自己的 web 服务器指定的路径下，然后访问即可。
 
 或者运行:
 ```
-pnpm run preview
+npm run preview
 ```
 进行生产预览
 
