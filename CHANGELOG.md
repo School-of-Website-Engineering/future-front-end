@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.4...v1.1.5) (2023-03-17)
+
+
+### Bug Fixes
+
+* 修复base: '/future/', ([a6c255c](https://github.com/School-of-Website-Engineering/future-front-end/commit/a6c255cc7e4ee15fcd0d9c57fce93abc35294729))
+
 ## [1.1.4](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.3...v1.1.4) (2023-03-17)
 
 
