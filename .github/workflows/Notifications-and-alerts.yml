@@ -1,44 +1,41 @@
 name: Notify and Alert
+
+# 监听 push 事件，只有在主分支上推送时才触发
 on:
-    push:
-      branches:
-        - main
+  push:
+    branches:
+      - main
 
 jobs:
-    notify-and-alert:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
+  notify-and-alert:
+    runs-on: ubuntu-latest
+    steps:
+      # 检出代码
+      - uses: actions/checkout@v2
 
-        - name: Setup Node.js and nodemailer
-          uses: actions/setup-node@v2
-          with:
-            node-version: '14.x'
-        - run: npm install nodemailer
+      # 设置 Node.js 环境和 nodemailer 库
+      - name: Setup Node.js and nodemailer
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - run: npm install nodemailer
+             npm install -g nodemailer-cli
 
-        - name: Send alert email
-          run: |
-            echo "New code has been pushed to the main branch." | npx nodemailer-cli send \
-              --host smtp.gmail.com \
-              --port 587 \
-              --secure false \
-              --user ${{ secrets.EMAIL_USERNAME }} \
-              --pass ${{ secrets.EMAIL_PASSWORD }} \
-              --from "${{ secrets.EMAIL_USERNAME }}" \
-              --to "1960638223@qq.com, 1694181697@qq.com" \
-              --subject "New code has been pushed to the main branch." \
-              --text "您好，\n\n新代码已推送到主分支。\n\n此致。"
-  
+      # 发送通知邮件
+      - name: Send alert email
+        run: |
+        # 邮件标题和内容
+          subject="鸡你太美New code has been pushed to the main branch."
+          message="你干嘛~哎呦~哈哈~你好烦~~Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
 
-#  这个工作流程使用 `push` 事件来监听新的代码提交，并且只有针对主分支的操作才会触发它。notify-and-alert job 中，我们先安装 Node.js 运行环境和 `nodemailer` 库，通过运行 `npm install nodemailer` 命令进行安装。
-#  接着，在 Send alert email 步骤中，我们使用 `npx nodemailer-cli send` 命令向指定的电子邮件地址发送通知消息。其中需要填写 SMTP 邮件服务器、端口号、身份验证信息、发件人等详细信息。我们在此使用 Gmail SMTP 服务器并存储了身份验证信息和收件人电子邮件地址在 GitHub 密钥中。
-#  - `echo "New code has been pushed to the main branch."`：待发送的消息文本。
-#  - `npx nodemailer-cli send`：使用 `nodemailer-cli` 库进行邮件发送。
-#  - `--host smtp.gmail.com`：SMTP 邮件服务器地址，这里使用 Gmail 的 SMTP 服务器。
-#  - `--port 587`：SMTP 邮件服务器端口号，Gmail 的 SMTP 端口号为 587。
-#  - `--secure false`：是否启用加密传输协议，在此示例中不启用加密传输。
-#  - `--auth-user ${{ secrets.EMAIL_USERNAME }}`：发件人的邮箱地址，从 GitHub 密钥中获取（即 `${{ secrets.EMAIL_USERNAME }}`）。
-#  - `--auth-pass ${{ secrets.EMAIL_PASSWORD }}`：发件人的邮箱密码或授权码，从 GitHub 密钥中获取（即 `${{ secrets.EMAIL_PASSWORD }}`）。
-#  - `--from "GitHub Actions <${{ secrets.EMAIL_USERNAME }}>"`：发件人显示名称和邮箱地址，`${{ secrets.EMAIL_USERNAME }}` 表示发件人的邮箱地址从 GitHub 密钥中获取。
-#  - `--to "recipient1@example.com, recipient2@example.com"`：收件人邮箱地址
-
+        # 使用 nodemailer-cli 发送邮件
+          echo "${message}" | npx nodemailer-cli \
+            --host smtp.gmail.com \ # SMTP 服务器地址，这里使用 Gmail 的 SMTP 服务器。
+            --port 587 \ # SMTP 服务器端口号，Gmail 的 SMTP 端口号为 587。
+            --secure false \ # 是否启用加密传输协议，在此示例中不启用加密传输。
+            --user ${{ secrets.EMAIL_USERNAME }} \ # 发件人邮箱地址，从 GitHub 密钥中获取。
+            --pass ${{ secrets.EMAIL_PASSWORD }} \ # 发件人邮箱密码或授权码，从 GitHub 密钥中获取。
+            --from "${{ secrets.EMAIL_USERNAME }}" \ # 发件人显示名称和邮箱地址，从 GitHub 密钥中获取。
+            --to "1694181697@qq.com, 1960638223@q.com" \ # 收件人邮箱地址，请替换成你自己的收件人邮箱地址。
+               --subject "${subject}" \ # 邮件标题，使用变量传递消息文本。
+               --text "${message}" # 邮件正文，使用变量传递消息文本。
