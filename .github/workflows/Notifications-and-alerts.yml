@@ -21,14 +21,26 @@ jobs:
           npm install -g nodemailer-cli
 
       # 发送通知邮件
-      - name: Send alert email
-        run: |
-          subject="鸡你太美New code has been pushed to the main branch."
-          message="你干嘛~哎呦~哈哈~你好烦~~Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
-           npm install -g nodemailer-cli 
-          --from ymsxiaohao@qq.com  --to 1960638223@qq.com \ 
-          --text "鸡你太美" --smtp-host smtp.qq.com 
-          --smtp-port 465 \ 
-          --smtp-secure true \ 
-          --smtp-auth-user ymsxiaohao@qq.com \ 
-          --smtp-auth-password qrjvreyqgccfbihf \ 
+      - name: Send Mail 发送邮件
+        uses: bingblue/send-nodemailer@master
+        with:
+          # 账号
+          user: '${{ secrets.EMAIL_USERNAME }}'
+          # 密码
+          pass: '${{ secrets.EMAIL_PASSWORD }}'
+          # Host，在邮箱的设置里可以找到
+          host: 'smtp.gmail.com'
+          # 端口
+          port: 465
+          # 是否开启SSL
+          secure: true
+          # 发送者
+          from: 'Your Name <youremail@gmail.com>'
+          # 收件人
+          to: 1960638223@qq.com,clingsd@gmail.com
+          # 主题
+          subject: 'this is email subject'
+          # Use html file prefix [file://]，使用HTML文件，已[file://]开头
+          html: <p>this is content</p>
+          # Or use html script，或者使用HTML代码片段
+          # html: '<p>this is content</p>'
