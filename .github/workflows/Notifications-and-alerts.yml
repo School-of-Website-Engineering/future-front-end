@@ -1,4 +1,3 @@
-name: Notify and Alert
 # 监听 push 事件，只有在主分支上推送时才触发
 on:
   push:
@@ -19,7 +18,7 @@ jobs:
           node-version: '14.x'
       - run: |
           npm install nodemailer
-          npm install -g nodemailer-cli
+          npm install nodemailer-cli
 
       # 发送通知邮件
       - name: Send alert email
@@ -27,13 +26,12 @@ jobs:
           subject="New code has been pushed to the main branch."
           message="Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
           npx nodemailer-cli \
-            --from "246834152@qq.com" \
-            --to 1694181697@qq.com, 1960638223@qq.com \
+            --from "${{ secrets.EMAIL_USERNAME }}" \
+            --to "1694181697@qq.com, 1960638223@qq.com" \
             --subject "$subject" \
             --text "$message" \
-            --smtp-host smtp.qq.com \
-            --smtp-secure true \
-            --smtp-auth-user 246834152@qq.com \
-            --smtp-auth-password zewewmvnylxgbgfh \
-            --smtp-require-tls true\
-            --smtp-port 465
+            --smtp-host smtp.gmail.com \
+            --smtp-port 465 \
+            --secure true \
+            --smtp-auth-user ${{ secrets.EMAIL_USERNAME }} \
+            --smtp-auth-password ${{ secrets.EMAIL_PASSWORD }} \
