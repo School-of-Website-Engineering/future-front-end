@@ -1,6 +1,5 @@
-name: 构建和部署
+name: build-and-deploy
 
-# workflow的触发事件，这里代表main分支的push事件触发
 on:
   push:
     branches: [ main ]
@@ -12,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
 
       - name: Install and Build
         run: |
@@ -25,23 +26,10 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: dist
-
+      
+      # 判断工作流是否全部成功，如果有任意一个步骤失败，则发送失败邮件；否则发送成功邮件。
       - name: Send Mail 发送邮件
-        uses: bingblue/send-nodemailer@master
-        with:
-          user: '${{ secrets.EMAIL_USERNAME }}'
-          pass: '${{ secrets.EMAIL_PASSWORD }}'
-          host: 'smtp.gmail.com'
-          port: 465
-          secure: true
-          from: 'GitHub workflows <maosenyang00@gmail.com>'
-          to: 1960638223@qq.com,1694181697@qq.com
-          # 判断所有任务是否成功执行。如果有失败的任务，则发送部署失败邮件，否则发送部署成功邮件。
-          if: ${{ success() }}
-          subject: 'Success：部署成功！'
-          html: '<h2>所有工作流成功执行完毕！</h2>'
-
-      - name: Send Mail 发送邮件
+        if: ${{ !cancelled() && success() }}
         uses: bingblue/send-nodemailer@master
         with:
           user: '${{ secrets.EMAIL_USERNAME }}'
@@ -51,6 +39,19 @@ jobs:
           secure: true
           from: '构建与部署 <maosenyang00@gmail.com>'
           to: 1960638223@qq.com,1694181697@qq.com
-          if: ${{ failure() }}
+          subject: 'Success：部署成功！'
+          html: '<p>构建部署执行完毕！</p>'
+      
+      - name: Send Mail 发送邮件
+        if: ${{ !cancelled() && failure() }}
+        uses: bingblue/send-nodemailer@master
+        with:
+          user: '${{ secrets.EMAIL_USERNAME }}'
+          pass: '${{ secrets.EMAIL_PASSWORD }}'
+          host: 'smtp.gmail.com'
+          port: 465
+          secure: true
+          from: '构建与部署 <maosenyang00@gmail.com>'
+          to: 1960638223@qq.com,1694181697@qq.com
           subject: 'Failed：部署失败'
-          html: '<h2>部署失败请重新检查代码</h2>'
+          html: '<p>部署失败请重新检查代码。</p>'
