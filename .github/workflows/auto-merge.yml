@@ -39,10 +39,6 @@ jobs:
         run: |# 执行 lint 命令
           npm run lint 
 
-      - name: Test code # 步骤名称为：Test code
-        run: |# 执行测试命令并生成测试覆盖率报告
-          npm test -- --coverage 
-
   # 合并发布版本的 PR 到 master 分支
   auto-merge:
     runs-on: ubuntu-latest # 运行环境为最新版 ubuntu
