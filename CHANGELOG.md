@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.7](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.6...v1.1.7) (2023-03-18)
+
+
+### Build System
+
+* **deps:** bump actions/setup-node from 1 to 3 ([a2a5473](https://github.com/School-of-Website-Engineering/future-front-end/commit/a2a5473601345e1d1d5d8c5f9f7a00573f37947c))
+
 ## [1.1.6](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.5...v1.1.6) (2023-03-18)
 
 
