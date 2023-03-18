@@ -21,7 +21,7 @@ jobs:
       # 启用 Dependabot 自动更新 package.json 文件中的依赖项，并生成 PR 更新信息
       - name: Enable Dependabot for automatic updates
         run: |
-          docker run --rm -it \
+          docker run --rm \
               -v "${PWD}:/tmp/repo" \
               -w /tmp/repo \
               dependabot/dependabot-core:latest \
