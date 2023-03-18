@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # 检查代码库，将其检出到 runner 中
       - name: Setup Node.js
-        uses: actions/setup-node@v1 # 安装 Node.js 运行环境和依赖包
+        uses: actions/setup-node@v3 # 安装 Node.js 运行环境和依赖包
         with:
           node-version: '12.x'
       - name: Install dependencies
