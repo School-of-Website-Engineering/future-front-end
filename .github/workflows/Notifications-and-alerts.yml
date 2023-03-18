@@ -23,18 +23,16 @@ jobs:
       # 发送通知邮件
       - name: Send alert email
         run: |
-          # 邮件标题和内容
                subject="鸡你太美New code has been pushed to the main branch."
                message="你干嘛~哎呦~哈哈~你好烦~~Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
           
-          # 使用 nodemailer-cli 发送邮件
                echo "${message}" | npx nodemailer-cli \
-               --host smtp.gmail.com \ # SMTP 服务器地址，这里使用 Gmail 的 SMTP 服务器。
-               --port 587 \ # SMTP 服务器端口号，Gmail 的 SMTP 端口号为 587。
-               --secure false \ # 是否启用加密传输协议，在此示例中不启用加密传输。
-               --user ${{ secrets.EMAIL_USERNAME }} \ # 发件人邮箱地址，从 GitHub 密钥中获取。
-               --pass ${{ secrets.EMAIL_PASSWORD }} \ # 发件人邮箱密码或授权码，从 GitHub 密钥中获取。
-               --from "${{ secrets.EMAIL_USERNAME }}" \ # 发件人显示名称和邮箱地址，从 GitHub 密钥中获取。
-               --to "1694181697@qq.com, 1960638223@q.com" \ # 收件人邮箱地址，请替换成你自己的收件人邮箱地址。
-               --subject "${subject}" \ # 邮件标题，使用变量传递消息文本。
-               --text "${message}" # 邮件正文，使用变量传递消息文本。
+               --subject "${subject}" \
+               --text "${message}" 
+               --smtp-host smtp.gmail.com \ 
+               --smtp-port 587 \ 
+               --smtp-secure false \ 
+               --smtp-auth-user ${{ secrets.EMAIL_USERNAME }} \ 
+               --smtp-auth-password ${{ secrets.EMAIL_PASSWORD }} \ 
+               --from "${{ secrets.EMAIL_USERNAME }}" \ 
+               --to "1694181697@qq.com, 1960638223@q.com" \ 
