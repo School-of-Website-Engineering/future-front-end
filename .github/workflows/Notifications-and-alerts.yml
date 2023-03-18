@@ -1,3 +1,4 @@
+name: Notify and Alert
 # 监听 push 事件，只有在主分支上推送时才触发
 on:
   push:
@@ -16,22 +17,18 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14.x'
-      - run: |
-          npm install nodemailer
-          npm install nodemailer-cli
+      - run: npm install nodemailer
+          npm install -g nodemailer-cli
 
       # 发送通知邮件
       - name: Send alert email
         run: |
-          subject="New code has been pushed to the main branch."
-          message="Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
+          subject="鸡你太美New code has been pushed to the main branch."
+          message="你干嘛~哎呦~哈哈~你好烦~~Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
           npx nodemailer-cli \
-            --from "${{ secrets.EMAIL_USERNAME }}" \
-            --to "1694181697@qq.com, 1960638223@qq.com" \
-            --subject "$subject" \
-            --text "$message" \
-            --smtp-host smtp.gmail.com \
-            --smtp-port 465 \
-            --secure true \
-            --smtp-auth-user ${{ secrets.EMAIL_USERNAME }} \
-            --smtp-auth-password ${{ secrets.EMAIL_PASSWORD }} \
+          --from ymsxiaohao@qq.com \ --to 1694181697@qq.com, 1960638223@qq.com \ 
+          --text "鸡你太美" --smtp-host smtp.qq.com 
+          --smtp-port 465 \ 
+          --smtp-secure true \ 
+          --smtp-auth-user ymsxiaohao@qq.com \ 
+          --smtp-auth-password qrjvreyqgccfbihf \ 
