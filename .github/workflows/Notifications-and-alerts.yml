@@ -35,4 +35,4 @@ jobs:
             --smtp-secure false \
             --smtp-auth-user maosenyang00@gmail.com \
             --smtp-auth-password qufwlbrkoazaujzx \
-            --smtp-require-tls true
+            --smtp-require-tls false
