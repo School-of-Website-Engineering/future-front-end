@@ -6,13 +6,14 @@ on:
     branches: [ main ]
 
 jobs:
-  # 修改任务名称
-  deploy-to-ghpages:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
 
       - name: Install and Build
         run: |
@@ -20,26 +21,29 @@ jobs:
           pnpm install
           pnpm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: dist
 
-      # 判断工作流是否成功，并发送邮件通知
-      - name: Send Notification Email 发送邮件通知
-        if: always()
-        uses: dawidd6/action-send-mail@v3.0.0
-        env:
-          SMTP_SERVER_ADDRESS: smtp.gmail.com
-          SMTP_SERVER_PORT: 465
-          SMTP_USERNAME: ${{ secrets.EMAIL_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          EMAIL_FROM_ADDRESS: maosenyang00@gmail.com
-          EMAIL_TO_ADDRESS: 1960638223@qq.com,1694181697@qq.com
+      - name: Send Mail 发送邮件
+        uses: bingblue/send-nodemailer@master
         with:
-          server_address: $SMTP_SERVER_ADDRESS
-          server_port: $SMTP_SERVER_PORT
-          subject: ${{ job.status }}：部署${{ job.status == 'success' && '成功！' || '失败' }}
-          body: ${{ job.status == 'success' && '所有工作流成功执行完毕！' || '部署失败请重新检查代码' }}，workflow名称为 ${{ github.workflow }}。
+          user: '${{ secrets.EMAIL_USERNAME }}'
+          pass: '${{ secrets.EMAIL_PASSWORD }}'
+          host: 'smtp.gmail.com'
+          port: 465
+          secure: true
+          from: '构建部署 <maosenyang00@gmail.com>'
+          to: 1960638223@qq.com,1694181697@qq.com
+
+          # 判断是否有失败的工作流，如果有则发送“Failed：部署失败”邮件，否则发送“Success：部署成功！”邮件
+          if: ${{ job.status != 'success' }}
+          subject: Failed：部署失败
+          html: <h2>部署失败请重新检查代码!workflow名称为 ${{ github.workflow }}。</h2>
+
+          else:
+            subject: Success：部署成功！
+            html: <h2>构建部署执行完毕！workflow名称为 ${{ github.workflow }}。</h2>
