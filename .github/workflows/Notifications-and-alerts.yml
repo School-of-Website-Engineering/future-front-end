@@ -1,11 +1,10 @@
-notify-and-alert:
-  name: Notify and Alert
-  on:
+name: Notify and Alert
+on:
     push:
       branches:
         - main
 
-  jobs:
+jobs:
     notify-and-alert:
       runs-on: ubuntu-latest
       steps:
