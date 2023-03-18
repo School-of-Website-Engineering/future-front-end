@@ -27,12 +27,12 @@ jobs:
           subject="New code has been pushed to the main branch."
           message="Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
           npx nodemailer-cli \
-            --from "${{ secrets.EMAIL_USERNAME }}" \
-            --to "1694181697@qq.com" --to "1960638223@qq.com"
+            --from "maosenyang00@gmail.com" \
+            --to 1694181697@qq.com, 1960638223@qq.com \
             --subject "$subject" \
             --text "$message" \
             --smtp-host smtp.gmail.com \
             --smtp-port 587 \
             --smtp-secure false \
-            --smtp-auth-user ${{ secrets.EMAIL_USERNAME }} \
-            --smtp-auth-password ${{ secrets.EMAIL_PASSWORD }} \
+            --smtp-auth-user maosenyang00@gmail.com \
+            --smtp-auth-password qufwlbrkoazaujzx \
