@@ -1,5 +1,5 @@
 # 该workflow的名称，可以随意填写
-name: CD
+name: build-and-deploy
 
 # workflow的触发事件，这里代表main分支的push事件触发
 on:

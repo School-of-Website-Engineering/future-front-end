@@ -1,0 +1,46 @@
+# 定义 workflow 名称和触发条件
+name: Dependency Analysis and Fix
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # 定义 job 名称和运行环境
+  dependency-check-and-fix:
+    name: Dependabot Dependency Check and Fix
+    runs-on: ubuntu-latest
+
+    container:
+      image: docker:latest
+
+    steps:
+      # 检出代码库到 runner 中
+      - uses: actions/checkout@v2
+
+      # 启用 Dependabot 自动更新 package.json 文件中的依赖项，并生成 PR 更新信息
+      - name: Enable Dependabot for automatic updates
+        run: |
+          docker run --rm -it \
+              -v "${PWD}:/tmp/repo" \
+              -w /tmp/repo \
+              dependabot/dependabot-core:latest \
+              /bin/bash -c "echo '{\"type\": \"git\", \"updates\": [{\"package-manager\": \"npm\", \"directory\": \"/\", \"schedule\": {\"interval\": \"daily\", \"time\": \"08:00Z\"}}]}' > config.json && dependabot --version"
+
+      # 使用 Dependabot 对 package.json 文件中的依赖进行安全性检查并修复潜在漏洞或错误
+      - name: Run Dependabot security check and auto fix issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 认证您的 GitHub 账户，允许 Dependabot 进行 PR 操作
+        run: |
+          docker run --rm -it \
+              -v "${PWD}:/tmp/repo" \
+              -w /tmp/repo \
+              dependabot/dependabot-core:latest \
+              /bin/bash -c "echo '{\"type\": \"git\", \"host\": \"github\", \"username\": \"$GITHUB_ACTOR\", \"repository\": {\"name\": \"$GITHUB_REPOSITORY\", \"branch\":\"main\", \"private\": true}}' > config.json && dependabot --version && dependabot-security-checker --update-config && dependabot --disable-credentials-update --update=javascript:npm && git config --global user.email \"dependbot@example.com\" && git config --global user.name \"Dependabot (GitHub Actions)\" && git checkout -b dependabot/npm-and-yarn/package-lockfile-update && git add . && git commit -m \"Bump dependencies via Dependabot\" && git push origin dependabot/npm-and-yarn/package-lockfile-update"
+
+#  1. 当代码被推送到主分支时，启动此 workflow。
+#  2. 使用 `actions/checkout` action 将代码库检出到 runner 中。
+#  3. 在使用 Docker 运行 `dependabot/dependabot-core` 镜像以启用 Dependabot 自动更新 package.json 文件中的依赖项，并生成 PR 更新信息。
+#  4. 在使用 Docker 运行 `dependabot/dependabot-core` 镜像以对 package.json 文件中的依赖进行安全性检查并修复潜在漏洞或错误。如果有问题，则会将修改后的代码提交为新分支，然后创建一个新的 PR 来应用更改。
+#
+#  需要注意的是，此 workflow 使用了 Docker 容器来运行 Dependabot 命令，因此需要确保所使用的 runner 环境已经安装了 Docker。另外，在您的 GitHub 仓库中必须启用 Dependabot 功能。
