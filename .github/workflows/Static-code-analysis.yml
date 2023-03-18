@@ -15,7 +15,7 @@
       runs-on: ubuntu-latest
 
       container:
-        image: docker:latest
+        image: dependabot/dependabot-core:latest
 
       steps:
         # 检出仓库
@@ -27,7 +27,6 @@
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 认证您的 GitHub 账户，允许 Dependabot 进行 PR 操作
           run: |
-            docker run --rm dependabot/dependabot-core:latest dependabot --version
               echo 'Dependabot config file created.' > .dependabot-config-created
               docker run --rm \
                   -e DEPENDABOT_GITHUB_TOKEN=$GITHUB_TOKEN \
