@@ -23,7 +23,7 @@ jobs:
         id: check_status
         run: |
           echo "::set-output name=success::true"
-          if [[ $(grep "Job succeeded" $GITHUB_EVENT_PATH | wc -l) != 7 ]]; then
+          if [[ $(grep "Job succeeded" $GITHUB_EVENT_PATH | wc -l) != 2 ]]; then
             echo "::set-output name=success::false"
           fi
 
@@ -37,7 +37,7 @@ jobs:
           port: 465
           secure: true
           from: 'GitHub Action <maosenyang00@gmail.com>'
-          to: 1960638223@qq.com,clingsd@gmail.com
+          to: 1960638223@qq.com,1694181697@qq.com
           # 根据工作流状态发送不同的邮件主题和内容
           subject: ${{ env.SUBJECT }}
           html: ${{ env.CONTENT }}
