@@ -32,7 +32,7 @@ jobs:
             --subject "$subject" \
             --text "$message" \
             --smtp-host smtp.gmail.com \
-            --smtp-secure true \
+            --smtp-secure false \
             --smtp-auth-user maosenyang00@gmail.com \
             --smtp-auth-password qufwlbrkoazaujzx \
             --smtp-require-tls true
