@@ -1,4 +1,3 @@
-name: Notify and Alert
 notify-and-alert:
   name: Notify and Alert
   on:
@@ -41,3 +40,4 @@ notify-and-alert:
 #  - `--auth-pass ${{ secrets.EMAIL_PASSWORD }}`：发件人的邮箱密码或授权码，从 GitHub 密钥中获取（即 `${{ secrets.EMAIL_PASSWORD }}`）。
 #  - `--from "GitHub Actions <${{ secrets.EMAIL_USERNAME }}>"`：发件人显示名称和邮箱地址，`${{ secrets.EMAIL_USERNAME }}` 表示发件人的邮箱地址从 GitHub 密钥中获取。
 #  - `--to "recipient1@example.com, recipient2@example.com"`：收件人邮箱地址
+

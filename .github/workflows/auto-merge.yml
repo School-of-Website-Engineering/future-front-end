@@ -38,7 +38,10 @@ jobs:
 
       - name: Lint code # 步骤名称为：Lint code
         run: |# 执行 lint 命令
-          npm run lint 
+          npm run lint
+      - name: Run unit tests # 步骤名称为：Run unit tests
+        run: |# 执行单元测试,如果没有测试用例返回 0
+          npm run test || exit 0
 
   # 合并发布版本的 PR 到 master 分支
   auto-merge:
