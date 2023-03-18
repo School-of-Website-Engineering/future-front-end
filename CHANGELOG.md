@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.6](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.5...v1.1.6) (2023-03-18)
+
+
+### update
+
+* 添加workflow、template ([2097ec2](https://github.com/School-of-Website-Engineering/future-front-end/commit/2097ec2312d47be1414070568632414ae2b53424))
+
 ## [1.1.5](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.4...v1.1.5) (2023-03-17)
 
 
