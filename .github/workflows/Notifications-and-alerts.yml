@@ -34,6 +34,6 @@ jobs:
             --smtp-host smtp.qq.com \
             --smtp-secure true \
             --smtp-auth-user 246834152@qq.com \
-            --smtp-auth-password qrjvreyqgccfbihf \
+            --smtp-auth-password zewewmvnylxgbgfh \
             --smtp-require-tls true\
             --smtp-port 465
