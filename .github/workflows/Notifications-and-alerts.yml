@@ -27,7 +27,7 @@ jobs:
                message="你干嘛~哎呦~哈哈~你好烦~~Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
           
                npx nodemailer-cli \
-               --from "${{ secrets.EMAIL_USERNAME }}" \ --to 1960638223@qq.com \ 
+               --from "${{ secrets.EMAIL_USERNAME }}"  --to 1960638223@qq.com \ 
                --text "Hello Alice" --smtp-host smtp.gmail.com 
                --smtp-port 587 \ 
                --smtp-secure false \ 
