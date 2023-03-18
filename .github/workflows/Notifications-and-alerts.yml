@@ -17,16 +17,19 @@ jobs:
         - run: npm install nodemailer
 
         - name: Send alert email
+          #  包含无效的电子邮件地址：发送
+          #  您必须至少有一个主题或消息正文。
           run: |
-            echo "新代码已被推送到主分支。" | npx nodemailer-cli send \
+            echo "Subject: 新代码已被推送到主分支。
+              新代码已被推送到主分支。" | npx nodemailer-cli send \
               --host smtp.gmail.com \
               --port 587 \
               --secure false \
               --auth-user ${{ secrets.EMAIL_USERNAME }} \
               --auth-pass ${{ secrets.EMAIL_PASSWORD }} \
               --from "GitHub Actions <${{ secrets.EMAIL_USERNAME }}>" \
-              --to "1960638223@qq.com, 1694181697@qq.com"
-  
+              --to "1960638223@qq.com"
+
 
 #  这个工作流程使用 `push` 事件来监听新的代码提交，并且只有针对主分支的操作才会触发它。notify-and-alert job 中，我们先安装 Node.js 运行环境和 `nodemailer` 库，通过运行 `npm install nodemailer` 命令进行安装。
 #  接着，在 Send alert email 步骤中，我们使用 `npx nodemailer-cli send` 命令向指定的电子邮件地址发送通知消息。其中需要填写 SMTP 邮件服务器、端口号、身份验证信息、发件人等详细信息。我们在此使用 Gmail SMTP 服务器并存储了身份验证信息和收件人电子邮件地址在 GitHub 密钥中。
