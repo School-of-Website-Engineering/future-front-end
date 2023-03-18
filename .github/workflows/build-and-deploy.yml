@@ -1,60 +1,57 @@
 name: build-and-deploy
 
-# workflow的触发事件，这里代表main分支的push事件触发
 on:
   push:
     branches: [ main ]
 
-# 任务
 jobs:
-  # build-and-deploy 为任务的ID
   build-and-deploy:
-    # 运行所需要的环境
     runs-on: ubuntu-latest
 
     steps:
-      # 步骤名
       - name: Checkout
-        # 使用的actions脚本，这里是官方提供的获取源码脚本
-        uses: actions/checkout@v2
-
-      # 步骤名：安装和打包
-      - name: Install and Build
-        # 安装Node.js和npm
-        uses: actions/setup-node@v2
+        uses: actions/checkout@v3
         with:
-          node-version: '14.x'
-        # 执行npm脚本打包项目
+          persist-credentials: false
+
+      - name: Install and Build
         run: |
           npm install -g pnpm
           pnpm install
           pnpm run build
 
-      # 步骤名：部署到GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.1.3
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: dist
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
 
-      # 步骤名：发送邮件通知
-      - name: Send Mail
-        uses: dawidd6/action-send-mail@v2.1.0
-        env:
-          #设置SMTP服务商网站、SMTP端口号和SSL协议开关
-          SMTP_SERVER_ADDRESS: smtp.gmail.com
-          SMTP_SERVER_PORT: 465
-          SMTP_SECURED: true
+      # 判断工作流是否全部成功，如果有任意一个步骤失败，则发送失败邮件；否则发送成功邮件。
+      - name: Send Mail 发送邮件
+        if: ${{ !cancelled() && success() }}
+        uses: bingblue/send-nodemailer@master
+        with:
+          user: '${{ secrets.EMAIL_USERNAME }}'
+          pass: '${{ secrets.EMAIL_PASSWORD }}'
+          host: 'smtp.gmail.com'
+          port: 465
+          secure: true
+          from: '构建与部署 <maosenyang00@gmail.com>'
+          to: 1960638223@qq.com,1694181697@qq.com
+          subject: 'Success：部署成功！'
+          html: '<h2>构建部署执行完毕！</h2>'
 
-          # 邮件基本信息
-          FROM: Your Name <youremail@gmail.com>
-          TO: 1960638223@qq.com,clingsd@gmail.com
-
-          SUBJECT: ${{ env.SUBJECT }}
-          BODY_PLAIN_TEXT: ${{ env.CONTENT }}
-
-        # 发送不同的邮件主题和内容根据工作流状态
-        env:
-          SUBJECT: ${{ job.status == 'success' && 'Success：部署成功！' || 'Failed：部署失败' }}
-          CONTENT: ${{ job.status == 'success' && '所有工作流成功执行完毕！' || '部署失败请重新检查代码' }}
+      - name: Send Mail 发送邮件
+        if: ${{ !cancelled() && failure() }}
+        uses: bingblue/send-nodemailer@master
+        with:
+          user: '${{ secrets.EMAIL_USERNAME }}'
+          pass: '${{ secrets.EMAIL_PASSWORD }}'
+          host: 'smtp.gmail.com'
+          port: 465
+          secure: true
+          from: '构建与部署 <maosenyang00@gmail.com>'
+          to: 1960638223@qq.com,1694181697@qq.com
+          subject: 'Failed：部署失败'
+          html: '<h2>部署失败请重新检查代码。</h2>'
