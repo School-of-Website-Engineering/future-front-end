@@ -20,8 +20,7 @@ jobs:
           #  包含无效的电子邮件地址：发送
           #  您必须至少有一个主题或消息正文。
           run: |
-            echo "Subject: 新代码已被推送到主分支。
-              新代码已被推送到主分支。" | npx nodemailer-cli send \
+            echo "Subject: 新代码已被推送到主分支" | npx nodemailer-cli send \
               --host smtp.gmail.com \
               --port 587 \
               --secure false \
