@@ -25,7 +25,7 @@ jobs:
         run: |
           subject="鸡你太美New code has been pushed to the main branch."
           message="你干嘛~哎呦~哈哈~你好烦~~Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
-          npx nodemailer-cli \
+           npm install -g nodemailer-cli 
           --from ymsxiaohao@qq.com  --to 1960638223@qq.com \ 
           --text "鸡你太美" --smtp-host smtp.qq.com 
           --smtp-port 465 \ 
