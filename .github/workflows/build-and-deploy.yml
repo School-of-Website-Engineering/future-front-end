@@ -1,5 +1,4 @@
-# 该workflow的名称，可以随意填写
-name: build-and-deploy
+name: 构建和部署
 
 # workflow的触发事件，这里代表main分支的push事件触发
 on:
@@ -40,5 +39,6 @@ jobs:
           EMAIL_FROM_ADDRESS: maosenyang00@gmail.com
           EMAIL_TO_ADDRESS: 1960638223@qq.com,1694181697@qq.com
         with:
+          server_address: $SMTP_SERVER_ADDRESS
           subject: ${{ job.status }}：部署${{ job.status == 'success' && '成功！' || '失败' }}
           body: ${{ job.status == 'success' && '所有工作流成功执行完毕！' || '部署失败请重新检查代码' }}，workflow名称为 ${{ github.workflow }}。
