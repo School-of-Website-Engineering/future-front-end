@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.8](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.7...v1.1.8) (2023-03-18)
+
+
+### Build System
+
+* **deps:** bump actions/checkout from 2 to 3 ([4cd1549](https://github.com/School-of-Website-Engineering/future-front-end/commit/4cd1549c096230f767486573492ef06ab0d03256))
+
 ## [1.1.7](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.6...v1.1.7) (2023-03-18)
 
 
