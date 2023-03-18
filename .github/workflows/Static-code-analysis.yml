@@ -25,7 +25,7 @@ jobs:
               -v "${PWD}:/tmp/repo" \
               -w /tmp/repo \
               dependabot/dependabot-core:latest \
-              /bin/bash -c "echo '{\"type\": \"git\", \"updates\": [{\"package-manager\": \"npm\", \"directory\": \"/\", \"schedule\": {\"interval\": \"daily\", \"time\": \"08:00Z\"}}]}' > config.json && dependabot --version"
+              /bin/bash -c "echo '{\"type\": \"git\", \"updates\": [{\"package-manager\": \"npm\", \"directory\": \"/\", \"schedule\": {\"interval\": \"daily\", \"time\": \"08:00Z\"}}]}' > config.json && dependabot --version" -t
 
       # 使用 Dependabot 对 package.json 文件中的依赖进行安全性检查并修复潜在漏洞或错误
       - name: Run Dependabot security check and auto fix issues
