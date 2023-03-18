@@ -15,7 +15,7 @@
       runs-on: ubuntu-latest
 
       container:
-        image: dependabot/dependabot
+        image: docker:latest
 
       steps:
         # 检出仓库
@@ -27,13 +27,13 @@
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 认证您的 GitHub 账户，允许 Dependabot 进行 PR 操作
           run: |
-            echo '{ "type": "npm", "update_schedule": { "interval":"daily", "time":"08:00" } }' > .dependabot/config.yml
-            dependabot --version
-            docker run --rm \
-                -e DEPENDABOT_GITHUB_TOKEN=$GITHUB_TOKEN \
-                -v "$(pwd):/workspace" \
-                dependabot/dependabot-core:latest \
-                /bin/bash -c "cd /workspace && dependabot --ignore-dependencies --require-all --update=javascript:npm,python && git config --global user.email 'dependbot@example.com' && git config --global user.name 'Dependabot (GitHub Actions)' && git commit -a -m 'Bump dependencies via Dependabot' && git push origin HEAD"
+            docker run --rm dependabot/dependabot-core:latest dependabot --version
+              echo 'Dependabot config file created.' > .dependabot-config-created
+              docker run --rm \
+                  -e DEPENDABOT_GITHUB_TOKEN=$GITHUB_TOKEN \
+                  -v "$(pwd):/workspace" \
+                  dependabot/dependabot-core:latest \
+                  /bin/bash -c "cd /workspace && dependabot --version && dependabot --ignore-dependencies --require-all --update=javascript:npm,python && git config --global user.email 'dependbot@example.com' && git config --global user.name 'Dependabot (GitHub Actions)' && git commit -a -m 'Bump dependencies via Dependabot' && git push origin HEAD"
 
 #    说明：
 #  - 工作流名称为“Dependency Analysis and Fix”。
