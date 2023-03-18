@@ -1,5 +1,5 @@
 name: Notify and Alert
-# 监听 push 事件，只有在主分支上推送时才触发
+
 on:
   push:
     branches:
@@ -9,10 +9,8 @@ jobs:
   notify-and-alert:
     runs-on: ubuntu-latest
     steps:
-      # 检出代码
       - uses: actions/checkout@v2
 
-      # 设置 Node.js 环境和 nodemailer 库
       - name: Setup Node.js and nodemailer
         uses: actions/setup-node@v2
         with:
@@ -20,27 +18,30 @@ jobs:
       - run: npm install nodemailer
           npm install -g nodemailer-cli
 
+      # 判断所有工作流是否成功执行
+      - name: Check Workflow Status
+        id: check_status
+        run: |
+          echo "::set-output name=success::true"
+          if [[ $(grep "Job succeeded" $GITHUB_EVENT_PATH | wc -l) != 7 ]]; then
+            echo "::set-output name=success::false"
+          fi
+
       # 发送通知邮件
-      - name: Send Mail 发送邮件
+      - name: Send Mail
         uses: bingblue/send-nodemailer@master
         with:
-          # 账号
           user: '${{ secrets.EMAIL_USERNAME }}'
-          # 密码
           pass: '${{ secrets.EMAIL_PASSWORD }}'
-          # Host，在邮箱的设置里可以找到
           host: 'smtp.gmail.com'
-          # 端口
           port: 465
-          # 是否开启SSL
           secure: true
-          # 发送者
-          from: 'Your Name <youremail@gmail.com>'
-          # 收件人
+          from: 'GitHub Action <maosenyang00@gmail.com>'
           to: 1960638223@qq.com,clingsd@gmail.com
-          # 主题
-          subject: 'this is email subject'
-          # Use html file prefix [file://]，使用HTML文件，已[file://]开头
-          html: <p>this is content</p>
-          # Or use html script，或者使用HTML代码片段
-          # html: '<p>this is content</p>'
+          # 根据工作流状态发送不同的邮件主题和内容
+          subject: ${{ env.SUBJECT }}
+          html: ${{ env.CONTENT }}
+        env:
+          SUBJECT: ${{ env.STATUS == 'success' && 'Success：GitHub Action run successfully' || 'Failed：GitHub Action failed to run' }}
+          CONTENT: ${{ env.STATUS == 'success' && '<p>所有工作流成功执行完毕！</p>' || '<p>有失败的工作流</p>' }}
+          STATUS: ${{ steps.check_status.outputs.success }}
