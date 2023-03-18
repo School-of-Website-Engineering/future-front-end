@@ -1,46 +1,48 @@
-# 定义 workflow 名称和触发条件
-name: Dependency Analysis and Fix
-on:
-  push:
-    branches:
-      - main
+  name: Dependency Analysis and Fix
 
-jobs:
-  # 定义 job 名称和运行环境
-  dependency-check-and-fix:
-    name: Dependabot Dependency Check and Fix
-    runs-on: ubuntu-latest
+  # 当代码被推送到主分支时，启动此workflow。
+  on:
+    push:
+      branches:
+        - main
+    # 定义工作流每日定时运行一次，以确保持续检测安全问题
+    schedule:
+      - cron: '0 8 * * *' # 每天 08:00 运行
 
-    container:
-      image: docker:latest
+  jobs:
+    security-check:
+      name: Dependabot Security Check
+      runs-on: ubuntu-latest
 
-    steps:
-      # 检出代码库到 runner 中
-      - uses: actions/checkout@v2
+      container:
+        image: docker:latest
 
-      # 启用 Dependabot 自动更新 package.json 文件中的依赖项，并生成 PR 更新信息
-      - name: Enable Dependabot for automatic updates
-        run: |
-          docker run --rm \
-              -v "${PWD}:/tmp/repo" \
-              -w /tmp/repo \
-              dependabot/dependabot-core:latest \
-              /bin/bash -c "echo '{\"type\": \"git\", \"updates\": [{\"package-manager\": \"npm\", \"directory\": \"/\", \"schedule\": {\"interval\": \"daily\", \"time\": \"08:00Z\"}}]}' > config.json && dependabot --version" -t
+      steps:
+        # 检出仓库
+        - name: Checkout repository
+          uses: actions/checkout@v2
 
-      # 使用 Dependabot 对 package.json 文件中的依赖进行安全性检查并修复潜在漏洞或错误
-      - name: Run Dependabot security check and auto fix issues
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 认证您的 GitHub 账户，允许 Dependabot 进行 PR 操作
-        run: |
-          docker run --rm -it \
-              -v "${PWD}:/tmp/repo" \
-              -w /tmp/repo \
-              dependabot/dependabot-core:latest \
-              /bin/bash -c "echo '{\"type\": \"git\", \"host\": \"github\", \"username\": \"$GITHUB_ACTOR\", \"repository\": {\"name\": \"$GITHUB_REPOSITORY\", \"branch\":\"main\", \"private\": true}}' > config.json && dependabot --version && dependabot-security-checker --update-config && dependabot --disable-credentials-update --update=javascript:npm && git config --global user.email \"dependbot@example.com\" && git config --global user.name \"Dependabot (GitHub Actions)\" && git checkout -b dependabot/npm-and-yarn/package-lockfile-update && git add . && git commit -m \"Bump dependencies via Dependabot\" && git push origin dependabot/npm-and-yarn/package-lockfile-update"
+        # 使用 Dependabot 对 package.json 文件中的依赖进行安全性检查并修复潜在漏洞或错误
+        - name: Run Dependabot security check and auto fix issues
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 认证您的 GitHub 账户，允许 Dependabot 进行 PR 操作
+          run: |
+            echo '{ "type": "npm", "update_schedule": { "interval":"daily", "time":"08:00" } }' > .dependabot/config.yml
+          # 配置Dependabot对npm依赖进行自动更新，在每日8:00执行更新操作
+            docker run --rm \
+                -e DEPENDABOT_GITHUB_TOKEN=$GITHUB_TOKEN \
+                -v "$(pwd):/workspace" \
+                dependabot/dependabot-core:latest \
+                /bin/bash -c "cd /workspace && dependabot --version && dependabot --ignore-dependencies --require-all --update=javascript:npm,python && git config --global user.email 'dependbot@example.com' && git config --global user.name 'Dependabot (GitHub Actions)' && git commit -a -m 'Bump dependencies via Dependabot' && git push origin HEAD"
 
-#  1. 当代码被推送到主分支时，启动此 workflow。
-#  2. 使用 `actions/checkout` action 将代码库检出到 runner 中。
-#  3. 在使用 Docker 运行 `dependabot/dependabot-core` 镜像以启用 Dependabot 自动更新 package.json 文件中的依赖项，并生成 PR 更新信息。
-#  4. 在使用 Docker 运行 `dependabot/dependabot-core` 镜像以对 package.json 文件中的依赖进行安全性检查并修复潜在漏洞或错误。如果有问题，则会将修改后的代码提交为新分支，然后创建一个新的 PR 来应用更改。
+#    说明：
+#  - 工作流名称为“Dependency Analysis and Fix”。
+#  - 触发条件定义了当代码被推送到主分支时和每天定时运行一次（8点）均会触发该工作流。
+#  - 工作流中只有一个job，即“security-check”，用于执行包的安全性检查与自动修复操作。
+#  - job运行的环境为最新版的 Ubuntu 系统容器。
+#  - 使用了 Docker 执行 Dependabot package manager security check 和 update 的命令。
+#  - 在容器中使用 $GITHUB_TOKEN 授权 GitHub API 权限进行操作，该 token 存储在 secrets 中。同时，将当前文件夹映射到容器中。
+#  - Dependabot配置文件config.yml位于.dependabot目录下，其中配置了Dependabot自动更新npm依赖，在每天8：00执行更新操作。
+#  - 使用 `--ignore-dependencies` 标志忽略依赖关系，并通过 `--require-all` 参数指定所有必需项都需要满足才能升级软件包。最后，使用Git命令提交修改并推送至 GitHub 仓库。
 #
-#  需要注意的是，此 workflow 使用了 Docker 容器来运行 Dependabot 命令，因此需要确保所使用的 runner 环境已经安装了 Docker。另外，在您的 GitHub 仓库中必须启用 Dependabot 功能。
+#    这个工作流可以帮助您实现自动化安全检查，并及时修复安全漏洞或错误，是一种高效而可靠的开发实践。
