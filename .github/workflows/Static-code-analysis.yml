@@ -27,7 +27,7 @@
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 认证您的 GitHub 账户，允许 Dependabot 进行 PR 操作
           run: |
-              echo '{ "type": "npm", "update_schedule": { "interval":"daily", "time":"08:00" } }' > .dependabot/config.yml
+              echo 'Dependabot config file created.' > .dependabot-config-created
               docker run --rm \
                   -e DEPENDABOT_GITHUB_TOKEN=$GITHUB_TOKEN \
                   -v "$(pwd):/workspace" \
