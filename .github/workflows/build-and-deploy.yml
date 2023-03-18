@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          persist-credentials: false
 
       - name: Install and Build
         run: |
@@ -36,14 +34,23 @@ jobs:
           host: 'smtp.gmail.com'
           port: 465
           secure: true
-          from: '构建部署 <maosenyang00@gmail.com>'
+          from: 'GitHub workflows <maosenyang00@gmail.com>'
           to: 1960638223@qq.com,1694181697@qq.com
+          # 判断所有任务是否成功执行。如果有失败的任务，则发送部署失败邮件，否则发送部署成功邮件。
+          if: ${{ success() }}
+          subject: 'Success：部署成功！'
+          html: '<h2>所有工作流成功执行完毕！</h2>'
 
-          # 判断是否有失败的工作流，如果有则发送“Failed：部署失败”邮件，否则发送“Success：部署成功！”邮件
-          if: ${{ job.status != 'success' }}
-          subject: Failed：部署失败
-          html: <h2>部署失败请重新检查代码!workflow名称为 ${{ github.workflow }}。</h2>
-
-          else:
-            subject: Success：部署成功！
-            html: <h2>构建部署执行完毕！workflow名称为 ${{ github.workflow }}。</h2>
+      - name: Send Mail 发送邮件
+        uses: bingblue/send-nodemailer@master
+        with:
+          user: '${{ secrets.EMAIL_USERNAME }}'
+          pass: '${{ secrets.EMAIL_PASSWORD }}'
+          host: 'smtp.gmail.com'
+          port: 465
+          secure: true
+          from: '构建与部署 <maosenyang00@gmail.com>'
+          to: 1960638223@qq.com,1694181697@qq.com
+          if: ${{ failure() }}
+          subject: 'Failed：部署失败'
+          html: '<h2>部署失败请重新检查代码</h2>'
