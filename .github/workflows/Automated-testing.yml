@@ -1,0 +1,25 @@
+name: Automated Testing
+
+on:
+  push:
+    branches: [ main ] # 只有对主分支进行的推送会触发此工作流程
+  pull_request:
+    branches: [ main ] # 只有针对主分支的 PR 会触发此工作流程
+
+jobs:
+  run-tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 # 检查代码库，将其检出到 runner 中
+      - name: Setup Node.js
+        uses: actions/setup-node@v1 # 安装 Node.js 运行环境和依赖包
+        with:
+          node-version: '12.x'
+      - name: Install dependencies
+        run: npm install # 安装项目依赖
+      - name: Run tests
+        run: npm test # 运行测试命令
+#这个 workflow 文件可以自动监听 push 和 pull_request 事件，只有针对主分支的操作才会触发它。run-tests job 使用 `actions/checkout` action 将代码库检出到 runner 中，使用 `actions/setup-node` action 安装 Node.js 运行环境和依赖包，并最终通过运行 `npm test` 命令来运行测试。
+#
+#需要注意的是，在此示例中，我们使用了默认的 `npm test` 命令来运行测试。如果您的项目使用其他测试框架或命令，请相应地更改该命令。
