@@ -1,0 +1,11 @@
+- name: First interaction
+  uses: actions/first-interaction@v1.1.1
+  with:
+    # 存储库的令牌。可以使用 {{ secrets.GITHUB_TOKEN }} 传入。
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
+    issue-message: |
+      你好呀！感谢您打开我们项目的第一期。感谢您的反馈，并期待尽快解决此问题。
+    # 参数定义了在个人第一次创建问题时应该发布的评论。这也是可选参数。
+    pr-message: |
+      恭喜你打开了你的第一个拉取请求！我们的团队将很快对其进行审核并提供任何必要的反馈。感谢您为我们的项目做出贡献！
+    # 参数定义了在个人第一次创建 PR 时应该发布的评论。此参数也是可选项。
