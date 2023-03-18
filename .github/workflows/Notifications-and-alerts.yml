@@ -27,10 +27,46 @@ jobs:
           subject="New code has been pushed to the main branch."
           message="Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
           npx nodemailer-cli \
-            --from ${{ secrets.EMAIL_USERNAME }} --to 1960638223@qq.com \
-            --text "你好爱丽丝" --smtp-host smtp.gmail.com
             --from "${{ secrets.EMAIL_USERNAME }}" \
-            --to "1694181697@qq.com, 1960638223@qq.com" \
+            name: Notify and Alert
+# 监听 push 事件，只有在主分支上推送时才触发
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-and-alert:
+    runs-on: ubuntu-latest
+    steps:
+      # 检出代码
+      - uses: actions/checkout@v2
+
+      # 设置 Node.js 环境和 nodemailer 库
+      - name: Setup Node.js and nodemailer
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - run: |
+          npm install nodemailer
+          npm install -g nodemailer-cli
+
+      # 发送通知邮件
+      - name: Send alert email
+        run: |
+          subject="New code has been pushed to the main branch."
+          message="Hello,\n\nNew code has been pushed to the main branch.\n\nBest regards."
+          npx nodemailer-cli \
+            --from "${{ secrets.EMAIL_USERNAME }}" \
+            --to "1694181697@qq.com" --to "1960638223@qq.com"
+            --subject "$subject" \
+            --text "$message" \
+            --smtp-host smtp.gmail.com \
+            --smtp-port 587 \
+            --smtp-secure false \
+            --smtp-auth-user ${{ secrets.EMAIL_USERNAME }} \
+            --smtp-auth-password ${{ secrets.EMAIL_PASSWORD }} \
+
             --subject "$subject" \
             --text "$message" \
             --smtp-host smtp.gmail.com \
