@@ -20,7 +20,7 @@
       steps:
         # 检出仓库
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@v3
 
         # 使用 Dependabot 对 package.json 文件中的依赖进行安全性检查并修复潜在漏洞或错误
         - name: Run Dependabot security check and auto fix issues
