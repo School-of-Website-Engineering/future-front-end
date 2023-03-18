@@ -18,6 +18,7 @@ jobs:
       - name: Lint and test code
         run: |
                npm run lint
+               npm test || true
       - name: Setup code review
         uses: reviewdog/action-eslint@v1 # 使用 reviewdog 工具进行代码审查
         with:
