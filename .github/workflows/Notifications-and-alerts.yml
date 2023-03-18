@@ -33,7 +33,7 @@ jobs:
             --text "$message" \
             --smtp-host smtp.qq.com \
             --smtp-secure true \
-            --smtp-auth-user maosenyang00@gmail.com \
+            --smtp-auth-user 246834152@qq.com \
             --smtp-auth-password qrjvreyqgccfbihf \
             --smtp-require-tls true\
             --smtp-port 465
