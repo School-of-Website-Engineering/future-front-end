@@ -2,10 +2,9 @@
 
 ## [1.1.11](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.10...v1.1.11) (2023-03-19)
 
-
 ### CI
 
-* Update .deepsource.toml ([380eded](https://github.com/School-of-Website-Engineering/future-front-end/commit/380eded04d3da30ef2f1112354f195b784f36b91))
+-   Update .deepsource.toml ([380eded](https://github.com/School-of-Website-Engineering/future-front-end/commit/380eded04d3da30ef2f1112354f195b784f36b91))
 
 ## [1.1.10](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.9...v1.1.10) (2023-03-19)
 
