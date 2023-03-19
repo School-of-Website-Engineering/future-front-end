@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.9](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.8...v1.1.9) (2023-03-19)
+
+
+### CI
+
+* Add .deepsource.toml ([81ba00b](https://github.com/School-of-Website-Engineering/future-front-end/commit/81ba00b07148f058705fe100643b5012caa9270d))
+
 ## [1.1.8](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.7...v1.1.8) (2023-03-18)
 
 
