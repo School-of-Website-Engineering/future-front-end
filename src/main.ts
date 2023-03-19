@@ -12,7 +12,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 const app = createApp(App);
 const pinia = createPinia();
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-    app.component(key, component);
+	app.component(key, component);
 }
 // 动态获取 base 配置选项
 const base = import.meta.env.BASE_URL;
