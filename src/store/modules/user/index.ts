@@ -20,9 +20,5 @@ export const useUserStore = defineStore('user', {
             this.token = '';
             this.username = '';
         }
-    },
-    // 开启数据缓存
-    persist: {
-        storage: sessionStorage
     }
 });
