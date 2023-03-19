@@ -17,7 +17,21 @@ export const routes: Array<RouteRecordRaw> = [
     {
         path     : '/main',
         name     : 'main',
-        component: () => import('../views/Main/index.vue')
+        component: () => import('../views/Main/index.vue'),
+        children : [
+            {
+                // 私信
+                path     : '/main/message',
+                name     : 'message',
+                component: () => import('../views/Main/Message/index.vue')
+            },
+            //频道服务器
+            {
+                path     : '/channels',
+                name     : 'channels',
+                component: () => import('../views/Channels/index.vue')
+            }
+        ]
     },
     //     404
     {

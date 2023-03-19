@@ -1,25 +1,25 @@
 <template>
 	<!--频道侧边栏,Collapse 折叠面板-->
 	<el-aside width="90px" class="main-aside">
-		<el-menu default-active="2" :collapse="isCollapse" class="el-menu-vertical-demo">
-			<el-menu-item index="2">
-				<el-badge :max="99" :value="5" class="item-message"> </el-badge>
+		<el-menu default-active="message" :collapse="isCollapse" router class="el-menu-vertical-demo">
+			<el-menu-item index="message">
+				<el-badge :max="99" :value="5" class="item-message"></el-badge>
 				<img class="channel-img" src="../../assets/vue.svg" />
 				<template #title>sdcfsdfsdf</template>
 			</el-menu-item>
 			<div class="listItem-3SmSlK">
 				<div class="guildSeparator-a4uisj"></div>
 			</div>
-			<el-menu-item index="3">
-				<el-badge :max="99" :value="5" class="item-message"> </el-badge>
+			<el-menu-item index="/channels">
+				<el-badge :max="99" :value="5" class="item-message"></el-badge>
 				<img class="channel-img" src="../../assets/vue.svg" />
 				<template #title>
 					<span>Navigator One</span>
 				</template>
 			</el-menu-item>
-			<el-menu-item index="4">
+			<el-menu-item index="/channels">
 				<!-- 右下角消息数量 -->
-				<el-badge :max="99" :value="5" class="item-message"> </el-badge>
+				<el-badge :max="99" :value="5" class="item-message"></el-badge>
 				<img class="channel-img" src="../../assets/vue.svg" />
 				<template #title>
 					<span>Navigator One</span>
@@ -30,7 +30,7 @@
 					<Plus class="icon" />
 				</el-icon>
 				<template #title>
-					<span>添加组</span>
+					<span>创建组</span>
 				</template>
 			</el-menu-item>
 			<el-menu-item index="6" class="add-icon">
@@ -113,6 +113,26 @@ $sidebar-width: 80px;
 			border-radius: 0 4px 4px 0; /* 圆角在右侧 */
 			transition: all 0.3s ease-out; /* 缓动效果 */
 			opacity: 0.5;
+		}
+
+		//    最后三个元素不显示:before
+		&:nth-last-child(-n + 4) {
+			&::before {
+				opacity: 0;
+			}
+
+			&:hover {
+				.el-icon {
+					border-radius: 35% !important;
+					color: #fff !important;
+				}
+
+				//    如果含有add-icon类名，就显示背景色为#fff
+				& .el-icon {
+					background-color: #fff !important;
+					color: #666 !important;
+				}
+			}
 		}
 
 		// 鼠标移入后左侧出现一个小竖条，从左往右缓入
