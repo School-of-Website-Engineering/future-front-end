@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.10](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.9...v1.1.10) (2023-03-19)
+
+### Styling
+
+-   Format code with prettier ([0d13759](https://github.com/School-of-Website-Engineering/future-front-end/commit/0d13759a69b51e7e0f510aa905da2cccfcd9ec6d))
+
 ## [1.1.9](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.8...v1.1.9) (2023-03-19)
 
 ### CI
