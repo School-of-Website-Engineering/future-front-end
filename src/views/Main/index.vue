@@ -4,12 +4,7 @@
 		<ChannelSidebar class="channel-sidebar" />
 		<el-row class="main-box-right">
 			<el-col :span="4">
-				<el-container>
-					<el-header class="main-box-right-header1">Header</el-header>
-					<el-main class="main-box-right-main1">
-						<el-footer>Footer</el-footer>
-					</el-main>
-				</el-container>
+				<router-view />
 			</el-col>
 			<el-col :span="20">
 				<el-container>
