@@ -5,24 +5,24 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
-export {}
+export {};
 
 declare module '@vue/runtime-core' {
-  export interface GlobalComponents {
-    ChannelSidebar: typeof import('./components/common/ChannelSidebar.vue')['default']
-    ElAside: typeof import('element-plus/es')['ElAside']
-    ElBadge: typeof import('element-plus/es')['ElBadge']
-    ElCol: typeof import('element-plus/es')['ElCol']
-    ElContainer: typeof import('element-plus/es')['ElContainer']
-    ElFooter: typeof import('element-plus/es')['ElFooter']
-    ElHeader: typeof import('element-plus/es')['ElHeader']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElMain: typeof import('element-plus/es')['ElMain']
-    ElMenu: typeof import('element-plus/es')['ElMenu']
-    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
-    ElRow: typeof import('element-plus/es')['ElRow']
-    NotFound: typeof import('./components/NotFound.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
-  }
+	export interface GlobalComponents {
+		ChannelSidebar: typeof import('./components/common/ChannelSidebar.vue')['default'];
+		ElAside: typeof import('element-plus/es')['ElAside'];
+		ElBadge: typeof import('element-plus/es')['ElBadge'];
+		ElCol: typeof import('element-plus/es')['ElCol'];
+		ElContainer: typeof import('element-plus/es')['ElContainer'];
+		ElFooter: typeof import('element-plus/es')['ElFooter'];
+		ElHeader: typeof import('element-plus/es')['ElHeader'];
+		ElIcon: typeof import('element-plus/es')['ElIcon'];
+		ElMain: typeof import('element-plus/es')['ElMain'];
+		ElMenu: typeof import('element-plus/es')['ElMenu'];
+		ElMenuItem: typeof import('element-plus/es')['ElMenuItem'];
+		ElRow: typeof import('element-plus/es')['ElRow'];
+		NotFound: typeof import('./components/NotFound.vue')['default'];
+		RouterLink: typeof import('vue-router')['RouterLink'];
+		RouterView: typeof import('vue-router')['RouterView'];
+	}
 }

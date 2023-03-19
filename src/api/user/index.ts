@@ -10,8 +10,8 @@ export interface userLoginApi {
 }
 
 class UserLoginService implements userLoginApi {
-    getUserLogin<Response>(userData: object): Promise<Response> {
-        return http.post<Response>(USER_LOGIN, userData);
-    }
+	getUserLogin<Response>(userData: object): Promise<Response> {
+		return http.post<Response>(USER_LOGIN, userData);
+	}
 }
 export default new UserLoginService();
