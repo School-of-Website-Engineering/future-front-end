@@ -12,9 +12,9 @@ export interface WeatherApi {
 }
 
 class WeatherService implements WeatherApi {
-    getWeatherNow(): Promise<Response> {
-        return http.get(WEATHER_NOW);
-    }
+	getWeatherNow(): Promise<Response> {
+		return http.get(WEATHER_NOW);
+	}
 }
 
 export default new WeatherService();
