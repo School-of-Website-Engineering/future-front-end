@@ -10,6 +10,12 @@
 ![](https://img.shields.io/badge/Vite-%20%5E4.1.4-brightgreen)
 ![](https://img.shields.io/badge/npm-%5E9.5.1-orange)
 
+---
+DeepSource 趋势线：
+
+[![DeepSource](https://deepsource.io/gh/School-of-Website-Engineering/future-front-end.svg/?label=active+issues&show_trend=true&token=y_ZjbP8TmVGwwkuKPdl67NZO)](https://deepsource.io/gh/School-of-Website-Engineering/future-front-end/?ref=repository-badge)
+
+---
 ## 项目简介
 future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似discord交友聊天项目，使用了 Vue Router、Vuex、Element Plus 等主流框架和库，项目采用了模块化、组件化、工程化的开发模式。
 
