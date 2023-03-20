@@ -9,7 +9,7 @@
         "resolveJsonModule"      : true,
         "isolatedModules"        : true,
         "esModuleInterop"        : true,
-        "lib"                    : ["ESNext", "DOM"],
+        "lib"                    : [ "es5", "es6", "dom", "dom.iterable"],
         "skipLibCheck"           : true,
         "noEmit"                 : true,
         "types"                  : ["element-plus/global", "vite/client"],

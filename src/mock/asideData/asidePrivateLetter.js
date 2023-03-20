@@ -1,13 +1,11 @@
 // 获取列表数据
-import { AsideLPrivate } from '../../api/aside/index.js';
-
 export default [
     // 用户登录
     {
         // 请求地址
-        url     : '/users',
+        url     : '/aside/letter',
         // 请求方法
-        method  : 'post',
+        method  : 'get',
         // 响应数据
         response: () => {
             return {
@@ -15,10 +13,6 @@ export default [
                 message: 'success',
                 // 侧边栏数据
                 data   : {
-                    id             : 1,
-                    name           : '私信',
-                    //     消息数量
-                    count          : 0,
                     //     用户私信列表数量
                     privateUserList: [
                         {

@@ -1,23 +1,28 @@
 <template>
-    <!--频道侧边栏,Collapse 折叠面板-->
+    <!--频道侧边栏,菜单-->
     <el-aside width="90px" class="main-aside">
-        <el-menu default-active="message" :collapse="isCollapse" router class="el-menu-vertical-demo">
-            <el-menu-item index="message">
-                <el-badge :max="99" :value="5" class="item-message"></el-badge>
+        <el-menu :collapse="isCollapse" router class="el-menu-vertical-demo">
+            <el-menu-item index="/message" :class="{ 'is-active': $route.path === '/main/message' }">
                 <div class="channel-img" src="../../assets/vue.svg" />
                 <template #title>sdcfsdfsdf</template>
             </el-menu-item>
             <div class="listItem-3SmSlK">
                 <div class="guildSeparator-a4uisj"></div>
             </div>
-            <el-menu-item index="/channels">
-                <el-badge :max="99" :value="5" class="item-message"></el-badge>
-                <img class="channel-img" src="../../assets/vue.svg" />
+            <el-menu-item
+                v-for="item in asideSidebarList"
+                :key="item.id"
+                :index="'/channels/' + item.id"
+                :class="{ 'is-active': $route.path === '/channels/' + item.id }"
+                @click="() => $router.push('/channels/' + item.id)"
+            >
+                <el-badge :max="99" :value="item.count" class="item-message"></el-badge>
+                <el-avatar class="channel-img" :size="50" :src="item.img" @error="errorHandler"> </el-avatar>
                 <template #title>
-                    <span>Navigator One</span>
+                    <span>{{ item.name }}</span>
                 </template>
             </el-menu-item>
-            <el-menu-item index="5" class="add-icon">
+            <el-menu-item index="1" class="add-icon">
                 <el-icon>
                     <Plus class="icon" />
                 </el-icon>
@@ -25,7 +30,7 @@
                     <span>创建组</span>
                 </template>
             </el-menu-item>
-            <el-menu-item index="6" class="add-icon">
+            <el-menu-item index="2" class="add-icon">
                 <el-icon>
                     <Compass class="icon" />
                 </el-icon>
@@ -36,7 +41,7 @@
             <div class="listItem-3SmSlK">
                 <div class="guildSeparator-a4uisj"></div>
             </div>
-            <el-menu-item index="7" class="add-icon">
+            <el-menu-item index="3" class="add-icon">
                 <el-icon>
                     <Download class="icon" />
                 </el-icon>
@@ -49,9 +54,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
+import { onMounted, reactive, ref } from 'vue';
+import AsideLPrivateService, { IAsideSidebarList } from '@/api/aside';
+import { useRouter } from 'vue-router';
+const errorHandler = () => true;
 const isCollapse = ref(true);
+const router = useRouter();
+// 侧边栏频道列表数据
+const asideSidebarList = reactive<IAsideSidebarList[]>([]);
+onMounted(() => {
+    getChannelList();
+    //     打印当前路由路径
+    console.log(router.currentRoute.value.path);
+});
+
+//获取侧边栏频道列表
+const getChannelList = async() => {
+    const res = await AsideLPrivateService.getAsideSidebarList();
+    asideSidebarList.push(...(res.data as any));
+    console.log(asideSidebarList);
+};
 </script>
 
 <style lang="scss" scoped>

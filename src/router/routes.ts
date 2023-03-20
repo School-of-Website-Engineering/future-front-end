@@ -27,9 +27,10 @@ export const routes: Array<RouteRecordRaw> = [
             },
             //频道服务器
             {
-                path     : '/channels',
+                path     : '/channels/:id',
                 name     : 'channels',
-                component: () => import('../views/Channels/index.vue')
+                component: () => import('../views/Channels/index.vue'),
+                props    : true
             }
         ]
     },
