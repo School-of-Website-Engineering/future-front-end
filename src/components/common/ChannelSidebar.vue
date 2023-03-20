@@ -4,21 +4,13 @@
         <el-menu default-active="message" :collapse="isCollapse" router class="el-menu-vertical-demo">
             <el-menu-item index="message">
                 <el-badge :max="99" :value="5" class="item-message"></el-badge>
-                <img class="channel-img" src="../../assets/vue.svg" />
+                <div class="channel-img" src="../../assets/vue.svg" />
                 <template #title>sdcfsdfsdf</template>
             </el-menu-item>
             <div class="listItem-3SmSlK">
                 <div class="guildSeparator-a4uisj"></div>
             </div>
             <el-menu-item index="/channels">
-                <el-badge :max="99" :value="5" class="item-message"></el-badge>
-                <img class="channel-img" src="../../assets/vue.svg" />
-                <template #title>
-                    <span>Navigator One</span>
-                </template>
-            </el-menu-item>
-            <el-menu-item index="/channels">
-                <!-- 右下角消息数量 -->
                 <el-badge :max="99" :value="5" class="item-message"></el-badge>
                 <img class="channel-img" src="../../assets/vue.svg" />
                 <template #title>
@@ -170,6 +162,15 @@ $sidebar-width: 80px;
             border-radius: 50%;
             background-color: #313338;
             transition: all 0.3s;
+        }
+
+        //    只给第一个元素添加background-image
+        &:first-child {
+            .channel-img {
+                background-image: url('./../../assets/message.png') !important;
+                background-size: 100% 100%;
+                border-radius: unset;
+            }
         }
 
         :deep(.el-menu-tooltip__trigger) {
