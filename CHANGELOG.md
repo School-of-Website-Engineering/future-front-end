@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.2](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.2.1...v1.2.2) (2023-03-21)
+
+### Styling
+
+-   Format code with prettier ([c572434](https://github.com/School-of-Website-Engineering/future-front-end/commit/c5724344951a9dd5c90310a6332aecb2684f5cf1))
+
+### update
+
+-   重构组件文件夹路径、完善私信显示列表框 ([4364f3b](https://github.com/School-of-Website-Engineering/future-front-end/commit/4364f3b5783c74f9d9b2a020350cdc9bdc8ffad2))
+
 ## [1.2.1](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.2.0...v1.2.1) (2023-03-21)
 
 ### Styling
