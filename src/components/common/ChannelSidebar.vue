@@ -3,7 +3,10 @@
     <el-aside width="90px" class="main-aside">
         <el-menu :collapse="isCollapse" router class="el-menu-vertical-demo">
             <el-menu-item index="/message" :class="{ 'is-active': $route.path === '/main/message' }">
-                <div class="channel-img" src="../../assets/vue.svg" />
+                <img
+                    class="channel-img"
+                    src="https://cdn.discordapp.com/icons/464395429392678912/401026c51da58472a16c650ee263701d.webp?size=160"
+                />
                 <template #title>sdcfsdfsdf</template>
             </el-menu-item>
             <div class="listItem-3SmSlK">
@@ -189,8 +192,6 @@ $sidebar-width: 80px;
         //    只给第一个元素添加background-image
         &:first-child {
             .channel-img {
-                background-image: url('./../../assets/message.png') !important;
-                background-size: 100% 100%;
                 border-radius: unset;
             }
         }

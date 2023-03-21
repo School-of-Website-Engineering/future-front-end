@@ -1,6 +1,16 @@
 <template>
     <el-container>
-        <el-header class="main-box-right-header1">Header</el-header>
+        <el-header class="main-box-right-header1">
+            <!-- Message Box 消息弹出框 -->
+            <el-button class="search-btn" text @click="dialogTableVisible = true">寻找或开始新的对话 </el-button>
+            <el-dialog v-model="dialogTableVisible" title="Shipping address">
+                <el-table :data="gridData">
+                    <el-table-column property="date" label="Date" width="150" />
+                    <el-table-column property="name" label="Name" width="200" />
+                    <el-table-column property="address" label="Address" />
+                </el-table>
+            </el-dialog>
+        </el-header>
         <el-main class="main-box-right-main1">
             <el-footer>Footer</el-footer>
         </el-main>
@@ -8,21 +18,75 @@
 </template>
 
 <script setup lang="ts">
-import AsideLPrivateService from '@/api/aside';
-import { onMounted } from 'vue';
+import { reactive, ref } from 'vue';
 
-onMounted(() => {
-    getAsideLPrivateData();
+const dialogTableVisible = ref(false);
+
+const form = reactive({
+    name    : '',
+    region  : '',
+    date1   : '',
+    date2   : '',
+    delivery: false,
+    type    : [],
+    resource: '',
+    desc    : ''
 });
 
-// 获取侧边栏私信数据
-const getAsideLPrivateData = async() => {
-    const res = await AsideLPrivateService.getAsideLPrivate();
-    console.log(res);
-};
+const gridData = [
+    {
+        date   : '2016-05-02',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
+    },
+    {
+        date   : '2016-05-04',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
+    },
+    {
+        date   : '2016-05-01',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
+    },
+    {
+        date   : '2016-05-03',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
+    }
+];
 </script>
 
 <style lang="scss" scoped>
+.main-box-right-header1 {
+    // 居中
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .search-btn {
+        width: 100%;
+        height: 28px;
+        overflow: hidden;
+        border-radius: 4px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        background-color: #1e1f22;
+        color: #949b98;
+        text-align: left;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        white-space: nowrap;
+        // hover时的样式背景色和颜色相反
+        &:hover {
+            background-color: #949b98;
+            color: #1e1f22;
+        }
+    }
+}
+
 .main-box-right-header1,
 .main-box-right-header2 {
     height: 50px;
