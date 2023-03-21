@@ -72,7 +72,7 @@ onMounted(() => {
 });
 
 //获取侧边栏频道列表
-const getChannelList = async () => {
+const getChannelList = async() => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
     console.log(asideSidebarList);
@@ -219,7 +219,7 @@ $sidebar-width: 80px;
     .item-message {
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: 3px;
         margin-top: 0;
         margin-right: 0;
         padding: 0 3px;

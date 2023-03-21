@@ -8,6 +8,7 @@ import './assets/scss/global.scss';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
+import FriendStatus from './components/common/FriendStatus.vue';
 
 const app = createApp(App);
 const pinia = createPinia();
@@ -17,6 +18,8 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 // 动态获取 base 配置选项
 const base = import.meta.env.BASE_URL;
 console.log('Base URL:', base);
+// 注册FriendStatus
+app.component('FriendStatus', FriendStatus);
 
 // piniaPluginPersistedstate是一个插件，用于持久化pinia的状态
 pinia.use(piniaPluginPersistedstate);
