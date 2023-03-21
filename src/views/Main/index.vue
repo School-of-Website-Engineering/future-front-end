@@ -71,12 +71,12 @@ import ChannelSidebar from '@/components/common/ChannelSidebar.vue';
 
         &.main-box-right-header1 {
             background-color: #2b2d31;
-            border-bottom: solid 1px #1f2123;
+            border-bottom: solid 1.5px #1f2123;
         }
 
         &.main-box-right-header2 {
             background-color: #313338;
-            border-bottom: solid 1px #2c2e33;
+            border-bottom: solid 1.5px #2c2e33;
         }
     }
 
@@ -84,7 +84,7 @@ import ChannelSidebar from '@/components/common/ChannelSidebar.vue';
     .main-box-right-main2-main2 {
         &.main-box-right-main2-main1 {
             background-color: #313338;
-            border-right: 1px solid #3f4147;
+            border-right: 1.5px solid #3f4147;
         }
 
         &.main-box-right-main2-main2 {
