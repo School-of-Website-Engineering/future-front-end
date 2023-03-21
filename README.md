@@ -1,4 +1,5 @@
 # future-front-end
+
 <!-- ![](https://img.shields.io/badge/%E7%8A%B6%E6%80%81-%E7%BB%B4%E6%8A%A4%E4%B8%AD-brightgreen) -->
 <!--![](https://img.shields.io/badge/%E7%8A%B6%E6%80%81-%E5%B0%B1%E7%BB%AA-orange)-->
 
@@ -11,30 +12,31 @@
 ![](https://img.shields.io/badge/npm-%5E9.5.1-orange)
 
 ---
-DeepSource 趋势线：
 
 [![DeepSource](https://deepsource.io/gh/School-of-Website-Engineering/future-front-end.svg/?label=active+issues&show_trend=true&token=y_ZjbP8TmVGwwkuKPdl67NZO)](https://deepsource.io/gh/School-of-Website-Engineering/future-front-end/?ref=repository-badge)
 
 ---
+
 ## 项目简介
-future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似discord交友聊天项目，使用了 Vue Router、Vuex、Element Plus 等主流框架和库，项目采用了模块化、组件化、工程化的开发模式。
+
+future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似 discord 交友聊天项目，使用了 Vue Router、Vuex、Element Plus 等主流框架和库，项目采用了模块化、组件化、工程化的开发模式。
 
  <h2>内容列表</h2>
 
-- [future-front-end](#future-front-end)
-  - [项目简介](#项目简介)
-  - [Git 规范](#git-规范)
-    - [Git 分支命名](#git-分支命名)
-  - [Git Commit Message 格式](#git-commit-message-格式)
-    - [type 提交类型：](#type-提交类型)
-    - [subject 提交描述](#subject-提交描述)
-  - [相关仓库](#相关仓库)
-  - [维护者](#维护者)
-  - [如何贡献](#如何贡献)
-    - [贡献者](#贡献者)
-  - [快速上手](#快速上手)
-    - [特别感谢：](#特别感谢)
-  - [使用许可](#使用许可)
+-   [future-front-end](#future-front-end)
+    -   [项目简介](#项目简介)
+    -   [Git 规范](#git-规范)
+        -   [Git 分支命名](#git-分支命名)
+    -   [Git Commit Message 格式](#git-commit-message-格式)
+        -   [type 提交类型：](#type-提交类型)
+        -   [subject 提交描述](#subject-提交描述)
+    -   [相关仓库](#相关仓库)
+    -   [维护者](#维护者)
+    -   [如何贡献](#如何贡献)
+        -   [贡献者](#贡献者)
+    -   [快速上手](#快速上手)
+        -   [特别感谢：](#特别感谢)
+    -   [使用许可](#使用许可)
 
 ## Git 规范
 
@@ -137,15 +139,18 @@ npm run build
 执行命令后会得到 dist 目录，可以放到自己的 web 服务器指定的路径下，然后访问即可。
 
 或者运行:
+
 ```
 npm run preview
 ```
+
 进行生产预览
 
 ---
+
 **注意事项：**
 
-如果出现`"cygpath: command not found" when commiting to branch`错误，请添加你的Path环境变量:`C:\Program Files\Git\usr\bin`，更多信息请参考["cygpath: command not found" when commiting to branch #10326](https://github.com/desktop/desktop/issues/10326)
+如果出现`"cygpath: command not found" when commiting to branch`错误，请添加你的 Path 环境变量:`C:\Program Files\Git\usr\bin`，更多信息请参考["cygpath: command not found" when commiting to branch #10326](https://github.com/desktop/desktop/issues/10326)
 
 ---
 

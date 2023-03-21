@@ -4,10 +4,10 @@ import UserLoginService, { UserState } from '@/api/userTset';
 export const useUserStore = defineStore('user', {
     state: (): UserState => ({
         username: '',
-        token   : ''
+        token: '',
     }),
     getters: {
-        hello: (state): string => 'Hello!' + state.username
+        hello: (state): string => 'Hello!' + state.username,
     },
     actions: {
         // 异步 action，一般用来处理异步逻辑
@@ -19,6 +19,6 @@ export const useUserStore = defineStore('user', {
         logout(): void {
             this.token = '';
             this.username = '';
-        }
-    }
+        },
+    },
 });
