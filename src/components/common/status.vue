@@ -44,9 +44,9 @@ const status = ref<string>('');
 
 defineProps({
     status: {
-        type   : String,
-        default: 'online'
-    }
+        type: String,
+        default: 'online',
+    },
 });
 </script>
 
