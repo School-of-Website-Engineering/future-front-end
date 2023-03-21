@@ -77,7 +77,7 @@ onMounted(() => {
  * @function
  * @returns {Promise<void>}
  */
-const getChannelList = async() => {
+const getChannelList = async () => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
     console.log(asideSidebarList);
