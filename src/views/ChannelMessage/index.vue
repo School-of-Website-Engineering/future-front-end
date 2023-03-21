@@ -1,7 +1,7 @@
 <template>
     <el-container>
         <el-header class="main-box-right-header1">
-            <!-- Message Box 消息弹出框 -->
+            <!-- ChannelMessage Box 消息弹出框 -->
             <el-button class="search-btn" text @click="dialogTableVisible = true">寻找或开始新的对话 </el-button>
             <!-- 弹出框 -->
             <el-dialog v-model="dialogTableVisible" title="Shipping address">
@@ -15,7 +15,6 @@
         <el-main class="main-box-right-main1">
             <el-container class="main-box-right-main1-flex">
                 <el-header class="Friends-private-message">
-                    <!-- 搜索框下部分 -->
                     <el-container class="friends-top friends-top-head">
                         <el-row
                             :class="['friends-top-flex', $route.path === '/@me' ? 'is-active' : '']"
@@ -48,7 +47,7 @@
                             </el-col>
                         </el-row>
                     </el-container>
-                    <!-- 私信好友底部 -->
+
                     <el-container class="friends-top">
                         <el-row class="friends-top-title">
                             <span>私信</span>
