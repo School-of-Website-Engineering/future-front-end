@@ -72,7 +72,7 @@ onMounted(() => {
 });
 
 //获取侧边栏频道列表
-const getChannelList = async() => {
+const getChannelList = async () => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
     console.log(asideSidebarList);
