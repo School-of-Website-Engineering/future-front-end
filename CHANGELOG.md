@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.11...v1.2.0) (2023-03-21)
+
+
+### Features
+
+* 完成侧边栏数据、添加header ([30da772](https://github.com/School-of-Website-Engineering/future-front-end/commit/30da77212d24b80ae29f5e90d42453f2fd9e80a5))
+* 完成左侧状态栏mock数据交互 ([22898ba](https://github.com/School-of-Website-Engineering/future-front-end/commit/22898bab78bff0cc2528a8fce1a588b2b3caad9a))
+
+
+### Styling
+
+* Format code with prettier ([1211219](https://github.com/School-of-Website-Engineering/future-front-end/commit/1211219af4eb4f5ee146ce2ce2ba1a8295fb1961))
+* Format code with prettier ([f44be47](https://github.com/School-of-Website-Engineering/future-front-end/commit/f44be47b43e18ff876fe06f4e5bf21e89e3b29f5))
+
 ## [1.1.11](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.10...v1.1.11) (2023-03-19)
 
 ### CI
