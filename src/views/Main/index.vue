@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import ChannelSidebar from '@/views/Aside/ChannelSidebar.vue';
+import ChannelSidebar from '@/views/Aside/index.vue';
 </script>
 
 <style lang="scss" scoped>
