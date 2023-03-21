@@ -1,26 +1,26 @@
 {
     "compilerOptions": {
-        "target"                 : "ESNext",
+        "target": "ESNext",
         "useDefineForClassFields": true,
-        "module"                 : "ESNext",
-        "moduleResolution"       : "Node",
-        "strict"                 : true,
-        "jsx"                    : "preserve",
-        "resolveJsonModule"      : true,
-        "isolatedModules"        : true,
-        "esModuleInterop"        : true,
-        "lib"                    : ["es5", "es6", "dom", "dom.iterable"],
-        "skipLibCheck"           : true,
-        "noEmit"                 : true,
-        "types"                  : ["element-plus/global", "vite/client"],
-        "allowJs"                : true, // 允许编译器编译JS，JSX文件
-        "baseUrl"                : "./",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "strict": true,
+        "jsx": "preserve",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "lib": ["es5", "es6", "dom", "dom.iterable"],
+        "skipLibCheck": true,
+        "noEmit": true,
+        "types": ["element-plus/global", "vite/client"],
+        "allowJs": true, // 允许编译器编译JS，JSX文件
+        "baseUrl": "./",
         // "paths"是相对于"baseUrl"进行解析的
-        "paths"                  : {
+        "paths": {
             "@/*": ["src/*"]
         }
     },
-    "include"   : ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts", "src/vite-env.d.ts"],
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts", "src/vite-env.d.ts"],
     // references属性是 TypeScript 3.0 的新特性，允许将 TypeScript 程序拆分结构化(即拆成多个文件，分别配置不同的部分)。
     "references": [{ "path": "./tsconfig.node.json" }]
 }
