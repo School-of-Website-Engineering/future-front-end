@@ -71,7 +71,12 @@ onMounted(() => {
     console.log(router.currentRoute.value.path);
 });
 
-//获取侧边栏频道列表
+/**
+ * 获取频道列表
+ * @async
+ * @function
+ * @returns {Promise<void>}
+ */
 const getChannelList = async() => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
