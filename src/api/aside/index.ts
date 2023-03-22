@@ -1,6 +1,6 @@
 import http, { Response } from '@/utils/http';
 
-// 侧边栏私信数据的 URL
+// 侧边栏 用户私信列表数量
 export const ASIDE_LPRIVATE = '/aside/letter';
 export const ASIDE_SIDEBAR_LIST = '/aside/sidebarList';
 
