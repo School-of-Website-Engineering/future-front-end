@@ -1,22 +1,22 @@
 <template>
-    <el-container class="main-box">
-        <!--频道侧边栏-->
-        <ChannelSidebar class="channel-sidebar" />
-        <!-- 右侧主内容 -->
-        <el-row class="main-box-right">
-            <el-col :span="4">
-                <router-view name="leftAside" />
+    <el-container>
+        <el-header class="main-box-right-header2">Header</el-header>
+        <el-row class="main-box-right-main2">
+            <el-col :span="17">
+                <el-container>
+                    <el-main class="main-box-right-main2-main1">Main</el-main>
+                </el-container>
             </el-col>
-            <el-col :span="20">
-                <router-view name="rightMain" />
+            <el-col :span="7">
+                <el-container>
+                    <el-main class="main-box-right-main2-main2">Main</el-main>
+                </el-container>
             </el-col>
         </el-row>
     </el-container>
 </template>
 
-<script setup lang="ts">
-import ChannelSidebar from '@/views/Aside/index.vue';
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .el-container {
