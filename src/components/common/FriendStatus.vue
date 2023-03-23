@@ -1,32 +1,34 @@
 <template>
     <!-- 在线状态显示组件 -->
     <!-- 在线 -->
-    <el-tooltip v-if="status === 'online'" effect="dark" content="Top Center prompts info" placement="top">
+    <el-tooltip v-if="status === 'online'" effect="dark" :content="statusText" placement="top">
         <div class="status-online friendStatus"></div>
     </el-tooltip>
-
     <!-- 闲置 -->
-    <el-tooltip v-else-if="status === 'idle'" effect="dark" content="Top Center prompts info" placement="top">
+    <el-tooltip v-else-if="status === 'idle'" effect="dark" :content="statusText" placement="top">
         <div class="status-idle friendStatus"></div>
     </el-tooltip>
     <!-- 离线 -->
-    <el-tooltip v-else-if="status === 'offline'" effect="dark" content="Top Center prompts info" placement="top">
+    <el-tooltip v-else-if="status === 'offline'" effect="dark" :content="statusText" placement="top">
         <div class="status-offline friendStatus"></div>
     </el-tooltip>
     <!-- 忙碌 -->
-    <el-tooltip v-else-if="status === 'busy'" effect="dark" content="Top Center prompts info" placement="top">
+    <el-tooltip v-else-if="status === 'busy'" effect="dark" :content="statusText" placement="top">
         <div class="status-busy friendStatus"></div>
     </el-tooltip>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
 // 父组件传入的状态值：在线、离线、闲置、忙碌
 const props = defineProps({
     status: {
-        type   : String,
-        default: 'online'
-    }
+        type: String,
+        default: 'online',
+    },
+    statusText: {
+        type: String,
+        default: '在线',
+    },
 });
 </script>
 
@@ -40,7 +42,7 @@ const props = defineProps({
     border: 2px solid #2f3136;
 }
 //闲置状态显示组件样式
-.idle {
+.status-idle {
     width: 10px;
     height: 10px;
     background-color: #faa61a;
