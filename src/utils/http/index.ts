@@ -80,10 +80,10 @@ const http = {
             url,
             data,
             ...config,
-            method : 'POST',
-            headers: { 'Content-Type': 'multipart/form-data' }
+            method: 'POST',
+            headers: { 'Content-Type': 'multipart/form-data' },
         });
-    }
+    },
 };
 
 export default http;
