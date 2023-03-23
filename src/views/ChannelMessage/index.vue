@@ -16,13 +16,13 @@
         <el-main class="main-box-right-main1">
             <el-container class="main-box-right-main1-flex">
                 <el-header class="Friends-private-message">
-                    <!-- 好友、store -->
+                    <!-- 好友、Store -->
                     <el-container class="friends-top friends-top-head">
                         <el-row
-                            :class="['friends-top-flex', $route.path === '/@me' ? 'is-active' : '']"
+                            :class="['friends-top-flex', $route.path === '/main/@me' ? 'is-active' : '']"
                             @click="
                                 () => {
-                                    $router.push('@me');
+                                    $router.push('/main/@me');
                                 }
                             "
                         >
@@ -34,10 +34,10 @@
                             </el-col>
                         </el-row>
                         <el-row
-                            :class="['friends-top-flex', $route.path === '/store' ? 'is-active' : '']"
+                            :class="['friends-top-flex', $route.path === '/main/Store' ? 'is-active' : '']"
                             @click="
                                 () => {
-                                    $router.push('/store');
+                                    $router.push('/main/Store');
                                 }
                             "
                         >
@@ -115,25 +115,25 @@ const dialogTableVisible = ref(false);
 // 表格数据
 const gridData = [
     {
-        date: '2016-05-02',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-02',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-04',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-04',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-01',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-01',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-03',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
-    },
+        date   : '2016-05-03',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
+    }
 ];
 // 私信列表
 const privateMessageList = reactive<IAsideLPrivateResponse[]>([]);
@@ -149,7 +149,7 @@ onMounted(() => {
  * @constructor
  * @description 获取私信列表
  */
-const getPrivateMessageList = async () => {
+const getPrivateMessageList = async() => {
     const { data } = await AsideLPrivateService.getAsidePrivateUserList();
     privateMessageList.push(...data.sidebarList);
     console.log('---------getAsidePrivateUserList---------');

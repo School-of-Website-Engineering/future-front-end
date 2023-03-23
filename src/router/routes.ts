@@ -21,16 +21,40 @@ export const routes: Array<RouteRecordRaw> = [
         children : [
             {
                 // 私信
-                path     : '/main/message',
-                name     : 'message',
-                component: () => import('../views/ChannelMessage/index.vue')
+                path      : '/main/@me',
+                name      : 'message',
+                components: {
+                    leftAside: () => import('../views/ChannelMessage/index.vue'),
+                    rightMain: () => import('../views/FriendInterface/index.vue')
+                }
             },
             //频道服务器
             {
-                path     : '/channels/:id',
-                name     : 'channels',
-                component: () => import('../views/Channels/index.vue'),
-                props    : true
+                path      : '/channels/:id',
+                name      : 'channels',
+                components: {
+                    leftAside: () => import('../views/Channels/index.vue'),
+                    rightMain: () => import('../views/FriendInterface/index.vue')
+                },
+                props: true
+            },
+            //FriendInterface
+            {
+                path      : '/main/@me',
+                name      : 'friend',
+                components: {
+                    leftAside: () => import('../views/ChannelMessage/index.vue'),
+                    rightMain: () => import('../views/FriendInterface/index.vue')
+                }
+            },
+            //Store
+            {
+                path      : '/main/store',
+                name      : 'friend',
+                components: {
+                    leftAside: () => import('../views/ChannelMessage/index.vue'),
+                    rightMain: () => import('../views/Store/index.vue')
+                }
             }
         ]
     },

@@ -14,7 +14,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     // 如果路径为/#/main或/#/message,则跳转到/#/main/message
     if (to.path === '/main' || to.path === '/message') {
-        next('/main/message');
+        next('/main/@me');
     } else {
         next();
     }

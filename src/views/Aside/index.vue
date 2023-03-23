@@ -2,7 +2,7 @@
     <!--频道侧边栏,菜单-->
     <el-aside width="90px" class="main-aside">
         <el-menu :collapse="isCollapse" router class="el-menu-vertical-demo">
-            <el-menu-item index="/message" :class="{ 'is-active': $route.path === '/main/message' }">
+            <el-menu-item index="/message" :class="{ 'is-active': $route.path === '/main/@me' }">
                 <img
                     class="channel-img"
                     src="https://cdn.discordapp.com/icons/464395429392678912/401026c51da58472a16c650ee263701d.webp?size=160"
@@ -77,7 +77,7 @@ onMounted(() => {
  * @function
  * @returns {Promise<void>}
  */
-const getChannelList = async () => {
+const getChannelList = async() => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
     console.log(asideSidebarList);
