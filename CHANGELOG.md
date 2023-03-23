@@ -2,10 +2,9 @@
 
 ## [1.3.2](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.1...v1.3.2) (2023-03-23)
 
-
 ### update
 
-* 添加路由切换 ([3273901](https://github.com/School-of-Website-Engineering/future-front-end/commit/32739019e80bf9a07dcac8c8ed694e8b40b8095f))
+-   添加路由切换 ([3273901](https://github.com/School-of-Website-Engineering/future-front-end/commit/32739019e80bf9a07dcac8c8ed694e8b40b8095f))
 
 ## [1.3.1](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.0...v1.3.1) (2023-03-23)
 
