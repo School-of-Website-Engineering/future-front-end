@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.3.1](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.0...v1.3.1) (2023-03-23)
+
+### Styling
+
+-   Format code with prettier ([bb0b7d2](https://github.com/School-of-Website-Engineering/future-front-end/commit/bb0b7d2ceed43348ac484fcc5190d78633614cb2))
+
+## [1.3.0](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.2.5...v1.3.0) (2023-03-23)
+
+### Features
+
+-   使用 prettier 格式化代码，添加侧边栏私信 mock 数据与调用 ([656536f](https://github.com/School-of-Website-Engineering/future-front-end/commit/656536f18695d496ccf9439e55b128bb0a33e02f))
+
+### Styling
+
+-   Format code with prettier ([fa689f2](https://github.com/School-of-Website-Engineering/future-front-end/commit/fa689f2d7f68bac0f1c49846c415fa4d9df74336))
+
 ## [1.2.5](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.2.4...v1.2.5) (2023-03-21)
 
 ### Styling
