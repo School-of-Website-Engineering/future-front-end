@@ -1,5 +1,6 @@
 <template>
     <el-container>
+        <!-- 搜索框 -->
         <el-header class="main-box-right-header1">
             <!-- ChannelMessage Box 消息弹出框 -->
             <el-button class="search-btn" text @click="dialogTableVisible = true">寻找或开始新的对话 </el-button>
@@ -15,6 +16,7 @@
         <el-main class="main-box-right-main1">
             <el-container class="main-box-right-main1-flex">
                 <el-header class="Friends-private-message">
+                    <!-- 好友、store -->
                     <el-container class="friends-top friends-top-head">
                         <el-row
                             :class="['friends-top-flex', $route.path === '/@me' ? 'is-active' : '']"
@@ -47,7 +49,7 @@
                             </el-col>
                         </el-row>
                     </el-container>
-
+                    <!-- 私信 -->
                     <el-container class="friends-top">
                         <el-row class="friends-top-title">
                             <span>私信</span>
@@ -55,37 +57,17 @@
                                 <span>+</span>
                             </el-tooltip>
                         </el-row>
-                        <el-row class="friends-top-flex">
-                            <!-- 私信列表 -->
+                        <!-- 私信列表 -->
+                        <el-row class="friends-top-flex" v-for="item in privateMessageList" :key="item.id">
                             <div class="private-message-user-box">
                                 <div class="private-message-user-box-flex">
                                     <div class="private-message-user-box-flex-left">
-                                        <img
-                                            src="https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48"
-                                        />
-                                        <FriendStatus :status="'online'" />
+                                        <img :src="item.avatar" />
+                                        <FriendStatus :status="item.status" :statusText="item.statusText" />
                                     </div>
                                     <div class="private-message-user-box-flex-right">
                                         <div class="private-message-user-box-flex-right-top">
-                                            <span>liuliu</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </el-row>
-                        <el-row class="friends-top-flex">
-                            <!-- 私信列表 -->
-                            <div class="private-message-user-box">
-                                <div class="private-message-user-box-flex">
-                                    <div class="private-message-user-box-flex-left">
-                                        <img
-                                            src="https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48"
-                                        />
-                                        <FriendStatus :status="'online'" />
-                                    </div>
-                                    <div class="private-message-user-box-flex-right">
-                                        <div class="private-message-user-box-flex-right-top">
-                                            <span>liuliu</span>
+                                            <span>{{ item.name }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +81,6 @@
                         <el-col :span="12" class="bottom-profile-avatar">
                             <el-avatar
                                 src="https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48"
-                                size="mini"
                                 class="bottom-profile-avatar-img"
                             />
                             <span>
@@ -126,43 +107,54 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue';
+import { reactive, ref, onMounted } from 'vue';
+import AsideLPrivateService, { IAsideLPrivateResponse } from '@/api/aside';
 
+// 控制dialog显示
 const dialogTableVisible = ref(false);
-
-const form = reactive({
-    name: '',
-    region: '',
-    date1: '',
-    date2: '',
-    delivery: false,
-    type: [],
-    resource: '',
-    desc: '',
-});
-
+// 表格数据
 const gridData = [
     {
-        date: '2016-05-02',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-02',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-04',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-04',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-01',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-01',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-03',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
-    },
+        date   : '2016-05-03',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
+    }
 ];
+// 私信列表
+const privateMessageList = reactive<IAsideLPrivateResponse[]>([]);
+
+onMounted(() => {
+    getPrivateMessageList();
+});
+
+/**
+ * 获取私信列表
+ * @param {string} id
+ * @returns {Promise<void>}
+ * @constructor
+ * @description 获取私信列表
+ */
+const getPrivateMessageList = async() => {
+    const { data } = await AsideLPrivateService.getAsidePrivateUserList();
+    privateMessageList.push(...data.sidebarList);
+    console.log('---------getAsidePrivateUserList---------');
+    console.log(privateMessageList);
+};
 </script>
 
 <style lang="scss" scoped>
@@ -246,6 +238,17 @@ const gridData = [
                         cursor: pointer;
                         color: #dbdee1;
 
+                        //控制私信用户名称颜色为：DBDEE1
+                        .private-message-user-box {
+                            .private-message-user-box-flex-right {
+                                .private-message-user-box-flex-right-top {
+                                    span {
+                                        color: #dbdee1 !important;
+                                    }
+                                }
+                            }
+                        }
+
                         .el-col {
                             .el-icon {
                                 color: #dbdee1;
@@ -282,7 +285,7 @@ const gridData = [
 
                     .private-message-user-box {
                         .private-message-user-box-flex {
-                            margin: 3px 0px 2px 0px;
+                            margin: 5px 0px;
                             height: 40px;
                             display: flex;
                             align-items: center;
@@ -304,8 +307,8 @@ const gridData = [
                                 //登录状态定位
                                 :deep(.friendStatus) {
                                     position: absolute;
-                                    left: 30px;
-                                    top: 28px;
+                                    left: 31.5px;
+                                    top: 32px;
                                 }
                             }
 
@@ -316,6 +319,7 @@ const gridData = [
                                     flex-direction: column;
 
                                     span {
+                                        color: #949ba4;
                                         &:first-child {
                                             font-size: 15.5px;
                                             font-weight: inherit;

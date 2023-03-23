@@ -39,41 +39,41 @@ const http = {
         return request({ url, params, ...config, method: 'GET' });
     },
     /**
-	 * 常用的 POST 请求方法
-	 * @param url string - 请求地址
-	 * @param data Object - 请求参数，默认为空对象
-	 * @param config AxiosRequestConfig - Axios 请求配置对象，默认为空对象
-	 * @returns Promise<T> - 请求成功后的数据
-	 */
+     * 常用的 POST 请求方法
+     * @param url string - 请求地址
+     * @param data Object - 请求参数，默认为空对象
+     * @param config AxiosRequestConfig - Axios 请求配置对象，默认为空对象
+     * @returns Promise<T> - 请求成功后的数据
+     */
     post<T = any>(url: string, data = {}, config?: AxiosRequestConfig): Promise<T> {
         return request({ url, data, ...config, method: 'POST' });
     },
     /**
-	 * 常用的 PUT 请求方法
-	 * @param url string - 请求地址
-	 * @param data Object - 请求参数，默认为空对象
-	 * @param config AxiosRequestConfig - Axios 请求配置对象，默认为空对象
-	 * @returns Promise<T> - 请求成功后的数据
-	 */
+     * 常用的 PUT 请求方法
+     * @param url string - 请求地址
+     * @param data Object - 请求参数，默认为空对象
+     * @param config AxiosRequestConfig - Axios 请求配置对象，默认为空对象
+     * @returns Promise<T> - 请求成功后的数据
+     */
     put<T = any>(url: string, data = {}, config?: AxiosRequestConfig): Promise<T> {
         return request({ url, data, ...config, method: 'PUT' });
     },
     /**
-	 * 常用的 DELETE 请求方法
-	 * @param url string - 请求地址
-	 * @param data Object - 请求参数，默认为空对象
-	 * @param config AxiosRequestConfig - Axios 请求配置对象，默认为空对象
-	 */
+     * 常用的 DELETE 请求方法
+     * @param url string - 请求地址
+     * @param data Object - 请求参数，默认为空对象
+     * @param config AxiosRequestConfig - Axios 请求配置对象，默认为空对象
+     */
     delete<T = any>(url: string, data = {}, config?: AxiosRequestConfig): Promise<T> {
         return request({ url, data, ...config, method: 'DELETE' });
     },
     /**
-	 * 上传文件
-	 * @param url string - 请求地址
-	 * @param data Object - 请求参数，默认为空对象
-	 * @param config AxiosRequestConfig - Axios 请求配置对象，默认为空对象
-	 * @returns Promise<T> - 请求成功后的数据
-	 */
+     * 上传文件
+     * @param url string - 请求地址
+     * @param data Object - 请求参数，默认为空对象
+     * @param config AxiosRequestConfig - Axios 请求配置对象，默认为空对象
+     * @returns Promise<T> - 请求成功后的数据
+     */
     // 上传文件，指定 'Content-Type': 'multipart/form-data'
     upload<T = any>(url: string, data = {}, config?: AxiosRequestConfig): Promise<T> {
         return request({
