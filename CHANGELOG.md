@@ -1,5 +1,51 @@
 # Changelog
 
+## [1.2.5](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.2.4...v1.2.5) (2023-03-21)
+
+### Styling
+
+-   Format code with prettier ([e1fd7fa](https://github.com/School-of-Website-Engineering/future-front-end/commit/e1fd7faf252daa9a46600a6954f81325639cf642))
+
+## [1.2.4](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.2.3...v1.2.4) (2023-03-21)
+
+### Styling
+
+-   Format code with prettier ([ca50930](https://github.com/School-of-Website-Engineering/future-front-end/commit/ca50930e8e7731940e110db1f70ce2b176bb1faa))
+
+## [1.2.3](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.2.2...v1.2.3) (2023-03-21)
+
+### Styling
+
+-   Format code with prettier ([3e9d47d](https://github.com/School-of-Website-Engineering/future-front-end/commit/3e9d47d5337f5411aaa53b555428e5112eefcb2f))
+
+## [1.2.2](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.2.1...v1.2.2) (2023-03-21)
+
+### Styling
+
+-   Format code with prettier ([c572434](https://github.com/School-of-Website-Engineering/future-front-end/commit/c5724344951a9dd5c90310a6332aecb2684f5cf1))
+
+### update
+
+-   重构组件文件夹路径、完善私信显示列表框 ([4364f3b](https://github.com/School-of-Website-Engineering/future-front-end/commit/4364f3b5783c74f9d9b2a020350cdc9bdc8ffad2))
+
+## [1.2.1](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.2.0...v1.2.1) (2023-03-21)
+
+### Styling
+
+-   Format code with prettier ([c9b2ad5](https://github.com/School-of-Website-Engineering/future-front-end/commit/c9b2ad5f4ab97baf0a86b54f7877b8f199936d4a))
+
+## [1.2.0](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.11...v1.2.0) (2023-03-21)
+
+### Features
+
+-   完成侧边栏数据、添加 header ([30da772](https://github.com/School-of-Website-Engineering/future-front-end/commit/30da77212d24b80ae29f5e90d42453f2fd9e80a5))
+-   完成左侧状态栏 mock 数据交互 ([22898ba](https://github.com/School-of-Website-Engineering/future-front-end/commit/22898bab78bff0cc2528a8fce1a588b2b3caad9a))
+
+### Styling
+
+-   Format code with prettier ([1211219](https://github.com/School-of-Website-Engineering/future-front-end/commit/1211219af4eb4f5ee146ce2ce2ba1a8295fb1961))
+-   Format code with prettier ([f44be47](https://github.com/School-of-Website-Engineering/future-front-end/commit/f44be47b43e18ff876fe06f4e5bf21e89e3b29f5))
+
 ## [1.1.11](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.1.10...v1.1.11) (2023-03-19)
 
 ### CI
