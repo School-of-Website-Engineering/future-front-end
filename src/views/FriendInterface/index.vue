@@ -9,20 +9,37 @@
                             好友
                         </span>
                         <div class="divider-q3P9HC"></div>
-                        <span> 在线 </span>
-                        <span> 全部 </span>
-                        <span> 待定 </span>
-                        <span> 已屏蔽 </span>
-                        <span> 添加好友 </span>
+                        <span :class="{ 'is-active': activeIndex === 1 }" @click="activeIndex = 1"> 在线 </span>
+                        <span :class="{ 'is-active': activeIndex === 2 }" @click="activeIndex = 2"> 全部 </span>
+                        <span :class="{ 'is-active': activeIndex === 3 }" @click="activeIndex = 3"> 待定 </span>
+                        <span :class="{ 'is-active': activeIndex === 4 }" @click="activeIndex = 4"> 已屏蔽 </span>
+                        <span :class="{ 'is-active-add': activeIndex === 5 }" @click="activeIndex = 5"> 添加好友 </span>
                     </div>
                 </el-col>
-                <el-col :span="5" class="header-right"> </el-col>
+                <el-col :span="5" class="header-right"></el-col>
             </el-row>
         </el-header>
         <el-row class="main-box-right-main2">
             <el-col :span="17">
                 <el-container>
-                    <el-main class="main-box-right-main2-main1">Main</el-main>
+                    <el-main class="main-box-right-main2-main1">
+                        <el-empty v-if="activeIndex === 0" :image-size="200" description="没有人陪wo玩。" />
+                        <el-row v-else-if="activeIndex === 1">
+                            <el-col> asdf </el-col>
+                        </el-row>
+                        <el-row v-else-if="activeIndex === 2">
+                            <el-col> 家第三方 </el-col>
+                        </el-row>
+                        <el-row v-else-if="activeIndex === 3">
+                            <el-col> 阿瑟的发生大 </el-col>
+                        </el-row>
+                        <el-row v-else-if="activeIndex === 4">
+                            <el-col> 阿萨德饭奥德赛 </el-col>
+                        </el-row>
+                        <el-row v-else-if="activeIndex === 5">
+                            <el-col> 萨尔地方 </el-col>
+                        </el-row>
+                    </el-main>
                 </el-container>
             </el-col>
             <el-col :span="7">
@@ -34,7 +51,34 @@
     </el-container>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, watch } from 'vue';
+// 切换的索引
+const activeIndex = ref(1);
+// watch一上来就执行
+watch(
+    activeIndex,
+    (newVal, oldVal) => {
+        //     如果是在线，请求在线好友数据
+        if (newVal === 1) {
+            console.log('在线');
+        }
+        //     如果是全部，请求全部好友数据
+        if (newVal === 2) {
+            console.log('全部');
+        }
+        //     如果是待定，请求待定好友数据
+        if (newVal === 3) {
+            console.log('待定');
+        }
+        //     如果是已屏蔽，请求已屏蔽好友数据
+        if (newVal === 4) {
+            console.log('已屏蔽');
+        }
+    },
+    { immediate: true }
+);
+</script>
 
 <style lang="scss" scoped>
 .header-left {
@@ -61,11 +105,15 @@
                 font-size: 16px;
                 color: #b5bac1;
 
-                &:hover:not(:first-child) {
+                &:hover:not(:first-child :last-child) {
                     background-color: #393c41;
                     border-radius: 3px;
                     cursor: pointer;
                     color: #d6d6dc;
+                }
+
+                &:hover:last-child {
+                    cursor: pointer;
                 }
             }
 
@@ -169,5 +217,17 @@
 
 body > .el-container {
     margin-bottom: 40px;
+}
+
+.is-active {
+    background-color: #43444b;
+    border-radius: 3px;
+    color: #f6f6f6;
+}
+
+.is-active-add {
+    background-color: unset !important;
+    border-radius: 3px;
+    color: #2dc770 !important;
 }
 </style>
