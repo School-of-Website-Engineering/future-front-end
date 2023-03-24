@@ -479,9 +479,6 @@ const getPrivateMessageList = async() => {
         flex-direction: column;
         justify-content: flex-end;
     }
-
-    &.main-box-right-main2 {
-    }
 }
 
 .el-header,

@@ -16,7 +16,26 @@
                         <span :class="{ 'is-active-add': activeIndex === 5 }" @click="activeIndex = 5"> 添加好友 </span>
                     </div>
                 </el-col>
-                <el-col :span="5" class="header-right"></el-col>
+                <el-col :span="5" class="header-right">
+                    <div class="header-right-right">
+                        <el-tooltip class="box-item" effect="dark" content="Top Center prompts info" placement="bottom">
+                            <span>
+                                <i class="fa-solid fa-message"></i>
+                            </span>
+                        </el-tooltip>
+                        <div class="divider-q3P9HC"></div>
+                        <el-tooltip class="box-item" effect="dark" content="Top Center prompts info" placement="bottom">
+                            <span>
+                                <i class="fa-solid fa-inbox"></i>
+                            </span>
+                        </el-tooltip>
+                        <el-tooltip class="box-item" effect="dark" content="Top Center prompts info" placement="bottom">
+                            <span>
+                                <i class="fa-solid fa-circle-question"></i>
+                            </span>
+                        </el-tooltip>
+                    </div>
+                </el-col>
             </el-row>
         </el-header>
         <el-row class="main-box-right-main2">
@@ -25,19 +44,19 @@
                     <el-main class="main-box-right-main2-main1">
                         <el-empty v-if="activeIndex === 0" :image-size="200" description="没有人陪wo玩。" />
                         <el-row v-else-if="activeIndex === 1">
-                            <el-col> asdf </el-col>
+                            <Online />
                         </el-row>
                         <el-row v-else-if="activeIndex === 2">
-                            <el-col> 家第三方 </el-col>
+                            <All />
                         </el-row>
                         <el-row v-else-if="activeIndex === 3">
-                            <el-col> 阿瑟的发生大 </el-col>
+                            <ToBeDetermined />
                         </el-row>
                         <el-row v-else-if="activeIndex === 4">
-                            <el-col> 阿萨德饭奥德赛 </el-col>
+                            <Blocked />
                         </el-row>
                         <el-row v-else-if="activeIndex === 5">
-                            <el-col> 萨尔地方 </el-col>
+                            <AddFriend />
                         </el-row>
                     </el-main>
                 </el-container>
@@ -53,12 +72,18 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
+import AddFriend from '@/views/ChannelMessage/components/AddFriend.vue';
+import All from '@/views/ChannelMessage/components/All.vue';
+import Online from '@/views/ChannelMessage/components/Online.vue';
+import Blocked from '@/views/ChannelMessage/components/Blocked.vue';
+import ToBeDetermined from '@/views/ChannelMessage/components/ToBeDetermined.vue';
+
 // 切换的索引
 const activeIndex = ref(1);
 // watch一上来就执行
 watch(
     activeIndex,
-    (newVal, oldVal) => {
+    (newVal) => {
         //     如果是在线，请求在线好友数据
         if (newVal === 1) {
             console.log('在线');
@@ -98,6 +123,9 @@ watch(
                 .fa-user {
                     color: #80848e;
                 }
+                svg {
+                    margin-right: 4px;
+                }
             }
 
             &:not(:first-child) {
@@ -123,15 +151,28 @@ watch(
                 color: #fffff3;
             }
         }
+    }
+}
 
-        .divider-q3P9HC {
-            width: 1px;
-            height: 24px;
-            margin: 0 8px;
-            -webkit-box-flex: 0;
-            -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-            background: #3f4147;
+.header-right {
+    .header-right-right {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+
+        span {
+            margin: 0 10px;
+            font-size: 17.5px;
+            color: #b5bac1;
+
+            &:hover {
+                background-color: #393c41;
+                border-radius: 3px;
+                cursor: pointer;
+                color: #d6d6dc;
+            }
         }
     }
 }
@@ -162,9 +203,6 @@ watch(
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-        }
-
-        &.main-box-right-main2 {
         }
     }
 
@@ -229,5 +267,15 @@ body > .el-container {
     background-color: unset !important;
     border-radius: 3px;
     color: #2dc770 !important;
+}
+
+.divider-q3P9HC {
+    width: 1px;
+    height: 24px;
+    margin: 0 8px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    background: #3f4147;
 }
 </style>
