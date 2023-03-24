@@ -115,25 +115,25 @@ const dialogTableVisible = ref(false);
 // 表格数据
 const gridData = [
     {
-        date: '2016-05-02',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-02',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-04',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-04',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-01',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-01',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-03',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
-    },
+        date   : '2016-05-03',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
+    }
 ];
 // 私信列表
 const privateMessageList = reactive<IAsideLPrivateResponse[]>([]);
@@ -149,7 +149,7 @@ onMounted(() => {
  * @constructor
  * @description 获取私信列表
  */
-const getPrivateMessageList = async () => {
+const getPrivateMessageList = async() => {
     const { data } = await AsideLPrivateService.getAsidePrivateUserList();
     privateMessageList.push(...data.sidebarList);
     console.log('---------getAsidePrivateUserList---------');
@@ -172,6 +172,20 @@ const getPrivateMessageList = async () => {
             .friends-top-head {
                 .friends-top-flex {
                     height: 80px;
+                }
+                .is-active {
+                    background-color: #404249;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    .el-col {
+                        .el-icon {
+                            color: #f2f3f5 !important;
+                        }
+                        span {
+                            color: #f2f3f5 !important;
+                        }
+                    }
                 }
             }
 

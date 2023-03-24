@@ -1,6 +1,24 @@
 <template>
     <el-container>
-        <el-header class="main-box-right-header2">Header</el-header>
+        <el-header class="main-box-right-header2">
+            <el-row>
+                <el-col :span="19" class="header-left">
+                    <div class="header-left-left">
+                        <span>
+                            <i class="fa-solid fa-user"></i>
+                            好友
+                        </span>
+                        <div class="divider-q3P9HC"></div>
+                        <span> 在线 </span>
+                        <span> 全部 </span>
+                        <span> 待定 </span>
+                        <span> 已屏蔽 </span>
+                        <span> 添加好友 </span>
+                    </div>
+                </el-col>
+                <el-col :span="5" class="header-right"> </el-col>
+            </el-row>
+        </el-header>
         <el-row class="main-box-right-main2">
             <el-col :span="17">
                 <el-container>
@@ -19,6 +37,57 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
+.header-left {
+    .header-left-left {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 440px;
+
+        span {
+            &:first-child {
+                font-size: 16px;
+                font-weight: bold;
+                color: #f2f3f5;
+
+                .fa-user {
+                    color: #80848e;
+                }
+            }
+
+            &:not(:first-child) {
+                padding: 1.8px 8px;
+                font-size: 16px;
+                color: #b5bac1;
+
+                &:hover:not(:first-child) {
+                    background-color: #393c41;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    color: #d6d6dc;
+                }
+            }
+
+            &:last-child {
+                background-color: #248046;
+                border-radius: 3px;
+                color: #fffff3;
+            }
+        }
+
+        .divider-q3P9HC {
+            width: 1px;
+            height: 24px;
+            margin: 0 8px;
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            background: #3f4147;
+        }
+    }
+}
+
 .el-container {
     height: 100%;
 }

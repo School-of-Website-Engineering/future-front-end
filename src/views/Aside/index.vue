@@ -1,13 +1,19 @@
 <template>
     <!--频道侧边栏,菜单-->
     <el-aside width="90px" class="main-aside">
-        <el-menu :collapse="isCollapse" router class="el-menu-vertical-demo">
-            <el-menu-item index="/message" :class="{ 'is-active': $route.path === '/main/@me' }">
+        <el-menu
+            default-active="/main/@me"
+            :collapse="isCollapse"
+            router
+            class="el-menu-vertical-demo"
+            :class="{ 'is-active': pathClass }"
+        >
+            <el-menu-item index="/main/@me" id="rePathClass">
                 <img
                     class="channel-img"
                     src="https://cdn.discordapp.com/icons/464395429392678912/401026c51da58472a16c650ee263701d.webp?size=160"
                 />
-                <template #title>sdcfsdfsdf</template>
+                <template #title>私信</template>
             </el-menu-item>
             <div class="listItem-3SmSlK">
                 <div class="guildSeparator-a4uisj"></div>
@@ -20,7 +26,7 @@
                 @click="() => $router.push('/channels/' + item.id)"
             >
                 <el-badge :max="99" :value="item.count" class="item-message"></el-badge>
-                <el-avatar class="channel-img" :size="50" :src="item.img" @error="errorHandler"> </el-avatar>
+                <el-avatar class="channel-img" :size="50" :src="item.img" @error="errorHandler"></el-avatar>
                 <template #title>
                     <span>{{ item.name }}</span>
                 </template>
@@ -60,6 +66,7 @@
 import { onMounted, reactive, ref } from 'vue';
 import AsideLPrivateService, { IAsideSidebarList } from '@/api/aside';
 import { useRouter } from 'vue-router';
+
 const errorHandler = () => true;
 const isCollapse = ref(true);
 const router = useRouter();
@@ -77,11 +84,34 @@ onMounted(() => {
  * @function
  * @returns {Promise<void>}
  */
-const getChannelList = async () => {
+const getChannelList = async() => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
     console.log(asideSidebarList);
 };
+// 根据当前路由路径是否为/main/@me动态添加is_active类名,去除/main/@me左侧竖条开始的所有字符保留前面的/main
+const pathClass = () => router.currentRoute.value.path.slice(0, 5) === '/main';
+// 根据rePathClass 的id删除is-active类名
+const removeClass = () => {
+    const rePathClass = document.getElementById('rePathClass');
+    if (!rePathClass) return;
+    rePathClass.classList.remove('is-active');
+};
+// 根据rePathClass 的id添加is-active类名
+const addClass = () => {
+    const rePathClass = document.getElementById('rePathClass');
+    if (!rePathClass) return;
+    rePathClass.classList.add('is-active');
+};
+// 监听路由变化
+router.afterEach((to) => {
+    //     如果当前路由路径为/main/@me,则删除is-active类名
+    if (!pathClass()) {
+        removeClass();
+    } else {
+        addClass();
+    }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -118,7 +148,6 @@ $sidebar-width: 80px;
     }
 
     .el-menu-item {
-        display: unset;
         width: $sidebar-width;
         text-align: center;
         margin-bottom: 10px;
@@ -263,7 +292,7 @@ $sidebar-width: 80px;
         .el-icon {
             width: 50px;
             height: 50px;
-            background-color: #313338;
+            background-color: #313338 !important;
             border-radius: 50%;
             // 控制图标的圆角缓动
             transition: all 0.3s;

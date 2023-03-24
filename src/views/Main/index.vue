@@ -5,10 +5,14 @@
         <!-- 右侧主内容 -->
         <el-row class="main-box-right">
             <el-col :span="4">
-                <router-view name="leftAside" />
+                <keep-alive>
+                    <router-view name="leftAside" />
+                </keep-alive>
             </el-col>
             <el-col :span="20">
-                <router-view name="rightMain" />
+                <keep-alive>
+                    <router-view name="rightMain" />
+                </keep-alive>
             </el-col>
         </el-row>
     </el-container>
