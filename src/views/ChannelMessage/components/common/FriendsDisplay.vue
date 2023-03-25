@@ -1,29 +1,31 @@
 <template>
-    <div class="search-box">
-        <el-input
-            class="search-box-input"
-            v-model="search"
-            placeholder="搜索"
-            @keyup.enter.native="searchFriend"
-        ></el-input>
-        <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="search-box-header-top">
+        <div class="search-box">
+            <el-input
+                class="search-box-input"
+                v-model="search"
+                placeholder="搜索"
+                @keyup.enter.native="searchFriend"
+            ></el-input>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div>
+            <h2 class="title-x4dI75 container-q97qHp">好友总数 — {{ list.length }}</h2>
+        </div>
     </div>
-    <div>
-        <h2 class="title-x4dI75 container-q97qHp">{{ text }}</h2>
-    </div>
-    <div class="friends-list">
+    <div class="friends-list" v-for="(item, index) in list" :key="index">
         <div class="friends-avatar">
-            <el-avatar
-                class="avatar"
-                src="https://cdn.discordapp.com/avatars/307917208460460033/a_8e5acc68e72c83cba21286a27c4bbfa0.webp?size=128"
-            ></el-avatar>
+            <el-avatar class="avatar" :src="item.avatar"></el-avatar>
             <div class="friends-info">
                 <div class="friends-name">
-                    小明
-                    <p>#121</p>
+                    {{ item.name }}
+                    <p>#{{ item.id }}</p>
                 </div>
-                <div class="friends-status">在线</div>
-                <FriendStatus :status-text="'Friend'" :status="'online'" />
+                <div v-if="item.status === 'online'" class="friends-status">在线</div>
+                <div v-else-if="item.status === 'offline'" class="friends-status">离线</div>
+                <div v-else-if="item.status === 'busy'" class="friends-status">忙碌</div>
+                <div v-else-if="item.status === 'idle'" class="friends-status">闲置</div>
+                <FriendStatus :status-text="'Friend'" :status="item.status" />
             </div>
         </div>
         <div class="friends-more">
@@ -42,18 +44,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineComponent, defineProps } from 'vue';
+import { defineComponent, defineProps, ref } from 'vue';
+import { IUserFriendsResponse } from '@/api/friends';
+
 defineComponent({
     name: 'FriendsDisplay'
 });
 defineProps({
-    text: {
-        type   : String,
-        default: '好友'
-    },
     status: {
         type   : String,
         default: 'online'
+    },
+    list: {
+        type   : Array as () => Array<IUserFriendsResponse>,
+        default: () => []
     }
 });
 const searchFriend = () => {
@@ -63,6 +67,19 @@ const search = ref('');
 </script>
 
 <style lang="scss" scoped>
+.search-box-header-top {
+    //固定定位
+    position: fixed;
+    top: 50px;
+    bottom: 79.9vh;
+    left: 315px;
+    right: 340px;
+    //    使其不会被遮挡
+    z-index: 999;
+    overflow: auto;
+    background-color: #313338;
+}
+
 .friends-list {
     display: flex;
     justify-content: space-between;
@@ -97,7 +114,7 @@ const search = ref('');
         flex-direction: column;
         justify-content: space-evenly;
         height: 35px;
-        width: 55px;
+        width: 390px;
         position: relative;
 
         .friends-name {
@@ -130,7 +147,7 @@ const search = ref('');
     }
 
     .friends-avatar {
-        width: 125px;
+        width: 460px;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
@@ -182,13 +199,23 @@ const search = ref('');
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     color: #b5bac1;
+    position: absolute;
+    top: 75px;
 }
 
 .search-box {
-    position: relative;
-    width: 100%;
     height: 35px;
-    margin: 0px 16px 20px 16px;
+    padding: 20px 16px 20px 16px;
+    //固定定位
+    position: fixed;
+    top: 50px;
+    bottom: 100px;
+    left: 315px;
+    right: 340px;
+    //    使其不会被遮挡
+    z-index: 999;
+    overflow: auto;
+    background-color: #313338;
 
     .search-box-input {
         width: 100%;
@@ -211,7 +238,7 @@ const search = ref('');
     .fa-magnifying-glass {
         position: absolute;
         top: 50%;
-        right: 11px;
+        right: 26px;
         transform: translateY(-50%);
         font-size: 18px;
         color: #b5bac1;

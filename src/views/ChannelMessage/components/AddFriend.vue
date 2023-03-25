@@ -1,5 +1,5 @@
 <template>
-    <el-col> 添加好友 </el-col>
+    <FriendsDisplay />
 </template>
 
 <script setup lang="ts">

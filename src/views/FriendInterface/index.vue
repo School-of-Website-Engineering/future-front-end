@@ -70,7 +70,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
+import { useUserFriendsStore } from '@/store/modules/friends';
 import AddFriend from '@/views/ChannelMessage/components/AddFriend.vue';
 import All from '@/views/ChannelMessage/components/All.vue';
 import Online from '@/views/ChannelMessage/components/Online.vue';
@@ -79,22 +80,33 @@ import ToBeDetermined from '@/views/ChannelMessage/components/ToBeDetermined.vue
 
 // 切换的索引
 const activeIndex = ref(1);
-// watch一上来就执行
+const userFriends = useUserFriendsStore();
+
+// statusMap[newVal]接口
+interface IStatusMap {
+    [key: number]: string;
+}
+
+userFriends.getFriends();
+
 watch(
     activeIndex,
     (newVal) => {
         //     如果是在线，请求在线好友数据
-        if (newVal === 1) {
-            console.log('在线');
-        } else if (newVal === 2) {
-            console.log('全部');
-        } else if (newVal === 3) {
-            console.log('待定');
-        } else if (newVal === 4) {
-            console.log('已屏蔽');
-        } else if (newVal === 5) {
-            console.log('添加好友');
-        }
+        const statusMap: IStatusMap = {
+            1: '在线',
+            2: '全部',
+            3: '待定',
+            4: '已屏蔽',
+            5: '添加好友'
+        };
+        userFriends.getFriends();
+        setTimeout(() => {
+            console.log('-------------好友数据--------------');
+            console.log(userFriends.friends);
+        }, 1000);
+        console.log('-------------好友切换--------------');
+        console.log(statusMap[newVal]);
     },
     { immediate: true }
 );
@@ -118,6 +130,7 @@ watch(
                 .fa-user {
                     color: #80848e;
                 }
+
                 svg {
                     margin-right: 4px;
                 }
@@ -189,6 +202,7 @@ watch(
 
     .main-box-right-main1,
     .main-box-right-main2 {
+        position: relative;
         height: 100%;
         padding: unset;
 
@@ -215,7 +229,32 @@ watch(
             border-bottom: solid 1.5px #2c2e33;
         }
     }
+    .main-box-right-main2-main1 {
+        //    固定定位
+        position: fixed;
+        top: 159px;
+        bottom: 0;
+        left: 315px;
+        right: 340px;
+        //    使其不会被遮挡
+        z-index: 1;
+        overflow: auto;
+        //    美化滚动条
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
 
+        &::-webkit-scrollbar-thumb {
+            background-color: #3f4147;
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #313338;
+            border-radius: 4px;
+        }
+    }
     .main-box-right-main2-main1,
     .main-box-right-main2-main2 {
         &.main-box-right-main2-main1 {

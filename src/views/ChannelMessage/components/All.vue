@@ -1,10 +1,11 @@
 <template>
-    <FriendsDisplay :text="'好友总数 — 4'" :status="'all'" />
+    <FriendsDisplay :status="'all'" :list="userFriends.friends" />
 </template>
 
 <script setup lang="ts">
 import { defineComponent } from 'vue';
-import FriendsDisplay from './common/FriendsDisplay.vue';
+import { useUserFriendsStore } from '@/store/modules/friends';
+const userFriends = useUserFriendsStore();
 
 defineComponent({
     name: 'All'

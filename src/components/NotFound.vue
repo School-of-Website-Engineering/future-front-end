@@ -32,7 +32,14 @@ const onLogout = () => {
     userStore.logout();
 };
 
-// 404页面的动画
+/**
+ * 404页面的动画
+ *
+ * @const {string[]} letters - 数组，包含要显示的字符
+ * @const {Reactive<[]>} animated - 跟踪每个字符是否应该被动画化的数组
+ * @function animate - 触发动画效果的函数
+ *
+ */
 const letters = ['4', '0', '4'];
 const animated = reactive([false, false, false]);
 const animate = () => {

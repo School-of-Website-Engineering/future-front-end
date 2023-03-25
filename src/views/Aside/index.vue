@@ -74,6 +74,7 @@ const asideSidebarList = reactive<IAsideSidebarList[]>([]);
 onMounted(() => {
     getChannelList();
     //     打印当前路由路径
+    console.log('-------当前路由路径---------');
     console.log(router.currentRoute.value.path);
 });
 
@@ -86,6 +87,7 @@ onMounted(() => {
 const getChannelList = async() => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
+    console.log('-------侧边栏频道列表数据---------');
     console.log(asideSidebarList);
 };
 

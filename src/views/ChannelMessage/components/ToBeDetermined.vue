@@ -1,5 +1,5 @@
 <template>
-    <el-col> 待定 </el-col>
+    <FriendsDisplay />
 </template>
 
 <script setup lang="ts">

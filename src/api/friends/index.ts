@@ -1,24 +1,15 @@
 import http, { Response } from '@/utils/http';
+
 export const USER_FRIENDS = '/user/friends';
 
-// 用户好友接口定义
-export interface IUserFriends {
-    id: number;
-    username: string;
-    avatar: string;
-    sign: string;
-    status: string;
-    shield: boolean;
-}
 // 用户好友响应结果接口定义
 export interface IUserFriendsResponse {
-    friends: Array<IUserFriends>;
-    id: number;
-    username: string;
+    id: string;
+    name: string;
     avatar: string;
-    sign: string;
     status: string;
     shield: boolean;
+    friends?: Array<IUserFriendsResponse>;
 }
 
 // 用户好友 API 接口定义

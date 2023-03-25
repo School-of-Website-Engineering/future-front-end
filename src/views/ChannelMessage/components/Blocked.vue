@@ -1,5 +1,5 @@
 <template>
-    <el-col> 屏蔽 </el-col>
+    <FriendsDisplay />
 </template>
 
 <script setup lang="ts">
