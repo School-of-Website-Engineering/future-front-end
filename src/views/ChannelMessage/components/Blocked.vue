@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import { defineComponent } from 'vue';
 defineComponent({
-    name: 'ToBeDetermined'
+    name: 'ToBeDetermined',
 });
 </script>
 

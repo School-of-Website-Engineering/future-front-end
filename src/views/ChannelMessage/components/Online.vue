@@ -6,7 +6,7 @@
 import FriendsDisplay from './common/FriendsDisplay.vue';
 import { defineComponent } from 'vue';
 defineComponent({
-    name: 'Online'
+    name: 'Online',
 });
 </script>
 
