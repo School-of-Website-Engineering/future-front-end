@@ -1,5 +1,5 @@
 <template>
-    <FriendsDisplay :text="'在线 — 1'" />
+    <FriendsDisplay :status="'online'" />
 </template>
 
 <script setup lang="ts">

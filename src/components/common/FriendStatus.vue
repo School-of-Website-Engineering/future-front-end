@@ -40,6 +40,16 @@ const props = defineProps({
     background-color: #43b581;
     border-radius: 50%;
     border: 2px solid #2f3136;
+    //中间为空心
+    &:after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: #2f3136;
+        border-radius: 50%;
+        margin: 2.5px;
+    }
 }
 //闲置状态显示组件样式
 .status-idle {
@@ -48,6 +58,16 @@ const props = defineProps({
     background-color: #faa61a;
     border-radius: 50%;
     border: 2px solid #2f3136;
+    //中间为空心
+    &:after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: #2f3136;
+        border-radius: 50%;
+        margin: 2.5px;
+    }
 }
 //离线状态显示组件样式
 .status-offline {
@@ -56,6 +76,16 @@ const props = defineProps({
     background-color: #747f8d;
     border-radius: 50%;
     border: 2px solid #2f3136;
+    //中间为空心
+    &:after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: #2f3136;
+        border-radius: 50%;
+        margin: 2.5px;
+    }
 }
 //忙碌状态显示组件样式
 .status-busy {
@@ -64,5 +94,15 @@ const props = defineProps({
     background-color: #f04747;
     border-radius: 50%;
     border: 2px solid #2f3136;
+    //中间为空心
+    &:after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: #2f3136;
+        border-radius: 50%;
+        margin: 2.5px;
+    }
 }
 </style>

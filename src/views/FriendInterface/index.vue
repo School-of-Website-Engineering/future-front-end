@@ -42,20 +42,19 @@
             <el-col :span="17">
                 <el-container>
                     <el-main class="main-box-right-main2-main1">
-                        <el-empty v-if="activeIndex === 0" :image-size="200" description="没有人陪wo玩。" />
-                        <el-row v-else-if="activeIndex === 1">
+                        <el-row v-show="activeIndex === 1">
                             <Online />
                         </el-row>
-                        <el-row v-else-if="activeIndex === 2">
+                        <el-row v-show="activeIndex === 2">
                             <All />
                         </el-row>
-                        <el-row v-else-if="activeIndex === 3">
+                        <el-row v-show="activeIndex === 3">
                             <ToBeDetermined />
                         </el-row>
-                        <el-row v-else-if="activeIndex === 4">
+                        <el-row v-show="activeIndex === 4">
                             <Blocked />
                         </el-row>
-                        <el-row v-else-if="activeIndex === 5">
+                        <el-row v-show="activeIndex === 5">
                             <AddFriend />
                         </el-row>
                     </el-main>
@@ -87,18 +86,14 @@ watch(
         //     如果是在线，请求在线好友数据
         if (newVal === 1) {
             console.log('在线');
-        }
-        //     如果是全部，请求全部好友数据
-        if (newVal === 2) {
+        } else if (newVal === 2) {
             console.log('全部');
-        }
-        //     如果是待定，请求待定好友数据
-        if (newVal === 3) {
+        } else if (newVal === 3) {
             console.log('待定');
-        }
-        //     如果是已屏蔽，请求已屏蔽好友数据
-        if (newVal === 4) {
+        } else if (newVal === 4) {
             console.log('已屏蔽');
+        } else if (newVal === 5) {
+            console.log('添加好友');
         }
     },
     { immediate: true }
