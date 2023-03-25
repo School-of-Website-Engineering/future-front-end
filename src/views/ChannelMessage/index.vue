@@ -62,7 +62,7 @@
                             <div class="private-message-user-box">
                                 <div class="private-message-user-box-flex">
                                     <div class="private-message-user-box-flex-left">
-                                        <img :src="item.avatar" />
+                                        <el-avatar :src="item.avatar" />
                                         <FriendStatus :status="item.status" :statusText="item.statusText" />
                                     </div>
                                     <div class="private-message-user-box-flex-right">
@@ -321,8 +321,8 @@ const getPrivateMessageList = async() => {
                                 //登录状态定位
                                 :deep(.friendStatus) {
                                     position: absolute;
-                                    left: 31.5px;
-                                    top: 32px;
+                                    left: 34.8px;
+                                    top: 35.5px;
                                 }
                             }
 

@@ -1,19 +1,19 @@
 <template>
     <!-- 在线状态显示组件 -->
     <!-- 在线 -->
-    <el-tooltip v-if="status === 'online'" effect="dark" :content="statusText" placement="top">
+    <el-tooltip :enterable="false" v-if="status === 'online'" effect="dark" :content="statusText" placement="top">
         <div class="status-online friendStatus"></div>
     </el-tooltip>
     <!-- 闲置 -->
-    <el-tooltip v-else-if="status === 'idle'" effect="dark" :content="statusText" placement="top">
+    <el-tooltip :enterable="false" v-else-if="status === 'idle'" effect="dark" :content="statusText" placement="top">
         <div class="status-idle friendStatus"></div>
     </el-tooltip>
     <!-- 离线 -->
-    <el-tooltip v-else-if="status === 'offline'" effect="dark" :content="statusText" placement="top">
+    <el-tooltip :enterable="false" v-else-if="status === 'offline'" effect="dark" :content="statusText" placement="top">
         <div class="status-offline friendStatus"></div>
     </el-tooltip>
     <!-- 忙碌 -->
-    <el-tooltip v-else-if="status === 'busy'" effect="dark" :content="statusText" placement="top">
+    <el-tooltip :enterable="false" v-else-if="status === 'busy'" effect="dark" :content="statusText" placement="top">
         <div class="status-busy friendStatus"></div>
     </el-tooltip>
 </template>

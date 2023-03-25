@@ -260,7 +260,7 @@ body > .el-container {
 .is-active {
     background-color: #43444b;
     border-radius: 3px;
-    color: #f6f6f6;
+    color: #f2f3f5 !important;
 }
 
 .is-active-add {
