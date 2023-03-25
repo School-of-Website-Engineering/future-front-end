@@ -1,14 +1,5 @@
 <template>
-    <div class="search-box">
-        <el-input
-            class="search-box-input"
-            v-model="search"
-            placeholder="搜索"
-            @keyup.enter.native="searchFriend"
-        ></el-input>
-        <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-    <div><h2 class="title-x4dI75 container-q97qHp">好友总数 — 4</h2></div>
+    <FriendsDisplay :text="'好友总数 — 4'" />
     <div class="friends-list">
         <div class="friends-avatar">
             <el-avatar
@@ -97,6 +88,7 @@
 
 <script setup lang="ts">
 import { defineComponent } from 'vue';
+import FriendsDisplay from './common/FriendsDisplay.vue';
 
 defineComponent({
     name: 'All'
