@@ -9,7 +9,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "vue-tsc && vite build",
         "preview": "vite preview",
-        "lint": "eslint --fix  vite.config.ts tsconfig.json .eslintrc.cjs --ext .cjs,.js,.vue,.ts,.html, src",
+        "lint": "eslint --fix  vite.config.ts tsconfig.json .eslintrc.cjs --ext .cjs,.js,.vue,.ts,.html src",
         "prettier": "prettier --write ./**/*.{js,ts,vue,json,cjs,css,scss}",
         "prepare": "husky install",
         "lint-staged": "lint-staged",

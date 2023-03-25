@@ -1,13 +1,20 @@
 <template>
     <!--频道侧边栏,菜单-->
     <el-aside width="90px" class="main-aside">
-        <el-menu :collapse="isCollapse" router class="el-menu-vertical-demo">
-            <el-menu-item index="/message" :class="{ 'is-active': $route.path === '/main/@me' }">
-                <img
-                    class="channel-img"
-                    src="https://cdn.discordapp.com/icons/464395429392678912/401026c51da58472a16c650ee263701d.webp?size=160"
-                />
-                <template #title>sdcfsdfsdf</template>
+        <el-menu
+            default-active="/main/@me"
+            :collapse="isCollapse"
+            router
+            class="el-menu-vertical-demo"
+            :class="{ 'is-active': pathClass }"
+        >
+            <el-menu-item index="/main/@me" id="rePathClass">
+                <el-tooltip class="box-item" effect="dark" content="私信" placement="right" :enterable="false">
+                    <img
+                        class="channel-img"
+                        src="https://cdn.discordapp.com/icons/464395429392678912/401026c51da58472a16c650ee263701d.webp?size=160"
+                    />
+                </el-tooltip>
             </el-menu-item>
             <div class="listItem-3SmSlK">
                 <div class="guildSeparator-a4uisj"></div>
@@ -20,38 +27,35 @@
                 @click="() => $router.push('/channels/' + item.id)"
             >
                 <el-badge :max="99" :value="item.count" class="item-message"></el-badge>
-                <el-avatar class="channel-img" :size="50" :src="item.img" @error="errorHandler"> </el-avatar>
+                <el-avatar class="channel-img" :size="50" :src="item.img" @error="errorHandler"></el-avatar>
                 <template #title>
                     <span>{{ item.name }}</span>
                 </template>
             </el-menu-item>
-            <el-menu-item index="1" class="add-icon">
-                <el-icon>
-                    <Plus class="icon" />
-                </el-icon>
-                <template #title>
-                    <span>创建组</span>
-                </template>
-            </el-menu-item>
-            <el-menu-item index="2" class="add-icon">
-                <el-icon>
-                    <Compass class="icon" />
-                </el-icon>
-                <template #title>
-                    <span>探索公共组</span>
-                </template>
-            </el-menu-item>
+            <el-tooltip class="box-item" effect="dark" content="创建组" placement="right" :enterable="false">
+                <el-menu-item index="1" class="add-icon">
+                    <el-icon>
+                        <Plus class="icon" />
+                    </el-icon>
+                </el-menu-item>
+            </el-tooltip>
+            <el-tooltip class="box-item" effect="dark" content="探索公共组" placement="right" :enterable="false">
+                <el-menu-item index="2" class="add-icon">
+                    <el-icon>
+                        <Compass class="icon" />
+                    </el-icon>
+                </el-menu-item>
+            </el-tooltip>
             <div class="listItem-3SmSlK">
                 <div class="guildSeparator-a4uisj"></div>
             </div>
-            <el-menu-item index="3" class="add-icon">
-                <el-icon>
-                    <Download class="icon" />
-                </el-icon>
-                <template #title>
-                    <span>下载App</span>
-                </template>
-            </el-menu-item>
+            <el-tooltip class="box-item" effect="dark" content="下载App" placement="right" :enterable="false">
+                <el-menu-item index="3" class="add-icon">
+                    <el-icon>
+                        <Download class="icon" />
+                    </el-icon>
+                </el-menu-item>
+            </el-tooltip>
         </el-menu>
     </el-aside>
 </template>
@@ -60,14 +64,17 @@
 import { onMounted, reactive, ref } from 'vue';
 import AsideLPrivateService, { IAsideSidebarList } from '@/api/aside';
 import { useRouter } from 'vue-router';
+
 const errorHandler = () => true;
 const isCollapse = ref(true);
 const router = useRouter();
 // 侧边栏频道列表数据
 const asideSidebarList = reactive<IAsideSidebarList[]>([]);
+
 onMounted(() => {
     getChannelList();
     //     打印当前路由路径
+    console.log('-------当前路由路径---------');
     console.log(router.currentRoute.value.path);
 });
 
@@ -80,8 +87,46 @@ onMounted(() => {
 const getChannelList = async() => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
+    console.log('-------侧边栏频道列表数据---------');
     console.log(asideSidebarList);
 };
+
+/**
+ * 根据rePathClass 的id删除is-active类名
+ * @function removeClass
+ */
+const pathClass = () => router.currentRoute.value.path.slice(0, 5) === '/main';
+
+const removeClass = () => {
+    const rePathClass = document.getElementById('rePathClass');
+    if (!rePathClass) return;
+    rePathClass.classList.remove('is-active');
+};
+
+/**
+ * 根据rePathClass 的id添加is-active类名
+ * @function addClass
+ */
+const addClass = () => {
+    const rePathClass = document.getElementById('rePathClass');
+    if (!rePathClass) return;
+    rePathClass.classList.add('is-active');
+};
+
+/**
+ * 监听路由变化并根据当前路由路径添加或删除is-active类名
+ * @function router.afterEach
+ * @param {Object} to - 路由对象
+ */
+router.afterEach((to) => {
+    if (!pathClass()) {
+        // 如果当前路由路径不是/main/@me, 则删除is-active类名
+        removeClass();
+    } else {
+        // 如果当前路由路径为/main/@me, 则添加is-active类名
+        addClass();
+    }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -118,7 +163,6 @@ $sidebar-width: 80px;
     }
 
     .el-menu-item {
-        display: unset;
         width: $sidebar-width;
         text-align: center;
         margin-bottom: 10px;
@@ -263,7 +307,7 @@ $sidebar-width: 80px;
         .el-icon {
             width: 50px;
             height: 50px;
-            background-color: #313338;
+            background-color: #313338 !important;
             border-radius: 50%;
             // 控制图标的圆角缓动
             transition: all 0.3s;

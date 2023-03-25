@@ -62,10 +62,11 @@ module.exports = {
                 endOfLine                : 'auto'
             }
         ],
-        'comma-dangle'          : ['warn', 'never'],
-        eqeqeq                  : 'warn',
-        'arrow-parens'          : 0,
-        'generator-star-spacing': 0,
+        'comma-dangle'                          : ['warn', 'never'],
+        eqeqeq                                  : 'warn',
+        'arrow-parens'                          : 0,
+        'generator-star-spacing'                : 0,
+        'vue/no-deprecated-v-on-native-modifier': 'off',
 
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 

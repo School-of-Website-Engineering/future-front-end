@@ -62,7 +62,7 @@
                             <div class="private-message-user-box">
                                 <div class="private-message-user-box-flex">
                                     <div class="private-message-user-box-flex-left">
-                                        <img :src="item.avatar" />
+                                        <el-avatar :src="item.avatar" />
                                         <FriendStatus :status="item.status" :statusText="item.statusText" />
                                     </div>
                                     <div class="private-message-user-box-flex-right">
@@ -152,7 +152,7 @@ onMounted(() => {
 const getPrivateMessageList = async() => {
     const { data } = await AsideLPrivateService.getAsidePrivateUserList();
     privateMessageList.push(...data.sidebarList);
-    console.log('---------getAsidePrivateUserList---------');
+    console.log('---------获取私信列表---------');
     console.log(privateMessageList);
 };
 </script>
@@ -172,6 +172,20 @@ const getPrivateMessageList = async() => {
             .friends-top-head {
                 .friends-top-flex {
                     height: 80px;
+                }
+                .is-active {
+                    background-color: #404249;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    .el-col {
+                        .el-icon {
+                            color: #f2f3f5 !important;
+                        }
+                        span {
+                            color: #f2f3f5 !important;
+                        }
+                    }
                 }
             }
 
@@ -307,8 +321,8 @@ const getPrivateMessageList = async() => {
                                 //登录状态定位
                                 :deep(.friendStatus) {
                                     position: absolute;
-                                    left: 31.5px;
-                                    top: 32px;
+                                    left: 34.8px;
+                                    top: 35.5px;
                                 }
                             }
 
@@ -464,9 +478,6 @@ const getPrivateMessageList = async() => {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-    }
-
-    &.main-box-right-main2 {
     }
 }
 
