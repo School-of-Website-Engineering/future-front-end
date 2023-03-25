@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.2...v1.3.3) (2023-03-25)
+
+
+### update
+
+* 更新用户好友mock接口、修改样式、更新全部好友 ([279ad5b](https://github.com/School-of-Website-Engineering/future-front-end/commit/279ad5b8f2f65b811792c2c4d4ac9528c4c7ade8))
+
 ## [1.3.2](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.1...v1.3.2) (2023-03-23)
 
 ### update
