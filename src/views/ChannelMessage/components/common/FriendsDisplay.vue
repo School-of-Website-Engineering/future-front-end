@@ -1,4 +1,4 @@
-如果数组为空则显示空白组件，如果不为空则显示好友列表
+<!--如果数组为空则显示空白组件，如果不为空则显示好友列表-->
 <template>
     <div class="search-box-header-top">
         <div class="search-box">
@@ -28,15 +28,16 @@
                 <FriendStatus :status="item.status" />
             </div>
         </div>
-        <div class="friends-more">
+        <!-- 图标 -->
+        <div class="friends-more" v-if="iconLeft || iconRight">
             <el-tooltip :enterable="false" class="box-item" effect="dark" content="消息" placement="top">
-                <span>
-                    <i class="fa-solid fa-comments"></i>
+                <span v-if="iconLeft">
+                    <i :class="iconLeft"></i>
                 </span>
             </el-tooltip>
             <el-tooltip :enterable="false" class="box-item" effect="dark" content="更多" placement="top">
-                <span>
-                    <i class="fa-solid fa-bars"></i>
+                <span v-if="iconRight">
+                    <i :class="iconRight"></i>
                 </span>
             </el-tooltip>
         </div>
@@ -48,17 +49,25 @@ import { defineComponent, defineProps, ref } from 'vue';
 import { IUserFriendsResponse } from '@/api/friends';
 
 defineComponent({
-    name: 'FriendsDisplay',
+    name: 'FriendsDisplay'
 });
 defineProps({
     status: {
-        type: String,
-        default: 'online',
+        type   : String,
+        default: 'online'
     },
     list: {
-        type: Array as () => Array<IUserFriendsResponse>,
-        default: () => [],
+        type   : Array as () => Array<IUserFriendsResponse>,
+        default: () => []
     },
+    iconLeft: {
+        type   : String,
+        default: ''
+    },
+    iconRight: {
+        type   : String,
+        default: ''
+    }
 });
 const searchFriend = () => {
     console.log(search);
