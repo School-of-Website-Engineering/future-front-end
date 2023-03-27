@@ -98,7 +98,7 @@ watch(
             2: '全部',
             3: '待定',
             4: '已屏蔽',
-            5: '添加好友'
+            5: '添加好友',
         };
         userFriends.getFriends();
         setTimeout(() => {
@@ -108,7 +108,7 @@ watch(
         console.log('-------------好友切换--------------');
         console.log(statusMap[newVal]);
     },
-    { immediate: true }
+    { immediate: true },
 );
 </script>
 

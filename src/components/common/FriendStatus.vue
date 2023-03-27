@@ -60,13 +60,13 @@
 // 父组件传入的状态值：在线、离线、闲置、忙碌
 const props = defineProps({
     status: {
-        type   : String,
-        default: 'online'
+        type: String,
+        default: 'online',
     },
     statusText: {
-        type   : String,
-        default: ''
-    }
+        type: String,
+        default: '',
+    },
 });
 </script>
 
