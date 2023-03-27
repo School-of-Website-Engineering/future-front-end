@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.4](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.3...v1.3.4) (2023-03-27)
+
+
+### Bug Fixes
+
+* 修复好友展示框bug，使用sticky替换fixed ([b6cc8a9](https://github.com/School-of-Website-Engineering/future-front-end/commit/b6cc8a9c8bf165a8ed86acedb7e6c6b7ce2ffb03))
+
 ## [1.3.3](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.2...v1.3.3) (2023-03-25)
 
 
