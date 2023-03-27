@@ -48,17 +48,17 @@ import { defineComponent, defineProps, ref } from 'vue';
 import { IUserFriendsResponse } from '@/api/friends';
 
 defineComponent({
-    name: 'FriendsDisplay',
+    name: 'FriendsDisplay'
 });
 defineProps({
     status: {
-        type: String,
-        default: 'online',
+        type   : String,
+        default: 'online'
     },
     list: {
-        type: Array as () => Array<IUserFriendsResponse>,
-        default: () => [],
-    },
+        type   : Array as () => Array<IUserFriendsResponse>,
+        default: () => []
+    }
 });
 const searchFriend = () => {
     console.log(search);

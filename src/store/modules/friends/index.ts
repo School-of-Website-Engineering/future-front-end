@@ -4,7 +4,7 @@ import UserFriendsService, { IUserFriendsResponse } from '@/api/friends';
 export const useUserFriendsStore = defineStore('menu', {
     state: () => {
         return {
-            friends: [] as any,
+            friends: [] as any
         };
     },
     getters: {},
@@ -15,6 +15,6 @@ export const useUserFriendsStore = defineStore('menu', {
             if (data) {
                 this.friends = data.friends;
             }
-        },
-    },
+        }
+    }
 });
