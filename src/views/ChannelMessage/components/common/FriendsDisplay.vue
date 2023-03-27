@@ -25,7 +25,7 @@
                 <div v-else-if="item.status === 'offline'" class="friends-status">离线</div>
                 <div v-else-if="item.status === 'busy'" class="friends-status">忙碌</div>
                 <div v-else-if="item.status === 'idle'" class="friends-status">闲置</div>
-                <FriendStatus :status-text="'Friend'" :status="item.status" />
+                <FriendStatus :status="item.status" />
             </div>
         </div>
         <div class="friends-more">
