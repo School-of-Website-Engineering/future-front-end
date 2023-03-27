@@ -70,7 +70,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { useUserFriendsStore } from '@/store/modules/friends';
 import AddFriend from '@/views/ChannelMessage/components/AddFriend.vue';
 import All from '@/views/ChannelMessage/components/All.vue';
@@ -205,6 +205,7 @@ watch(
         position: relative;
         height: 100%;
         padding: unset;
+        background-color: #313338;
 
         &.main-box-right-main1 {
             background-color: #2b2d31;
@@ -229,16 +230,17 @@ watch(
             border-bottom: solid 1.5px #2c2e33;
         }
     }
+
     .main-box-right-main2-main1 {
+        padding-top: unset;
         //    固定定位
-        position: fixed;
-        top: 159px;
-        bottom: 0;
-        left: 315px;
-        right: 340px;
+        position: absolute;
+        width: 820px;
+        height: 100%;
         //    使其不会被遮挡
         z-index: 1;
-        overflow: auto;
+        //超出视口滚动条
+        overflow-y: auto;
         //    美化滚动条
         &::-webkit-scrollbar {
             width: 8px;
@@ -255,6 +257,7 @@ watch(
             border-radius: 4px;
         }
     }
+
     .main-box-right-main2-main1,
     .main-box-right-main2-main2 {
         &.main-box-right-main2-main1 {

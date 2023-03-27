@@ -4,10 +4,10 @@
         <ChannelSidebar class="channel-sidebar" />
         <!-- 右侧主内容 -->
         <el-row class="main-box-right">
-            <el-col :span="4">
+            <el-col :span="4" class="leftAside">
                 <router-view name="leftAside" />
             </el-col>
-            <el-col :span="20">
+            <el-col :span="20" class="rightMain">
                 <router-view name="rightMain" />
             </el-col>
         </el-row>

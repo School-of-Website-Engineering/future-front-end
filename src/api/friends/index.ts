@@ -8,8 +8,7 @@ export interface IUserFriendsResponse {
     name: string;
     avatar: string;
     status: string;
-    shield: boolean;
-    friends?: Array<IUserFriendsResponse>;
+    [key: string]: any;
 }
 
 // 用户好友 API 接口定义

@@ -1,3 +1,4 @@
+如果数组为空则显示空白组件，如果不为空则显示好友列表
 <template>
     <div class="search-box-header-top">
         <div class="search-box">
@@ -9,10 +10,9 @@
             ></el-input>
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <div>
-            <h2 class="title-x4dI75 container-q97qHp">好友总数 — {{ list.length }}</h2>
-        </div>
+        <h2 class="title-x4dI75 container-q97qHp">好友总数 — {{ list.length }}</h2>
     </div>
+    <div class="placeholder"></div>
     <div class="friends-list" v-for="(item, index) in list" :key="index">
         <div class="friends-avatar">
             <el-avatar class="avatar" :src="item.avatar"></el-avatar>
@@ -25,7 +25,7 @@
                 <div v-else-if="item.status === 'offline'" class="friends-status">离线</div>
                 <div v-else-if="item.status === 'busy'" class="friends-status">忙碌</div>
                 <div v-else-if="item.status === 'idle'" class="friends-status">闲置</div>
-                <FriendStatus :status-text="'Friend'" :status="item.status" />
+                <FriendStatus :status="item.status" />
             </div>
         </div>
         <div class="friends-more">
@@ -68,19 +68,24 @@ const search = ref('');
 
 <style lang="scss" scoped>
 .search-box-header-top {
-    //固定定位
-    position: fixed;
-    top: 50px;
-    bottom: 79.9vh;
-    left: 315px;
-    right: 340px;
+    padding-top: 15px;
+    height: 50px;
+    width: 100%;
+    //固定至顶部
+    position: sticky;
+    top: 0px;
     //    使其不会被遮挡
     z-index: 999;
-    overflow: auto;
     background-color: #313338;
 }
 
+.placeholder {
+    height: 45px; /* 固定元素高度 */
+    width: 100%;
+}
+
 .friends-list {
+    clear: both;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -181,7 +186,7 @@ const search = ref('');
 }
 
 .title-x4dI75 {
-    margin: 0px 16px 20px 16px;
+    padding: 25px 0 15px 0;
 }
 
 .container-q97qHp {
@@ -200,21 +205,12 @@ const search = ref('');
     flex: 1 1 auto;
     color: #b5bac1;
     position: absolute;
-    top: 75px;
+    width: 100%;
+    background-color: #313338;
+    text-align: left;
 }
 
 .search-box {
-    height: 35px;
-    padding: 20px 16px 20px 16px;
-    //固定定位
-    position: fixed;
-    top: 50px;
-    bottom: 100px;
-    left: 315px;
-    right: 340px;
-    //    使其不会被遮挡
-    z-index: 999;
-    overflow: auto;
     background-color: #313338;
 
     .search-box-input {
@@ -238,7 +234,7 @@ const search = ref('');
     .fa-magnifying-glass {
         position: absolute;
         top: 50%;
-        right: 26px;
+        right: 10px;
         transform: translateY(-50%);
         font-size: 18px;
         color: #b5bac1;

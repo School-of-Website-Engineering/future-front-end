@@ -4,7 +4,7 @@ import UserFriendsService, { IUserFriendsResponse } from '@/api/friends';
 export const useUserFriendsStore = defineStore('menu', {
     state: () => {
         return {
-            friends: [] as any
+            friends: [] as IUserFriendsResponse[]
         };
     },
     getters: {},
@@ -12,8 +12,8 @@ export const useUserFriendsStore = defineStore('menu', {
         //     异步请求
         async getFriends(): Promise<void> {
             const { data, code } = await UserFriendsService.getUserFriends();
-            if (data) {
-                this.friends = data.friends;
+            if (code === 0) {
+                this.friends = data.friends || [];
             }
         }
     }

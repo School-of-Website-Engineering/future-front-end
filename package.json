@@ -8,6 +8,7 @@
         "prod": "vite --mode production",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "vue-tsc && vite build",
+        "build:dev": "vue-tsc && vite build --mode development",
         "preview": "vite preview",
         "lint": "eslint --fix  vite.config.ts tsconfig.json .eslintrc.cjs --ext .cjs,.js,.vue,.ts,.html src",
         "prettier": "prettier --write ./**/*.{js,ts,vue,json,cjs,css,scss}",
