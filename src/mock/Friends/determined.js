@@ -39,7 +39,7 @@ export default [
                 code   : 0,
                 message: 'success',
                 data   : {
-                    friends: friends
+                    friends
                 }
             };
         }
