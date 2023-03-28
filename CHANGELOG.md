@@ -2,25 +2,22 @@
 
 ## [1.3.5](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.4...v1.3.5) (2023-03-28)
 
-
 ### Styling
 
-* Format code with prettier ([3dd9670](https://github.com/School-of-Website-Engineering/future-front-end/commit/3dd9670aeff96e1cbbb15a8cd26331b85a63474b))
-* Format code with prettier ([08bbe8e](https://github.com/School-of-Website-Engineering/future-front-end/commit/08bbe8e7113f66d3f438904332236184c3691220))
+-   Format code with prettier ([3dd9670](https://github.com/School-of-Website-Engineering/future-front-end/commit/3dd9670aeff96e1cbbb15a8cd26331b85a63474b))
+-   Format code with prettier ([08bbe8e](https://github.com/School-of-Website-Engineering/future-front-end/commit/08bbe8e7113f66d3f438904332236184c3691220))
 
 ## [1.3.4](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.3...v1.3.4) (2023-03-27)
 
-
 ### Bug Fixes
 
-* 修复好友展示框bug，使用sticky替换fixed ([b6cc8a9](https://github.com/School-of-Website-Engineering/future-front-end/commit/b6cc8a9c8bf165a8ed86acedb7e6c6b7ce2ffb03))
+-   修复好友展示框 bug，使用 sticky 替换 fixed ([b6cc8a9](https://github.com/School-of-Website-Engineering/future-front-end/commit/b6cc8a9c8bf165a8ed86acedb7e6c6b7ce2ffb03))
 
 ## [1.3.3](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.2...v1.3.3) (2023-03-25)
 
-
 ### update
 
-* 更新用户好友mock接口、修改样式、更新全部好友 ([279ad5b](https://github.com/School-of-Website-Engineering/future-front-end/commit/279ad5b8f2f65b811792c2c4d4ac9528c4c7ade8))
+-   更新用户好友 mock 接口、修改样式、更新全部好友 ([279ad5b](https://github.com/School-of-Website-Engineering/future-front-end/commit/279ad5b8f2f65b811792c2c4d4ac9528c4c7ade8))
 
 ## [1.3.2](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.1...v1.3.2) (2023-03-23)
 
