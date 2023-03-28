@@ -3,7 +3,7 @@
         <!-- 搜索框 -->
         <el-header class="main-box-right-header1">
             <!-- ChannelMessage Box 消息弹出框 -->
-            <el-button class="search-btn" text @click="dialogTableVisible = true">寻找或开始新的对话 </el-button>
+            <el-button class="search-btn" text @click="dialogTableVisible = true">寻找或开始新的对话</el-button>
             <!-- 弹出框 -->
             <el-dialog v-model="dialogTableVisible" title="Shipping address">
                 <el-table :data="gridData">
@@ -84,7 +84,7 @@
                                 class="bottom-profile-avatar-img"
                             />
                             <span>
-                                <p>Mason Skywork</p>
+                                <p>鸡你太美</p>
                                 <p>#1237</p>
                             </span>
                         </el-col>
@@ -107,7 +107,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, onMounted } from 'vue';
+import { onMounted, reactive, ref } from 'vue';
 import AsideLPrivateService, { IAsideLPrivateResponse } from '@/api/aside';
 
 // 控制dialog显示
@@ -164,15 +164,22 @@ const getPrivateMessageList = async() => {
         justify-content: space-between;
 
         .Friends-private-message {
-            height: 300px;
-            margin-top: 10px;
+            height: 90%;
             background-color: unset;
-            padding: 0 8px !important;
+            padding: 0px 8px !important;
 
             .friends-top-head {
+                //固定头部
+                position: sticky;
+                padding-top: 10px;
+                top: 0px;
+                background-color: #2b2d31;
+                z-index: 99;
+
                 .friends-top-flex {
                     height: 80px;
                 }
+
                 .is-active {
                     background-color: #404249;
                     border-radius: 5px;
@@ -182,6 +189,7 @@ const getPrivateMessageList = async() => {
                         .el-icon {
                             color: #f2f3f5 !important;
                         }
+
                         span {
                             color: #f2f3f5 !important;
                         }
@@ -194,9 +202,27 @@ const getPrivateMessageList = async() => {
                 height: 80px;
                 display: flex;
                 flex-direction: column;
+                //超出视口滚动条
+                overflow-y: auto;
+                //    美化滚动条
+                &::-webkit-scrollbar {
+                    width: 2px;
+                    height: 2px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #3f4147;
+                    border-radius: 4px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: #313338;
+                    border-radius: 4px;
+                }
+
                 //第二个元素高度
                 &:nth-child(2) {
-                    height: 110px;
+                    height: 610px;
 
                     .friends-top-title {
                         height: 30px;
@@ -207,6 +233,12 @@ const getPrivateMessageList = async() => {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+
+                        //固定位置不动
+                        position: sticky;
+                        top: 0px;
+                        background-color: #2b2d31;
+                        z-index: 99;
 
                         &:hover {
                             span {
@@ -334,6 +366,7 @@ const getPrivateMessageList = async() => {
 
                                     span {
                                         color: #949ba4;
+
                                         &:first-child {
                                             font-size: 15.5px;
                                             font-weight: inherit;
@@ -361,6 +394,10 @@ const getPrivateMessageList = async() => {
                 height: 100%;
                 display: flex;
                 align-items: center;
+                //固定位置不动
+                position: sticky;
+                bottom: 0;
+                z-index: 99;
 
                 .bottom-profile-avatar {
                     height: 40px;
@@ -428,6 +465,9 @@ const getPrivateMessageList = async() => {
     justify-content: center;
     align-items: center;
     padding: 0 8px !important;
+    //固定位置
+    position: static;
+    top: 0;
 
     .search-btn {
         width: 100%;
@@ -478,6 +518,8 @@ const getPrivateMessageList = async() => {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        //    超出隐藏
+        //overflow-y: hidden;
     }
 }
 

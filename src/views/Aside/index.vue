@@ -133,6 +133,24 @@ router.afterEach((to) => {
 // 定义左侧边栏宽度变量
 $sidebar-width: 80px;
 .main-aside {
+    //超出视口滚动条
+    overflow-y: auto;
+    overflow-x: hidden;
+    //    美化滚动条
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #3f4147;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #313338;
+        border-radius: 4px;
+    }
     padding-top: 8px;
     width: $sidebar-width;
 
