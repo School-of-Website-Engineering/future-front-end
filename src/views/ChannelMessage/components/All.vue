@@ -18,7 +18,7 @@ import { useUserFriendsStore } from '@/store/modules/friends';
 const userFriends = useUserFriendsStore();
 
 defineComponent({
-    name: 'All'
+    name: 'All',
 });
 const search = ref('');
 </script>
