@@ -18,11 +18,11 @@ import { useUserFriendsStore } from '@/store/modules/friends';
 const userFriends = useUserFriendsStore();
 
 defineComponent({
-    name: 'All'
+    name: 'All',
 });
 const search = ref('');
 defineComponent({
-    name: 'Blocked'
+    name: 'Blocked',
 });
 </script>
 
