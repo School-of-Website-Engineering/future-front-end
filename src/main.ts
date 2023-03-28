@@ -10,8 +10,6 @@ import 'element-plus/dist/index.css';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import FriendStatus from './components/common/FriendStatus.vue';
 import FriendsDisplay from './views/ChannelMessage/components/common/FriendsDisplay.vue';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import { useRegisterSW } from 'virtual:pwa-register/vue';
 
 const app = createApp(App);
