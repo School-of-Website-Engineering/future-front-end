@@ -21,24 +21,23 @@
                     {{ item.name }}
                     <p>#{{ item.id }}</p>
                 </div>
-                <div v-if="item.status === 'online'" class="friends-status">在线</div>
-                <div v-else-if="item.status === 'offline'" class="friends-status">离线</div>
-                <div v-else-if="item.status === 'busy'" class="friends-status">忙碌</div>
-                <div v-else-if="item.status === 'idle'" class="friends-status">闲置</div>
+                <div :class="[statusMap[item.status], 'friends-status']">
+                    {{ statusMap[item.status] }}
+                </div>
                 <FriendStatus :status="item.status" />
             </div>
         </div>
         <!-- 图标 -->
-        <div class="friends-more" v-if="iconLeft || iconRight">
-            <el-tooltip :enterable="false" class="box-item" effect="dark" content="消息" placement="top">
-                <span v-if="iconLeft">
-                    <i :class="iconLeft"></i>
-                </span>
-            </el-tooltip>
-            <el-tooltip :enterable="false" class="box-item" effect="dark" content="更多" placement="top">
-                <span v-if="iconRight">
-                    <i :class="iconRight"></i>
-                </span>
+        <div class="friends-more">
+            <el-tooltip
+                :enterable="false"
+                v-for="(icon, index) in displayIcons"
+                :key="index"
+                class="box-item"
+                :content="icon.tooltip"
+                placement="top"
+            >
+                <span><i :class="icon.class"></i></span>
             </el-tooltip>
         </div>
     </div>
@@ -46,7 +45,6 @@
 
 <script setup lang="ts">
 import { defineComponent, defineProps, ref } from 'vue';
-import { IUserFriendsResponse } from '@/api/friends';
 
 defineComponent({
     name: 'FriendsDisplay'
@@ -57,7 +55,7 @@ defineProps({
         default: 'online'
     },
     list: {
-        type   : Array as () => Array<IUserFriendsResponse>,
+        type   : Array as () => Array<unknown>,
         default: () => []
     },
     iconLeft: {
@@ -69,6 +67,20 @@ defineProps({
         default: ''
     }
 });
+const icons = [
+    { class: 'icon-left', tooltip: '消息' },
+    { class: 'icon-right', tooltip: '更多' }
+];
+
+const displayIcons = () => icons.filter((icon) => icon.class === 'icon-left' || icon.class === 'icon-right');
+
+// statusMap
+const statusMap = {
+    online : '在线',
+    offline: '离线',
+    busy   : '忙碌',
+    idle   : '闲置'
+};
 const searchFriend = () => {
     console.log(search);
 };

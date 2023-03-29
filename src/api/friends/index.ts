@@ -1,6 +1,8 @@
 import http, { Response } from '@/utils/http';
-
+// 查询好友列表
 export const USER_FRIENDS = '/user/friends';
+// 查询待定好友列表
+export const USER_FRIENDS_PENDING = '/user/friends/pending';
 
 // 用户好友响应结果接口定义
 export interface IUserFriendsResponse {
@@ -10,10 +12,19 @@ export interface IUserFriendsResponse {
     status: string;
     [key: string]: any;
 }
+// 用户好友响应结果接口定义
+export interface IUserFriendsPendingResponse {
+    friends: IUserFriendsPendingResponse[];
+    id: string;
+    name: string;
+    avatar: string;
+    isInitiative: boolean;
+}
 
 // 用户好友 API 接口定义
 export interface IUserFriendsApi {
     getUserFriends(): Promise<Response<IUserFriendsResponse>>;
+    getUserFriendsPending(): Promise<Response<IUserFriendsPendingResponse>>;
 }
 
 /**
@@ -25,6 +36,11 @@ class UserFriendsService implements IUserFriendsApi {
      * @returns Promise 对象，解析为类型为 Response<IUserFriendsResponse> 的响应结果
      */
     getUserFriends = () => http.get<Response<IUserFriendsResponse>>(USER_FRIENDS);
+    /**
+     * 获取用户待定好友数据
+     * @returns Promise 对象，解析为类型为 Response<IUserFriendsPendingResponse> 的响应结果
+     */
+    getUserFriendsPending = () => http.get<Response<IUserFriendsPendingResponse>>(USER_FRIENDS_PENDING);
 }
 
 export default new UserFriendsService();

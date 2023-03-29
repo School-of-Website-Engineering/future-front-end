@@ -26,7 +26,7 @@
                 :class="{ 'is-active': $route.path === '/channels/' + item.id }"
                 @click="() => $router.push('/channels/' + item.id)"
             >
-                <el-badge :max="99" :value="item.count" class="item-message"></el-badge>
+                <el-badge :max="99" :value="item.count" class="item-message" v-if="item.count > 0" />
                 <el-avatar class="channel-img" :size="50" :src="item.img" @error="errorHandler"></el-avatar>
                 <template #title>
                     <span>{{ item.name }}</span>
@@ -138,8 +138,8 @@ $sidebar-width: 80px;
     overflow-x: hidden;
     //    美化滚动条
     &::-webkit-scrollbar {
-        width: 4px;
-        height: 4px;
+        width: 2px;
+        height: 2px;
     }
 
     &::-webkit-scrollbar-thumb {

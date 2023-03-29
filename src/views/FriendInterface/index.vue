@@ -42,21 +42,11 @@
             <el-col :span="17">
                 <el-container>
                     <el-main class="main-box-right-main2-main1">
-                        <el-row v-show="activeIndex === 1">
-                            <Online />
-                        </el-row>
-                        <el-row v-show="activeIndex === 2">
-                            <All />
-                        </el-row>
-                        <el-row v-show="activeIndex === 3">
-                            <ToBeDetermined />
-                        </el-row>
-                        <el-row v-show="activeIndex === 4">
-                            <Blocked />
-                        </el-row>
-                        <el-row v-show="activeIndex === 5">
-                            <AddFriend />
-                        </el-row>
+                        <template v-for="(component, index) in components">
+                            <el-row v-if="activeIndex === index + 1" :key="index">
+                                <component :is="component" />
+                            </el-row>
+                        </template>
                     </el-main>
                 </el-container>
             </el-col>
@@ -81,6 +71,8 @@ import ToBeDetermined from '@/views/ChannelMessage/components/ToBeDetermined.vue
 // 切换的索引
 const activeIndex = ref(1);
 const userFriends = useUserFriendsStore();
+// 组件
+const components = markRaw([Online, All, ToBeDetermined, Blocked, AddFriend]);
 
 // statusMap[newVal]接口
 interface IStatusMap {
@@ -102,7 +94,7 @@ watch(
         };
         userFriends.getFriends();
         setTimeout(() => {
-            console.log('-------------好友数据--------------');
+            console.log('-------------全部好友数据--------------');
             console.log(userFriends.friends);
         }, 1000);
         console.log('-------------好友切换--------------');

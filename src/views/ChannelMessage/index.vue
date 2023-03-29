@@ -290,6 +290,7 @@ const getPrivateMessageList = async() => {
                                 .private-message-user-box-flex-right-top {
                                     span {
                                         color: #dbdee1 !important;
+                                        width: 100px;
                                     }
                                 }
                             }
@@ -366,7 +367,13 @@ const getPrivateMessageList = async() => {
 
                                     span {
                                         color: #949ba4;
-
+                                        width: 150px;
+                                        text-align: left;
+                                        margin-left: 18px;
+                                        //超出部分显示省略号
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        white-space: nowrap;
                                         &:first-child {
                                             font-size: 15.5px;
                                             font-weight: inherit;
