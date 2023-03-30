@@ -6,7 +6,9 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
+  const asyncTryCatch: typeof import('./utils/exceptionHandling')['asyncTryCatch']
   const axios: typeof import('./utils/http/axios')['default']
+  const classAsyncTryCatch: typeof import('./utils/exceptionHandling')['classAsyncTryCatch']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const createPinia: typeof import('pinia')['createPinia']

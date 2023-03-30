@@ -114,18 +114,18 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
         },
         server: {
             host      : '0.0.0.0',
-            port      : 3000,
+            port      : 3001,
             // 设为 true 时若端口已会被占用直接退出，而不是尝试下一个可用端口。
             strictPort: false,
             open      : true,
             proxy     : {
                 '/api-dev': {
-                    target      : 'http://localhost:3000/',
+                    target      : 'http://localhost:3001/',
                     changeOrigin: true,
                     rewrite     : (path: string) => path.replace(/^\/api-dev/, '')
                 },
                 '/api-pro': {
-                    target      : 'http://localhost:3000/',
+                    target      : 'http://localhost:3001/',
                     changeOrigin: true,
                     rewrite     : (path: string) => path.replace(/^\/api-pro/, '')
                 }

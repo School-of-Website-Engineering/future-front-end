@@ -1,5 +1,5 @@
 # /node_modules/* and /bower_components/* ignored by default
 
-# Ignore built files except build/index.ts
+# Ignore built files except build/exceptionHandling.ts
 build/*
-!build/index.ts
+!build/exceptionHandling.ts

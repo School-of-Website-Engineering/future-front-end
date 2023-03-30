@@ -37,7 +37,37 @@ export default [
                         id   : '437456121056741326',
                         name : '草稿',
                         count: 456,
-                        img  : '\thttps://cdn.discordapp.com/icons/721156457630007316/3531587942f5cfdba2ba702c2659fd1e.webp?size=160'
+                        img  : 'https://cdn.discordapp.com/icons/721156457630007316/4428a5c5f5d740b0280415fa2f16d247.webp?size=160'
+                    },
+                    {
+                        id   : '437456121056741327',
+                        name : '服务器',
+                        count: 0,
+                        img  : 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                    },
+                    {
+                        id   : '437456121056741328',
+                        name : '好友',
+                        count: 10,
+                        img  : 'https://cdn.discordapp.com/icons/541484311354933258/a_8d6214652c64574bfdde14e05dde7708.webp?size=160'
+                    },
+                    {
+                        id   : '437456121056741329',
+                        name : '群组',
+                        count: 30,
+                        img  : 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
+                    },
+                    {
+                        id   : '437456121056741330',
+                        name : '频道',
+                        count: 40,
+                        img  : 'https://cdn.discordapp.com/icons/302094807046684672/a_4a2d4c71d0ec0c7f72792d7280a6529d.webp?size=160'
+                    },
+                    {
+                        id   : '437456121056741331',
+                        name : 'DM',
+                        count: 450,
+                        img  : 'https://cdn.discordapp.com/icons/251072485095636994/a_37069f32ec5e98ad8bf0e8334df18594.webp?size=160'
                     }
                 ]
             };
