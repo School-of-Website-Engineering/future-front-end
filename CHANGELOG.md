@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.7](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.6...v1.3.7) (2023-03-30)
+
+
+### Performance Improvements
+
+* 添加exceptionHandling优化代码提升性能 ([1fa5b45](https://github.com/School-of-Website-Engineering/future-front-end/commit/1fa5b45ed38ea78cafd3af8b7e27177a1508fa73))
+
 ## [1.3.6](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.5...v1.3.6) (2023-03-28)
 
 
