@@ -11,7 +11,7 @@ export const useUserFriendsStore = defineStore('menu', {
          *
          * @type {UserFriend[]}
          */
-        friends: [] as IUserFriendsResponse[]
+        friends: [] as IUserFriendsResponse[],
     }),
 
     getters: {},
@@ -35,6 +35,6 @@ export const useUserFriendsStore = defineStore('menu', {
             if (code === 0) {
                 this.friends = data.friends || [];
             }
-        }
-    }
+        },
+    },
 });
