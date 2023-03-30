@@ -28,16 +28,16 @@
             </div>
         </div>
         <!-- 图标 -->
-        <div class="friends-more">
-            <el-tooltip
-                :enterable="false"
-                v-for="(icon, index) in displayIcons"
-                :key="index"
-                class="box-item"
-                :content="icon.tooltip"
-                placement="top"
-            >
-                <span><i :class="icon.class"></i></span>
+        <div class="friends-more" v-if="iconLeft || iconRight">
+            <el-tooltip :enterable="false" class="box-item" effect="dark" content="消息" placement="top">
+                <span v-if="iconLeft">
+                    <i :class="iconLeft"></i>
+                </span>
+            </el-tooltip>
+            <el-tooltip :enterable="false" class="box-item" effect="dark" content="更多" placement="top">
+                <span v-if="iconRight">
+                    <i :class="iconRight"></i>
+                </span>
             </el-tooltip>
         </div>
     </div>
@@ -55,7 +55,7 @@ defineProps({
         default: 'online'
     },
     list: {
-        type   : Array as () => Array<unknown>,
+        type   : Array as () => Array<any>,
         default: () => []
     },
     iconLeft: {
@@ -72,14 +72,16 @@ const icons = [
     { class: 'icon-right', tooltip: '更多' }
 ];
 
-const displayIcons = () => icons.filter((icon) => icon.class === 'icon-left' || icon.class === 'icon-right');
+interface StatusMap {
+    [key: string]: string;
+}
 
 // statusMap
-const statusMap = {
+const statusMap: StatusMap = {
     online : '在线',
     offline: '离线',
     busy   : '忙碌',
-    idle   : '闲置'
+    away   : '离开'
 };
 const searchFriend = () => {
     console.log(search);
