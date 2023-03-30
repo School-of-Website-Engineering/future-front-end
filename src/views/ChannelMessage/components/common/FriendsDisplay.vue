@@ -47,25 +47,25 @@
 import { defineComponent, defineProps, ref } from 'vue';
 
 defineComponent({
-    name: 'FriendsDisplay',
+    name: 'FriendsDisplay'
 });
 defineProps({
     status: {
-        type: String,
-        default: 'online',
+        type   : String,
+        default: 'online'
     },
     list: {
-        type: Array as () => Array<any>,
-        default: () => [],
+        type   : Array as () => Array<any>,
+        default: () => []
     },
     iconLeft: {
-        type: String,
-        default: '',
+        type   : String,
+        default: ''
     },
     iconRight: {
-        type: String,
-        default: '',
-    },
+        type   : String,
+        default: ''
+    }
 });
 
 interface StatusMap {
@@ -74,10 +74,10 @@ interface StatusMap {
 
 // statusMap
 const statusMap: StatusMap = {
-    online: '在线',
+    online : '在线',
     offline: '离线',
-    busy: '忙碌',
-    away: '离开',
+    busy   : '忙碌',
+    away   : '离开'
 };
 const searchFriend = () => {
     console.log(search);

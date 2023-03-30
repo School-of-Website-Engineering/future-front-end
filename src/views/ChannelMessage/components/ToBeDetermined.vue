@@ -19,7 +19,7 @@ onMounted(() => {
     toBeDeterminedList();
 });
 
-const toBeDeterminedList = async () => {
+const toBeDeterminedList = async() => {
     const { data, code } = await UserFriendsService.getUserFriendsPending();
     if (code === 0) {
         console.log('待定好友列表------------------------');
@@ -30,7 +30,7 @@ const toBeDeterminedList = async () => {
 
 const search = ref('');
 defineComponent({
-    name: 'Blocked',
+    name: 'Blocked'
 });
 </script>
 
