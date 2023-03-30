@@ -5,22 +5,27 @@
         :list="userFriends.friends"
         :icon-right="'fa-solid fa-bars'"
         :icon-left="'fa-solid fa-comments'"
-        v-if="userFriends.friends.length > 0"
+        :title-text="'好友总数'"
+        v-if="ListLength"
     />
     <!--  空状态  -->
     <el-empty description="暂无好友" :image-size="200" class="empty-box" v-else></el-empty>
 </template>
 
 <script setup lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
 import { useUserFriendsStore } from '@/store/modules/friends';
+
+// 所有好友列表长度
+const ListLength = computed(() => {
+    return userFriends.friends.length;
+});
 
 const userFriends = useUserFriendsStore();
 
 defineComponent({
     name: 'All'
 });
-const search = ref('');
 </script>
 
 <style lang="scss" scoped>

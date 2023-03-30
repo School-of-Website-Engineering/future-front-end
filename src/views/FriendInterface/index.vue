@@ -80,6 +80,7 @@ interface IStatusMap {
 }
 
 userFriends.getFriends();
+userFriends.getPendingFriends();
 
 watch(
     activeIndex,
@@ -94,7 +95,7 @@ watch(
         };
         userFriends.getFriends();
         console.log('-------------好友切换--------------');
-        console.log(statusMap[newVal]);
+        console.log('切换至' + statusMap[newVal]);
     },
     { immediate: true }
 );
@@ -236,7 +237,7 @@ watch(
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: #3f4147;
+            background-color: #2b2d31;
             border-radius: 4px;
         }
 

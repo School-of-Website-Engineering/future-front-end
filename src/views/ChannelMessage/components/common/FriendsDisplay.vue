@@ -1,6 +1,6 @@
 <!--如果数组为空则显示空白组件，如果不为空则显示好友列表-->
 <template>
-    <div class="search-box-header-top">
+    <div class="search-box-header-top" style="width: 770px">
         <div class="search-box">
             <el-input
                 class="search-box-input"
@@ -10,10 +10,10 @@
             ></el-input>
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <h2 class="title-x4dI75 container-q97qHp">好友总数 — {{ list.length }}</h2>
+        <h2 class="title-x4dI75 container-q97qHp">{{ titleText }} — {{ list.length }}</h2>
     </div>
     <div class="placeholder"></div>
-    <div class="friends-list" v-for="(item, index) in list" :key="index">
+    <div class="friends-list" v-for="(item, index) in list" :key="index" style="width: 755px">
         <div class="friends-avatar">
             <el-avatar class="avatar" :src="item.avatar"></el-avatar>
             <div class="friends-info">
@@ -28,14 +28,28 @@
             </div>
         </div>
         <!-- 图标 -->
-        <div class="friends-more" v-if="iconLeft || iconRight">
-            <el-tooltip :enterable="false" class="box-item" effect="dark" content="消息" placement="top">
-                <span v-if="iconLeft">
+        <div
+            class="friends-more"
+            v-if="iconLeft || iconRight"
+            :class="{ 'deleteFriends addFriends': status === 'ToBeDetermined' }"
+        >
+            <el-tooltip
+                :enterable="false"
+                class="box-item"
+                :content="(statusProps as any)[status].iconLeftMessage"
+                placement="top"
+            >
+                <span v-if="iconLeft" class="span-hover1">
                     <i :class="iconLeft"></i>
                 </span>
             </el-tooltip>
-            <el-tooltip :enterable="false" class="box-item" effect="dark" content="更多" placement="top">
-                <span v-if="iconRight">
+            <el-tooltip
+                :enterable="false"
+                class="box-item"
+                :content="(statusProps as any)[status].iconRightMessage"
+                placement="top"
+            >
+                <span v-if="iconRight" class="span-hover2">
                     <i :class="iconRight"></i>
                 </span>
             </el-tooltip>
@@ -50,6 +64,10 @@ defineComponent({
     name: 'FriendsDisplay'
 });
 defineProps({
+    titleText: {
+        type   : String,
+        default: ''
+    },
     status: {
         type   : String,
         default: 'online'
@@ -68,11 +86,31 @@ defineProps({
     }
 });
 
+/**
+ * @description: 用于存储不同状态下的图标信息
+ * @param {string} iconLeftMessage 左侧图标的提示信息
+ * @param {string} iconRightMessage 右侧图标的提示信息
+ * @return {*}
+ * @example: statusProps[status].iconLeftMessage
+ * */
+const statusProps = {
+    ToBeDetermined: {
+        iconLeftMessage : '忽略',
+        iconRightMessage: '接受'
+    },
+    all: {
+        iconLeftMessage : '消息',
+        iconRightMessage: '更多'
+    }
+};
+
 interface StatusMap {
     [key: string]: string;
 }
 
-// statusMap
+/**
+ * @description: 用于存储不同状态下的文字信息
+ * */
 const statusMap: StatusMap = {
     online : '在线',
     offline: '离线',
@@ -110,7 +148,7 @@ const search = ref('');
     align-items: center;
     width: 100%;
     padding: 12px 0;
-    margin: 0px 8px 0px 8px;
+    margin: 0 8px 0 8px;
     border-top: 1px solid #3f4147;
 
     &:hover {
@@ -268,5 +306,17 @@ const search = ref('');
 
 :deep(.is-focus) {
     box-shadow: unset;
+}
+
+.deleteFriends {
+    .span-hover1:hover {
+        color: #f23f42;
+    }
+}
+
+.addFriends {
+    .span-hover2:hover {
+        color: #23a559;
+    }
 }
 </style>
