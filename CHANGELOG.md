@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.8](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.7...v1.3.8) (2023-03-30)
+
+
+### Bug Fixes
+
+* bug fix ([533cd77](https://github.com/School-of-Website-Engineering/future-front-end/commit/533cd774754a31f5dd5086cf686120cf3e52d1b4))
+
 ## [1.3.7](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.6...v1.3.7) (2023-03-30)
 
 ### Performance Improvements
