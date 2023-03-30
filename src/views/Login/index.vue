@@ -40,16 +40,16 @@ export default {
     name: 'LoginBox',
     data() {
         return {
-            isLogin  : false,
+            isLogin: false,
             loginForm: {
-                email   : '',
-                password: ''
+                email: '',
+                password: '',
             },
             registerForm: {
-                name    : '',
-                email   : '',
-                password: ''
-            }
+                name: '',
+                email: '',
+                password: '',
+            },
         };
     },
     methods: {
@@ -58,8 +58,8 @@ export default {
         },
         register() {
             //ok
-        }
-    }
+        },
+    },
 };
 </script>
 
