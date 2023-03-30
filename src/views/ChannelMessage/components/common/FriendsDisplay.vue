@@ -67,10 +67,6 @@ defineProps({
         default: ''
     }
 });
-const icons = [
-    { class: 'icon-left', tooltip: '消息' },
-    { class: 'icon-right', tooltip: '更多' }
-];
 
 interface StatusMap {
     [key: string]: string;

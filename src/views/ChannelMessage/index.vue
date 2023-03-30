@@ -109,6 +109,7 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue';
 import AsideLPrivateService, { IAsideLPrivateResponse } from '@/api/aside';
+import { MessageBox, UserFilled } from '@element-plus/icons-vue';
 
 // 控制dialog显示
 const dialogTableVisible = ref(false);

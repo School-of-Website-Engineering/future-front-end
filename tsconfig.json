@@ -15,7 +15,7 @@
         "types"                  : ["element-plus/global", "vite/client", "vite-plugin-pwa/client"],
         "allowJs"                : true, // 允许编译器编译JS，JSX文件
         "baseUrl"                : "./",
-        // "paths"是相对于"baseUrl"进行解析的
+        "experimentalDecorators" : true,
         "paths"                  : {
             "@/*": ["src/*"]
         }

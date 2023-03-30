@@ -13,6 +13,7 @@
                     <img
                         class="channel-img"
                         src="https://cdn.discordapp.com/icons/464395429392678912/401026c51da58472a16c650ee263701d.webp?size=160"
+                        alt=""
                     />
                 </el-tooltip>
             </el-menu-item>
@@ -24,10 +25,10 @@
                 :key="item.id"
                 :index="'/channels/' + item.id"
                 :class="{ 'is-active': $route.path === '/channels/' + item.id }"
-                @click="() => $router.push('/channels/' + item.id)"
+                @click="goToChannel(item)"
             >
-                <el-badge :max="99" :value="item.count" class="item-message" v-if="item.count > 0" />
                 <el-avatar class="channel-img" :size="50" :src="item.img" @error="errorHandler"></el-avatar>
+                <el-badge :max="99" :value="item.count" class="item-message" v-if="item.count > 0" />
                 <template #title>
                     <span>{{ item.name }}</span>
                 </template>
@@ -64,6 +65,7 @@
 import { onMounted, reactive, ref } from 'vue';
 import AsideLPrivateService, { IAsideSidebarList } from '@/api/aside';
 import { useRouter } from 'vue-router';
+import { Compass, Download, Plus } from '@element-plus/icons-vue';
 
 const errorHandler = () => true;
 const isCollapse = ref(true);
@@ -77,6 +79,16 @@ onMounted(() => {
     console.log('-------当前路由路径---------');
     console.log(router.currentRoute.value.path);
 });
+
+/**
+ * 跳转到频道
+ * @function
+ * @param {Object} item - 频道对象
+ * */
+
+const goToChannel = (item: IAsideSidebarList) => {
+    router.push(`/channels/${item.id}`);
+};
 
 /**
  * 获取频道列表
@@ -151,6 +163,7 @@ $sidebar-width: 80px;
         background-color: #313338;
         border-radius: 4px;
     }
+
     padding-top: 8px;
     width: $sidebar-width;
 

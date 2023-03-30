@@ -37,7 +37,7 @@ export default [
                         id   : '437456121056741326',
                         name : '草稿',
                         count: 456,
-                        img  : 'https://cdn.discordapp.com/icons/721156457630007316/3531587942f5cfdba2ba702c2659fd1e.webp?size=160'
+                        img  : 'https://cdn.discordapp.com/icons/721156457630007316/4428a5c5f5d740b0280415fa2f16d247.webp?size=160'
                     },
                     {
                         id   : '437456121056741327',

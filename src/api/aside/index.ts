@@ -1,4 +1,5 @@
 import http, { Response } from '@/utils/http';
+import { classAsyncTryCatch } from '@/utils/exceptionHandling';
 
 // 侧边栏 用户私信列表信息
 export const ASIDE_LPRIVATE = '/aside/letter';
@@ -44,29 +45,39 @@ export interface IAsideLPrivateResponse {
 // 侧边栏私信数据 API 接口定义
 export interface IAsideLPrivateApi {
     getAsideLPrivate(): Promise<Response<IAsideLPrivate>>;
+
     getAsideSidebarList(): Promise<Response<IAsideSidebarList>>;
+
     getAsidePrivateUserList(): Promise<Response<IAsideLPrivateResponse>>;
 }
 
 /**
  * 实现了 IAsideLPrivateApi 接口的类，用于获取侧边栏私信数据
  */
+@classAsyncTryCatch
 class AsideLPrivateService implements IAsideLPrivateApi {
     /**
      * 获取侧边栏私信数据
      * @returns Promise 对象，解析为类型为 Response<IAsideLPrivate> 的响应结果
-     */
-    getAsideLPrivate = () => http.get<Response<IAsideLPrivate>>(ASIDE_LPRIVATE);
-    /**
-     * 获取侧边栏频道数据
-     * @returns Promise 对象，解析为类型为 Response<IAsideSidebarList> 的响应结果
      * */
-    getAsideSidebarList = () => http.get<Response<IAsideSidebarList>>(ASIDE_SIDEBAR_LIST);
+    async getAsideLPrivate() {
+        return await http.get<Response<IAsideLPrivate>>(ASIDE_LPRIVATE);
+    }
+
+    /** 获取侧边栏频道数据
+     *  @returns Promise 对象，解析为类型为 Response<IAsideSidebarList> 的响应结果
+     * */
+    async getAsideSidebarList() {
+        return await http.get<Response<IAsideSidebarList>>(ASIDE_SIDEBAR_LIST);
+    }
+
     /**
      * 获取侧边栏私信用户数据
      * @returns Promise 对象，解析为类型为 Response<IAsideLPrivateResponse> 的响应结果
      */
-    getAsidePrivateUserList = () => http.get<Response<IAsideLPrivateResponse>>(ASIDE_PRIVATE_USER_LIST);
+    async getAsidePrivateUserList() {
+        return await http.get<Response<IAsideLPrivateResponse>>(ASIDE_PRIVATE_USER_LIST);
+    }
 }
 
 export default new AsideLPrivateService();

@@ -93,10 +93,6 @@ watch(
             5: '添加好友'
         };
         userFriends.getFriends();
-        setTimeout(() => {
-            console.log('-------------全部好友数据--------------');
-            console.log(userFriends.friends);
-        }, 1000);
         console.log('-------------好友切换--------------');
         console.log(statusMap[newVal]);
     },

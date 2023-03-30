@@ -1,4 +1,5 @@
 export const USER_LOGIN = '/api/userTset/login';
+import { classAsyncTryCatch } from '@/utils/exceptionHandling';
 
 /**
  * @description 用户登录信息
@@ -23,9 +24,10 @@ export interface userLoginApi {
  * @param {object} userData 用户登录信息
  * @return {Promise} 返回一个Promise
  * */
+@classAsyncTryCatch
 class UserLoginService implements userLoginApi {
-    getUserLogin<Response>(userData: object): Promise<Response> {
-        return http.post<Response>(USER_LOGIN, userData);
+    async getUserLogin<Response>(userData: object): Promise<Response> {
+        return await http.get<Response>(USER_LOGIN, userData);
     }
 }
 export default new UserLoginService();

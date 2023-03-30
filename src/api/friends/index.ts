@@ -1,4 +1,5 @@
 import http, { Response } from '@/utils/http';
+import { classAsyncTryCatch } from '@/utils/exceptionHandling';
 // 查询好友列表
 export const USER_FRIENDS = '/user/friends';
 // 查询待定好友列表
@@ -30,17 +31,23 @@ export interface IUserFriendsApi {
 /**
  * 实现了 IUserFriendsApi 接口的类，用于获取用户好友数据
  */
+@classAsyncTryCatch
 class UserFriendsService implements IUserFriendsApi {
     /**
      * 获取用户好友数据
      * @returns Promise 对象，解析为类型为 Response<IUserFriendsResponse> 的响应结果
      */
-    getUserFriends = () => http.get<Response<IUserFriendsResponse>>(USER_FRIENDS);
+    async getUserFriends() {
+        return await http.get<Response<IUserFriendsResponse>>(USER_FRIENDS);
+    }
     /**
      * 获取用户待定好友数据
      * @returns Promise 对象，解析为类型为 Response<IUserFriendsPendingResponse> 的响应结果
      */
-    getUserFriendsPending = () => http.get<Response<IUserFriendsPendingResponse>>(USER_FRIENDS_PENDING);
+    // getUserFriendsPending = () => http.get<Response<IUserFriendsPendingResponse>>(USER_FRIENDS_PENDING);
+    async getUserFriendsPending() {
+        return await http.get<Response<IUserFriendsPendingResponse>>(USER_FRIENDS_PENDING);
+    }
 }
 
 export default new UserFriendsService();
