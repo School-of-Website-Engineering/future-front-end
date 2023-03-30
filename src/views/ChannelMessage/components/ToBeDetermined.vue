@@ -24,7 +24,7 @@ const ListLength = computed(() => {
 });
 
 defineComponent({
-    name: 'Blocked'
+    name: 'Blocked',
 });
 </script>
 

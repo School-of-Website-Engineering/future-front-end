@@ -24,7 +24,7 @@ const ListLength = computed(() => {
 const userFriends = useUserFriendsStore();
 
 defineComponent({
-    name: 'All'
+    name: 'All',
 });
 </script>
 

@@ -11,12 +11,12 @@ export const useUserFriendsStore = defineStore('menu', {
          *
          * @type {IUserFriendsResponse[]}
          */
-        friends       : [] as IUserFriendsResponse[],
+        friends: [] as IUserFriendsResponse[],
         /**
          * 用户待定好友列表。
          * @type {IUserFriendsPendingResponse[]}
          */
-        pendingFriends: [] as IUserFriendsPendingResponse[]
+        pendingFriends: [] as IUserFriendsPendingResponse[],
     }),
 
     getters: {},
@@ -60,6 +60,6 @@ export const useUserFriendsStore = defineStore('menu', {
                 console.log('---------待定好友列表---------');
                 console.log('pendingFriends', this.pendingFriends);
             }
-        }
-    }
+        },
+    },
 });
