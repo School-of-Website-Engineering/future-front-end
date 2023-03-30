@@ -22,7 +22,7 @@ export default [
                 },
                 {
                     id          : '345623411435767852',
-                    name        : '已屏蔽',
+                    name        : '只因',
                     avatar      : 'https://cdn.discordapp.com/avatars/307917208460460033/a_8e5acc68e72c83cba21286a27c4bbfa0.webp?size=128',
                     isInitiative: false
                 },

@@ -1,34 +1,28 @@
 <template>
     <!--  如果数组中有数据  -->
     <FriendsDisplay
-        :status="'all'"
-        :list="toBeDeterminedFriendsList"
+        :status="'ToBeDetermined'"
+        :list="userFriends.pendingFriends"
         :icon-right="'fa-solid fa-check'"
         :icon-left="'fa-solid fa-xmark'"
-        v-if="toBeDeterminedList.length > 0"
+        :title-text="'待处理数'"
+        v-if="ListLength"
     />
     <!--  空状态  -->
     <el-empty description="暂无好友" :image-size="200" class="empty-box" v-else></el-empty>
 </template>
 
 <script setup lang="ts">
-import UserFriendsService, { IUserFriendsPendingResponse } from '@/api/friends';
-import { onMounted, reactive, defineComponent, ref } from 'vue';
-const toBeDeterminedFriendsList = reactive<IUserFriendsPendingResponse[]>([]);
-onMounted(() => {
-    toBeDeterminedList();
+import { defineComponent, computed } from 'vue';
+import { useUserFriendsStore } from '@/store/modules/friends';
+
+const userFriends = useUserFriendsStore();
+
+// 待定好友列表长度
+const ListLength = computed(() => {
+    return userFriends.pendingFriends.length;
 });
 
-const toBeDeterminedList = async() => {
-    const { data, code } = await UserFriendsService.getUserFriendsPending();
-    if (code === 0) {
-        console.log('待定好友列表------------------------');
-        toBeDeterminedFriendsList.push(...data.friends);
-        console.log(toBeDeterminedFriendsList);
-    }
-};
-
-const search = ref('');
 defineComponent({
     name: 'Blocked'
 });

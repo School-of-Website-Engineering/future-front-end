@@ -13,6 +13,12 @@ export const routes: Array<RouteRecordRaw> = [
         name     : 'home',
         component: () => import('../views/Home/index.vue')
     },
+    {
+        // 登录/注册
+        path     : '/login',
+        name     : 'login',
+        component: () => import('../views/Login/index.vue')
+    },
     // 主页
     {
         path     : '/main',
