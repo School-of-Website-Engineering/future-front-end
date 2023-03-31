@@ -53,7 +53,13 @@
                     <el-container class="friends-top">
                         <el-row class="friends-top-title">
                             <span>私信</span>
-                            <el-tooltip class="box-item" effect="dark" content="创建私信" placement="top">
+                            <el-tooltip
+                                :hide-after="50"
+                                class="box-item"
+                                effect="dark"
+                                content="创建私信"
+                                placement="top"
+                            >
                                 <span>+</span>
                             </el-tooltip>
                         </el-row>
@@ -89,13 +95,25 @@
                             </span>
                         </el-col>
                         <el-col :span="12" class="bottom-profile-avatar">
-                            <el-tooltip class="box-item" effect="dark" content="取消静音" placement="top">
+                            <el-tooltip
+                                :hide-after="50"
+                                class="box-item"
+                                effect="dark"
+                                content="取消静音"
+                                placement="top"
+                            >
                                 <i class="fa-solid fa-microphone-slash"></i>
                             </el-tooltip>
-                            <el-tooltip class="box-item" effect="dark" content="耳机静音" placement="top">
+                            <el-tooltip
+                                :hide-after="50"
+                                class="box-item"
+                                effect="dark"
+                                content="耳机静音"
+                                placement="top"
+                            >
                                 <i class="fa-solid fa-headphones"></i>
                             </el-tooltip>
-                            <el-tooltip class="box-item" effect="dark" content="设置" placement="top">
+                            <el-tooltip :hide-after="50" class="box-item" effect="dark" content="设置" placement="top">
                                 <i class="fa-solid fa-gear"></i>
                             </el-tooltip>
                         </el-col>

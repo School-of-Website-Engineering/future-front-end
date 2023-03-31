@@ -18,18 +18,36 @@
                 </el-col>
                 <el-col :span="5" class="header-right">
                     <div class="header-right-right">
-                        <el-tooltip class="box-item" effect="dark" content="Top Center prompts info" placement="bottom">
+                        <el-tooltip
+                            :hide-after="50"
+                            class="box-item"
+                            effect="dark"
+                            content="Top Center prompts info"
+                            placement="bottom"
+                        >
                             <span>
                                 <i class="fa-solid fa-message"></i>
                             </span>
                         </el-tooltip>
                         <div class="divider-q3P9HC"></div>
-                        <el-tooltip class="box-item" effect="dark" content="Top Center prompts info" placement="bottom">
+                        <el-tooltip
+                            :hide-after="50"
+                            class="box-item"
+                            effect="dark"
+                            content="Top Center prompts info"
+                            placement="bottom"
+                        >
                             <span>
                                 <i class="fa-solid fa-inbox"></i>
                             </span>
                         </el-tooltip>
-                        <el-tooltip class="box-item" effect="dark" content="Top Center prompts info" placement="bottom">
+                        <el-tooltip
+                            :hide-after="50"
+                            class="box-item"
+                            effect="dark"
+                            content="Top Center prompts info"
+                            placement="bottom"
+                        >
                             <span>
                                 <i class="fa-solid fa-circle-question"></i>
                             </span>

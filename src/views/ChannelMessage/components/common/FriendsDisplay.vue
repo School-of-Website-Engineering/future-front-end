@@ -34,22 +34,24 @@
             :class="{ 'deleteFriends addFriends': status === 'ToBeDetermined' }"
         >
             <el-tooltip
+                :hide-after="50"
                 :enterable="false"
                 class="box-item"
                 :content="(statusProps as any)[status].iconLeftMessage"
                 placement="top"
             >
-                <span v-if="iconLeft" class="span-hover1">
+                <span v-show="iconLeft && item.isInitiative" class="span-hover2">
                     <i :class="iconLeft"></i>
                 </span>
             </el-tooltip>
             <el-tooltip
+                :hide-after="50"
                 :enterable="false"
                 class="box-item"
                 :content="(statusProps as any)[status].iconRightMessage"
                 placement="top"
             >
-                <span v-if="iconRight" class="span-hover2">
+                <span v-if="iconRight" class="span-hover1">
                     <i :class="iconRight"></i>
                 </span>
             </el-tooltip>
@@ -95,8 +97,8 @@ defineProps({
  * */
 const statusProps = {
     ToBeDetermined: {
-        iconLeftMessage : '忽略',
-        iconRightMessage: '接受'
+        iconLeftMessage : '接受',
+        iconRightMessage: '忽略'
     },
     all: {
         iconLeftMessage : '消息',
@@ -130,7 +132,7 @@ const search = ref('');
     width: 100%;
     //固定至顶部
     position: sticky;
-    top: 0px;
+    top: 0;
     //    使其不会被遮挡
     z-index: 999;
     background-color: #313338;
@@ -223,7 +225,7 @@ const search = ref('');
     .friends-more {
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: flex-end;
         width: 100px;
 
         span {

@@ -9,7 +9,14 @@
             :class="{ 'is-active': pathClass }"
         >
             <el-menu-item index="/main/@me" id="rePathClass">
-                <el-tooltip class="box-item" effect="dark" content="私信" placement="right" :enterable="false">
+                <el-tooltip
+                    :hide-after="50"
+                    class="box-item"
+                    effect="dark"
+                    content="私信"
+                    placement="right"
+                    :enterable="false"
+                >
                     <img
                         class="channel-img"
                         src="https://cdn.discordapp.com/icons/464395429392678912/401026c51da58472a16c650ee263701d.webp?size=160"
@@ -33,14 +40,28 @@
                     <span>{{ item.name }}</span>
                 </template>
             </el-menu-item>
-            <el-tooltip class="box-item" effect="dark" content="创建组" placement="right" :enterable="false">
+            <el-tooltip
+                :hide-after="50"
+                class="box-item"
+                effect="dark"
+                content="创建组"
+                placement="right"
+                :enterable="false"
+            >
                 <el-menu-item index="1" class="add-icon">
                     <el-icon>
                         <Plus class="icon" />
                     </el-icon>
                 </el-menu-item>
             </el-tooltip>
-            <el-tooltip class="box-item" effect="dark" content="探索公共组" placement="right" :enterable="false">
+            <el-tooltip
+                :hide-after="50"
+                class="box-item"
+                effect="dark"
+                content="探索公共组"
+                placement="right"
+                :enterable="false"
+            >
                 <el-menu-item index="2" class="add-icon">
                     <el-icon>
                         <Compass class="icon" />
@@ -50,7 +71,14 @@
             <div class="listItem-3SmSlK">
                 <div class="guildSeparator-a4uisj"></div>
             </div>
-            <el-tooltip class="box-item" effect="dark" content="下载App" placement="right" :enterable="false">
+            <el-tooltip
+                :hide-after="50"
+                class="box-item"
+                effect="dark"
+                content="下载App"
+                placement="right"
+                :enterable="false"
+            >
                 <el-menu-item index="3" class="add-icon">
                     <el-icon>
                         <Download class="icon" />
