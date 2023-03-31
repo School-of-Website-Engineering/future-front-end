@@ -11,7 +11,9 @@
                         <div class="divider-q3P9HC"></div>
                         <span :class="{ 'is-active': activeIndex === 1 }" @click="activeIndex = 1"> 在线 </span>
                         <span :class="{ 'is-active': activeIndex === 2 }" @click="activeIndex = 2"> 全部 </span>
-                        <span :class="{ 'is-active': activeIndex === 3 }" @click="activeIndex = 3"> 待定 </span>
+                        <span :class="{ 'is-active': activeIndex === 3 }" @click="activeIndex = 3">
+                            待定 <i class="msgNum">{{ userFriends.handlePendingFriendsRequestList.length }}</i>
+                        </span>
                         <span :class="{ 'is-active': activeIndex === 4 }" @click="activeIndex = 4"> 已屏蔽 </span>
                         <span :class="{ 'is-active-add': activeIndex === 5 }" @click="activeIndex = 5"> 添加好友 </span>
                     </div>
@@ -78,7 +80,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useUserFriendsStore } from '@/store/modules/friends';
 import AddFriend from '@/views/ChannelMessage/components/AddFriend.vue';
 import All from '@/views/ChannelMessage/components/All.vue';
@@ -89,7 +91,6 @@ import ToBeDetermined from '@/views/ChannelMessage/components/ToBeDetermined.vue
 // 切换的索引
 const activeIndex = ref(1);
 const userFriends = useUserFriendsStore();
-// 组件
 const components = markRaw([Online, All, ToBeDetermined, Blocked, AddFriend]);
 
 // statusMap[newVal]接口
@@ -97,8 +98,10 @@ interface IStatusMap {
     [key: number]: string;
 }
 
-userFriends.getFriends();
-userFriends.getPendingFriends();
+onMounted(() => {
+    userFriends.getFriends();
+    userFriends.getPendingFriends();
+});
 
 watch(
     activeIndex,
@@ -109,13 +112,13 @@ watch(
             2: '全部',
             3: '待定',
             4: '已屏蔽',
-            5: '添加好友',
+            5: '添加好友'
         };
         userFriends.getFriends();
         console.log('-------------好友切换--------------');
         console.log('切换至' + statusMap[newVal]);
     },
-    { immediate: true },
+    { immediate: true }
 );
 </script>
 
@@ -127,8 +130,25 @@ watch(
         align-items: center;
         justify-content: space-evenly;
         width: 440px;
+        .msgNum {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #f23f42;
+            font-weight: 700;
+            color: #fff;
+            font-size: 12px;
+            margin-left: 4px;
+            //垂直居中
+            vertical-align: middle;
+        }
 
         span {
+            display: flex;
+            align-items: center;
             &:first-child {
                 font-size: 16px;
                 font-weight: bold;

@@ -5,8 +5,7 @@ import { ElMessage } from 'element-plus';
 /**
  *@description 错误处理器(ErrorHandler)接口
  * @interface ErrorHandler
- */
-export interface ErrorHandler {
+ */ export interface ErrorHandler {
     handle(response: AxiosResponse<Response>): void;
 }
 
@@ -17,8 +16,7 @@ export interface ErrorHandler {
  * @param {AxiosResponse<Response>} response - 响应数据
  * @returns {void}
  * @memberof TokenExpiredErrorHandler
- */
-export class TokenExpiredErrorHandler implements ErrorHandler {
+ */ export class TokenExpiredErrorHandler implements ErrorHandler {
     handle(response: AxiosResponse<Response>) {
         const errMessage = 'Token expired';
         // 跳转至登录页
@@ -34,8 +32,7 @@ export class TokenExpiredErrorHandler implements ErrorHandler {
  * @implements {ErrorHandler} 错误处理器接口
  * @param {AxiosResponse<Response>} response - 响应数据
  * @returns {void}
- */
-export class NoPermissionErrorHandler implements ErrorHandler {
+ */ export class NoPermissionErrorHandler implements ErrorHandler {
     handle(response: AxiosResponse<Response>) {
         const errMessage = 'No permission';
         // 显示错误提示信息
@@ -49,8 +46,7 @@ export class NoPermissionErrorHandler implements ErrorHandler {
  * @implements {ErrorHandler} 错误处理器接口
  * @param {AxiosResponse<Response>} response - 响应数据
  * @returns {void}
- */
-export class DefaultErrorHandler implements ErrorHandler {
+ */ export class DefaultErrorHandler implements ErrorHandler {
     handle(response: AxiosResponse<Response>) {
         const { message } = response.data;
         if (message) ElMessage.error(message);

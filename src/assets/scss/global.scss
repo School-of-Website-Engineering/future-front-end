@@ -33,3 +33,18 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+//消息数量
+.el-badge__content--danger {
+    background-color: $quantity !important;
+    font-weight: 700;
+}
+.el-badge__content {
+    background-color: $quantity !important;
+}
+//文字提示
+.el-popper.is-dark {
+    background-color: $textTooltip !important;
+}
+.el-popper.is-dark .el-popper__arrow::before {
+    background-color: $textTooltip !important;
+}

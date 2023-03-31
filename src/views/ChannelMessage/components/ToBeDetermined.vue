@@ -2,7 +2,7 @@
     <!--  如果数组中有数据  -->
     <FriendsDisplay
         :status="'ToBeDetermined'"
-        :list="userFriends.pendingFriendsList"
+        :list="userFriends.handlePendingFriendsList"
         :icon-left="'fa-solid fa-check'"
         :icon-right="'fa-solid fa-xmark'"
         :title-text="'待处理数'"
@@ -23,7 +23,7 @@ const ListLength = computed(() => {
 });
 
 defineComponent({
-    name: 'Blocked',
+    name: 'Blocked'
 });
 </script>
 

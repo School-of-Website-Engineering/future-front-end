@@ -13,15 +13,14 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, computed } from 'vue';
+import { computed, defineComponent } from 'vue';
 import { useUserFriendsStore } from '@/store/modules/friends';
 
+const userFriends = useUserFriendsStore();
 // 所有好友列表长度
 const ListLength = computed(() => {
     return userFriends.friends.length;
 });
-
-const userFriends = useUserFriendsStore();
 
 defineComponent({
     name: 'All'

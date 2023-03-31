@@ -31,6 +31,7 @@
                                     <UserFilled />
                                 </el-icon>
                                 <span>好友</span>
+                                <i class="msgNum">{{ userFriends.handlePendingFriendsRequestList.length }}</i>
                             </el-col>
                         </el-row>
                         <el-row
@@ -128,31 +129,34 @@
 import { onMounted, reactive, ref } from 'vue';
 import AsideLPrivateService, { IAsideLPrivateResponse } from '@/api/aside';
 import { MessageBox, UserFilled } from '@element-plus/icons-vue';
+import { useUserFriendsStore } from '@/store';
+
+const userFriends = useUserFriendsStore();
 
 // 控制dialog显示
 const dialogTableVisible = ref(false);
 // 表格数据
 const gridData = [
     {
-        date: '2016-05-02',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-02',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-04',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-04',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-01',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-01',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-03',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
-    },
+        date   : '2016-05-03',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
+    }
 ];
 // 私信列表
 const privateMessageList = reactive<IAsideLPrivateResponse[]>([]);
@@ -168,10 +172,10 @@ onMounted(() => {
  * @constructor
  * @description 获取私信列表
  */
-const getPrivateMessageList = async () => {
+const getPrivateMessageList = async() => {
     const { data } = await AsideLPrivateService.getAsidePrivateUserList();
     privateMessageList.push(...data.sidebarList);
-    console.log('---------获取私信列表---------');
+    console.log('----------获取私信列表---------');
     console.log(privateMessageList);
 };
 </script>
@@ -570,5 +574,18 @@ const getPrivateMessageList = async () => {
             color: #dbdee1;
         }
     }
+}
+.msgNum {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #f23f42;
+    color: #fff;
+    font-size: 12px;
 }
 </style>

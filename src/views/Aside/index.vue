@@ -10,6 +10,7 @@
         >
             <el-menu-item index="/main/@me" id="rePathClass">
                 <el-tooltip
+                    raw-content
                     :hide-after="50"
                     class="box-item"
                     effect="dark"
@@ -23,6 +24,12 @@
                         alt=""
                     />
                 </el-tooltip>
+                <el-badge
+                    :max="99"
+                    :value="privateLetterStore.getPrivateLetterCount.length"
+                    class="item-message"
+                    v-if="privateLetterStore.getPrivateLetterCount.length > 0"
+                />
             </el-menu-item>
             <div class="listItem-3SmSlK">
                 <div class="guildSeparator-a4uisj"></div>
@@ -94,7 +101,9 @@ import { onMounted, reactive, ref } from 'vue';
 import AsideLPrivateService, { IAsideSidebarList } from '@/api/aside';
 import { useRouter } from 'vue-router';
 import { Compass, Download, Plus } from '@element-plus/icons-vue';
+import { usePrivateLetterStore } from '@/store';
 
+const privateLetterStore = usePrivateLetterStore();
 const errorHandler = () => true;
 const isCollapse = ref(true);
 const router = useRouter();
@@ -124,7 +133,7 @@ const goToChannel = (item: IAsideSidebarList) => {
  * @function
  * @returns {Promise<void>}
  */
-const getChannelList = async () => {
+const getChannelList = async() => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
     console.log('-------侧边栏频道列表数据---------');

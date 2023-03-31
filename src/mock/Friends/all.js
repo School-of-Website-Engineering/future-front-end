@@ -16,7 +16,7 @@ export default [
                             id    : '345623411435767855',
                             name  : 'Just an assassin enjoyer',
                             avatar: 'https://cdn.discordapp.com/avatars/714393480645967985/ebe1b411f87e82ae43822d1b157d8a2c.webp?size=128',
-                            status: 'online'
+                            status: 'offline'
                         },
                         {
                             id    : '345623411435767856',
@@ -92,7 +92,7 @@ export default [
                             // 用户头像
                             avatar: 'https://cdn.discordapp.com/avatars/598588658177671188/df122ff3d7dfa25674aed205a043684f.webp?size=128',
                             // 用户状态
-                            status: 'busy'
+                            status: 'offline'
                         },
                         {
                             // 用户id
@@ -112,7 +112,7 @@ export default [
                             // 用户头像
                             avatar: 'https://cdn.discordapp.com/guilds/296399356196552705/users/895571799956410388/avatars/b22dedba1dac0fbcb9fc274e62238b08.webp?size=128',
                             // 用户状态
-                            status: 'busy'
+                            status: 'offline'
                         },
                         {
                             // 用户id
