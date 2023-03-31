@@ -1,57 +1,77 @@
 <template>
-    <!-- 顶部搜索 -->
-    <div class="search-box-header-top" style="width: 770px">
-        <div class="search-box">
-            <el-input
-                class="search-box-input"
-                v-model="search"
-                placeholder="搜索"
-                @keyup.enter.native="searchFriend"
-            ></el-input>
-            <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="friends-avatar">
+        <el-avatar class="avatar" :src="item.avatar"></el-avatar>
+        <div class="friends-info">
+            <div class="friends-name">
+                {{ item.name }}
+                <p>#{{ item.id }}</p>
+            </div>
+            <div :class="[statusMap?.[item.status], 'friends-status']">
+                {{ statusMap[item.status] ? statusMap[item.status] : isInitiativeMpa[item.isInitiative] }}
+            </div>
+            <FriendStatus :status="item.status" />
         </div>
-        <h2 class="title-x4dI75 container-q97qHp">{{ titleText }} — {{ list.length }}</h2>
     </div>
-    <div class="placeholder" v-if="list.length === 0"></div>
-    <template v-else>
-        <div class="friends-list" v-for="(item, index) in list" :key="index" style="width: 755px">
-            <!-- 好友列表 -->
-            <Friend
-                :item="item"
-                :statusMap="statusMap"
-                :isInitiativeMpa="isInitiativeMpa"
-                :icon-left="iconLeft"
-                :icon-right="iconRight"
-                :status="status"
-                :
-            ></Friend>
-        </div>
-    </template>
+    <!-- 图标 -->
+    <div
+        class="friends-more"
+        v-if="iconLeft || iconRight"
+        :class="{ 'deleteFriends addFriends': status === 'ToBeDetermined' }"
+    >
+        <el-tooltip
+            class="box-item"
+            :hide-after="50"
+            :enterable="false"
+            :content="(statusProps as any)[status].iconLeftMessage"
+            placement="top"
+        >
+            <span v-show="iconLeft && !item.isInitiative" class="span-hover2">
+                <i :class="iconLeft"></i>
+            </span>
+        </el-tooltip>
+        <el-tooltip
+            :hide-after="50"
+            :enterable="false"
+            class="box-item"
+            :content="(statusProps as any)[status].iconRightMessage"
+            placement="top"
+        >
+            <span v-if="iconRight" class="span-hover1">
+                <i :class="iconRight"></i>
+            </span>
+        </el-tooltip>
+    </div>
 </template>
 
 <script setup lang="ts">
-import { defineComponent, defineProps, ref } from 'vue';
-import Friend from './Friend.vue';
-
-defineComponent({
-    name      : 'FriendsDisplay',
-    components: {
-        Friend
-    }
-});
+import { defineProps } from 'vue';
 
 defineProps({
-    titleText: {
-        type   : String,
-        default: ''
+    item: {
+        type   : Object,
+        default: () => ({
+            id          : 0,
+            name        : '',
+            avatar      : '',
+            status      : 'online',
+            isInitiative: false
+        })
     },
-    status: {
-        type   : String,
-        default: 'online'
+    statusMap: {
+        type   : Object,
+        default: () => ({
+            online : '在线',
+            offline: '离线',
+            busy   : '忙碌',
+            away   : '离开'
+        })
     },
-    list: {
-        type   : Array as () => Array<any>,
-        default: () => []
+    isInitiativeMpa: {
+        type   : Object,
+        default: () => ({
+            true : '送出的好友请求',
+            false: '收到好友请求'
+        })
     },
     iconLeft: {
         type   : String,
@@ -60,26 +80,31 @@ defineProps({
     iconRight: {
         type   : String,
         default: ''
+    },
+    status: {
+        type   : String,
+        default: 'ToBeDetermined'
+    },
+    statusProps: {
+        type   : Object,
+        default: () => ({
+            ToBeDetermined: {
+                iconLeftMessage : '接受',
+                iconRightMessage: '忽略'
+            },
+            all: {
+                iconLeftMessage : '消息',
+                iconRightMessage: '更多'
+            }
+        })
     }
 });
-
-const search = ref('');
-/**
- @description: 用于存储不同状态下的文字信息
- */ const statusMap = { online: '在线', offline: '离线', busy: '忙碌', away: '离开' };
-/**
- @description: 用于存储待定好友的文字信息
- */ const isInitiativeMpa = { true: '送出的好友请求', false: '收到好友请求' };
-
-const searchFriend = () => {
-    console.log(search.value);
-};
 </script>
 
 <style lang="scss" scoped>
 .search-box-header-top {
     padding-top: 15px;
-    height: 90px;
+    height: 50px;
     width: 100%;
     //固定至顶部
     position: sticky;
@@ -103,9 +128,7 @@ const searchFriend = () => {
     padding: 12px 0;
     margin: 0 8px 0 8px;
     border-top: 1px solid #3f4147;
-    &:first-child {
-        margin-top: 40px;
-    }
+
     &:hover {
         background-color: #393c41;
         cursor: pointer;
@@ -245,7 +268,7 @@ const searchFriend = () => {
 
     .fa-magnifying-glass {
         position: absolute;
-        top: 32%;
+        top: 50%;
         right: 10px;
         transform: translateY(-50%);
         font-size: 18px;
