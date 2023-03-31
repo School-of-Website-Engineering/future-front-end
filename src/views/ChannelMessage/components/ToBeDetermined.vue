@@ -2,9 +2,9 @@
     <!--  如果数组中有数据  -->
     <FriendsDisplay
         :status="'ToBeDetermined'"
-        :list="userFriends.pendingFriends"
-        :icon-right="'fa-solid fa-check'"
-        :icon-left="'fa-solid fa-xmark'"
+        :list="userFriends.pendingFriendsList"
+        :icon-left="'fa-solid fa-check'"
+        :icon-right="'fa-solid fa-xmark'"
         :title-text="'待处理数'"
         v-if="ListLength"
     />
@@ -17,14 +17,13 @@ import { defineComponent, computed } from 'vue';
 import { useUserFriendsStore } from '@/store/modules/friends';
 
 const userFriends = useUserFriendsStore();
-
 // 待定好友列表长度
 const ListLength = computed(() => {
     return userFriends.pendingFriends.length;
 });
 
 defineComponent({
-    name: 'Blocked',
+    name: 'Blocked'
 });
 </script>
 

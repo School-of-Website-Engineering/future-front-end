@@ -15,6 +15,7 @@
             ]"
         ></div>
         <el-tooltip
+            :hide-after="50"
             :enterable="false"
             v-else-if="status === 'online'"
             effect="dark"
@@ -25,6 +26,7 @@
         </el-tooltip>
         <!-- 闲置 -->
         <el-tooltip
+            :hide-after="50"
             :enterable="false"
             v-else-if="status === 'idle'"
             effect="dark"
@@ -35,6 +37,7 @@
         </el-tooltip>
         <!-- 离线 -->
         <el-tooltip
+            :hide-after="50"
             :enterable="false"
             v-else-if="status === 'offline'"
             effect="dark"
@@ -45,6 +48,7 @@
         </el-tooltip>
         <!-- 忙碌 -->
         <el-tooltip
+            :hide-after="50"
             :enterable="false"
             v-else-if="status === 'busy'"
             effect="dark"
