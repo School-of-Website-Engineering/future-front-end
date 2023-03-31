@@ -23,7 +23,6 @@
                 :icon-left="iconLeft"
                 :icon-right="iconRight"
                 :status="status"
-                :
             ></Friend>
         </div>
     </template>

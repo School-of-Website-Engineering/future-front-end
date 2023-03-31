@@ -31,6 +31,7 @@
                                     <UserFilled />
                                 </el-icon>
                                 <span>好友</span>
+                                <i class="msgNum">{{ userFriends.handlePendingFriendsRequestList.length }}</i>
                             </el-col>
                         </el-row>
                         <el-row
@@ -128,6 +129,9 @@
 import { onMounted, reactive, ref } from 'vue';
 import AsideLPrivateService, { IAsideLPrivateResponse } from '@/api/aside';
 import { MessageBox, UserFilled } from '@element-plus/icons-vue';
+import { useUserFriendsStore } from '@/store';
+
+const userFriends = useUserFriendsStore();
 
 // 控制dialog显示
 const dialogTableVisible = ref(false);
@@ -570,5 +574,18 @@ const getPrivateMessageList = async() => {
             color: #dbdee1;
         }
     }
+}
+.msgNum {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #f23f42;
+    color: #fff;
+    font-size: 12px;
 }
 </style>

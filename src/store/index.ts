@@ -4,5 +4,5 @@ const pinia = createPinia();
 
 export default pinia;
 
-export * from './modules/user';
 export * from './modules/friends';
+export * from './modules/privateLetter';

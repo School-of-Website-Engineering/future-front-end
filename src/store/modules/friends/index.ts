@@ -9,15 +9,23 @@ export const useUserFriendsStore = defineStore('menu', {
         /**
          * 用户好友列表。
          * @type {IUserFriendsResponse[]}
-         */ friends           : [] as IUserFriendsResponse[],
+         */ friends                  : <IUserFriendsResponse[]>[],
         /**
          * 用户待定好友列表。
          * @type {IUserFriendsPendingResponse[]}
-         */ pendingFriends    : [] as IUserFriendsPendingResponse[],
+         */ pendingFriends           : <IUserFriendsPendingResponse[]>[],
         /**
          * 用户待定好友排序后的列表
          * @type {IUserFriendsPendingResponse[]}
-         * */ pendingFriendsList: [] as IUserFriendsPendingResponse[]
+         * */ pendingFriendsList       : <IUserFriendsPendingResponse[]>[],
+        /**
+         * 待定好友列表中的好友请求列表
+         * @type {IUserFriendsPendingResponse[]}
+         * */ pendingFriendsRequestList: <IUserFriendsPendingResponse[]>[],
+        /**
+         * 在线好友列表
+         * @type {IUserFriendsResponse[]}
+         * */ onlineFriendsList        : <IUserFriendsResponse[]>[]
     }),
 
     getters: {
@@ -27,6 +35,11 @@ export const useUserFriendsStore = defineStore('menu', {
                 .filter((item) => !item.isInitiative)
                 .concat(state.pendingFriends.filter((item) => item.isInitiative));
             return state.pendingFriendsList;
+        },
+        //将pendingFriends列表中为isInitiative: false的装入pendingFriendsRequestList
+        handlePendingFriendsRequestList(state): IUserFriendsPendingResponse[] {
+            state.pendingFriendsRequestList = state.pendingFriends.filter((item) => !item.isInitiative);
+            return state.pendingFriendsRequestList;
         }
     },
 
@@ -67,7 +80,6 @@ export const useUserFriendsStore = defineStore('menu', {
                 this.pendingFriends = data.friends || [];
                 console.log('---------待定好友列表---------');
                 console.log('pendingFriends', this.pendingFriends);
-                this.handlePendingFriendsList;
                 console.log('---------待定好友列表排序后---------');
                 console.log('pendingFriendsList', this.pendingFriendsList);
             }
