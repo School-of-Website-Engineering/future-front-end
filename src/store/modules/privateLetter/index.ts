@@ -13,7 +13,7 @@ export const usePrivateLetterStore = defineStore('privateLetter', {
         /**
          * 私信数量
          * @type {number}
-         **/ privateLetterCount: [] as Array<IPrivateLetterCount>
+         **/ privateLetterCount: [] as Array<IPrivateLetterCount>,
     }),
     getters: {
         /**
@@ -23,7 +23,7 @@ export const usePrivateLetterStore = defineStore('privateLetter', {
             //将useUserFriendsStore中handlePendingFriendsRequestList的数组装入privateLetterCount，并返回
             state.privateLetterCount = useUserFriendsStore().handlePendingFriendsRequestList;
             return state.privateLetterCount;
-        }
+        },
     },
-    actions: {}
+    actions: {},
 });

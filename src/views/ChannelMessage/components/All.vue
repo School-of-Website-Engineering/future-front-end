@@ -23,7 +23,7 @@ const ListLength = computed(() => {
 });
 
 defineComponent({
-    name: 'All'
+    name: 'All',
 });
 </script>
 

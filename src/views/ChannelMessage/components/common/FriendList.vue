@@ -48,56 +48,56 @@ import { defineProps } from 'vue';
 
 defineProps({
     item: {
-        type   : Object,
+        type: Object,
         default: () => ({
-            id          : 0,
-            name        : '',
-            avatar      : '',
-            status      : 'online',
-            isInitiative: false
-        })
+            id: 0,
+            name: '',
+            avatar: '',
+            status: 'online',
+            isInitiative: false,
+        }),
     },
     statusMap: {
-        type   : Object,
+        type: Object,
         default: () => ({
-            online : '在线',
+            online: '在线',
             offline: '离线',
-            busy   : '忙碌',
-            away   : '离开'
-        })
+            busy: '忙碌',
+            away: '离开',
+        }),
     },
     isInitiativeMap: {
-        type   : Object,
+        type: Object,
         default: () => ({
-            true : '送出的好友请求',
-            false: '收到好友请求'
-        })
+            true: '送出的好友请求',
+            false: '收到好友请求',
+        }),
     },
     iconLeft: {
-        type   : String,
-        default: ''
+        type: String,
+        default: '',
     },
     iconRight: {
-        type   : String,
-        default: ''
+        type: String,
+        default: '',
     },
     status: {
-        type   : String,
-        default: 'ToBeDetermined'
+        type: String,
+        default: 'ToBeDetermined',
     },
     statusProps: {
-        type   : Object,
+        type: Object,
         default: () => ({
             ToBeDetermined: {
-                iconLeftMessage : '接受',
-                iconRightMessage: '忽略'
+                iconLeftMessage: '接受',
+                iconRightMessage: '忽略',
             },
             all: {
-                iconLeftMessage : '消息',
-                iconRightMessage: '更多'
-            }
-        })
-    }
+                iconLeftMessage: '消息',
+                iconRightMessage: '更多',
+            },
+        }),
+    },
 });
 </script>
 

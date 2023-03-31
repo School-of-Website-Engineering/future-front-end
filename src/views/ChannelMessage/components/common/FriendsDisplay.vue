@@ -33,33 +33,33 @@ import { defineComponent, defineProps, ref } from 'vue';
 import Friend from './FriendList.vue';
 
 defineComponent({
-    name      : 'FriendsDisplay',
+    name: 'FriendsDisplay',
     components: {
-        Friend
-    }
+        Friend,
+    },
 });
 
 defineProps({
     titleText: {
-        type   : String,
-        default: ''
+        type: String,
+        default: '',
     },
     status: {
-        type   : String,
-        default: 'online'
+        type: String,
+        default: 'online',
     },
     list: {
-        type   : Array as () => Array<any>,
-        default: () => []
+        type: Array as () => Array<any>,
+        default: () => [],
     },
     iconLeft: {
-        type   : String,
-        default: ''
+        type: String,
+        default: '',
     },
     iconRight: {
-        type   : String,
-        default: ''
-    }
+        type: String,
+        default: '',
+    },
 });
 
 const search = ref('');
