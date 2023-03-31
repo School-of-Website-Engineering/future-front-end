@@ -7,7 +7,7 @@
                 <p>#{{ item.id }}</p>
             </div>
             <div :class="[statusMap?.[item.status], 'friends-status']">
-                {{ statusMap[item.status] ? statusMap[item.status] : isInitiativeMpa[item.isInitiative] }}
+                {{ statusMap[item.status] ? statusMap[item.status] : isInitiativeMap[item.isInitiative] }}
             </div>
             <FriendStatus :status="item.status" />
         </div>
@@ -66,7 +66,7 @@ defineProps({
             away   : '离开'
         })
     },
-    isInitiativeMpa: {
+    isInitiativeMap: {
         type   : Object,
         default: () => ({
             true : '送出的好友请求',

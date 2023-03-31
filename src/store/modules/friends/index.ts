@@ -4,12 +4,12 @@ import UserFriendsService, { IUserFriendsPendingResponse, IUserFriendsResponse }
 /**
  * 用于管理用户好友的 Pinia 存储。
  */
-export const useUserFriendsStore = defineStore('menu', {
+export const useUserFriendsStore = defineStore('friends', {
     state: () => ({
         /**
          * 用户好友列表。
          * @type {IUserFriendsResponse[]}
-         */ friends                  : <IUserFriendsResponse[]>[],
+         **/ friends                  : <IUserFriendsResponse[]>[],
         /**
          * 用户待定好友列表。
          * @type {IUserFriendsPendingResponse[]}
@@ -40,19 +40,22 @@ export const useUserFriendsStore = defineStore('menu', {
         handlePendingFriendsRequestList(state): IUserFriendsPendingResponse[] {
             state.pendingFriendsRequestList = state.pendingFriends.filter((item) => !item.isInitiative);
             return state.pendingFriendsRequestList;
+        },
+        //将friends列表中值为offline的剔除然后将其他的展开装入onlineFriendsList
+        handleOnlineFriendsList(state): IUserFriendsResponse[] {
+            state.onlineFriendsList = state.friends.filter((item) => item.status !== 'offline');
+            return state.onlineFriendsList;
         }
     },
 
     actions: {
         /**
          * 异步从 API 检索用户好友列表，并设置“friends”状态属性。
-         *
          * @async
          */
         async getFriends() {
             /**
              * 检索用户好友 API 调用的响应对象。
-             *
              * @type {object}
              * @property {IUserFriendsResponse} data - 包含用户好友列表的响应数据。
              * @property {number} code - 表示成功或失败的响应代码。

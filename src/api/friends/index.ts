@@ -44,7 +44,6 @@ class UserFriendsService implements IUserFriendsApi {
      * 获取用户待定好友数据
      * @returns Promise 对象，解析为类型为 Response<IUserFriendsPendingResponse> 的响应结果
      */
-    // getUserFriendsPending = () => http.get<Response<IUserFriendsPendingResponse>>(USER_FRIENDS_PENDING);
     async getUserFriendsPending() {
         return await http.get<Response<IUserFriendsPendingResponse>>(USER_FRIENDS_PENDING);
     }

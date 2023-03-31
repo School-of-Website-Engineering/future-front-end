@@ -19,7 +19,7 @@
             <Friend
                 :item="item"
                 :statusMap="statusMap"
-                :isInitiativeMpa="isInitiativeMpa"
+                :isInitiativeMap="isInitiativeMap"
                 :icon-left="iconLeft"
                 :icon-right="iconRight"
                 :status="status"
@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 import { defineComponent, defineProps, ref } from 'vue';
-import Friend from './Friend.vue';
+import Friend from './FriendList.vue';
 
 defineComponent({
     name      : 'FriendsDisplay',
@@ -68,7 +68,7 @@ const search = ref('');
  */ const statusMap = { online: '在线', offline: '离线', busy: '忙碌', away: '离开' };
 /**
  @description: 用于存储待定好友的文字信息
- */ const isInitiativeMpa = { true: '送出的好友请求', false: '收到好友请求' };
+ */ const isInitiativeMap = { true: '送出的好友请求', false: '收到好友请求' };
 
 const searchFriend = () => {
     console.log(search.value);

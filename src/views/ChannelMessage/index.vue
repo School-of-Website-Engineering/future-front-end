@@ -175,7 +175,7 @@ onMounted(() => {
 const getPrivateMessageList = async() => {
     const { data } = await AsideLPrivateService.getAsidePrivateUserList();
     privateMessageList.push(...data.sidebarList);
-    console.log('---------获取私信列表---------');
+    console.log('----------获取私信列表---------');
     console.log(privateMessageList);
 };
 </script>

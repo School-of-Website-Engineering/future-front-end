@@ -80,7 +80,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useUserFriendsStore } from '@/store/modules/friends';
 import AddFriend from '@/views/ChannelMessage/components/AddFriend.vue';
 import All from '@/views/ChannelMessage/components/All.vue';
@@ -98,8 +98,10 @@ interface IStatusMap {
     [key: number]: string;
 }
 
-userFriends.getFriends();
-userFriends.getPendingFriends();
+onMounted(() => {
+    userFriends.getFriends();
+    userFriends.getPendingFriends();
+});
 
 watch(
     activeIndex,
