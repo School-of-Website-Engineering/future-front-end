@@ -63,29 +63,29 @@
 import { defineComponent, defineProps, ref } from 'vue';
 
 defineComponent({
-    name: 'FriendsDisplay'
+    name: 'FriendsDisplay',
 });
 defineProps({
     titleText: {
-        type   : String,
-        default: ''
+        type: String,
+        default: '',
     },
     status: {
-        type   : String,
-        default: 'online'
+        type: String,
+        default: 'online',
     },
     list: {
-        type   : Array as () => Array<any>,
-        default: () => []
+        type: Array as () => Array<any>,
+        default: () => [],
     },
     iconLeft: {
-        type   : String,
-        default: ''
+        type: String,
+        default: '',
     },
     iconRight: {
-        type   : String,
-        default: ''
-    }
+        type: String,
+        default: '',
+    },
 });
 
 /**
@@ -97,13 +97,13 @@ defineProps({
  * */
 const statusProps = {
     ToBeDetermined: {
-        iconLeftMessage : '接受',
-        iconRightMessage: '忽略'
+        iconLeftMessage: '接受',
+        iconRightMessage: '忽略',
     },
     all: {
-        iconLeftMessage : '消息',
-        iconRightMessage: '更多'
-    }
+        iconLeftMessage: '消息',
+        iconRightMessage: '更多',
+    },
 };
 
 interface StatusMap {
@@ -114,10 +114,10 @@ interface StatusMap {
  * @description: 用于存储不同状态下的文字信息
  * */
 const statusMap: StatusMap = {
-    online : '在线',
+    online: '在线',
     offline: '离线',
-    busy   : '忙碌',
-    away   : '离开'
+    busy: '忙碌',
+    away: '离开',
 };
 const searchFriend = () => {
     console.log(search);
