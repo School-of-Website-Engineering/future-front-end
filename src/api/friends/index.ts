@@ -4,6 +4,8 @@ import { classAsyncTryCatch } from '@/utils/exceptionHandling';
 export const USER_FRIENDS = '/user/friends';
 // 查询待定好友列表
 export const USER_FRIENDS_PENDING = '/user/friends/pending';
+// 用户屏蔽的好友
+export const USER_FRIENDS_BLOCKED = '/user/friends/blocked';
 
 // 用户好友响应结果接口定义
 export interface IUserFriendsResponse {
@@ -28,6 +30,14 @@ export interface IUserFriendsApi {
     getUserFriendsPending(): Promise<Response<IUserFriendsPendingResponse>>;
 }
 
+// 用户屏蔽的好友响应结果接口定义
+export interface IUserFriendsBlockedResponse {
+    friends: IUserFriendsBlockedResponse[];
+    id: string;
+    name: string;
+    avatar: string;
+}
+
 /**
  * 实现了 IUserFriendsApi 接口的类，用于获取用户好友数据
  */
@@ -46,6 +56,13 @@ class UserFriendsService implements IUserFriendsApi {
      */
     async getUserFriendsPending() {
         return await http.get<Response<IUserFriendsPendingResponse>>(USER_FRIENDS_PENDING);
+    }
+    /**
+     * 获取用户屏蔽的好友数据
+     * @returns Promise 对象，解析为类型为 Response<IUserFriendsBlockedResponse> 的响应结果
+     * */
+    async getUserFriendsBlocked() {
+        return await http.get<Response<IUserFriendsBlockedResponse>>(USER_FRIENDS_BLOCKED);
     }
 }
 

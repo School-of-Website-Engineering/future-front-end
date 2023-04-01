@@ -1,5 +1,5 @@
 <template>
-    <!--  如果数组中有数据  -->
+    <!--  在线好友  -->
     <FriendsDisplay
         :status="'all'"
         :list="userFriends.handleOnlineFriendsList"

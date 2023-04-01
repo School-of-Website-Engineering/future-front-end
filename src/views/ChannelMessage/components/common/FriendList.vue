@@ -9,14 +9,14 @@
             <div :class="[statusMap?.[item.status], 'friends-status']">
                 {{ statusMap[item.status] ? statusMap[item.status] : isInitiativeMap[item.isInitiative] }}
             </div>
-            <FriendStatus :status="item.status" />
+            <FriendStatus :status="item.status" v-if="status !== 'blocked'" />
         </div>
     </div>
     <!-- 图标 -->
     <div
         class="friends-more"
         v-if="iconLeft || iconRight"
-        :class="{ 'deleteFriends addFriends': status === 'ToBeDetermined' }"
+        :class="{ 'deleteFriends addFriends': status === 'ToBeDetermined' || status === 'blocked' }"
     >
         <el-tooltip
             class="box-item"
@@ -95,6 +95,9 @@ defineProps({
             all: {
                 iconLeftMessage : '消息',
                 iconRightMessage: '更多'
+            },
+            blocked: {
+                iconRightMessage: '解除屏蔽'
             }
         })
     }
