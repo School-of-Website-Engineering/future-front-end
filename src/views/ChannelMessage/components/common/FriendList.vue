@@ -1,31 +1,39 @@
 <template>
     <div class="friends-avatar">
-        <el-avatar class="avatar" :src="item.avatar"></el-avatar>
+        <el-avatar class="avatar" :src="$props.item.avatar"></el-avatar>
         <div class="friends-info">
             <div class="friends-name">
-                {{ item.name }}
-                <p>#{{ item.id }}</p>
+                {{ $props.item.name }}
+                <p>#{{ $props.item.id }}</p>
             </div>
-            <div :class="[statusMap?.[item.status], 'friends-status']">
-                {{ statusMap[item.status] ? statusMap[item.status] : isInitiativeMap[item.isInitiative] }}
+            <div :class="[statusMap[$props.status] && statusMap[$props.status], 'friends-status']">
+                {{
+                    statusMap[$props.item.status]
+                        ? statusMap[$props.item.status]
+                        : isInitiativeMap[$props.item.isInitiative]
+                        ? isInitiativeMap[$props.item.isInitiative]
+                        : '已屏蔽'
+                }}
             </div>
-            <FriendStatus :status="item.status" />
+            <friend-status :status="$props.status" :key="$props.status" v-if="status !== 'blocked'" />
         </div>
     </div>
     <!-- 图标 -->
     <div
         class="friends-more"
         v-if="iconLeft || iconRight"
-        :class="{ 'deleteFriends addFriends': status === 'ToBeDetermined' }"
+        :class="{
+            'deleteFriends addFriends': $props.status === 'ToBeDetermined' || $props.status === 'blocked',
+        }"
     >
         <el-tooltip
             class="box-item"
             :hide-after="50"
             :enterable="false"
-            :content="(statusProps as any)[status].iconLeftMessage"
+            :content="statusProps[$props.status]?.iconLeftMessage"
             placement="top"
         >
-            <span v-show="iconLeft && !item.isInitiative" class="span-hover2">
+            <span v-show="iconLeft && !$props.item.isInitiative" class="span-hover2">
                 <i :class="iconLeft"></i>
             </span>
         </el-tooltip>
@@ -33,7 +41,7 @@
             :hide-after="50"
             :enterable="false"
             class="box-item"
-            :content="(statusProps as any)[status].iconRightMessage"
+            :content="statusProps[$props.status]?.iconRightMessage"
             placement="top"
         >
             <span v-if="iconRight" class="span-hover1">
@@ -43,10 +51,10 @@
     </div>
 </template>
 
-<script setup lang="ts">
-import { defineProps } from 'vue';
+<script setup>
+import { computed, defineProps, reactive, toRefs } from 'vue';
 
-defineProps({
+const props = defineProps({
     item: {
         type   : Object,
         default: () => ({
@@ -57,47 +65,36 @@ defineProps({
             isInitiative: false
         })
     },
-    statusMap: {
-        type   : Object,
-        default: () => ({
-            online : '在线',
-            offline: '离线',
-            busy   : '忙碌',
-            away   : '离开'
-        })
+    statusMap      : Object,
+    isInitiativeMap: Object,
+    iconLeft       : String,
+    iconRight      : String,
+    status         : String
+});
+
+const { item, statusMap, isInitiativeMap, iconLeft, iconRight, status } = toRefs(props);
+
+const STATUS_PROPS = {
+    ToBeDetermined: {
+        iconLeftMessage : '接受',
+        iconRightMessage: '忽略'
     },
-    isInitiativeMap: {
-        type   : Object,
-        default: () => ({
-            true : '送出的好友请求',
-            false: '收到好友请求'
-        })
+    all: {
+        iconLeftMessage : '消息',
+        iconRightMessage: '更多'
     },
-    iconLeft: {
-        type   : String,
-        default: ''
-    },
-    iconRight: {
-        type   : String,
-        default: ''
-    },
-    status: {
-        type   : String,
-        default: 'ToBeDetermined'
-    },
-    statusProps: {
-        type   : Object,
-        default: () => ({
-            ToBeDetermined: {
-                iconLeftMessage : '接受',
-                iconRightMessage: '忽略'
-            },
-            all: {
-                iconLeftMessage : '消息',
-                iconRightMessage: '更多'
-            }
-        })
+    blocked: {
+        iconRightMessage: '解除屏蔽'
     }
+};
+
+const statusProps = computed(() => ({
+    ...STATUS_PROPS,
+    [status.value]: STATUS_PROPS[status.value]
+}));
+
+const state = reactive({
+    STATUS_PROPS
 });
 </script>
 

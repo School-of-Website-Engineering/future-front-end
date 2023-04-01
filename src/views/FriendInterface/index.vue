@@ -101,6 +101,7 @@ interface IStatusMap {
 onMounted(() => {
     userFriends.getFriends();
     userFriends.getPendingFriends();
+    userFriends.getBlockedFriends();
 });
 
 watch(

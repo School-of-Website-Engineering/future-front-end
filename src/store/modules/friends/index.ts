@@ -1,5 +1,9 @@
 import { defineStore } from 'pinia';
-import UserFriendsService, { IUserFriendsPendingResponse, IUserFriendsResponse } from '@/api/friends';
+import UserFriendsService, {
+    IUserFriendsBlockedResponse,
+    IUserFriendsPendingResponse,
+    IUserFriendsResponse
+} from '@/api/friends';
 
 /**
  * 用于管理用户好友的 Pinia 存储。
@@ -25,7 +29,11 @@ export const useUserFriendsStore = defineStore('friends', {
         /**
          * 在线好友列表
          * @type {IUserFriendsResponse[]}
-         * */ onlineFriendsList        : <IUserFriendsResponse[]>[]
+         * */ onlineFriendsList        : <IUserFriendsResponse[]>[],
+        /**
+         * 用户屏蔽的好友列表
+         * @type {IUserFriendsBlockedResponse[]}
+         * */ blockedFriends           : <IUserFriendsBlockedResponse[]>[]
     }),
 
     getters: {
@@ -85,6 +93,22 @@ export const useUserFriendsStore = defineStore('friends', {
                 console.log('pendingFriends', this.pendingFriends);
                 console.log('---------待定好友列表排序后---------');
                 console.log('pendingFriendsList', this.pendingFriendsList);
+            }
+        },
+        /**
+         * 异步从 API 检索用户屏蔽的好友列表，并设置“blockedFriends”状态属性。
+         * @async
+         */
+        async getBlockedFriends() {
+            /**
+             * 检索用户屏蔽的好友 API 调用的响应对象。
+             * @type {object}
+             * @property {IUserFriendsBlockedResponse} data - 包含用户屏蔽的好友列表的响应数据。
+             * @property {number} code - 表示成功或失败的响应代码。
+             */
+            const { data, code } = await UserFriendsService.getUserFriendsBlocked();
+            if (code === 0) {
+                this.blockedFriends = data.friends || [];
             }
         }
     }
