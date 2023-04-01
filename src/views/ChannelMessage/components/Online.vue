@@ -23,7 +23,7 @@ const ListLength = computed(() => {
 });
 
 defineComponent({
-    name: 'Online'
+    name: 'Online',
 });
 </script>
 
