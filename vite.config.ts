@@ -120,14 +120,28 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
             open      : true,
             proxy     : {
                 '/api-dev': {
-                    target      : 'http://localhost:3001/',
+                    // target      : 'http://localhost:3001/',
+                    // 设置地址为开发环境中的env的VITE_BACKEND_API接口地址
+                    target      : env.VITE_BACKEND_API,
                     changeOrigin: true,
                     rewrite     : (path: string) => path.replace(/^\/api-dev/, '')
                 },
                 '/api-pro': {
-                    target      : 'http://localhost:3001/',
+                    // target      : 'http://localhost:3001/',
+                    // 设置地址为生产环境中的env的VITE_BACKEND_API接口地址
+                    target      : env.VITE_BACKEND_API,
                     changeOrigin: true,
                     rewrite     : (path: string) => path.replace(/^\/api-pro/, '')
+                },
+                '/api-pro-mock': {
+                    target      : env.VITE_BACKEND_API,
+                    changeOrigin: true,
+                    rewrite     : (path: string) => path.replace(/^\/api-pro-mock/, '')
+                },
+                '/api-dev-mock': {
+                    target      : env.VITE_BACKEND_API,
+                    changeOrigin: true,
+                    rewrite     : (path: string) => path.replace(/^\/api-dev-mock/, '')
                 }
             }
         },

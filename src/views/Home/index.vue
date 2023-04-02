@@ -18,7 +18,7 @@
                     <li>主页</li>
                 </ul>
             </div>
-            <button class="homepage_button">登录</button>
+            <button class="homepage_button" @click="$router.push('login')">登录</button>
         </div>
         <div class="hometext">
             <h2>想象这样一个场所......</h2>
@@ -26,8 +26,8 @@
                 在这里，您可以加入校园俱乐部、游戏群组，或是世界级艺术社区。在这里，您也能邀三五好友一起共度欢乐时光。在这里，您可以轻而易举地每日谈天说地，时常消遣娱乐。
             </p>
             <div class="hometext_Download">
-                <button>下载PC端</button>
-                <button>在你的浏览器中打开</button>
+                <button><i class="fa-solid fa-download"></i> 下载PC端</button>
+                <button @click="$router.push('main/@me')">在你的浏览器中打开</button>
             </div>
         </div>
         <div class="background_img">
@@ -73,10 +73,10 @@
         }
 
         .homepage_button {
-            width: 60px;
+            width: 50px;
             margin: 15px;
             padding: 10px;
-            border-radius: 41px;
+            border-radius: 35px;
             border: none;
             cursor: pointer;
         }
@@ -84,32 +84,36 @@
 
     .hometext {
         h2 {
-            font-size: 36px;
+            font-size: 56px;
             text-align: center;
-            margin: 50px;
-            margin-top: 100px;
+            margin: 100px 50px 50px;
             color: white;
         }
 
         p {
-            font-size: 18px;
+            font-size: 20px;
             width: 800px;
             margin: 0 auto;
             text-align: center;
             color: white;
+            overflow-wrap: break-word; /* 新版本的 CSS 规范中推荐将该属性用于替代 word-wrap */
         }
 
         .hometext_Download {
             text-align: center;
             margin: 50px auto;
-
             button {
-                font-size: 30px;
+                cursor: pointer;
+                font-size: 24px;
                 margin: 15px;
-                padding: 10px;
+                padding: 15px 32px;
                 border-radius: 41px;
                 border: none;
                 color: black;
+                &:nth-child(2) {
+                    background-color: #23272a;
+                    color: #fffff2;
+                }
             }
         }
     }

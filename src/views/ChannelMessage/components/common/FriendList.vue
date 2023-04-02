@@ -56,45 +56,48 @@ import { computed, defineProps, reactive, toRefs } from 'vue';
 
 const props = defineProps({
     item: {
-        type: Object,
+        type   : Object,
         default: () => ({
-            id: 0,
-            name: '',
-            avatar: '',
-            status: 'online',
-            isInitiative: false,
-        }),
+            id          : 0,
+            name        : '',
+            avatar      : '',
+            status      : 'online',
+            isInitiative: false
+        })
     },
-    statusMap: Object,
+    statusMap      : Object,
     isInitiativeMap: Object,
-    iconLeft: String,
-    iconRight: String,
-    status: String,
+    iconLeft       : String,
+    iconRight      : String,
+    status         : String
 });
 
 const { item, statusMap, isInitiativeMap, iconLeft, iconRight, status } = toRefs(props);
 
 const STATUS_PROPS = {
     ToBeDetermined: {
-        iconLeftMessage: '接受',
-        iconRightMessage: '忽略',
+        iconLeftMessage : '接受',
+        iconRightMessage: '忽略'
     },
     all: {
-        iconLeftMessage: '消息',
-        iconRightMessage: '更多',
+        iconLeftMessage : '消息',
+        iconRightMessage: '更多'
     },
     blocked: {
-        iconRightMessage: '解除屏蔽',
-    },
+        iconRightMessage: '解除屏蔽'
+    }
 };
 
+/**
+ * 计算状态的配置项
+ * @returns {Object} 计算得到的状态配置项对象
+ */
 const statusProps = computed(() => ({
     ...STATUS_PROPS,
-    [status.value]: STATUS_PROPS[status.value],
+    [status.value]: STATUS_PROPS[status.value]
 }));
-
 const state = reactive({
-    STATUS_PROPS,
+    STATUS_PROPS
 });
 </script>
 

@@ -46,7 +46,7 @@ watch(
             isInput.value = true;
         }
     },
-    { immediate: true },
+    { immediate: true }
 );
 </script>
 

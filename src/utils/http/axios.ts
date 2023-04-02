@@ -10,7 +10,7 @@ import { TokenExpiredErrorHandler, NoPermissionErrorHandler, DefaultErrorHandler
 // 重设axiosbaseURL
 axios.defaults.baseURL = import.meta.env.VITE_APP_API_BASE_URL;
 axios.defaults.timeout = 1000 * 10;
-axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8';
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 
 /**
  * @description 创建axios实例
