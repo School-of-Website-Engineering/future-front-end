@@ -12,7 +12,7 @@
         "pro:mock": "vite --mode promock",
         "build:devmock": "vue-tsc && vite build --mode devemock",
         "build:prodmock": "vue-tsc && vite build --mode promock",
-        "build:pro": "vue-tsc && vite build --mode production",
+        "build": "vue-tsc && vite build --mode production",
         "build:dev": "vue-tsc && vite build --mode development",
         "lint": "eslint --fix  vite.config.ts tsconfig.json .eslintrc.cjs --ext .cjs,.js,.vue,.ts,.html src",
         "prettier": "prettier --write ./**/*.{js,ts,vue,json,cjs,css,scss}",
