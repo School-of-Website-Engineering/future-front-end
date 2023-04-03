@@ -2,7 +2,7 @@ export default [
     // 查询好友
     {
         // 请求地址
-        url     : '/user/friends',
+        url     : '/api-dev-mock/user/friends',
         // 请求方法
         method  : 'get',
         // 响应数据
