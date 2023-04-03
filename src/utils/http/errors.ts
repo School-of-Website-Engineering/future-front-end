@@ -48,7 +48,7 @@ import { ElMessage } from 'element-plus';
  * @returns {void}
  */ export class DefaultErrorHandler implements ErrorHandler {
     handle(response: AxiosResponse<Response>) {
-        const { message } = response.data;
-        if (message) ElMessage.error(message);
+        const { reason } = response.data;
+        if (reason) ElMessage.error(reason);
     }
 }

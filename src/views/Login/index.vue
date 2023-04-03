@@ -1,77 +1,23 @@
 <template>
     <div class="main-box">
         <div :class="['container', 'container-register', { 'is-txl': isLogin }]">
-            <!--            <form>-->
-            <!--                <h2 class="title">创建帐户</h2>-->
-            <!--                <span class="text">或使用电子邮件进行注册</span>-->
-            <!--                <input class="form__input" type="text" placeholder="用户名" />-->
-            <!--                <input class="form__input" type="text" placeholder="邮箱" />-->
-            <!--                <input class="form__input" type="password" placeholder="密码" />-->
-            <!--                <div class="primary-btn">立即注册</div>-->
-            <!--            </form>-->
-            <el-form ref="registerForm" :model="registerForm" :rules="registerFormRules" class="register-form">
+            <form>
                 <h2 class="title">创建帐户</h2>
                 <span class="text">或使用电子邮件进行注册</span>
-                <el-form-item prop="username">
-                    <el-input
-                        type="text"
-                        class="form__input"
-                        v-model="registerForm.username"
-                        placeholder="用户名"
-                    ></el-input>
-                </el-form-item>
-                <el-form-item prop="email">
-                    <el-input
-                        type="text"
-                        class="form__input"
-                        v-model="registerForm.email"
-                        placeholder="邮箱"
-                    ></el-input>
-                </el-form-item>
-                <el-form-item prop="password">
-                    <el-input
-                        type="password"
-                        class="form__input"
-                        v-model="registerForm.password"
-                        placeholder="密码"
-                    ></el-input>
-                </el-form-item>
-                <el-form-item>
-                    <div class="primary-btn" @click="submitForm">立即注册</div>
-                </el-form-item>
-            </el-form>
+                <input class="form__input" type="text" placeholder="用户名" />
+                <input class="form__input" type="text" placeholder="邮箱" />
+                <input class="form__input" type="password" placeholder="密码" />
+                <div class="primary-btn">立即注册</div>
+            </form>
         </div>
         <div :class="['container', 'container-login', { 'is-txl is-z200': isLogin }]">
-            <el-form :model="loginForm" :rules="loginFormRules" ref="loginForm" class="login-form">
+            <form>
                 <h2 class="title">登录网站</h2>
                 <span class="text">或使用电子邮件进行注册</span>
-                <el-form-item prop="username">
-                    <el-input class="form__input" v-model="loginForm.username" placeholder="请输入用户名"> </el-input>
-                </el-form-item>
-                <el-form-item prop="userEmail">
-                    <el-input class="form__input" v-model="loginForm.userEmail" placeholder="请输入邮箱"> </el-input>
-                </el-form-item>
-                <el-form-item prop="password">
-                    <el-input class="form__input" v-model="loginForm.password" type="password" placeholder="请输入密码">
-                    </el-input>
-                </el-form-item>
-                <el-form-item>
-                    <div class="form__input_code-box">
-                        <el-input
-                            class="form__input form__input_code"
-                            v-model="loginForm.smsCode"
-                            placeholder="请输入验证码"
-                        >
-                        </el-input>
-                        <el-button class="primary-btn-code-btn" type="primary" :loading="isLoading" @click="getCode">
-                            获取验证码
-                        </el-button>
-                    </div>
-                </el-form-item>
-                <el-form-item>
-                    <div class="primary-btn" @click="submitForm">立即登录</div>
-                </el-form-item>
-            </el-form>
+                <input class="form__input" type="text" placeholder="邮箱" />
+                <input class="form__input" type="password" placeholder="密码" />
+                <div class="primary-btn">立即登录</div>
+            </form>
         </div>
         <div :class="['switch', { login: isLogin }]">
             <div class="switch__circle"></div>
@@ -89,55 +35,30 @@
     </div>
 </template>
 
-<script setup lang="ts">
-import { reactive, ref } from 'vue';
-import { useUserLoginRegisterStore } from '@/store/modules/user';
-import LoginService from '@/api/login-register';
-
-const userLoginRegisterStore = useUserLoginRegisterStore();
-const isLogin = ref(true);
-const loginForm = reactive({
-    username : 'admin',
-    userEmail: '1960638223@qq.com',
-    password : '54241',
-    smsCode  : 0
-});
-const registerForm = reactive({
-    name    : '',
-    email   : '',
-    password: ''
-});
-
-// 校验规则
-const usernameRules = reactive([
-    { required: true, message: '请输入用户名', trigger: 'blur' },
-    { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
-]);
-
-// 验证码按钮加载状态
-const isLoading = ref(false);
-// 登录
-const login = () => {
-    userLoginRegisterStore.userLogin(loginForm);
-};
-const register = () => {
-    //ok
-};
-// 获取验证码
-const getCode = async() => {
-    isLoading.value = true;
-    const res = await LoginService.getSmsCode(loginForm.userEmail);
-    if (res.code === 200) {
-        console.log(res);
-    }
-    isLoading.value = false;
-};
-// 提交表单
-const submitForm = () => {
-    if (isLogin.value) {
-        login();
-    } else {
-        register();
+<script lang="ts">
+export default {
+    name: 'LoginBox',
+    data() {
+        return {
+            isLogin  : false,
+            loginForm: {
+                email   : '',
+                password: ''
+            },
+            registerForm: {
+                name    : '',
+                email   : '',
+                password: ''
+            }
+        };
+    },
+    methods: {
+        login() {
+            //ok
+        },
+        register() {
+            //ok
+        }
     }
 };
 </script>
@@ -173,7 +94,7 @@ const submitForm = () => {
         background-color: #ecf0f3;
         transition: all 1.25s;
 
-        el-form {
+        form {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -211,32 +132,6 @@ const submitForm = () => {
 
                 &::placeholder {
                     color: #a0a5a8;
-                }
-            }
-
-            .form__input_code-box {
-                width: 375px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .form__input_code {
-                    width: 220px;
-                }
-
-                .primary-btn-code-btn {
-                    //获取验证码按钮
-                    width: 120px;
-                    height: 40px;
-                    margin: 4px 0;
-                    padding-left: 25px;
-                    font-size: 13px;
-                    letter-spacing: 0.15px;
-                    border: none;
-                    outline: none;
-                    font-family: 'Montserrat', sans-serif;
-                    transition: 0.25s ease;
-                    border-radius: 8px;
                 }
             }
         }

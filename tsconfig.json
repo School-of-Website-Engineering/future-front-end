@@ -20,7 +20,7 @@
             "@/*": ["src/*"]
         }
     },
-    "include"   : ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts", "src/vite-env.d.ts"],
+    "include"   : ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts", "src/vite-env.d.ts", "modules/**/*.ts"],
     // references属性是 TypeScript 3.0 的新特性，允许将 TypeScript 程序拆分结构化(即拆成多个文件，分别配置不同的部分)。
     "references": [{ "path": "./tsconfig.node.json" }]
 }
