@@ -79,8 +79,6 @@ future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似 discor
 ## 维护者
 
 [@mason369](https://github.com/mason369)
-[@liuliu66](https://github.com/liusxs)
-
 ## 如何贡献
 
 非常欢迎你的加入！[提一个 Issue](https://github.com/mason369/future/issues) 或者提交一个

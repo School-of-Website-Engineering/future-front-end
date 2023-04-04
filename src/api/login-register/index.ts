@@ -70,8 +70,11 @@ export interface IRegisterUserInput {
 // 登录 API 接口定义
 export interface ILoginApi {
     getLogin(userForm: ILoginUserInput): Promise<Response<ILoginResponse>>;
+
     getSmsCode(userEmail: string): Promise<Response<ILoginResponse>>;
+
     getLogout(): Promise<Response<ILoginResponse>>;
+
     getRegister(userForm: IRegisterUserInput): Promise<Response<ILoginResponse>>;
 }
 
@@ -97,6 +100,7 @@ class LoginService implements ILoginApi {
             smsCode
         });
     }
+
     /**
      * 获取验证码
      * @param email 用户邮箱
@@ -107,6 +111,7 @@ class LoginService implements ILoginApi {
             email
         });
     }
+
     /**
      * 退出登录
      * @returns Promise 对象，解析为类型为 Response<ILoginResponse> 的响应结果
@@ -114,6 +119,7 @@ class LoginService implements ILoginApi {
     async getLogout(): Promise<Response<ILoginResponse>> {
         return await http.post(LOGOUT);
     }
+
     /**
      * 注册
      * @param userForm.username 用户名

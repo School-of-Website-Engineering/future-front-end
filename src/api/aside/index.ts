@@ -22,6 +22,7 @@ export interface IAsideLPrivate {
     count: number;
     privateUserList?: IPrivateUserList[];
 }
+
 /**
  * 私信用户列表接口定义
  * @interface IPrivateUserList
@@ -75,7 +76,9 @@ export interface IAsideLPrivateResponse {
 // 侧边栏私信数据 API 接口定义
 export interface IAsideLPrivateApi {
     getAsideLPrivate(): Promise<Response<IAsideLPrivate>>;
+
     getAsideSidebarList(): Promise<Response<IAsideSidebarList>>;
+
     getAsidePrivateUserList(): Promise<Response<IAsideLPrivateResponse>>;
 }
 
@@ -91,6 +94,7 @@ class AsideLPrivateService implements IAsideLPrivateApi {
     async getAsideLPrivate(): Promise<Response<IAsideLPrivate>> {
         return await http.get<Response<IAsideLPrivate>>(ASIDE_LPRIVATE);
     }
+
     /**
      * 获取侧边栏频道数据
      *  @returns Promise 对象，解析为类型为 Response<IAsideSidebarList> 的响应结果

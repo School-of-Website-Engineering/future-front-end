@@ -135,7 +135,9 @@ class UserFriendsService implements IUserFriendsApi {
      * @returns Promise 对象，解析为类型为 Response<IUserInfoResponse> 的响应结果
      */
     async getUserInfo(userId: string): Promise<Response<IUserInfoResponse>> {
-        return await http.post<Response<IUserInfoResponse>>(USER_INFO, { userId });
+        return await http.post<Response<IUserInfoResponse>>(USER_INFO, {
+            userId
+        });
     }
 }
 
