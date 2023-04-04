@@ -23,20 +23,20 @@ future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似 discor
 
  <h2>内容列表</h2>
 
-- [future-front-end](#future-front-end)
-  - [项目简介](#项目简介)
-  - [项目现阶段预览](#项目现阶段预览)
-  - [相关仓库](#相关仓库)
-  - [维护者](#维护者)
-  - [如何贡献](#如何贡献)
-    - [贡献者](#贡献者)
-  - [快速上手](#快速上手)
-    - [特别感谢：](#特别感谢)
-  - [使用许可](#使用许可)
+-   [future-front-end](#future-front-end)
+    -   [项目简介](#项目简介)
+    -   [项目现阶段预览](#项目现阶段预览)
+    -   [相关仓库](#相关仓库)
+    -   [维护者](#维护者)
+    -   [如何贡献](#如何贡献)
+        -   [贡献者](#贡献者)
+    -   [快速上手](#快速上手)
+        -   [特别感谢：](#特别感谢)
+    -   [使用许可](#使用许可)
 
 ## 项目现阶段预览
-![demo](demo.gif)
 
+![demo](demo.gif)
 
 ## 相关仓库
 
@@ -45,6 +45,7 @@ future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似 discor
 ## 维护者
 
 [@mason369](https://github.com/mason369)
+
 ## 如何贡献
 
 非常欢迎你的加入！[提一个 Issue](https://github.com/mason369/future/issues) 或者提交一个

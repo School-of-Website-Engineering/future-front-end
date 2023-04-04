@@ -7,13 +7,13 @@ import LoginService, { ILoginResponse, ILoginUserInput } from '@/api/login-regis
 export const useUserLoginRegisterStore = defineStore('user', {
     state: () => ({
         // 用户信息
-        user: {} as ILoginResponse
+        user: {} as ILoginResponse,
     }),
     getters: {
         //获取用户id
         getUserId(): string {
             return this.user.id;
-        }
+        },
     },
     actions: {
         /**
@@ -29,6 +29,6 @@ export const useUserLoginRegisterStore = defineStore('user', {
             if (code === 200) {
                 this.user = data;
             }
-        }
-    }
+        },
+    },
 });
