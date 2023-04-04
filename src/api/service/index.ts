@@ -146,7 +146,7 @@ class ServerControlService implements IServerControl {
     async getServerUpdateCategoryById(id: number, category: string): Promise<Response> {
         return await http.post(SERVICE_UPDATE_SERVER_CATEGORY_BY_ID, {
             id,
-            category
+            category,
         });
     }
 

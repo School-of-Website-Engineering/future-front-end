@@ -33,16 +33,16 @@ const input = ref<string>('');
 // 用户信息对象
 const friendsInfo = reactive<IUserInfoResponse>({
     mapKey: {
-        id           : '',
-        username     : '',
-        email        : '',
+        id: '',
+        username: '',
+        email: '',
         discriminator: '',
-        password     : '',
-        createdAt    : '',
-        updatedAt    : '',
-        role         : '',
-        img          : ''
-    }
+        password: '',
+        createdAt: '',
+        updatedAt: '',
+        role: '',
+        img: '',
+    },
 });
 // 进入页面后输入框自动获取焦点
 onMounted(() => {
@@ -62,13 +62,13 @@ watch(
             isInput.value = true;
         }
     },
-    { immediate: true }
+    { immediate: true },
 );
 
 /**
  * @description: 搜索好友
  * */
-const searchFriend = async() => {
+const searchFriend = async () => {
     if (input.value) {
         const { data, code } = await UserFriendsService.getUserInfo(input.value);
         if (code === 200) {
