@@ -12,7 +12,7 @@ export const REGISTER = '/auth/register';
 
 // 登录接口响应结果接口定义
 export interface ILoginResponse {
-    id: number;
+    id: string;
     username: string;
     email: string;
     discriminator: string;

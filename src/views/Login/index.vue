@@ -139,6 +139,7 @@
 
 <script lang="js">
 import LoginService from "@/api/login-register";
+import {useUserLoginRegisterStore} from "@/store/modules/user";
 
 export default {
     name: "LoginBox",
@@ -177,7 +178,7 @@ export default {
     },
     methods: {
         async login() {
-            const { code, reason } = await LoginService.getLogin(this.loginForm);
+            const { code, reason } = await useUserLoginRegisterStore.userLogin(this.loginForm);
             if (code === 200) {
                 this.$message.success(reason);
                 this.$router.push("./main");

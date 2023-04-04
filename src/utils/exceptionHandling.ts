@@ -4,10 +4,10 @@
  * @param func 待包装的异步函数。
  * @returns 新的异步函数，具有相同的参数和返回值类型，但会在发生异常时返回 undefined。
  */
-export function asyncTryCatch<T extends (...args: unknown[]) => Promise<unknown>, U = ReturnType<T>>(
-    func: T,
+export function asyncTryCatch<T extends(...args: unknown[]) => Promise<unknown>, U = ReturnType<T>>(
+    func: T
 ): (...args: Parameters<T>) => Promise<U | undefined> {
-    return async function (...args: Parameters<T>): Promise<U | undefined> {
+    return async function(...args: Parameters<T>): Promise<U | undefined> {
         try {
             const result = await func(...args);
             return result as U;
@@ -23,7 +23,7 @@ export function asyncTryCatch<T extends (...args: unknown[]) => Promise<unknown>
  * @param target 待包装的类。
  * @returns 新的类，具有相同的参数和返回值类型，但会在发生异常时返回 undefined。
  * */
-export function classAsyncTryCatch<T extends new (...args: any[]) => object>(target: T) {
+export function classAsyncTryCatch<T extends new(...args: any[]) => object>(target: T) {
     for (const key of Object.getOwnPropertyNames(target.prototype)) {
         const descriptor = Object.getOwnPropertyDescriptor(target.prototype, key);
         if (descriptor && typeof descriptor.value === 'function') {
