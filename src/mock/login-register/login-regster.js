@@ -65,5 +65,19 @@ export default [
                 }
             };
         }
+    },
+    //     电子邮件验证码
+    {
+        url     : '/auth/verify-code',
+        method  : 'post',
+        response: (config) => {
+            return {
+                code  : 200,
+                reason: '电子邮件验证码发送成功',
+                data  : {
+                    code: Mock.Random.string('number', 6)
+                }
+            };
+        }
     }
 ];

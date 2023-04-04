@@ -31,7 +31,9 @@
                                     <UserFilled />
                                 </el-icon>
                                 <span>好友</span>
-                                <i class="msgNum">{{ userFriends.handlePendingFriendsRequestList.length }}</i>
+                                <i class="msgNum" v-if="userFriends.handlePendingFriendsRequestList.length">{{
+                                    userFriends.handlePendingFriendsRequestList.length
+                                }}</i>
                             </el-col>
                         </el-row>
                         <el-row

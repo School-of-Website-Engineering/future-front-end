@@ -68,7 +68,10 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
                 //mock文件夹路径
                 mockPath    : './src/mock',
                 //是否开启本地mock
-                localEnabled: true
+                localEnabled: true,
+                watchFiles  : true,
+                //是否开启生产环境mock
+                prodEnabled : false
             }),
             VitePWA({
                 includeAssets: ['favicon.svg'],
@@ -114,20 +117,31 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
         },
         server: {
             host      : '0.0.0.0',
-            port      : 3001,
+            port      : 3333,
             // 设为 true 时若端口已会被占用直接退出，而不是尝试下一个可用端口。
             strictPort: false,
             open      : true,
             proxy     : {
+                // 匹配 /api-dev、/api-pro、/api-mock-pro、/api-dev-mock 开头的请求
                 '/api-dev': {
-                    target      : 'http://localhost:3001/',
+                    target      : env.VITE_BACKEND_API,
                     changeOrigin: true,
                     rewrite     : (path: string) => path.replace(/^\/api-dev/, '')
                 },
                 '/api-pro': {
-                    target      : 'http://localhost:3001/',
+                    target      : env.VITE_BACKEND_API,
                     changeOrigin: true,
                     rewrite     : (path: string) => path.replace(/^\/api-pro/, '')
+                },
+                '/api-mock-dev': {
+                    target      : env.VITE_BACKEND_API,
+                    changeOrigin: true,
+                    rewrite     : (path: string) => path.replace(/^\/api-mock-dev/, '')
+                },
+                '/api-mock-pro': {
+                    target      : env.VITE_BACKEND_API,
+                    changeOrigin: true,
+                    rewrite     : (path: string) => path.replace(/^\/api-mock-pro/, '')
                 }
             }
         },

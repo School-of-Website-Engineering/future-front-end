@@ -6,6 +6,7 @@ export interface ImportMetaEnv {
     readonly VITE_BUILD_SOURCEMAP: string;
     readonly VITE_BUILD_DROP_CONSOLE: string;
     readonly VITE_PUBLIC_PATH: string;
+    readonly VITE_BACKEND_API: string;
 }
 
 export interface ImportMeta {

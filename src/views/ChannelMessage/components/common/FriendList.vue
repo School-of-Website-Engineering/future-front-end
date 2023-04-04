@@ -88,11 +88,14 @@ const STATUS_PROPS = {
     }
 };
 
+/**
+ * 计算状态的配置项
+ * @returns {Object} 计算得到的状态配置项对象
+ */
 const statusProps = computed(() => ({
     ...STATUS_PROPS,
     [status.value]: STATUS_PROPS[status.value]
 }));
-
 const state = reactive({
     STATUS_PROPS
 });

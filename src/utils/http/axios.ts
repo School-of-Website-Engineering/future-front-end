@@ -7,17 +7,15 @@ import type { Response } from './types';
 import { ElMessage } from 'element-plus';
 import { TokenExpiredErrorHandler, NoPermissionErrorHandler, DefaultErrorHandler, ErrorHandler } from './errors';
 
-// 重设axiosbaseURL
-axios.defaults.baseURL = import.meta.env.VITE_APP_API_BASE_URL;
+// 重设axiosbaseURL为当前环境的VITE_APP_API_BASE_URL
+axios.defaults.baseURL = import.meta.env.VITE_APP_API_BASE_URL as string;
 axios.defaults.timeout = 1000 * 10;
-axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8';
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 
 /**
  * @description 创建axios实例
  */
 const service = axios.create({
-    // 根据不同env设置不同的baseURL
-    baseURL          : import.meta.env.VITE_APP_API_BASE_URL,
     responseType     : 'json',
     transformResponse: [
         function(data) {
