@@ -12,7 +12,7 @@
                         class="form__input"
                         type="text"
                         placeholder="用户名"
-                        v-model="loginForm.username"
+                        v-model="registerForm.username"
                         :class="{ input__error: errors.username }"
                         @focus="errors.username = ''"
                     />
@@ -86,7 +86,7 @@
                         class="form__input"
                         type="text"
                         placeholder="邮箱"
-                        v-model="loginForm.email"
+                        v-model="loginForm.userEmail"
                         :class="{ input__error: errors.email }"
                         @focus="errors.email = ''"
                     />
@@ -139,6 +139,7 @@
 
 <script lang="js">
 import LoginService from "@/api/login-register";
+import {useUserLoginRegisterStore} from "@/store/modules/user";
 
 export default {
     name: "LoginBox",
@@ -146,15 +147,17 @@ export default {
         return {
             isLogin  : true,
             loginForm: {
-                username: "admin",
-                email   : "1960638223@qq.com",
-                password: "123456789o",
-                smsCode : undefined
+                username : "admin",
+                userEmail: "1960638223@qq.com",
+                password : "123456789o",
+                smsCode  : "123456"
             },
             registerForm: {
                 name    : "adi",
-                email   : "",
-                password: ""
+                email   : "1960638223@qq.com",
+                password: "123456",
+                smsCode : "123456",
+                role    : "man"
             },
             isLoding: false,
             getSms  : "获取验证码",
@@ -174,12 +177,23 @@ export default {
         };
     },
     methods: {
-        login() {
-            //ok
-            alert("登录成功");
+        async login() {
+            const { code, reason } = await useUserLoginRegisterStore.userLogin(this.loginForm);
+            if (code === 200) {
+                this.$message.success(reason);
+                this.$router.push("./main");
+            } else {
+                this.$message.error(reason);
+            }
         },
-        register() {
-            //ok
+        async register() {
+            const { code, reason } = await LoginService.getRegister(this.registerForm);
+            if (code === 200) {
+                this.$message.success(reason);
+                this.$router.push("./main");
+            } else {
+                this.$message.error(reason);
+            }
         },
         /**
          * @description: 获取邮箱验证码
@@ -227,12 +241,29 @@ export default {
             return valid;
         },
         /**
+         * 注册表单验证
+         * @return {Boolean} true:验证通过 false:验证失败
+         * */
+        validateFormRegister() {
+            let valid = true;
+            this.errors = {};
+            for (let field in this.rules) {
+                if (this.rules[field].required && !this.registerForm[field]) {
+                    this.errors[field] = this.rules[field].message;
+                    valid = false;
+                } else if (this.rules[field].type === "email" && !this.validateEmail(this.registerForm[field])) {
+                    this.errors[field] = this.rules[field].message;
+                    valid = false;
+                }
+            }
+            return valid;
+        },
+        /**
          * @description: 邮箱验证
          * @param {String} email
          * @return {Boolean} true:验证通过 false:验证失败
          * */
         validateEmail(email) {
-            // 邮箱验证函数
             const reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
             return reg.test(email);
         },
@@ -243,7 +274,7 @@ export default {
             }
         },
         submitFormRegister() {
-            if (this.validateForm()) {
+            if (this.validateFormRegister()) {
                 // 执行注册操作
                 this.register();
             }

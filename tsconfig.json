@@ -9,27 +9,16 @@
         "resolveJsonModule"      : true,
         "isolatedModules"        : true,
         "esModuleInterop"        : true,
-        "lib"                    : [
-            "es5",
-            "es6",
-            "dom",
-            "dom.iterable"
-        ],
-        "skipLibCheck": true,
-        "noEmit"      : true,
-        "types"       : [
-            "element-plus/global",
-            "vite/client",
-            "vite-plugin-pwa/client"
-        ],
-        "allowJs"               : true,
+        "lib"                    : ["es5", "es6", "dom", "dom.iterable"],
+        "skipLibCheck"           : true,
+        "noEmit"                 : true,
+        "types"                  : ["element-plus/global", "vite/client", "vite-plugin-pwa/client"],
+        "allowJs"                : true,
         // 允许编译器编译JS，JSX文件
-        "baseUrl"               : "./",
-        "experimentalDecorators": true,
-        "paths"                 : {
-            "@/*": [
-                "src/*"
-            ]
+        "baseUrl"                : "./",
+        "experimentalDecorators" : true,
+        "paths"                  : {
+            "@/*": ["src/*"]
         }
     },
     "include": [

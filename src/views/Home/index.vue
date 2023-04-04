@@ -45,7 +45,6 @@
 <style lang="scss" scoped>
 .home {
     background-color: rgb(64, 78, 237);
-
     .homepage {
         width: 100%;
         font-size: 16px;
@@ -102,6 +101,10 @@
         .hometext_Download {
             text-align: center;
             margin: 50px auto;
+            &:nth-child(2) {
+                /*内层被遮挡的元素设置auto 实现点击被遮挡的内层元素*/
+                pointer-events: auto;
+            }
             button {
                 cursor: pointer;
                 font-size: 24px;
@@ -123,6 +126,8 @@
         margin: 0 auto;
 
         .background_1 {
+            /*外层被遮挡的svg设置none*/
+            pointer-events: none;
             width: 100%;
             position: absolute;
             bottom: 0;

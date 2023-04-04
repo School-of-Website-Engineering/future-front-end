@@ -6,10 +6,12 @@
         <div class="search">
             <!-- 输入盒子 -->
             <div class="search-input">
-                <input type="text" placeholder="输入id" ref="inputRef" v-model="input" />
+                <input type="text" placeholder="输入id" ref="inputRef" v-model="input" @keyup.enter="searchFriend" />
                 <!-- 搜索按钮 -->
                 <div class="search-btn">
-                    <el-button type="primary" :disabled="isInput" color="#5865f2">发送好友请求 </el-button>
+                    <el-button type="primary" :disabled="isInput" color="#5865f2" @click="searchFriend">
+                        搜索
+                    </el-button>
                 </div>
             </div>
         </div>
@@ -22,12 +24,26 @@
 </template>
 
 <script setup lang="ts" name="AddFriend">
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, reactive, ref, watch } from 'vue';
+import UserFriendsService, { IUserInfoResponse } from '@/api/friends';
 
 const inputRef = ref<HTMLInputElement | null>(null);
 const isInput = ref<boolean>(false);
 const input = ref<string>('');
-
+// 用户信息对象
+const friendsInfo = reactive<IUserInfoResponse>({
+    mapKey: {
+        id           : '',
+        username     : '',
+        email        : '',
+        discriminator: '',
+        password     : '',
+        createdAt    : '',
+        updatedAt    : '',
+        role         : '',
+        img          : ''
+    }
+});
 // 进入页面后输入框自动获取焦点
 onMounted(() => {
     if (inputRef.value) {
@@ -48,6 +64,27 @@ watch(
     },
     { immediate: true }
 );
+
+/**
+ * @description: 搜索好友
+ * */
+const searchFriend = async() => {
+    if (input.value) {
+        const { data, code } = await UserFriendsService.getUserInfo(input.value);
+        if (code === 200) {
+            friendsInfo.mapKey.id = data.mapKey.id;
+            friendsInfo.mapKey.username = data.mapKey.username;
+            friendsInfo.mapKey.email = data.mapKey.email;
+            friendsInfo.mapKey.discriminator = data.mapKey.discriminator;
+            friendsInfo.mapKey.password = data.mapKey.password;
+            friendsInfo.mapKey.createdAt = data.mapKey.createdAt;
+            friendsInfo.mapKey.updatedAt = data.mapKey.updatedAt;
+            friendsInfo.mapKey.role = data.mapKey.role;
+            friendsInfo.mapKey.img = data.mapKey.img;
+        }
+        console.log(friendsInfo.mapKey);
+    }
+};
 </script>
 
 <style lang="scss" scoped>
