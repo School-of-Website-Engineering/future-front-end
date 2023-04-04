@@ -9,7 +9,9 @@
                 <input type="text" placeholder="输入id" ref="inputRef" v-model="input" />
                 <!-- 搜索按钮 -->
                 <div class="search-btn">
-                    <el-button type="primary" :disabled="isInput" color="#5865f2">发送好友请求 </el-button>
+                    <el-button type="primary" :disabled="isInput" color="#5865f2" @click="searchFriend">
+                        搜索
+                    </el-button>
                 </div>
             </div>
         </div>
@@ -23,6 +25,7 @@
 
 <script setup lang="ts" name="AddFriend">
 import { onMounted, ref, watch } from 'vue';
+import UserFriendsService from '@/api/friends';
 
 const inputRef = ref<HTMLInputElement | null>(null);
 const isInput = ref<boolean>(false);
@@ -48,6 +51,12 @@ watch(
     },
     { immediate: true }
 );
+
+// 搜索好友
+const searchFriend = async() => {
+    const res = await UserFriendsService.getUserInfo(input.value);
+    console.log(res);
+};
 </script>
 
 <style lang="scss" scoped>

@@ -10,7 +10,19 @@ export const LOGOUT = '/auth/logout';
 // 用户注册
 export const REGISTER = '/auth/register';
 
-// 登录接口响应结果接口定义
+/**
+ * 登录响应结果接口定义
+ * @interface ILoginResponse
+ * @property {string} id 用户id
+ * @property {string} username 用户名
+ * @property {string} email 用户邮箱
+ * @property {string} discriminator 用户标识
+ * @property {string} password 用户密码
+ * @property {string} createdAt 创建时间
+ * @property {string} updatedAt 更新时间
+ * @property {string} role 用户角色
+ * @property {string} img 用户头像
+ * */
 export interface ILoginResponse {
     id: string;
     username: string;
@@ -23,14 +35,30 @@ export interface ILoginResponse {
     img: string;
 }
 
-// 登录用户输入接口定义
+/**
+ * 登录用户输入接口定义
+ * @interface ILoginUserInput
+ * @property {string} username 用户名
+ * @property {string} userEmail 用户邮箱
+ * @property {string} password 用户密码
+ * @property {number | undefined | string} smsCode 验证码
+ * */
 export interface ILoginUserInput {
     username: string;
     userEmail: string;
     password: string;
     smsCode: number | undefined | string;
 }
-// 注册用户输入接口定义
+
+/**
+ * 注册用户输入接口定义
+ * @interface IRegisterUserInput
+ * @property {string} username 用户名
+ * @property {string} password 用户密码
+ * @property {string} email 用户邮箱
+ * @property {string} smsCode 验证码
+ * @property {string} role 用户角色
+ */
 export interface IRegisterUserInput {
     username: string;
     password: string;
