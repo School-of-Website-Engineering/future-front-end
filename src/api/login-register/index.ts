@@ -2,9 +2,13 @@ import http, { Response } from '@/utils/http';
 import { classAsyncTryCatch } from '@/utils/exceptionHandling';
 
 // 登录接口
-export const LOGIN = '/auth/login-register';
+export const LOGIN = '/auth/login';
 // 获取验证码接口
 export const GET_SMS_CODE = '/auth/verify-code';
+// 用户退出登录
+export const LOGOUT = '/auth/logout';
+// 用户注册
+export const REGISTER = '/auth/register';
 
 // 登录接口响应结果接口定义
 export interface ILoginResponse {
@@ -24,13 +28,23 @@ export interface ILoginUserInput {
     username: string;
     userEmail: string;
     password: string;
-    smsCode: number | undefined;
+    smsCode: number | undefined | string;
+}
+// 注册用户输入接口定义
+export interface IRegisterUserInput {
+    username: string;
+    password: string;
+    email: string;
+    smsCode: string;
+    role: string;
 }
 
 // 登录 API 接口定义
 export interface ILoginApi {
     getLogin(userForm: ILoginUserInput): Promise<Response<ILoginResponse>>;
     getSmsCode(userEmail: string): Promise<Response<ILoginResponse>>;
+    getLogout(): Promise<Response<ILoginResponse>>;
+    getRegister(userForm: IRegisterUserInput): Promise<Response<ILoginResponse>>;
 }
 
 /**
@@ -52,7 +66,7 @@ class LoginService implements ILoginApi {
             username,
             password,
             userEmail,
-            smsCode,
+            smsCode
         });
     }
 
@@ -63,7 +77,35 @@ class LoginService implements ILoginApi {
      */
     async getSmsCode(email: string): Promise<Response<ILoginResponse>> {
         return await http.post(GET_SMS_CODE, {
+            email
+        });
+    }
+
+    /**
+     * 退出登录
+     * @returns Promise 对象，解析为类型为 Response<ILoginResponse> 的响应结果
+     */
+    async getLogout(): Promise<Response<ILoginResponse>> {
+        return await http.post(LOGOUT);
+    }
+
+    /**
+     * 注册
+     * @param userForm.username 用户名
+     * @param userForm.password 密码
+     * @param userForm.email 用户邮箱
+     * @param userForm.smsCode 验证码
+     * @param userForm.role 角色
+     * @returns Promise 对象，解析为类型为 Response<ILoginResponse> 的响应结果
+     */
+    async getRegister(userForm: IRegisterUserInput): Promise<Response<ILoginResponse>> {
+        const { username, password, email, smsCode, role } = userForm;
+        return await http.post(REGISTER, {
+            username,
+            password,
             email,
+            smsCode,
+            role
         });
     }
 }
