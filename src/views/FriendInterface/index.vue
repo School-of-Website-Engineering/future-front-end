@@ -12,7 +12,10 @@
                         <span :class="{ 'is-active': activeIndex === 1 }" @click="activeIndex = 1"> 在线 </span>
                         <span :class="{ 'is-active': activeIndex === 2 }" @click="activeIndex = 2"> 全部 </span>
                         <span :class="{ 'is-active': activeIndex === 3 }" @click="activeIndex = 3">
-                            待定 <i class="msgNum">{{ userFriends.handlePendingFriendsRequestList.length }}</i>
+                            待定
+                            <i class="msgNum" v-if="userFriends.handlePendingFriendsRequestList.length">{{
+                                userFriends.handlePendingFriendsRequestList.length
+                            }}</i>
                         </span>
                         <span :class="{ 'is-active': activeIndex === 4 }" @click="activeIndex = 4"> 已屏蔽 </span>
                         <span :class="{ 'is-active-add': activeIndex === 5 }" @click="activeIndex = 5"> 添加好友 </span>

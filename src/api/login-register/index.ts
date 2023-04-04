@@ -2,7 +2,7 @@ import http, { Response } from '@/utils/http';
 import { classAsyncTryCatch } from '@/utils/exceptionHandling';
 
 // 登录接口
-export const LOGIN = '/auth/login';
+export const LOGIN = '/auth/login-register';
 // 获取验证码接口
 export const GET_SMS_CODE = '/auth/verify-code';
 

@@ -122,27 +122,26 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
             strictPort: false,
             open      : true,
             proxy     : {
+                // 匹配 /api-dev、/api-pro、/api-mock-pro、/api-dev-mock 开头的请求
                 '/api-dev': {
-                    // 设置地址为开发环境中的env的VITE_BACKEND_API接口地址
                     target      : env.VITE_BACKEND_API,
                     changeOrigin: true,
                     rewrite     : (path: string) => path.replace(/^\/api-dev/, '')
                 },
                 '/api-pro': {
-                    // 设置地址为生产环境中的env的VITE_BACKEND_API接口地址
                     target      : env.VITE_BACKEND_API,
                     changeOrigin: true,
                     rewrite     : (path: string) => path.replace(/^\/api-pro/, '')
                 },
-                '/api-pro-mock': {
+                '/api-mock-dev': {
                     target      : env.VITE_BACKEND_API,
                     changeOrigin: true,
-                    rewrite     : (path: string) => path.replace(/^\/api-pro-mock/, '')
+                    rewrite     : (path: string) => path.replace(/^\/api-mock-dev/, '')
                 },
-                '/api-devmock': {
+                '/api-mock-pro': {
                     target      : env.VITE_BACKEND_API,
                     changeOrigin: true,
-                    rewrite     : (path: string) => path.replace(/^\/api-devmock/, '')
+                    rewrite     : (path: string) => path.replace(/^\/api-mock-pro/, '')
                 }
             }
         },

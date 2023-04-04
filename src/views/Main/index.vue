@@ -25,7 +25,6 @@ import ChannelSidebar from '@/views/Aside/index.vue';
 
 .main-box {
     height: 100vh;
-
     .channel-sidebar {
         background-color: #1e1f22;
     }

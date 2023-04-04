@@ -10,7 +10,7 @@
         "preview": "vite preview",
         "pro": "vite --mode production",
         "pro:mock": "vite --mode promock",
-        "build:devmock": "vue-tsc && vite build --mode devemock",
+        "build:mockdev": "vue-tsc && vite build --mode devemock",
         "build:prodmock": "vue-tsc && vite build --mode promock",
         "build": "vue-tsc && vite build --mode production",
         "build:dev": "vue-tsc && vite build --mode development",

@@ -20,7 +20,7 @@ import { ElMessage } from 'element-plus';
     handle(response: AxiosResponse<Response>) {
         const errMessage = 'Token expired';
         // 跳转至登录页
-        // router.push('/login').then((r) => r);
+        // router.push('/login-register').then((r) => r);
         // 显示错误提示信息
         ElMessage.error(errMessage);
     }

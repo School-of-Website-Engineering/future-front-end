@@ -4,7 +4,7 @@ import LoginService, { ILoginResponse, ILoginUserInput } from '@/api/login-regis
 /**
  * 用于管理用户信息的 Pinia 存储。
  */
-export const useUserLoginRegisterStore = defineStore('login-register', {
+export const useUserLoginRegisterStore = defineStore('login-register-register', {
     state: () => ({
         // 用户信息
         user: {} as ILoginResponse
