@@ -16,17 +16,17 @@ axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;char
  * @description 创建axios实例
  */
 const service = axios.create({
-    responseType     : 'json',
+    responseType: 'json',
     transformResponse: [
-        function(data) {
+        function (data) {
             try {
                 data = JSON.parse(data);
             } catch (e) {
                 console.log(e);
             }
             return data;
-        }
-    ]
+        },
+    ],
 });
 
 /**
@@ -37,7 +37,7 @@ const service = axios.create({
 service.interceptors.request.use(
     (config: AxiosRequestConfig | any) => {
         config.headers = {
-            ...config.headers
+            ...config.headers,
             // ...auth.headers()
             // 自定义headers，如token等
         };
@@ -45,7 +45,7 @@ service.interceptors.request.use(
     },
     (error: AxiosError) => {
         return Promise.reject(error);
-    }
+    },
 );
 
 /**
@@ -55,7 +55,7 @@ service.interceptors.request.use(
 const errorHandlers: Record<number, ErrorHandler> = {
     404: new DefaultErrorHandler(),
     112: new TokenExpiredErrorHandler(),
-    212: new NoPermissionErrorHandler()
+    212: new NoPermissionErrorHandler(),
 };
 
 /**
