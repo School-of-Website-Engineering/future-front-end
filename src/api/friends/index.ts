@@ -8,7 +8,8 @@ export const USER_FRIENDS_PENDING = '/user/friends/pending';
 export const USER_FRIENDS_BLOCKED = '/user/friends/blocked';
 // 通过用户id查询用户信息
 export const USER_INFO = '/relationships/getFriendByUserId2';
-// 通过用户id查询用户信息
+
+// 通过用户id添加用户为好友
 
 /**
  * 用户好友响应结果接口定义
@@ -24,8 +25,10 @@ export interface IUserFriendsResponse {
     name: string;
     avatar: string;
     status: string;
+
     [key: string]: any;
 }
+
 /**
  * 用户待定好友响应结果接口定义
  * @interface IUserFriendsPendingResponse
@@ -42,6 +45,7 @@ export interface IUserFriendsPendingResponse {
     avatar: string;
     isInitiative: boolean;
 }
+
 /**
  * 用户屏蔽的好友响应结果接口定义
  * @interface IUserFriendsBlockedResponse
@@ -72,26 +76,27 @@ export interface IUserFriendsBlockedResponse {
  * @property {string} img 头像
  */
 export interface IUserInfoResponse {
-    data: {
-        mapKey: {
-            id: string;
-            username: string;
-            email: string;
-            discriminator: string;
-            password: string;
-            createdAt: string;
-            updatedAt: string;
-            role: string;
-            img: string;
-        };
+    mapKey: {
+        id: string;
+        username: string;
+        email: string;
+        discriminator: string;
+        password: string;
+        createdAt: string;
+        updatedAt: string;
+        role: string;
+        img: string;
     };
 }
 
 // 用户好友 API 接口定义
 export interface IUserFriendsApi {
     getUserFriends(): Promise<Response<IUserFriendsResponse>>;
+
     getUserFriendsPending(): Promise<Response<IUserFriendsPendingResponse>>;
+
     getUserFriendsBlocked(): Promise<Response<IUserFriendsBlockedResponse>>;
+
     getUserInfo(id: string): Promise<Response<IUserInfoResponse>>;
 }
 
@@ -104,35 +109,33 @@ class UserFriendsService implements IUserFriendsApi {
      * 获取用户好友数据
      * @returns Promise 对象，解析为类型为 Response<IUserFriendsResponse> 的响应结果
      */
-    async getUserFriends() {
+    async getUserFriends(): Promise<Response<IUserFriendsResponse>> {
         return await http.get<Response<IUserFriendsResponse>>(USER_FRIENDS);
     }
+
     /**
      * 获取用户待定好友数据
      * @returns Promise 对象，解析为类型为 Response<IUserFriendsPendingResponse> 的响应结果
      */
-    async getUserFriendsPending() {
+    async getUserFriendsPending(): Promise<Response<IUserFriendsPendingResponse>> {
         return await http.get<Response<IUserFriendsPendingResponse>>(USER_FRIENDS_PENDING);
     }
+
     /**
      * 获取用户屏蔽的好友数据
      * @returns Promise 对象，解析为类型为 Response<IUserFriendsBlockedResponse> 的响应结果
      * */
-    async getUserFriendsBlocked() {
+    async getUserFriendsBlocked(): Promise<Response<IUserFriendsBlockedResponse>> {
         return await http.get<Response<IUserFriendsBlockedResponse>>(USER_FRIENDS_BLOCKED);
     }
 
     /**
      * 通过用户id查询用户信息
-     * @param id 用户id
+     * @param userId 用户id
      * @returns Promise 对象，解析为类型为 Response<IUserInfoResponse> 的响应结果
      */
-    async getUserInfo(id: string) {
-        return await http.get<Response<IUserInfoResponse>>(USER_INFO, {
-            params: {
-                userId: id
-            }
-        });
+    async getUserInfo(userId: string): Promise<Response<IUserInfoResponse>> {
+        return await http.post<Response<IUserInfoResponse>>(USER_INFO, { userId });
     }
 }
 

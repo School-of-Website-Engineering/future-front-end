@@ -1,15 +1,15 @@
 // 通过用户id查询用户信息
 export default {
-    url     : '/friends/searchFriends',
+    url     : '/relationships/getFriendByUserId2',
     type    : 'post',
-    response: (config) => {
-        const { id } = config.query;
+    response: () => {
         return {
-            code: 200,
-            data: {
+            code  : 200,
+            reason: 'success',
+            data  : {
                 mapKey: {
-                    id           : '1',
-                    username     : 'Alpaͩcͤaͮ',
+                    id           : '2',
+                    username     : '2',
                     email        : '234532789ui@qq.com',
                     discriminator: '123456',
                     password     : 'LJjkiajBJLGljbJHGIulbjkUIJ2',

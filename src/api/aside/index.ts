@@ -88,14 +88,14 @@ class AsideLPrivateService implements IAsideLPrivateApi {
      * 获取侧边栏私信数据
      * @returns Promise 对象，解析为类型为 Response<IAsideLPrivate> 的响应结果
      * */
-    async getAsideLPrivate() {
+    async getAsideLPrivate(): Promise<Response<IAsideLPrivate>> {
         return await http.get<Response<IAsideLPrivate>>(ASIDE_LPRIVATE);
     }
-
-    /** 获取侧边栏频道数据
+    /**
+     * 获取侧边栏频道数据
      *  @returns Promise 对象，解析为类型为 Response<IAsideSidebarList> 的响应结果
      * */
-    async getAsideSidebarList() {
+    async getAsideSidebarList(): Promise<Response<IAsideSidebarList>> {
         return await http.get<Response<IAsideSidebarList>>(ASIDE_SIDEBAR_LIST);
     }
 
@@ -103,7 +103,7 @@ class AsideLPrivateService implements IAsideLPrivateApi {
      * 获取侧边栏私信用户数据
      * @returns Promise 对象，解析为类型为 Response<IAsideLPrivateResponse> 的响应结果
      */
-    async getAsidePrivateUserList() {
+    async getAsidePrivateUserList(): Promise<Response<IAsideLPrivateResponse>> {
         return await http.get<Response<IAsideLPrivateResponse>>(ASIDE_PRIVATE_USER_LIST);
     }
 }

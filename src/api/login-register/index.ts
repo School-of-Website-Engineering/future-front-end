@@ -97,7 +97,6 @@ class LoginService implements ILoginApi {
             smsCode
         });
     }
-
     /**
      * 获取验证码
      * @param email 用户邮箱
@@ -108,7 +107,6 @@ class LoginService implements ILoginApi {
             email
         });
     }
-
     /**
      * 退出登录
      * @returns Promise 对象，解析为类型为 Response<ILoginResponse> 的响应结果
@@ -116,7 +114,6 @@ class LoginService implements ILoginApi {
     async getLogout(): Promise<Response<ILoginResponse>> {
         return await http.post(LOGOUT);
     }
-
     /**
      * 注册
      * @param userForm.username 用户名
