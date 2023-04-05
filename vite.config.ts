@@ -11,19 +11,15 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import { viteMockServe } from 'vite-plugin-mock';
 import { VitePWA } from 'vite-plugin-pwa';
 import preload from 'vite-plugin-preload';
+import { terser } from 'rollup-plugin-terser';
 
 // 接口定义
-interface ViteConfigOptions {
+interface BaseConfigOptions {
     command: 'build' | 'serve';
     mode: string;
 }
 
-interface DefineConfigOptions {
-    command: 'build' | 'serve';
-    mode: string;
-}
-
-function defineConfig({ command, mode }: DefineConfigOptions) {
+function defineConfig({ command, mode }: BaseConfigOptions) {
     // 获取环境变量
     // 以下env配置是为了在代码中可以直接使用process.env.NODE_ENV,loadEnv是vite提供的一个方法，可以获取到环境变量
     const env: Partial<Record<string, string>> = loadEnv(mode, process.cwd());
@@ -71,7 +67,7 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
                 localEnabled: true,
                 watchFiles  : true,
                 //是否开启生产环境mock
-                prodEnabled : false
+                prodEnabled : true
             }),
             VitePWA({
                 includeAssets: ['favicon.svg'],
@@ -164,13 +160,21 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
                             return 'vendor';
                         }
                     }
-                }
+                },
+                plugins: [
+                    // terser是一个压缩js的插件，这里配置了压缩时删除注释
+                    terser()
+                ]
             },
             terserOptions: {
                 compress: {
                     keep_infinity: true, // 防止 Infinity 被压缩成 1/0，这可能会导致 Chrome 上的性能问题
                     drop_console : isProduction && env.VITE_BUILD_DROP_CONSOLE === 'true', // 去除 console
                     drop_debugger: isProduction // 去除 debugger
+                },
+                // 压缩时删除注释
+                format: {
+                    comments: false
                 }
             },
             chunkSizeWarningLimit: 1500 // chunk 大小警告的限制（以 kbs 为单位）
@@ -178,4 +182,4 @@ function defineConfig({ command, mode }: DefineConfigOptions) {
     };
 }
 
-export default ({ command, mode }: ViteConfigOptions) => defineConfig({ command, mode });
+export default ({ command, mode }: BaseConfigOptions) => defineConfig({ command, mode });

@@ -47,7 +47,7 @@ export interface ILoginUserInput {
     username: string;
     userEmail: string;
     password: string;
-    smsCode: number | undefined | string;
+    smsCode: string;
 }
 
 /**
