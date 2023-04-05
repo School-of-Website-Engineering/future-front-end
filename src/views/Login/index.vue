@@ -55,7 +55,7 @@
                         :class="{ input__error: errors.smsCode }"
                         @focus="errors.smsCode = ''"
                     />
-                    <el-button @click="getEmailSms" :disabled="isLoding" class="primary-btn">{{ getSms }} </el-button>
+                    <el-button @click="getEmailSms" :disabled="isLoding" class="primary-btn">{{ getSms }}</el-button>
                 </div>
                 <div class="primary-btn" @click="submitFormRegister">立即注册</div>
             </form>
@@ -86,7 +86,7 @@
                         class="form__input"
                         type="text"
                         placeholder="邮箱"
-                        v-model="loginForm.userEmail"
+                        v-model="loginForm.email"
                         :class="{ input__error: errors.email }"
                         @focus="errors.email = ''"
                     />
@@ -116,7 +116,7 @@
                         :class="{ input__error: errors.smsCode }"
                         @focus="errors.smsCode = ''"
                     />
-                    <el-button @click="getEmailSms" :disabled="isLoding" class="primary-btn">{{ getSms }} </el-button>
+                    <el-button @click="getEmailSms" :disabled="isLoding" class="primary-btn">{{ getSms }}</el-button>
                 </div>
                 <div class="primary-btn" @click="submitForm">立即登录</div>
             </form>
@@ -139,7 +139,9 @@
 
 <script lang="js">
 import LoginService from "@/api/login-register";
-import {useUserLoginRegisterStore} from "@/store/modules/user";
+import { useUserLoginRegisterStore } from "@/store/modules/user";
+
+const userLoginRegisterStore = useUserLoginRegisterStore();
 
 export default {
     name: "LoginBox",
@@ -147,10 +149,10 @@ export default {
         return {
             isLogin  : true,
             loginForm: {
-                username : "admin",
-                userEmail: "1960638223@qq.com",
-                password : "123456789o",
-                smsCode  : "123456"
+                username: "admin",
+                email   : "1960638223@qq.com",
+                password: "123456789o",
+                smsCode : "123456"
             },
             registerForm: {
                 name    : "adi",
@@ -177,14 +179,8 @@ export default {
         };
     },
     methods: {
-        async login() {
-            const { code, reason } = await useUserLoginRegisterStore.userLogin(this.loginForm);
-            if (code === 200) {
-                this.$message.success(reason);
-                this.$router.push("./main");
-            } else {
-                this.$message.error(reason);
-            }
+        login() {
+            userLoginRegisterStore.userLogin(this.loginForm);
         },
         async register() {
             const { code, reason } = await LoginService.getRegister(this.registerForm);
@@ -264,7 +260,7 @@ export default {
          * @return {Boolean} true:验证通过 false:验证失败
          * */
         validateEmail(email) {
-            const reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+            const reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             return reg.test(email);
         },
         submitForm() {

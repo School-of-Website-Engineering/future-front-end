@@ -12,8 +12,8 @@
 
 | 版本    | 是否支持           |
 | ------- | ------------------ |
+| v1.4.0  | :white_check_mark: |
 | v1.3.7  | :white_check_mark: |
-| v1.3.6  | :white_check_mark: |
 | v1.3.5  | :white_check_mark: |
 | < 1.3.0 | :x:                |
 

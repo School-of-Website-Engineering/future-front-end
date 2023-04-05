@@ -47,7 +47,7 @@ export interface ILoginUserInput {
     username: string;
     userEmail: string;
     password: string;
-    smsCode: number | undefined | string;
+    smsCode: string;
 }
 
 /**
@@ -97,7 +97,7 @@ class LoginService implements ILoginApi {
             username,
             password,
             userEmail,
-            smsCode,
+            smsCode
         });
     }
 
@@ -108,7 +108,7 @@ class LoginService implements ILoginApi {
      */
     async getSmsCode(email: string): Promise<Response<ILoginResponse>> {
         return await http.post(GET_SMS_CODE, {
-            email,
+            email
         });
     }
 
@@ -136,7 +136,7 @@ class LoginService implements ILoginApi {
             password,
             email,
             smsCode,
-            role,
+            role
         });
     }
 }
