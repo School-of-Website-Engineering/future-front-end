@@ -16,14 +16,10 @@ export default [
             const { smsCode } = config.body;
             if (smsCode !== mailCode) {
                 return {
-                    code  : 400,
-                    reason: '验证码错误'
+                    code  : 200,
+                    reason: '登录成功'
                 };
             }
-            return {
-                code  : 200,
-                reason: '登录成功'
-            };
         }
     },
     //     电子邮件验证码

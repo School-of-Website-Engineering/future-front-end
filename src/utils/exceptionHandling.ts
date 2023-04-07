@@ -1,6 +1,5 @@
 /**
  * 使用 try-catch 包装一个异步函数，可以捕获异常并输出错误日志。
- *
  * @param func 待包装的异步函数。
  * @returns 新的异步函数，具有相同的参数和返回值类型，但会在发生异常时返回 undefined。
  */
@@ -13,7 +12,7 @@ export function asyncTryCatch<T extends(...args: unknown[]) => Promise<unknown>,
             return result as U;
         } catch (e) {
             // 异常处理逻辑
-            console.log(`！！！捕获到异常，请检查${func.name}: ${e}`);
+            console.log(`！！！捕获到异常，请检查函数名为：${func.name}错误： ${e}`);
             return undefined;
         }
     };
