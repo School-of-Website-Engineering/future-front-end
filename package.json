@@ -1,7 +1,7 @@
 {
     "name": "future",
     "private": true,
-    "version": "1.4.0",
+    "version": "1.4.1",
     "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
