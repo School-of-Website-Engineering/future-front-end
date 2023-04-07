@@ -6,10 +6,28 @@
         <div class="search">
             <!-- 输入盒子 -->
             <div class="search-input">
-                <input type="text" placeholder="输入id" ref="inputRef" v-model="input" @keyup.enter="searchFriend" />
+                <input
+                    type="text"
+                    placeholder="输入id"
+                    ref="inputRef"
+                    v-model="input"
+                    :class="{ 'is-error': !isNumber && input }"
+                    @keyup.enter="searchFriend"
+                />
+                <div class="popover" :class="{ show: !isNumber && input }">
+                    <div class="content">
+                        <p v-if="!isNumber" class="error-text">请输入正确的好友id标签！如：123412</p>
+                        <p v-else class="error-text">唔，没起作用。请再次检查字母大小写，拼写，空格与数字是否正确。</p>
+                    </div>
+                </div>
                 <!-- 搜索按钮 -->
                 <div class="search-btn">
-                    <el-button type="primary" :disabled="isInput" color="#5865f2" @click="searchFriend">
+                    <el-button
+                        type="primary"
+                        :disabled="isInput || !isNumber"
+                        style="background-color: #5865f2"
+                        @click="searchFriend"
+                    >
                         搜索
                     </el-button>
                 </div>
@@ -23,13 +41,20 @@
     </div>
 </template>
 
-<script setup lang="ts" name="AddFriend">
+<script setup lang="ts">
 import { onMounted, reactive, ref, watch } from 'vue';
 import UserFriendsService, { IUserInfoResponse } from '@/api/friends';
 
+// 输入框的引用
 const inputRef = ref<HTMLInputElement | null>(null);
+// 是否禁用搜索按钮
 const isInput = ref<boolean>(false);
+// 输入框的值
 const input = ref<string>('');
+// popover 可见性
+const popoverVisible = ref<boolean>(false);
+// 是否为数字
+const isNumber = ref<boolean>(false);
 // 用户信息对象
 const friendsInfo = reactive<IUserInfoResponse>({
     mapKey: {
@@ -44,45 +69,54 @@ const friendsInfo = reactive<IUserInfoResponse>({
         img          : ''
     }
 });
-// 进入页面后输入框自动获取焦点
+
+/**
+ * @description 进入页面后输入框自动获取焦点
+ */
 onMounted(() => {
     if (inputRef.value) {
         inputRef.value.focus();
     }
 });
 
-//没有输入内容就禁用按钮,使用watch监听inputRef的值
+/**
+ * @description 使用 watch 监听 input 的值
+ */
 watch(
     () => input.value,
     (newVal, oldVal) => {
-        if (newVal) {
-            isInput.value = false;
-            console.log(isInput.value);
-        } else {
-            isInput.value = true;
-        }
+        const reg = /^\d+$/;
+        isInput.value = !newVal;
+        isNumber.value = reg.test(newVal);
     },
     { immediate: true }
 );
 
 /**
- * @description: 搜索好友
- * */
+ * @description 搜索好友
+ */
 const searchFriend = async() => {
-    if (input.value) {
-        const { data, code } = await UserFriendsService.getUserInfo(input.value);
-        if (code === 200) {
-            friendsInfo.mapKey.id = data.mapKey.id;
-            friendsInfo.mapKey.username = data.mapKey.username;
-            friendsInfo.mapKey.email = data.mapKey.email;
-            friendsInfo.mapKey.discriminator = data.mapKey.discriminator;
-            friendsInfo.mapKey.password = data.mapKey.password;
-            friendsInfo.mapKey.createdAt = data.mapKey.createdAt;
-            friendsInfo.mapKey.updatedAt = data.mapKey.updatedAt;
-            friendsInfo.mapKey.role = data.mapKey.role;
-            friendsInfo.mapKey.img = data.mapKey.img;
+    try {
+        if (/^\d+$/.test(input.value)) {
+            const { data, code } = await UserFriendsService.getUserInfo(input.value);
+            if (code === 200) {
+                friendsInfo.mapKey.id = data.mapKey.id;
+                friendsInfo.mapKey.username = data.mapKey.username;
+                friendsInfo.mapKey.email = data.mapKey.email;
+                friendsInfo.mapKey.discriminator = data.mapKey.discriminator;
+                friendsInfo.mapKey.password = data.mapKey.password;
+                friendsInfo.mapKey.createdAt = data.mapKey.createdAt;
+                friendsInfo.mapKey.updatedAt = data.mapKey.updatedAt;
+                friendsInfo.mapKey.role = data.mapKey.role;
+                friendsInfo.mapKey.img = data.mapKey.img;
+            } else {
+                throw new Error('请求数据失败');
+            }
+        } else {
+            popoverVisible.value = true;
         }
-        console.log(friendsInfo.mapKey);
+    } catch (error) {
+        console.error('Error: ', error);
     }
 };
 </script>
@@ -191,5 +225,27 @@ const searchFriend = async() => {
         height: 500px;
         width: 100%;
     }
+}
+
+.is-error {
+    border-color: #f23f42 !important;
+}
+.error-text {
+    color: #fa777c !important;
+    margin-top: 5px;
+}
+.popover {
+    position: absolute;
+    left: 14px;
+    width: 100%;
+    z-index: 99;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.popover.show .content {
+    display: block;
+}
+.popover .content {
+    display: none;
 }
 </style>
