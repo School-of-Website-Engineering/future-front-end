@@ -191,7 +191,7 @@ const getPrivateMessageList = async() => {
         .Friends-private-message {
             height: 90%;
             background-color: unset;
-            padding: 0px 8px !important;
+            padding: 0 8px !important;
 
             .friends-top-head {
                 //固定头部

@@ -13,7 +13,7 @@ export function asyncTryCatch<T extends(...args: unknown[]) => Promise<unknown>,
             return result as U;
         } catch (e) {
             // 异常处理逻辑
-            console.log(`捕获到异常，在 ${func.name}: ${e}`);
+            console.log(`！！！捕获到异常，请检查${func.name}: ${e}`);
             return undefined;
         }
     };
