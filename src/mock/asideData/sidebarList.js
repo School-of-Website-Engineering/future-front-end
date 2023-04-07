@@ -61,7 +61,7 @@ export default [
                         id   : '437456121056741330',
                         name : '频道',
                         count: 40,
-                        img  : 'https://cdn.discordapp.com/icons/302094807046684672/a_4a2d4c71d0ec0c7f72792d7280a6529d.webp?size=160'
+                        img  : 'https://cdn.discordapp.com/icons/706661525439512597/a_03113c74d072403ee7d7e78c1775bbc1.webp?size=160'
                     },
                     {
                         id   : '437456121056741331',

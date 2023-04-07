@@ -6,6 +6,7 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 import router from './router';
 import './assets/scss/global.scss';
 import ElementPlus from 'element-plus';
+import locale from 'element-plus/lib/locale/lang/zh-cn';
 import 'element-plus/dist/index.css';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import FriendStatus from './components/common/FriendStatus.vue';
@@ -24,8 +25,8 @@ app.component('FriendStatus', FriendStatus);
 app.component('FriendsDisplay', FriendsDisplay);
 // piniaPluginPersistedstate是一个插件，用于持久化pinia的状态
 pinia.use(piniaPluginPersistedstate);
-app.use(ElementPlus);
 app.use(pinia);
 app.use(store);
 app.use(router);
+app.use(ElementPlus, { locale });
 app.mount('#app');
