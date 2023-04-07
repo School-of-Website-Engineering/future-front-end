@@ -2,22 +2,19 @@
 
 ## [1.4.1](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.0...v1.4.1) (2023-04-07)
 
-
 ### Styling
 
-* Format code with prettier ([467ded9](https://github.com/School-of-Website-Engineering/future-front-end/commit/467ded9324a0ff517f76ff5c2ef849eaaaa93100))
+-   Format code with prettier ([467ded9](https://github.com/School-of-Website-Engineering/future-front-end/commit/467ded9324a0ff517f76ff5c2ef849eaaaa93100))
 
 ## [1.4.0](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.10...v1.4.0) (2023-04-04)
 
-
 ### Features
 
-* 添加后端接口 ([0e710c1](https://github.com/School-of-Website-Engineering/future-front-end/commit/0e710c1aabb5779226dbb500b4bd1baa0e1e8f5e))
-
+-   添加后端接口 ([0e710c1](https://github.com/School-of-Website-Engineering/future-front-end/commit/0e710c1aabb5779226dbb500b4bd1baa0e1e8f5e))
 
 ### Styling
 
-* Format code with prettier ([50249dc](https://github.com/School-of-Website-Engineering/future-front-end/commit/50249dce08d3c4246fae0ce3258fa42ed52a8dde))
+-   Format code with prettier ([50249dc](https://github.com/School-of-Website-Engineering/future-front-end/commit/50249dce08d3c4246fae0ce3258fa42ed52a8dde))
 
 ## [1.3.10](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.3.9...v1.3.10) (2023-04-01)
 
