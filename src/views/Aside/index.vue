@@ -102,6 +102,7 @@ import AsideLPrivateService, { IAsideSidebarList } from '@/api/aside';
 import { useRouter } from 'vue-router';
 import { Compass, Download, Plus } from '@element-plus/icons-vue';
 import { usePrivateLetterStore } from '@/store';
+import { asyncTryCatch } from '@/utils/exceptionHandling';
 
 const privateLetterStore = usePrivateLetterStore();
 const errorHandler = () => true;
@@ -109,7 +110,6 @@ const isCollapse = ref(true);
 const router = useRouter();
 // 侧边栏频道列表数据
 const asideSidebarList = reactive<IAsideSidebarList[]>([]);
-import { asyncTryCatch } from '@/utils/exceptionHandling';
 
 onMounted(() => {
     getChannelList();
