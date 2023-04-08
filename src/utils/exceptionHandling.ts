@@ -1,26 +1,28 @@
 /**
- * 使用 try-catch 包装一个异步函数，可以捕获异常并输出错误日志。
- * @param func 待包装的异步函数。
- * @returns 新的异步函数，具有相同的参数和返回值类型，但会在发生异常时返回 undefined。
+ * 使用 try-catch 包装一个异步函数，可以捕获异常并输出错误日志
+ * @param func 待包装的异步函数
+ * @returns 新的异步函数，具有相同的参数和返回值类型，但会在发生异常时返回 undefined
  */
-export function asyncTryCatch<T extends(...args: unknown[]) => Promise<unknown>, U = ReturnType<T>>(
-    func: T
-): (...args: Parameters<T>) => Promise<U | undefined> {
-    return async function(...args: Parameters<T>): Promise<U | undefined> {
+export function asyncTryCatch<T = any>(func: (...args: any[]) => Promise<T>) {
+    return async function(...args: any[]) {
         try {
             const result = await func(...args);
-            return result as U;
-        } catch (e) {
-            // 异常处理逻辑
-            console.log(`！！！捕获到异常，请检查函数名为：${func.name}错误： ${e}`);
-            return undefined;
+            return result;
+        } catch (error) {
+            // 如果没有func.name则不进行打印
+            if (func.name) {
+                console.log(`！！！捕获到异常，请检查函数：\n\t${func.name}\n错误： ${error}`);
+            }
+            // console.log(`！！！捕获到异常，请检查函数：\n\t${func.name}\n错误： ${error}`);
+            throw error; // 继续向上抛出错误，以便后续处理
         }
     };
 }
+
 /**
- * 使用 try-catch 包装一个类的所有异步方法，可以捕获异常并输出错误日志。
- * @param target 待包装的类。
- * @returns 新的类，具有相同的参数和返回值类型，但会在发生异常时返回 undefined。
+ * 在类中使用 try-catch 包装所有的异步方法，可以捕获异常并输出错误日志
+ * @param target 待包装的类
+ * @returns 新的类，具有相同的参数和返回值类型，但会在发生异常时返回 undefined
  * */
 export function classAsyncTryCatch<T extends new(...args: any[]) => object>(target: T) {
     for (const key of Object.getOwnPropertyNames(target.prototype)) {

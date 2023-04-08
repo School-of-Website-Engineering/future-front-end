@@ -109,6 +109,7 @@ const isCollapse = ref(true);
 const router = useRouter();
 // 侧边栏频道列表数据
 const asideSidebarList = reactive<IAsideSidebarList[]>([]);
+import { asyncTryCatch } from '@/utils/exceptionHandling';
 
 onMounted(() => {
     getChannelList();
@@ -133,13 +134,12 @@ const goToChannel = (item: IAsideSidebarList) => {
  * @function
  * @returns {Promise<void>}
  */
-const getChannelList = async() => {
+const getChannelList = asyncTryCatch(async() => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
     console.log('-------侧边栏频道列表数据---------');
     console.log(asideSidebarList);
-};
-
+});
 /**
  * 根据rePathClass 的id删除is-active类名
  * @function removeClass
