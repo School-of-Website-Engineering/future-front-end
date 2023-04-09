@@ -132,6 +132,7 @@ import { onMounted, reactive, ref } from 'vue';
 import AsideLPrivateService, { IAsideLPrivateResponse } from '@/api/aside';
 import { MessageBox, UserFilled } from '@element-plus/icons-vue';
 import { useUserFriendsStore } from '@/store';
+import { asyncTryCatch } from '@/utils/exceptionHandling';
 
 const userFriends = useUserFriendsStore();
 
@@ -174,12 +175,12 @@ onMounted(() => {
  * @constructor
  * @description 获取私信列表
  */
-const getPrivateMessageList = async() => {
+const getPrivateMessageList = asyncTryCatch(async() => {
     const { data } = await AsideLPrivateService.getAsidePrivateUserList();
     privateMessageList.push(...data.sidebarList);
     console.log('----------获取私信列表---------');
     console.log(privateMessageList);
-};
+});
 </script>
 
 <style lang="scss" scoped>

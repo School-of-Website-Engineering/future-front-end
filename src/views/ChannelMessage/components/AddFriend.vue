@@ -44,6 +44,7 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref, watch } from 'vue';
 import UserFriendsService, { IUserInfoResponse } from '@/api/friends';
+import { asyncTryCatch } from '@/utils/exceptionHandling';
 
 // 输入框的引用
 const inputRef = ref<HTMLInputElement | null>(null);
@@ -95,30 +96,26 @@ watch(
 /**
  * @description 搜索好友
  */
-const searchFriend = async() => {
-    try {
-        if (/^\d+$/.test(input.value)) {
-            const { data, code } = await UserFriendsService.getUserInfo(input.value);
-            if (code === 200) {
-                friendsInfo.mapKey.id = data.mapKey.id;
-                friendsInfo.mapKey.username = data.mapKey.username;
-                friendsInfo.mapKey.email = data.mapKey.email;
-                friendsInfo.mapKey.discriminator = data.mapKey.discriminator;
-                friendsInfo.mapKey.password = data.mapKey.password;
-                friendsInfo.mapKey.createdAt = data.mapKey.createdAt;
-                friendsInfo.mapKey.updatedAt = data.mapKey.updatedAt;
-                friendsInfo.mapKey.role = data.mapKey.role;
-                friendsInfo.mapKey.img = data.mapKey.img;
-            } else {
-                throw new Error('请求数据失败');
-            }
+const searchFriend = asyncTryCatch(async() => {
+    if (/^\d+$/.test(input.value)) {
+        const { data, code } = await UserFriendsService.getUserInfo(input.value);
+        if (code === 200) {
+            friendsInfo.mapKey.id = data.mapKey.id;
+            friendsInfo.mapKey.username = data.mapKey.username;
+            friendsInfo.mapKey.email = data.mapKey.email;
+            friendsInfo.mapKey.discriminator = data.mapKey.discriminator;
+            friendsInfo.mapKey.password = data.mapKey.password;
+            friendsInfo.mapKey.createdAt = data.mapKey.createdAt;
+            friendsInfo.mapKey.updatedAt = data.mapKey.updatedAt;
+            friendsInfo.mapKey.role = data.mapKey.role;
+            friendsInfo.mapKey.img = data.mapKey.img;
         } else {
-            popoverVisible.value = true;
+            throw new Error('请求数据失败');
         }
-    } catch (error) {
-        console.error('Error: ', error);
+    } else {
+        popoverVisible.value = true;
     }
-};
+});
 </script>
 
 <style lang="scss" scoped>
@@ -230,10 +227,12 @@ const searchFriend = async() => {
 .is-error {
     border-color: #f23f42 !important;
 }
+
 .error-text {
     color: #fa777c !important;
     margin-top: 5px;
 }
+
 .popover {
     position: absolute;
     left: 14px;
@@ -242,9 +241,11 @@ const searchFriend = async() => {
     border-radius: 4px;
     overflow: hidden;
 }
+
 .popover.show .content {
     display: block;
 }
+
 .popover .content {
     display: none;
 }

@@ -100,9 +100,7 @@ class AsideLPrivateService implements IAsideLPrivateApi {
      *  @returns Promise 对象，解析为类型为 Response<IAsideSidebarList> 的响应结果
      * */
     async getAsideSidebarList(): Promise<Response<IAsideSidebarList>> {
-        // return await http.get<Response<IAsideSidebarList>>(ASIDE_SIDEBAR_LIST);
-        //     抛出异常
-        throw new Error('抛出异常');
+        return await http.get<Response<IAsideSidebarList>>(ASIDE_SIDEBAR_LIST);
     }
 
     /**

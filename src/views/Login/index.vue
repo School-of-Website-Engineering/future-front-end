@@ -183,7 +183,8 @@ export default {
             userLoginRegisterStore.userLogin(this.loginForm);
         },
         async register() {
-            const { code, reason } = await LoginService.getRegister(this.registerForm);
+            const wrappedRegister = asyncTryCatch(LoginService.getRegister.bind(LoginService));
+            const { code, reason } = await wrappedRegister(this.registerForm);
             if (code === 200) {
                 this.$message.success(reason);
                 this.$router.push("./main");
@@ -209,7 +210,8 @@ export default {
                     this.isLoding = false;
                 }
             }, 1000);
-            const { data, reason, code } = await LoginService.getSmsCode(this.loginForm.email);
+            const wrappedGetSms = asyncTryCatch(LoginService.getSmsCode.bind(LoginService));
+            const { code, reason, data } = await wrappedGetSms(this.loginForm.email);
             if (code === 200) {
                 this.$message.success(reason);
                 console.log(data);
