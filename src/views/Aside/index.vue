@@ -102,6 +102,7 @@ import AsideLPrivateService, { IAsideSidebarList } from '@/api/aside';
 import { useRouter } from 'vue-router';
 import { Compass, Download, Plus } from '@element-plus/icons-vue';
 import { usePrivateLetterStore } from '@/store';
+import { asyncTryCatch } from '@/utils/exceptionHandling';
 
 const privateLetterStore = usePrivateLetterStore();
 const errorHandler = () => true;
@@ -133,13 +134,12 @@ const goToChannel = (item: IAsideSidebarList) => {
  * @function
  * @returns {Promise<void>}
  */
-const getChannelList = async() => {
+const getChannelList = asyncTryCatch(async() => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
     console.log('-------侧边栏频道列表数据---------');
     console.log(asideSidebarList);
-};
-
+});
 /**
  * 根据rePathClass 的id删除is-active类名
  * @function removeClass
