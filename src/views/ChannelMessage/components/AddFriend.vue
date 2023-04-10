@@ -59,16 +59,16 @@ const isNumber = ref<boolean>(false);
 // 用户信息对象
 const friendsInfo = reactive<IUserInfoResponse>({
     mapKey: {
-        id           : '',
-        username     : '',
-        email        : '',
+        id: '',
+        username: '',
+        email: '',
         discriminator: '',
-        password     : '',
-        createdAt    : '',
-        updatedAt    : '',
-        role         : '',
-        img          : ''
-    }
+        password: '',
+        createdAt: '',
+        updatedAt: '',
+        role: '',
+        img: '',
+    },
 });
 
 /**
@@ -90,13 +90,13 @@ watch(
         isInput.value = !newVal;
         isNumber.value = reg.test(newVal);
     },
-    { immediate: true }
+    { immediate: true },
 );
 
 /**
  * @description 搜索好友
  */
-const searchFriend = asyncTryCatch(async() => {
+const searchFriend = asyncTryCatch(async () => {
     if (/^\d+$/.test(input.value)) {
         const { data, code } = await UserFriendsService.getUserInfo(input.value);
         if (code === 200) {
