@@ -23,21 +23,21 @@ future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似 discor
 
  <h2>内容列表</h2>
 
-- [future-front-end](#future-front-end)
-  - [项目简介](#项目简介)
-  - [Git 规范](#git-规范)
-    - [Git 分支命名](#git-分支命名)
-  - [Git Commit Message 格式](#git-commit-message-格式)
-    - [type 提交类型：](#type-提交类型)
-    - [subject 提交描述](#subject-提交描述)
-  - [项目现阶段预览](#项目现阶段预览)
-  - [相关仓库](#相关仓库)
-  - [维护者](#维护者)
-  - [如何贡献](#如何贡献)
-    - [贡献者](#贡献者)
-  - [快速上手](#快速上手)
-    - [特别感谢：](#特别感谢)
-  - [使用许可](#使用许可)
+-   [future-front-end](#future-front-end)
+    -   [项目简介](#项目简介)
+    -   [Git 规范](#git-规范)
+        -   [Git 分支命名](#git-分支命名)
+    -   [Git Commit Message 格式](#git-commit-message-格式)
+        -   [type 提交类型：](#type-提交类型)
+        -   [subject 提交描述](#subject-提交描述)
+    -   [项目现阶段预览](#项目现阶段预览)
+    -   [相关仓库](#相关仓库)
+    -   [维护者](#维护者)
+    -   [如何贡献](#如何贡献)
+        -   [贡献者](#贡献者)
+    -   [快速上手](#快速上手)
+        -   [特别感谢：](#特别感谢)
+    -   [使用许可](#使用许可)
 
 ## Git 规范
 
