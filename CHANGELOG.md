@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.2](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.1...v1.4.2) (2023-04-11)
+
+
+### Styling
+
+* Format code with prettier ([1a91e69](https://github.com/School-of-Website-Engineering/future-front-end/commit/1a91e6934bf1bd69f6c1b6a02b5ca97773e7b625))
+
+
+### Docs
+
+* **contributor:** contrib-readme-action has updated readme ([6b6e08e](https://github.com/School-of-Website-Engineering/future-front-end/commit/6b6e08e041fbfb8d2312273bbc079c0c400d75d1))
+
 ## [1.4.1](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.0...v1.4.1) (2023-04-07)
 
 ### Styling
