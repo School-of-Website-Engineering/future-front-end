@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-cnpm run lint-staged --allow-empty
+npm run lint-staged --allow-empty

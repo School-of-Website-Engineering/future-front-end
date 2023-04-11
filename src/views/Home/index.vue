@@ -22,8 +22,8 @@
         </div>
         <div class="hometext">
             <h2>想象这样一个场所......</h2>
-            <p>
-                在这里，您可以加入校园俱乐部、游戏群组，或是世界级艺术社区。在这里，您也能邀三五好友一起共度欢乐时光。在这里，您可以轻而易举地每日谈天说地，时常消遣娱乐。
+            <p class="center-text">
+                在这里，您可以加入校园俱乐部、游戏群组，或是世界级艺术社区。在这里，您也能邀三<br />五好友一起共度欢乐时光。在这里，您可以轻而易举地每日谈天说地，时常消遣娱乐。
             </p>
             <div class="hometext_Download">
                 <button><i class="fa-solid fa-download"></i> 下载PC端</button>
