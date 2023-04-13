@@ -105,10 +105,18 @@ const props = defineProps({
 
 /**
  @description: 用于存储不同状态下的文字信息
- */ const statusMap = { online: '在线', offline: '离线', busy: '忙碌', away: '离开' };
+ */ const statusMap = {
+    online : '在线',
+    offline: '离线',
+    busy   : '忙碌',
+    away   : '离开'
+};
 /**
  @description: 用于存储待定好友的文字信息
- */ const isInitiativeMap = { true: '送出的好友请求', false: '收到好友请求' };
+ */ const isInitiativeMap = {
+    true : '送出的好友请求',
+    false: '收到好友请求'
+};
 
 const searchFriend = () => {
     console.log(search.value);

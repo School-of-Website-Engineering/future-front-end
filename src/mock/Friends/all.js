@@ -15,7 +15,7 @@ export default [
                         {
                             id    : '345623411435767855',
                             name  : 'Just an assassin enjoyer',
-                            avatar: 'https://cdn.discordapp.com/avatars/714393480645967985/ebe1b411f87e82ae43822d1b157d8a2c.webp?size=128',
+                            avatar: '../../',
                             status: 'offline'
                         },
                         {
@@ -80,7 +80,7 @@ export default [
                             // 用户名
                             name  : 'duelists samwise gamgee',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/406063120705126400/a765271a2e13bd42d0a0848c0af23bac.webp?size=128',
+                            avatar: 'https://cdn.discordapp.com/avatars/625933842263572490/5d2595d9e7b7b48bef909e90242cee89.webp?size=128',
                             // 用户状态
                             status: 'busy'
                         },

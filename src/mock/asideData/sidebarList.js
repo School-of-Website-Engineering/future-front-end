@@ -49,7 +49,7 @@ export default [
                         id   : '437456121056741328',
                         name : '好友',
                         count: 10,
-                        img  : 'https://cdn.discordapp.com/icons/541484311354933258/a_8d6214652c64574bfdde14e05dde7708.webp?size=160'
+                        img  : 'https://cdn.discordapp.com/avatars/744562248101396611/da75138093c6594eee95135c955cb972.webp?size=128'
                     },
                     {
                         id   : '437456121056741329',
