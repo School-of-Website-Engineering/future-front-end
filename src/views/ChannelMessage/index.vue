@@ -67,7 +67,12 @@
                             </el-tooltip>
                         </el-row>
                         <!-- 私信列表 -->
-                        <el-row class="friends-top-flex" v-for="item in privateMessageList" :key="item.id">
+                        <el-row
+                            class="friends-top-flex"
+                            v-for="item in privateMessageList"
+                            @click="toChat(item)"
+                            :key="item.id"
+                        >
                             <div class="private-message-user-box">
                                 <div class="private-message-user-box-flex">
                                     <div class="private-message-user-box-flex-left">
@@ -133,6 +138,7 @@ import AsideLPrivateService, { IAsideLPrivateResponse } from '@/api/aside';
 import { MessageBox, UserFilled } from '@element-plus/icons-vue';
 import { useUserFriendsStore } from '@/store';
 import { asyncTryCatch } from '@/utils/exceptionHandling';
+import router from '@/router';
 
 const userFriends = useUserFriendsStore();
 
@@ -141,25 +147,25 @@ const dialogTableVisible = ref(false);
 // 表格数据
 const gridData = [
     {
-        date: '2016-05-02',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-02',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-04',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-04',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-01',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
+        date   : '2016-05-01',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
     },
     {
-        date: '2016-05-03',
-        name: 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District',
-    },
+        date   : '2016-05-03',
+        name   : 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District'
+    }
 ];
 // 私信列表
 const privateMessageList = reactive<IAsideLPrivateResponse[]>([]);
@@ -175,11 +181,22 @@ onMounted(() => {
  * @constructor
  * @description 获取私信列表
  */
-const getPrivateMessageList = asyncTryCatch(async () => {
+const getPrivateMessageList = asyncTryCatch(async() => {
     const { data } = await AsideLPrivateService.getAsidePrivateUserList();
     privateMessageList.push(...data.sidebarList);
     console.log('----------获取私信列表---------');
     console.log(privateMessageList);
+});
+
+/**
+ * 跳转到聊天页面
+ * @param {IAsideLPrivateResponse} item
+ * @returns {Promise<void>}
+ * */
+const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
+    console.log('----------跳转到聊天页面---------');
+    console.log(item);
+    await router.push(`/main/@me/${item.id}`);
 });
 </script>
 
@@ -198,7 +215,7 @@ const getPrivateMessageList = asyncTryCatch(async () => {
                 //固定头部
                 position: sticky;
                 padding-top: 10px;
-                top: 0px;
+                top: 0;
                 background-color: #2b2d31;
                 z-index: 99;
 
