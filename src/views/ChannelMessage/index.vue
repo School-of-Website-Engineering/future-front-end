@@ -147,25 +147,25 @@ const dialogTableVisible = ref(false);
 // 表格数据
 const gridData = [
     {
-        date   : '2016-05-02',
-        name   : 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District'
+        date: '2016-05-02',
+        name: 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District',
     },
     {
-        date   : '2016-05-04',
-        name   : 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District'
+        date: '2016-05-04',
+        name: 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District',
     },
     {
-        date   : '2016-05-01',
-        name   : 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District'
+        date: '2016-05-01',
+        name: 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District',
     },
     {
-        date   : '2016-05-03',
-        name   : 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District'
-    }
+        date: '2016-05-03',
+        name: 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District',
+    },
 ];
 // 私信列表
 const privateMessageList = reactive<IAsideLPrivateResponse[]>([]);
@@ -181,7 +181,7 @@ onMounted(() => {
  * @constructor
  * @description 获取私信列表
  */
-const getPrivateMessageList = asyncTryCatch(async() => {
+const getPrivateMessageList = asyncTryCatch(async () => {
     const { data } = await AsideLPrivateService.getAsidePrivateUserList();
     privateMessageList.push(...data.sidebarList);
     console.log('----------获取私信列表---------');
@@ -193,7 +193,7 @@ const getPrivateMessageList = asyncTryCatch(async() => {
  * @param {IAsideLPrivateResponse} item
  * @returns {Promise<void>}
  * */
-const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
+const toChat = asyncTryCatch(async (item: IAsideLPrivateResponse) => {
     console.log('----------跳转到聊天页面---------');
     console.log(item);
     await router.push(`/main/@me/${item.id}`);
