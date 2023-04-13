@@ -83,7 +83,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import { useUserFriendsStore } from '@/store/modules/friends';
 import AddFriend from '@/views/ChannelMessage/components/AddFriend.vue';
 import All from '@/views/ChannelMessage/components/All.vue';
@@ -134,6 +134,7 @@ watch(
         align-items: center;
         justify-content: space-evenly;
         width: 440px;
+
         .msgNum {
             display: inline-block;
             width: 16px;
@@ -153,6 +154,7 @@ watch(
         span {
             display: flex;
             align-items: center;
+
             &:first-child {
                 font-size: 16px;
                 font-weight: bold;
