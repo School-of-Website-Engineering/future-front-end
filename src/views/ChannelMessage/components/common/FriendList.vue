@@ -33,7 +33,7 @@
             :content="statusProps[$props.status]?.iconLeftMessage"
             placement="top"
         >
-            <span v-show="iconLeft && !$props.item.isInitiative" class="span-hover2">
+            <span v-show="iconLeft && !$props.item.isInitiative" class="span-hover2" @click="handleAccept">
                 <i :class="iconLeft"></i>
             </span>
         </el-tooltip>
@@ -44,7 +44,7 @@
             :content="statusProps[$props.status]?.iconRightMessage"
             placement="top"
         >
-            <span v-if="iconRight" class="span-hover1">
+            <span v-if="iconRight" class="span-hover1" @click="handleIgnore">
                 <i :class="iconRight"></i>
             </span>
         </el-tooltip>
@@ -54,6 +54,7 @@
 <script setup>
 import { computed, defineProps, reactive, toRefs } from 'vue';
 
+const { item, statusMap, isInitiativeMap, iconLeft, iconRight, status } = toRefs(props);
 const props = defineProps({
     item: {
         type   : Object,
@@ -67,13 +68,19 @@ const props = defineProps({
     },
     statusMap      : Object,
     isInitiativeMap: Object,
-    iconLeft       : String,
-    iconRight      : String,
-    status         : String
+    iconLeft       : {
+        type   : String,
+        default: ''
+    },
+    iconRight: {
+        type   : String,
+        default: ''
+    },
+    status: {
+        type   : String,
+        default: ''
+    }
 });
-
-const { item, statusMap, isInitiativeMap, iconLeft, iconRight, status } = toRefs(props);
-
 const STATUS_PROPS = {
     ToBeDetermined: {
         iconLeftMessage : '接受',
@@ -99,6 +106,20 @@ const statusProps = computed(() => ({
 const state = reactive({
     STATUS_PROPS
 });
+
+// 阻止事件冒泡
+const stopPropagation = (e) => {
+    e.stopPropagation();
+    console.log('阻止事件冒泡');
+};
+const handleIgnore = (e) => {
+    stopPropagation(e);
+    console.log('忽略');
+};
+const handleAccept = (e) => {
+    stopPropagation(e);
+    console.log('接受');
+};
 </script>
 
 <style lang="scss" scoped>

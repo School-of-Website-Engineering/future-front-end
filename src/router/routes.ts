@@ -34,6 +34,16 @@ export const routes: Array<RouteRecordRaw> = [
                     rightMain: () => import('../views/FriendInterface/index.vue')
                 }
             },
+            //     跳转至chat聊天界面
+            {
+                path      : '/main/@me/:id',
+                name      : 'chat',
+                components: {
+                    leftAside: () => import('../views/ChannelMessage/index.vue'),
+                    rightMain: () => import('../views/Chat/index.vue')
+                },
+                props: true
+            },
             //频道服务器
             {
                 path      : '/channels/:id',

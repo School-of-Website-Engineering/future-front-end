@@ -4,9 +4,9 @@
  * @returns 新的异步函数，具有相同的参数和返回值类型，但会在发生异常时返回 undefined
  */
 export function asyncTryCatch<T = any>(
-    func: (...args: any[]) => Promise<T>,
+    func: (...args: any[]) => Promise<T>
 ): (...args: any[]) => Promise<T | undefined> {
-    return async function (...args: any[]) {
+    return async function(...args: any[]) {
         try {
             return await func(...args);
         } catch (error) {
@@ -23,7 +23,7 @@ export function asyncTryCatch<T = any>(
  * @param target 待包装的类
  * @returns 新的类，具有相同的参数和返回值类型，但会在发生异常时返回 undefined
  */
-export function classAsyncTryCatch<T extends new (...args: any[]) => object>(target: T): T {
+export function classAsyncTryCatch<T extends new(...args: any[]) => object>(target: T): T {
     for (const key of Object.getOwnPropertyNames(target.prototype)) {
         const descriptor = Object.getOwnPropertyDescriptor(target.prototype, key);
         if (descriptor && typeof descriptor.value === 'function') {
