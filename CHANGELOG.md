@@ -2,17 +2,15 @@
 
 ## [1.4.4](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.3...v1.4.4) (2023-04-15)
 
-
 ### Styling
 
-* Format code with prettier ([d44c1de](https://github.com/School-of-Website-Engineering/future-front-end/commit/d44c1def1c427516a5b6a56f48cdc4a168c1d2d5))
+-   Format code with prettier ([d44c1de](https://github.com/School-of-Website-Engineering/future-front-end/commit/d44c1def1c427516a5b6a56f48cdc4a168c1d2d5))
 
 ## [1.4.3](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.2...v1.4.3) (2023-04-13)
 
-
 ### update
 
-* 更新好友聊天跳转 ([3179fed](https://github.com/School-of-Website-Engineering/future-front-end/commit/3179fed553f1e0bdb7e10b7c6cd0c06856555c93))
+-   更新好友聊天跳转 ([3179fed](https://github.com/School-of-Website-Engineering/future-front-end/commit/3179fed553f1e0bdb7e10b7c6cd0c06856555c93))
 
 ## [1.4.2](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.1...v1.4.2) (2023-04-11)
 
