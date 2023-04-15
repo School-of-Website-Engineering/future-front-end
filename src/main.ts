@@ -35,6 +35,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const perf = getPerformance(app);
+
 const appx = createApp(App);
 const pinia = createPinia();
 
