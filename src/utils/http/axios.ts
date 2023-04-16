@@ -11,7 +11,7 @@ import { TokenExpiredErrorHandler, NoPermissionErrorHandler, DefaultErrorHandler
 // 判断是否为生产环境，是则设置baseURL为VITE_BACKEND_API，否则设置为axios.defaults.baseURL = import.meta.env.VITE_APP_API_BASE_URL as string;
 import.meta.env.PROD
     ? (axios.defaults.baseURL = import.meta.env.VITE_BACKEND_API as string)
-    : (axios.defaults.baseURL = import.meta.env.VITE_APP_API_BASE_URL as string);
+    : (axios.defaults.baseURL = 'http://180.188.21.81:20088');
 axios.defaults.timeout = 1000 * 10;
 axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 
