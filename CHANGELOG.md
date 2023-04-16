@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.6](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.5...v1.4.6) (2023-04-16)
+
+
+### Styling
+
+* Format code with prettier ([fbbce9f](https://github.com/School-of-Website-Engineering/future-front-end/commit/fbbce9f545d57379c2b4df1233389d8b47c97380))
+
+
+### Code Refactoring
+
+* ：添加聊天界面样式 ([0aab2af](https://github.com/School-of-Website-Engineering/future-front-end/commit/0aab2afa7b4e9fdd2ae977b7fbf54069783769c2))
+
 ## [1.4.5](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.4...v1.4.5) (2023-04-15)
 
 
