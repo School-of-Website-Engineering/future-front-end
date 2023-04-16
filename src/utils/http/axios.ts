@@ -7,11 +7,7 @@ import type { Response } from './types';
 import { ElMessage } from 'element-plus';
 import { TokenExpiredErrorHandler, NoPermissionErrorHandler, DefaultErrorHandler, ErrorHandler } from './errors';
 
-// 重设axiosbaseURL为当前环境的VITE_APP_API_BASE_URL
-// 判断是否为生产环境，是则设置baseURL为VITE_BACKEND_API，否则设置为axios.defaults.baseURL = import.meta.env.VITE_APP_API_BASE_URL as string;
-import.meta.env.PROD
-    ? (axios.defaults.baseURL = import.meta.env.VITE_BACKEND_API as string)
-    : (axios.defaults.baseURL = 'http://180.188.21.81:20088');
+axios.defaults.baseURL = import.meta.env.VITE_BACKEND_API as string;
 axios.defaults.timeout = 1000 * 10;
 axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 
@@ -19,17 +15,17 @@ axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;char
  * @description 创建axios实例
  */
 const service = axios.create({
-    responseType: 'json',
+    responseType     : 'json',
     transformResponse: [
-        function (data) {
+        function(data) {
             try {
                 data = JSON.parse(data);
             } catch (e) {
                 console.log(e);
             }
             return data;
-        },
-    ],
+        }
+    ]
 });
 
 /**
@@ -40,7 +36,7 @@ const service = axios.create({
 service.interceptors.request.use(
     (config: AxiosRequestConfig | any) => {
         config.headers = {
-            ...config.headers,
+            ...config.headers
             // ...auth.headers()
             // 自定义headers，如token等
         };
@@ -48,7 +44,7 @@ service.interceptors.request.use(
     },
     (error: AxiosError) => {
         return Promise.reject(error);
-    },
+    }
 );
 
 /**
@@ -58,7 +54,7 @@ service.interceptors.request.use(
 const errorHandlers: Record<number, ErrorHandler> = {
     404: new DefaultErrorHandler(),
     112: new TokenExpiredErrorHandler(),
-    212: new NoPermissionErrorHandler(),
+    212: new NoPermissionErrorHandler()
 };
 
 /**

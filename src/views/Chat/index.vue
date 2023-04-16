@@ -1,10 +1,259 @@
 <template>
     <div>
-        聊天界面asdfasdfasd阿萨德饭发的是发送到发大事发生的就看分工航空完全二狗覅哦；看呢荣IM翻跟头；开瓶器拉尔我弄破若非他还能问饿哦；地方农资；地开始念佛；饭哦按肯定是念佛砍死饿哦；地开放技能绕口；独食难肥；OK哪的上课喽；反代课老师；
-        那个口；但是发
+        <el-container>
+            <el-header class="main-box-right-header2">
+                <el-row>
+                    <el-col :span="19" class="header-left">
+                        <header-left />
+                    </el-col>
+                    <el-col :span="5" class="header-right">
+                        <header-right />
+                    </el-col>
+                </el-row>
+            </el-header>
+            <el-row class="main-box-right-main2">
+                <el-col :span="17">
+                    <el-container>
+                        <Main />
+                    </el-container>
+                </el-col>
+                <el-col :span="7">
+                    <el-container>
+                        <aside-right />
+                    </el-container>
+                </el-col>
+            </el-row>
+        </el-container>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HeaderLeft from '@/views/Chat/components/common/HeaderLeft.vue';
+import HeaderRight from '@/views/Chat/components/common/HeadeRight.vue';
+import AsideRight from '@/views/Chat/components/common/AsideRight.vue';
+import Main from '@/views/Chat/components/common/Main.vue';
+</script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header-left {
+    .header-left-left {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 440px;
+
+        .msgNum {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #f23f42;
+            font-weight: 700;
+            color: #fff;
+            font-size: 12px;
+            margin-left: 4px;
+            //垂直居中
+            vertical-align: middle;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+
+            &:first-child {
+                font-size: 16px;
+                font-weight: bold;
+                color: #f2f3f5;
+
+                .fa-user {
+                    color: #80848e;
+                }
+
+                svg {
+                    margin-right: 4px;
+                }
+            }
+
+            &:not(:first-child) {
+                padding: 1.8px 8px;
+                font-size: 16px;
+                color: #b5bac1;
+
+                &:hover:not(:first-child :last-child) {
+                    background-color: #393c41;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    color: #d6d6dc;
+                }
+
+                &:hover:last-child {
+                    cursor: pointer;
+                }
+            }
+
+            &:last-child {
+                background-color: #248046;
+                border-radius: 3px;
+                color: #fffff3;
+            }
+        }
+    }
+}
+
+.header-right {
+    .header-right-right {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+
+        span {
+            margin: 0 10px;
+            font-size: 17.5px;
+            color: #b5bac1;
+
+            &:hover {
+                background-color: #393c41;
+                border-radius: 3px;
+                cursor: pointer;
+                color: #d6d6dc;
+            }
+        }
+    }
+}
+
+.el-container {
+    height: 100%;
+}
+
+.main-box {
+    height: 100vh;
+
+    .channel-sidebar {
+        background-color: #1e1f22;
+    }
+
+    .main-box-right {
+        flex: 1;
+    }
+
+    .main-box-right-main1,
+    .main-box-right-main2 {
+        position: relative;
+        height: 100vh;
+        padding: unset;
+        background-color: #313338;
+
+        &.main-box-right-main1 {
+            background-color: #2b2d31;
+            //将盒子的内容放在底部
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+    }
+
+    .main-box-right-header1,
+    .main-box-right-header2 {
+        height: 50px;
+
+        &.main-box-right-header1 {
+            background-color: #2b2d31;
+            border-bottom: solid 1.5px #1f2123;
+        }
+
+        &.main-box-right-header2 {
+            background-color: #313338;
+            border-bottom: solid 1.5px #2c2e33;
+        }
+    }
+
+    .main-box-right-main2-main1 {
+        padding-top: unset;
+        //    固定定位
+        position: absolute;
+        width: 820px;
+        height: 100%;
+        //    使其不会被遮挡
+        z-index: 1;
+        //超出视口滚动条
+        overflow-y: auto;
+        //    美化滚动条
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #2b2d31;
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #313338;
+            border-radius: 4px;
+        }
+    }
+
+    .main-box-right-main2-main1,
+    .main-box-right-main2-main2 {
+        &.main-box-right-main2-main1 {
+            background-color: #313338;
+            border-right: 1.5px solid #3f4147;
+        }
+
+        &.main-box-right-main2-main2 {
+            background-color: #313338;
+        }
+    }
+}
+
+.el-header,
+.el-footer {
+    background-color: #b3c0d1;
+    color: #616161;
+    text-align: center;
+}
+
+.el-aside {
+    background-color: #d3dce6;
+    color: #616161;
+    text-align: center;
+}
+
+.el-main {
+    background-color: #e9eef3;
+    color: #616161;
+    text-align: center;
+}
+
+body > .el-container {
+    margin-bottom: 40px;
+}
+
+.is-active {
+    background-color: #43444b;
+    border-radius: 3px;
+    color: #f2f3f5 !important;
+}
+
+.is-active-add {
+    background-color: unset !important;
+    border-radius: 3px;
+    color: #2dc770 !important;
+}
+
+.divider-q3P9HC {
+    width: 1px;
+    height: 24px;
+    margin: 0 8px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    background: #3f4147;
+}
+</style>
