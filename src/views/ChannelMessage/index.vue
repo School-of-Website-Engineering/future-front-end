@@ -92,39 +92,7 @@
                 <!-- 底部个人资料 -->
                 <el-footer>
                     <el-row class="bottom-profile">
-                        <el-col :span="12" class="bottom-profile-avatar">
-                            <el-avatar
-                                src="https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48"
-                                class="bottom-profile-avatar-img"
-                            />
-                            <span>
-                                <p>鸡你太美</p>
-                                <p>#1237</p>
-                            </span>
-                        </el-col>
-                        <el-col :span="12" class="bottom-profile-avatar">
-                            <el-tooltip
-                                :hide-after="50"
-                                class="box-item"
-                                effect="dark"
-                                content="取消静音"
-                                placement="top"
-                            >
-                                <i class="fa-solid fa-microphone-slash"></i>
-                            </el-tooltip>
-                            <el-tooltip
-                                :hide-after="50"
-                                class="box-item"
-                                effect="dark"
-                                content="耳机静音"
-                                placement="top"
-                            >
-                                <i class="fa-solid fa-headphones"></i>
-                            </el-tooltip>
-                            <el-tooltip :hide-after="50" class="box-item" effect="dark" content="设置" placement="top">
-                                <i class="fa-solid fa-gear"></i>
-                            </el-tooltip>
-                        </el-col>
+                        <UserInfo />
                     </el-row>
                 </el-footer>
             </el-container>
@@ -139,6 +107,7 @@ import { MessageBox, UserFilled } from '@element-plus/icons-vue';
 import { useUserFriendsStore } from '@/store';
 import { asyncTryCatch } from '@/utils/exceptionHandling';
 import router from '@/router';
+import UserInfo from '@/components/common/userInfo.vue';
 
 const userFriends = useUserFriendsStore();
 
@@ -241,6 +210,7 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
             }
 
             .friends-top {
+                padding: unset;
                 width: 100%;
                 height: 80px;
                 display: flex;
@@ -265,7 +235,7 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
 
                 //第二个元素高度
                 &:nth-child(2) {
-                    height: 610px;
+                    height: 660px;
 
                     .friends-top-title {
                         height: 30px;
@@ -435,19 +405,25 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
         }
 
         //    底部个人资料
+        .el-container {
+            /* 添加 padding-bottom */
+            padding-bottom: 55px;
+        }
+
         .el-footer {
+            /* 修改为 position: fixed */
+            position: fixed;
+            bottom: 0;
+            width: 15.8%;
             background-color: #232428;
             height: 55px;
             padding: 0 6px;
+            z-index: 99;
 
             .bottom-profile {
                 height: 100%;
                 display: flex;
                 align-items: center;
-                //固定位置不动
-                position: sticky;
-                bottom: 0;
-                z-index: 99;
 
                 .bottom-profile-avatar {
                     height: 40px;
@@ -463,7 +439,6 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
                             height: 40px;
                         }
 
-                        // 鼠标移入后背景颜色变为：3D3E45
                         &:hover {
                             background-color: #3d3e45;
                             border-radius: 5px;
@@ -495,7 +470,7 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
                         color: #b5bac1;
                         height: 30px;
                         width: 30px;
-                        //鼠标悬停时的样式背景：35373C，控制.el-col下的.el-icon 和span颜色为：DBDEE1
+
                         &:hover {
                             background-color: #35373c;
                             border-radius: 5px;
