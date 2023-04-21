@@ -63,6 +63,6 @@ class Ws {
     }
 }
 
-const wsUrl = 'ws://your-websocket-server-url';
+const wsUrl = 'localhost:8080';
 
 export default new Ws(wsUrl);

@@ -13,14 +13,12 @@ declare global {
     const axios: typeof import('./utils/http/axios')['default'];
     const classAsyncTryCatch: typeof import('./utils/exceptionHandling')['classAsyncTryCatch'];
     const computed: typeof import('vue')['computed'];
-    const connection: typeof import('./utils/WebSocket')['default'];
     const createApp: typeof import('vue')['createApp'];
     const createPinia: typeof import('pinia')['createPinia'];
     const customRef: typeof import('vue')['customRef'];
     const defineAsyncComponent: typeof import('vue')['defineAsyncComponent'];
     const defineComponent: typeof import('vue')['defineComponent'];
     const defineStore: typeof import('pinia')['defineStore'];
-    const disconnector: typeof import('./utils/WebSocket/disconnector')['default'];
     const effectScope: typeof import('vue')['effectScope'];
     const getActivePinia: typeof import('pinia')['getActivePinia'];
     const getCurrentInstance: typeof import('vue')['getCurrentInstance'];
@@ -57,11 +55,9 @@ declare global {
     const provide: typeof import('vue')['provide'];
     const reactive: typeof import('vue')['reactive'];
     const readonly: typeof import('vue')['readonly'];
-    const receiver: typeof import('./utils/WebSocket/receiver')['default'];
     const ref: typeof import('vue')['ref'];
     const request: typeof import('./utils/http/index')['request'];
     const resolveComponent: typeof import('vue')['resolveComponent'];
-    const sender: typeof import('./utils/WebSocket/sender')['default'];
     const setActivePinia: typeof import('pinia')['setActivePinia'];
     const setMapStoreSuffix: typeof import('pinia')['setMapStoreSuffix'];
     const shallowReactive: typeof import('vue')['shallowReactive'];
@@ -85,6 +81,7 @@ declare global {
     const watchEffect: typeof import('vue')['watchEffect'];
     const watchPostEffect: typeof import('vue')['watchPostEffect'];
     const watchSyncEffect: typeof import('vue')['watchSyncEffect'];
+    const webSocket: typeof import('./utils/WebSocket/index')['default'];
 }
 // for type re-export
 declare global {

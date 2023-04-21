@@ -16,14 +16,12 @@
     "axios": true,
     "classAsyncTryCatch": true,
     "computed": true,
-    "connection": true,
     "createApp": true,
     "createPinia": true,
     "customRef": true,
     "defineAsyncComponent": true,
     "defineComponent": true,
     "defineStore": true,
-    "disconnector": true,
     "effectScope": true,
     "getActivePinia": true,
     "getCurrentInstance": true,
@@ -60,11 +58,9 @@
     "provide": true,
     "reactive": true,
     "readonly": true,
-    "receiver": true,
     "ref": true,
     "request": true,
     "resolveComponent": true,
-    "sender": true,
     "setActivePinia": true,
     "setMapStoreSuffix": true,
     "shallowReactive": true,
@@ -87,6 +83,7 @@
     "watch": true,
     "watchEffect": true,
     "watchPostEffect": true,
-    "watchSyncEffect": true
+    "watchSyncEffect": true,
+    "webSocket": true
   }
 }
