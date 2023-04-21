@@ -15,7 +15,7 @@ export default [
                         {
                             id    : '345623411435767855',
                             name  : 'Just an assassin enjoyer',
-                            avatar: '../../',
+                            avatar: 'https://cdn.discordapp.com/avatars/905665362400518224/21c6153c25cdbe4fc7499f558fe9dff8.webp?size=48',
                             status: 'offline'
                         },
                         {

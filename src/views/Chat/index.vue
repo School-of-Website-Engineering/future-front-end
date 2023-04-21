@@ -4,10 +4,10 @@
             <el-header class="main-box-right-header2">
                 <el-row>
                     <el-col :span="19" class="header-left">
-                        <header-left />
+                        <HeaderLeft />
                     </el-col>
                     <el-col :span="5" class="header-right">
-                        <header-right />
+                        <HeaderRight />
                     </el-col>
                 </el-row>
             </el-header>
@@ -19,7 +19,7 @@
                 </el-col>
                 <el-col :span="7">
                     <el-container>
-                        <aside-right />
+                        <AsideRight />
                     </el-container>
                 </el-col>
             </el-row>
