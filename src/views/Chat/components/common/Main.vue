@@ -4,7 +4,7 @@
         <div class="chat-record-list">
             <div class="chat-record-list-item">
                 <div class="chat-record-list-item-left">
-                    <img
+                    <el-image
                         src="https://cdn.discordapp.com/avatars/958631735489359882/de9b28a508261d4e547d0a38e2d1ba72.webp?size=128"
                         alt=""
                     />
@@ -23,7 +23,7 @@
             </div>
             <div class="chat-record-list-item">
                 <div class="chat-record-list-item-left">
-                    <img
+                    <el-image
                         src="https://cdn.discordapp.com/avatars/958631735489359882/de9b28a508261d4e547d0a38e2d1ba72.webp?size=128"
                         alt=""
                     />
@@ -55,12 +55,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, watch } from 'vue';
 import router from '@/router';
 import { Promotion } from '@element-plus/icons-vue';
+import ChatService, { IChatRecordResponse } from '@/api/chat';
+import { asyncTryCatch } from '@/utils/exceptionHandling';
+
 const text = ref<string>(
     '你好大事发生的发生的南方来看骄傲的少年考虑发生地偶家GV立刻；大伤脑筋发哈独守空房你卡的少年卡佛京东IP金佛奥德赛科技佛ij冻结佛牌的世界观我后is多个我opjasdojgdgdjoigpjadsopj的噶十多个当第三个大事干大事'
 );
+const searchValue = ref<string>('');
+// 聊天记录
+const chatRecord = ref<IChatRecordResponse[]>([]);
 // 检测text的字符串长度，如果超过29个字符，就截取前29个字符，然后检测后面的字符是否超过29个，依次类推，直到最后检测不超过29个字符
 /**
  * @param {string} text - 要检测的字符串
@@ -71,16 +77,29 @@ const textArr = text.value.match(/.{1,50}/g) || [text.value];
 console.log('------------聊天消息-------------');
 console.log(textArr);
 
-const searchValue = ref<string>('');
 const search = () => {
     console.log(searchValue.value);
 };
 
-onMounted(() => {
-    // 打印当前路由传的id
-    console.log('------------当前路由传的id-------------');
-    console.log(router.currentRoute.value.params.id);
-});
+// 使用watch监听路由变化
+watch(
+    () => router.currentRoute.value.params.id,
+    (id) => {
+        console.log('------------当前路由传的id-------------');
+        console.log(id);
+        //     获取聊天记录
+        asyncTryCatch(async() => {
+            const res = await ChatService.getChatRecord(id as string);
+            console.log(res);
+            chatRecord.value = res.data.message;
+            if (chatRecord.value.length > 0) {
+                console.log('------------聊天记录-------------');
+                console.log(chatRecord.value);
+            }
+        });
+    }
+),
+{ immediate: true };
 </script>
 
 <style lang="scss" scoped>
@@ -149,7 +168,7 @@ onMounted(() => {
             width: 40px;
             height: 40px;
 
-            img {
+            .el-image {
                 width: 100%;
                 height: 100%;
                 border-radius: 50%;
