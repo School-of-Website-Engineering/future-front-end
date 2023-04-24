@@ -36,9 +36,9 @@ class ChatService implements IChatApi {
      * @param id 聊天id
      * @returns {Promise<Response<{ message: IChatRecordResponse[] }>>}
      */
-    getChatRecord = (id: string) => {
-        return http.get(CHAT_RECORD + id);
-    };
+    async getChatRecord(id: string): Promise<Response<{ message: IChatRecordResponse[] }>> {
+        return await http.get(CHAT_RECORD + id);
+    }
 }
 
 export default new ChatService();

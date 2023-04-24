@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { reactive, ref, watch } from 'vue';
 import router from '@/router';
 import { Promotion } from '@element-plus/icons-vue';
 import ChatService, { IChatRecordResponse } from '@/api/chat';
@@ -66,7 +66,7 @@ const text = ref<string>(
 );
 const searchValue = ref<string>('');
 // 聊天记录
-const chatRecord = ref<IChatRecordResponse[]>([]);
+let chatRecord = reactive<IChatRecordResponse[]>([]);
 // 检测text的字符串长度，如果超过29个字符，就截取前29个字符，然后检测后面的字符是否超过29个，依次类推，直到最后检测不超过29个字符
 /**
  * @param {string} text - 要检测的字符串
@@ -87,19 +87,18 @@ watch(
     (id) => {
         console.log('------------当前路由传的id-------------');
         console.log(id);
-        //     获取聊天记录
-        asyncTryCatch(async() => {
-            const res = await ChatService.getChatRecord(id as string);
-            console.log(res);
-            chatRecord.value = res.data.message;
-            if (chatRecord.value.length > 0) {
-                console.log('------------聊天记录-------------');
-                console.log(chatRecord.value);
-            }
-        });
+        chatList(id);
     }
 ),
 { immediate: true };
+
+// 获取聊天记录
+const chatList = asyncTryCatch(async(id: string) => {
+    const { data } = await ChatService.getChatRecord(id);
+    chatRecord = data as unknown as IChatRecordResponse[];
+    console.log('------------聊天记录-------------');
+    console.log(chatRecord);
+});
 </script>
 
 <style lang="scss" scoped>
