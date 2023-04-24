@@ -235,8 +235,7 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
 
                 //第二个元素高度
                 &:nth-child(2) {
-                    height: 660px;
-
+                    height: 100vh;
                     .friends-top-title {
                         height: 30px;
                         line-height: 30px;
@@ -249,7 +248,7 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
 
                         //固定位置不动
                         position: sticky;
-                        top: 0px;
+                        top: 0;
                         background-color: #2b2d31;
                         z-index: 99;
 
@@ -290,6 +289,7 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
                     flex-direction: column;
                     justify-content: center;
                     margin-bottom: 3px;
+
                     //鼠标悬停时的样式背景：35373C，控制.el-col下的.el-icon 和span颜色为：DBDEE1
                     &:hover {
                         background-color: #35373c;
@@ -387,6 +387,7 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
                                         overflow: hidden;
                                         text-overflow: ellipsis;
                                         white-space: nowrap;
+
                                         &:first-child {
                                             font-size: 15.5px;
                                             font-weight: inherit;
@@ -570,6 +571,7 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
         }
     }
 }
+
 .msgNum {
     position: absolute;
     top: 8px;
