@@ -58,12 +58,12 @@ watch(
         console.log('------------当前路由传的id-------------');
         console.log(id);
         chatList(id);
-    }
+    },
 ),
-{ immediate: true };
+    { immediate: true };
 
 // 获取聊天记录
-const chatList = asyncTryCatch(async(id: string) => {
+const chatList = asyncTryCatch(async (id: string) => {
     const { data } = await ChatService.getChatRecord(id);
     chatRecord = data as unknown as IChatRecordResponse[];
     console.log('------------聊天记录-------------');
