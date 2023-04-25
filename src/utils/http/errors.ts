@@ -18,7 +18,8 @@ import { ElMessage } from 'element-plus';
  * @memberof TokenExpiredErrorHandler
  */ export class TokenExpiredErrorHandler implements ErrorHandler {
     handle(response: AxiosResponse<Response>) {
-        const errMessage = 'Token expired';
+        // const errMessage = 'Token expired';
+        const errMessage = 'Token 过期';
         // 跳转至登录页
         // router.push('/login-register').then((r) => r);
         // 显示错误提示信息
@@ -34,7 +35,8 @@ import { ElMessage } from 'element-plus';
  * @returns {void}
  */ export class NoPermissionErrorHandler implements ErrorHandler {
     handle(response: AxiosResponse<Response>) {
-        const errMessage = 'No permission';
+        // const errMessage = 'No permission';
+        const errMessage = '无权限';
         // 显示错误提示信息
         ElMessage.error(errMessage);
     }
@@ -48,7 +50,8 @@ import { ElMessage } from 'element-plus';
  * @returns {void}
  */ export class DefaultErrorHandler implements ErrorHandler {
     handle(response: AxiosResponse<Response>) {
-        const { reason } = response.data;
+        const { reason, message } = response.data;
         if (reason) ElMessage.error(reason);
+        if (message) ElMessage.error(message);
     }
 }
