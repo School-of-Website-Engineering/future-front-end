@@ -7,9 +7,9 @@
  * const getChatRecord = asyncTryCatch(async fun...);
  */
 export function asyncTryCatch<T = any>(
-    func: (...args: any[]) => Promise<T>
+    func: (...args: any[]) => Promise<T>,
 ): (...args: any[]) => Promise<T | undefined> {
-    return async function(...args: any[]) {
+    return async function (...args: any[]) {
         try {
             return await func(...args);
         } catch (error) {
@@ -30,7 +30,7 @@ export function asyncTryCatch<T = any>(
  * @classAsyncTryCatch
  * class ChatService implements IChatApi {...}
  */
-export function classAsyncTryCatch<T extends new(...args: any[]) => object>(target: T): T {
+export function classAsyncTryCatch<T extends new (...args: any[]) => object>(target: T): T {
     for (const key of Object.getOwnPropertyNames(target.prototype)) {
         const descriptor = Object.getOwnPropertyDescriptor(target.prototype, key);
         if (descriptor && typeof descriptor.value === 'function') {
