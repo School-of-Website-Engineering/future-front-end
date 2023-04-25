@@ -109,7 +109,7 @@ class UserFriendsService implements IUserFriendsApi {
      * 获取用户好友数据
      * @returns Promise 对象，解析为类型为 Response<IUserFriendsResponse> 的响应结果
      */
-    async getUserFriends(): Promise<Response<IUserFriendsResponse>> {
+    public async getUserFriends(): Promise<Response<IUserFriendsResponse>> {
         return await http.get<Response<IUserFriendsResponse>>(USER_FRIENDS);
     }
 
@@ -117,7 +117,7 @@ class UserFriendsService implements IUserFriendsApi {
      * 获取用户待定好友数据
      * @returns Promise 对象，解析为类型为 Response<IUserFriendsPendingResponse> 的响应结果
      */
-    async getUserFriendsPending(): Promise<Response<IUserFriendsPendingResponse>> {
+    public async getUserFriendsPending(): Promise<Response<IUserFriendsPendingResponse>> {
         return await http.get<Response<IUserFriendsPendingResponse>>(USER_FRIENDS_PENDING);
     }
 
@@ -125,7 +125,7 @@ class UserFriendsService implements IUserFriendsApi {
      * 获取用户屏蔽的好友数据
      * @returns Promise 对象，解析为类型为 Response<IUserFriendsBlockedResponse> 的响应结果
      * */
-    async getUserFriendsBlocked(): Promise<Response<IUserFriendsBlockedResponse>> {
+    public async getUserFriendsBlocked(): Promise<Response<IUserFriendsBlockedResponse>> {
         return await http.get<Response<IUserFriendsBlockedResponse>>(USER_FRIENDS_BLOCKED);
     }
 
@@ -134,7 +134,7 @@ class UserFriendsService implements IUserFriendsApi {
      * @param userId 用户id
      * @returns Promise 对象，解析为类型为 Response<IUserInfoResponse> 的响应结果
      */
-    async getUserInfo(userId: string): Promise<Response<IUserInfoResponse>> {
+    public async getUserInfo(userId: string): Promise<Response<IUserInfoResponse>> {
         return await http.post<Response<IUserInfoResponse>>(USER_INFO, {
             userId
         });

@@ -10,12 +10,14 @@ export const CHAT_RECORD = '/chat/';
  * @property {string} messageType 消息类型
  * @property {string} time 时间
  * @property {string} messageFrom 消息来源
+ * @property {string} messageId 消息id
  */
 export interface IChatRecordMessageResponse {
     content: string;
     messageType: string;
     time: string;
     messageFrom: string;
+    messageId: string;
 }
 
 /**
@@ -39,8 +41,7 @@ export interface IChatRecordResponse {
  * 聊天服务接口定义
  */
 export interface IChatApi {
-    // 获取聊天记录
-    getChatRecord: (id: string) => Promise<Response<{ data: IChatRecordResponse[] }>>;
+    getChatRecord: (id: string) => Promise<Response<{ data: IChatRecordResponse }>>;
 }
 
 /**
@@ -51,9 +52,9 @@ class ChatService implements IChatApi {
     /**
      * 获取聊天记录
      * @param id 聊天id
-     * @returns {Promise<Response<{ message: IChatRecordResponse[] }>>}
+     * @returns {Promise<Response<{ data: IChatRecordResponse }>>}
      */
-    async getChatRecord(id: string): Promise<Response<{ data: IChatRecordResponse[] }>> {
+    async getChatRecord(id: string): Promise<Response<{ data: IChatRecordResponse }>> {
         return await http.get(CHAT_RECORD + id);
     }
 }

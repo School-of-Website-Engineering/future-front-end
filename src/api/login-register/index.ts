@@ -91,7 +91,7 @@ class LoginService implements ILoginApi {
      * @param userForm.smsCode 验证码
      * @returns Promise 对象，解析为类型为 Response<ILoginResponse> 的响应结果
      */
-    async getLogin(userForm: ILoginUserInput): Promise<Response<ILoginResponse>> {
+    public async getLogin(userForm: ILoginUserInput): Promise<Response<ILoginResponse>> {
         const { username, password, userEmail, smsCode } = userForm;
         return await http.post(LOGIN, {
             username,
@@ -106,7 +106,7 @@ class LoginService implements ILoginApi {
      * @param email 用户邮箱
      * @returns Promise 对象，解析为类型为 Response<ILoginResponse> 的响应结果
      */
-    async getSmsCode(email: string): Promise<Response<ILoginResponse>> {
+    public async getSmsCode(email: string): Promise<Response<ILoginResponse>> {
         return await http.post(GET_SMS_CODE, {
             email
         });
@@ -116,7 +116,7 @@ class LoginService implements ILoginApi {
      * 退出登录
      * @returns Promise 对象，解析为类型为 Response<ILoginResponse> 的响应结果
      */
-    async getLogout(): Promise<Response<ILoginResponse>> {
+    public async getLogout(): Promise<Response<ILoginResponse>> {
         return await http.post(LOGOUT);
     }
 
@@ -129,7 +129,7 @@ class LoginService implements ILoginApi {
      * @param userForm.role 角色
      * @returns Promise 对象，解析为类型为 Response<ILoginResponse> 的响应结果
      */
-    async getRegister(userForm: IRegisterUserInput): Promise<Response<ILoginResponse>> {
+    public async getRegister(userForm: IRegisterUserInput): Promise<Response<ILoginResponse>> {
         const { username, password, email, smsCode, role } = userForm;
         return await http.post(REGISTER, {
             username,

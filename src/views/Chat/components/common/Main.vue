@@ -2,23 +2,23 @@
     <el-main class="main-box-right-main2-main1">
         <!--聊天记录列表：头像、名称、日期、内容-->
         <div class="chat-record-list">
-            <div class="chat-record-list-item" v-for="item in chatRecord" :key="item.id">
+            <div class="chat-record-list-item" v-for="item in messageRecord" :key="item.messageId">
                 <div class="chat-record-list-item-left">
                     <el-image
-                        src="https://cdn.discordapp.com/avatars/958631735489359882/de9b28a508261d4e547d0a38e2d1ba72.webp?size=128"
+                        :src="item.messageFrom === 'me' ? chatRecord.avatar : userLoginRegisterStore.getUserAvatar"
                         alt=""
                     />
                 </div>
                 <div class="chat-record-list-item-right">
                     <div class="chat-record-list-item-right-top">
                         <div class="chat-record-list-item-right-top-left">
-                            <span>张三</span>
-                            <span>2021-08-08 12:00:00</span>
+                            <span>{{ chatRecord.name }}</span>
+                            <span>{{ item.time }}</span>
                         </div>
                     </div>
                     <div class="chat-record-list-item-right-bottom">
                         <p>
-                            lhkhjkh备受打击年福建省DNF看电视看adsfadsfadsfdsafdsfasddassssssssssssssssssssssssssssss法呢撒旦法科大少年法卡萨的内裤放哪独食难肥会计师的那份福建省DNF看电视看adsfadsfadsfdsafdsfasddassssssssssssssssssssssssssssss法呢撒旦法科大少年法卡萨的内裤放哪独食难肥会计师的那份福建省DNF看电视看adsfadsfadsfdsafdsfasddassssssssssssssssssssssssssssss法呢撒旦法科大少年法卡萨的内裤放哪独食难肥会计师的那份福建省DNF看电视看adsfadsfadsfdsafdsfasddassssssssssssssssssssssssssssss法呢撒旦法科大少年法卡萨的内裤放哪独食难肥会计师的那份福建省DNF看电视看adsfadsfadsfdsafdsfasddassssssssssssssssssssssssssssss法呢撒旦法科大少年法卡萨的内裤放哪独食难肥会计师的那份尽可能的空间爱上你放假卡上的南方科技阿斯顿你开房纳斯达克技能
+                            {{ item.content }}
                         </p>
                     </div>
                 </div>
@@ -38,18 +38,50 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import router from '@/router';
 import { Promotion } from '@element-plus/icons-vue';
-import ChatService, { IChatRecordResponse } from '@/api/chat';
+import ChatService, { IChatRecordMessageResponse, IChatRecordResponse } from '@/api/chat';
 import { asyncTryCatch } from '@/utils/exceptionHandling';
+import { useUserLoginRegisterStore } from '@/store';
 
 const searchValue = ref<string>('');
-// 聊天记录
-let chatRecord = reactive<IChatRecordResponse[]>([]);
+// 聊天记录,空对象
+const chatRecord = reactive<IChatRecordResponse>({
+    avatar : '',
+    id     : '',
+    message: [],
+    name   : '',
+    time   : ''
+});
+
+// 聊天消息
+const messageRecord = reactive<IChatRecordMessageResponse[]>([]);
+// 获取用户信息
+const userLoginRegisterStore = useUserLoginRegisterStore();
+// 请求用户信息
+onMounted(() => {
+    userLoginRegisterStore.getUserInfo();
+});
 const search = () => {
     console.log(searchValue.value);
 };
+
+// 获取聊天记录
+const chatList = asyncTryCatch(async(id: string) => {
+    // 如果没有id，就不请求
+    if (!id) return;
+    const { data } = (await ChatService.getChatRecord(id)) as unknown as {
+        data: IChatRecordResponse;
+    };
+    chatRecord.avatar = data.avatar;
+    chatRecord.id = data.id;
+    chatRecord.name = data.name;
+    chatRecord.time = data.time;
+    messageRecord.push(...data.message);
+    console.log('------------聊天记录-------------');
+    console.log(chatRecord);
+});
 
 // 使用watch监听路由变化
 watch(
@@ -58,17 +90,11 @@ watch(
         console.log('------------当前路由传的id-------------');
         console.log(id);
         chatList(id);
+        console.log('------------messageRecord-------------');
+        console.log(messageRecord);
     },
-),
-    { immediate: true };
-
-// 获取聊天记录
-const chatList = asyncTryCatch(async (id: string) => {
-    const { data } = await ChatService.getChatRecord(id);
-    chatRecord = data as unknown as IChatRecordResponse[];
-    console.log('------------聊天记录-------------');
-    console.log(chatRecord);
-});
+    { immediate: true }
+);
 </script>
 
 <style lang="scss" scoped>
@@ -129,10 +155,12 @@ const chatList = asyncTryCatch(async (id: string) => {
         width: 8px;
         height: 5px;
     }
+
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color: #1a1b1e;
     }
+
     &::-webkit-scrollbar-track {
         border-radius: 10px;
         background-color: #2b2d31;
