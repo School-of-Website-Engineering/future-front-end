@@ -3,7 +3,7 @@
     <!-- 在线 -->
     <div class="friendStatus">
         <div
-            v-if="!statusText"
+            v-if="!props.statusText"
             :class="[
                 status === 'online'
                     ? 'status-online'
@@ -19,7 +19,7 @@
             :enterable="false"
             v-else-if="status === 'online'"
             effect="dark"
-            :content="statusText"
+            :content="props.statusText"
             placement="top"
         >
             <div class="status-online"></div>
@@ -30,7 +30,7 @@
             :enterable="false"
             v-else-if="status === 'idle'"
             effect="dark"
-            :content="statusText"
+            :content="props.statusText"
             placement="top"
         >
             <div class="status-idle"></div>
@@ -41,7 +41,7 @@
             :enterable="false"
             v-else-if="status === 'offline'"
             effect="dark"
-            :content="statusText"
+            :content="props.statusText"
             placement="top"
         >
             <div class="status-offline"></div>
@@ -52,7 +52,7 @@
             :enterable="false"
             v-else-if="status === 'busy'"
             effect="dark"
-            :content="statusText"
+            :content="props.statusText"
             placement="top"
         >
             <div class="status-busy"></div>

@@ -7,7 +7,7 @@ import type { Response } from './types';
 import { ElMessage } from 'element-plus';
 import { TokenExpiredErrorHandler, NoPermissionErrorHandler, DefaultErrorHandler, ErrorHandler } from './errors';
 
-axios.defaults.baseURL = import.meta.env.VITE_BACKEND_API as string;
+axios.defaults.baseURL = import.meta.env.VITE_APP_API_BASE_URL as string;
 axios.defaults.timeout = 1000 * 10;
 axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 
@@ -21,7 +21,7 @@ const service = axios.create({
             try {
                 data = JSON.parse(data);
             } catch (e) {
-                console.log(e);
+                console.log('JSON parse error: ', e);
             }
             return data;
         }

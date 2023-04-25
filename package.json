@@ -38,11 +38,13 @@
         "sass": "^1.58.3",
         "vite-plugin-compression": "^0.5.1",
         "vue": "^3.2.47",
-        "vue-router": "^4.1.6"
+        "vue-router": "^4.1.6",
+        "ws": "^8.13.0"
     },
     "devDependencies": {
         "@types/node": "^18.14.6",
         "@types/vue-router": "^2.0.0",
+        "@types/ws": "^8.5.4",
         "@typescript-eslint/eslint-plugin": "^5.54.0",
         "@typescript-eslint/parser": "^5.54.0",
         "@vitejs/plugin-vue": "^4.0.0",
