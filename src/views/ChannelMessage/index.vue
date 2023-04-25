@@ -68,7 +68,7 @@
                         </el-row>
                         <!-- 私信列表 -->
                         <el-row
-                            class="friends-top-flex"
+                            class="friends-top-flex friends-list"
                             v-for="item in privateMessageList"
                             @click="toChat(item)"
                             :key="item.id"
@@ -282,13 +282,17 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
                         }
                     }
                 }
-
+                .friends-list {
+                    &:last-child {
+                        margin-bottom: 200px;
+                    }
+                }
                 .friends-top-flex {
                     width: 100%;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    margin-bottom: 3px;
+                    margin: 3px 0;
 
                     //鼠标悬停时的样式背景：35373C，控制.el-col下的.el-icon 和span颜色为：DBDEE1
                     &:hover {

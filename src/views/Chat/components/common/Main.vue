@@ -2,7 +2,7 @@
     <el-main class="main-box-right-main2-main1">
         <!--聊天记录列表：头像、名称、日期、内容-->
         <div class="chat-record-list">
-            <div class="chat-record-list-item">
+            <div class="chat-record-list-item" v-for="item in chatRecord" :key="item.id">
                 <div class="chat-record-list-item-left">
                     <el-image
                         src="https://cdn.discordapp.com/avatars/958631735489359882/de9b28a508261d4e547d0a38e2d1ba72.webp?size=128"
@@ -17,26 +17,9 @@
                         </div>
                     </div>
                     <div class="chat-record-list-item-right-bottom">
-                        <span>你好</span>
-                    </div>
-                </div>
-            </div>
-            <div class="chat-record-list-item">
-                <div class="chat-record-list-item-left">
-                    <el-image
-                        src="https://cdn.discordapp.com/avatars/958631735489359882/de9b28a508261d4e547d0a38e2d1ba72.webp?size=128"
-                        alt=""
-                    />
-                </div>
-                <div class="chat-record-list-item-right">
-                    <div class="chat-record-list-item-right-top">
-                        <div class="chat-record-list-item-right-top-left">
-                            <span>张三</span>
-                            <span>2021-08-08 12:00:00</span>
-                        </div>
-                    </div>
-                    <div class="chat-record-list-item-right-bottom">
-                        <span v-for="item in textArr" :key="item">{{ item }}</span>
+                        <p>
+                            lhkhjkh备受打击年福建省DNF看电视看adsfadsfadsfdsafdsfasddassssssssssssssssssssssssssssss法呢撒旦法科大少年法卡萨的内裤放哪独食难肥会计师的那份福建省DNF看电视看adsfadsfadsfdsafdsfasddassssssssssssssssssssssssssssss法呢撒旦法科大少年法卡萨的内裤放哪独食难肥会计师的那份福建省DNF看电视看adsfadsfadsfdsafdsfasddassssssssssssssssssssssssssssss法呢撒旦法科大少年法卡萨的内裤放哪独食难肥会计师的那份福建省DNF看电视看adsfadsfadsfdsafdsfasddassssssssssssssssssssssssssssss法呢撒旦法科大少年法卡萨的内裤放哪独食难肥会计师的那份福建省DNF看电视看adsfadsfadsfdsafdsfasddassssssssssssssssssssssssssssss法呢撒旦法科大少年法卡萨的内裤放哪独食难肥会计师的那份尽可能的空间爱上你放假卡上的南方科技阿斯顿你开房纳斯达克技能
+                        </p>
                     </div>
                 </div>
             </div>
@@ -61,22 +44,9 @@ import { Promotion } from '@element-plus/icons-vue';
 import ChatService, { IChatRecordResponse } from '@/api/chat';
 import { asyncTryCatch } from '@/utils/exceptionHandling';
 
-const text = ref<string>(
-    '你好大事发生的发生的南方来看骄傲的少年考虑发生地偶家GV立刻；大伤脑筋发哈独守空房你卡的少年卡佛京东IP金佛奥德赛科技佛ij冻结佛牌的世界观我后is多个我opjasdojgdgdjoigpjadsopj的噶十多个当第三个大事干大事'
-);
 const searchValue = ref<string>('');
 // 聊天记录
 let chatRecord = reactive<IChatRecordResponse[]>([]);
-// 检测text的字符串长度，如果超过29个字符，就截取前29个字符，然后检测后面的字符是否超过29个，依次类推，直到最后检测不超过29个字符
-/**
- * @param {string} text - 要检测的字符串
- * @param {number} length - 每次检测的字符串长度
- * @return {string[]} - 返回一个字符串数组
- */
-const textArr = text.value.match(/.{1,50}/g) || [text.value];
-console.log('------------聊天消息-------------');
-console.log(textArr);
-
 const search = () => {
     console.log(searchValue.value);
 };
@@ -154,11 +124,24 @@ const chatList = asyncTryCatch(async(id: string) => {
 .chat-record-list {
     height: calc(100% - 90px);
     overflow-y: auto;
+    //滚动条样式
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #1a1b1e;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: #2b2d31;
+    }
 
     .chat-record-list-item {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         padding: 10px 10px;
         margin: 10px 0;
         border-top: 1.5px solid #3f4147;
@@ -176,7 +159,7 @@ const chatList = asyncTryCatch(async(id: string) => {
 
         .chat-record-list-item-right {
             width: calc(98% - 40px);
-            height: 40px;
+            height: auto;
 
             .chat-record-list-item-right-top {
                 display: flex;
@@ -207,15 +190,15 @@ const chatList = asyncTryCatch(async(id: string) => {
             }
 
             .chat-record-list-item-right-bottom {
-                height: 20px;
+                height: auto;
 
-                span {
+                p {
                     margin-top: 6px;
                     color: #fff;
                     font-size: 14px;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
+                    //超出自动换行
+                    white-space: normal;
+                    text-align: left;
                 }
             }
         }
