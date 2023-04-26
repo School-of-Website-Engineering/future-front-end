@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, ref, watch, reactive } from 'vue';
 import router from '@/router';
 import { Promotion } from '@element-plus/icons-vue';
 import ChatService, { IChatRecordMessageResponse, IChatRecordResponse } from '@/api/chat';
@@ -78,9 +78,9 @@ const chatList = asyncTryCatch(async(id: string) => {
     chatRecord.id = data.id;
     chatRecord.name = data.name;
     chatRecord.time = data.time;
-    messageRecord.push(...data.message);
+    messageRecord.splice(0, messageRecord.length, ...data.message);
     console.log('------------聊天记录-------------');
-    console.log(chatRecord);
+    // console.log(chatRecord);
 });
 
 // 使用watch监听路由变化
