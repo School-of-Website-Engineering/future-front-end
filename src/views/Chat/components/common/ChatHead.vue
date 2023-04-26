@@ -17,11 +17,11 @@
                 </div>
                 <div class="info">
                     <span></span>
-                    <!--                    <span>个共同服务器</span>-->
+                    <!--<span>个共同服务器</span>-->
                     <span>个共同服务器</span>
                     <div class="button">
-                        <el-button size="small" @click="deleteFriend" class="delete"> 删除好友 </el-button>
-                        <el-button size="small" @click="shield" class="shield"> 屏蔽 </el-button>
+                        <el-button size="small" @click="deleteFriend" class="delete"> 删除好友</el-button>
+                        <el-button size="small" @click="shield" class="shield"> 屏蔽</el-button>
                     </div>
                 </div>
             </div>
@@ -30,13 +30,35 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, defineProps } from 'vue';
+import { defineComponent, defineProps, onMounted, reactive } from 'vue';
 import { IChatRecordResponse } from '@/api/chat';
+import UserService, { ICommonServerCountResponse } from '@/api/user';
+import { asyncTryCatch } from '@/utils/exceptionHandling';
+
+const commonServiceCount = reactive<ICommonServerCountResponse>({ count: 0 });
 
 defineComponent({
-    name: 'ChatHead'
+    name : 'ChatHead',
+    props: {
+        chatRecord: {
+            type    : Object as () => IChatRecordResponse,
+            required: true
+        }
+    }
 });
-defineProps<{ chatRecord: IChatRecordResponse }>();
+
+defineProps<{
+    chatRecord: IChatRecordResponse;
+}>();
+
+onMounted(() => {
+    commonService();
+});
+
+const commonService = asyncTryCatch(async() => {
+    const { data } = await UserService.getCommonServerCount('123');
+    commonServiceCount.count = (data as unknown as { count: number }).count;
+});
 
 const deleteFriend = () => {
     console.log('deleteFriend');
@@ -147,6 +169,7 @@ const shield = () => {
                         border: none;
                     }
                 }
+
                 .button {
                     display: flex;
                     align-items: center;

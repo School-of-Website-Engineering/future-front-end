@@ -30,11 +30,8 @@
         <div class="chat-search-box">
             <input placeholder="消息@手动阀" v-model="searchValue" @clear="searchValue = ''" />
             <el-button type="primary" @click="search"
-                >发送
-                <el-icon>
-                    <Promotion />
-                </el-icon>
-            </el-button>
+                >发送<el-icon><Promotion /></el-icon
+            ></el-button>
         </div>
     </el-main>
 </template>

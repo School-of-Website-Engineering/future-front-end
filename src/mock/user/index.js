@@ -28,8 +28,9 @@ export default [
     {
         url     : '/user/getCommonServerCount',
         method  : 'get',
-        response: (param) => {
-            switch (param.id) {
+        response: ({ query }) => {
+            const { friendId } = query;
+            switch (friendId) {
                 case '123':
                     return {
                         code   : 200,

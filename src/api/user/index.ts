@@ -2,6 +2,8 @@ import http, { Response } from '@/utils/http';
 import { classAsyncTryCatch } from '@/utils/exceptionHandling';
 //查询当前登录用户信息
 export const USER_GET_CURRENT_USER = '/user/getCurrentUser';
+//根据当前好友id，查询共同加入的服务器数量
+export const USER_GET_SERVER_COUNT = '/user/getCommonServerCount';
 
 /**
  *  查询当前登录用户信息响应结果接口定义
@@ -29,11 +31,25 @@ export interface IGetCurrentUserResponse {
 }
 
 /**
+ * 查询当前登录用户信息响应结果接口定义
+ * @interface ICommonServerCountResponse
+ * @property {number} count 共同加入的服务器数量
+ */
+export interface ICommonServerCountResponse {
+    count: number | string;
+}
+
+/**
  *  用户api接口定义
  *  @interface IUserApi
  */
 export interface IUserApi {
     getCurrentUser: () => Promise<Response<{ data: IGetCurrentUserResponse }>>;
+    getCommonServerCount: (friendId: string) => Promise<
+        Response<{
+            data: ICommonServerCountResponse;
+        }>
+    >;
 }
 
 /**
@@ -50,6 +66,19 @@ class UserService implements IUserApi {
      */
     public async getCurrentUser(): Promise<Response<{ data: IGetCurrentUserResponse }>> {
         return await http.get(USER_GET_CURRENT_USER);
+    }
+
+    /**
+     * 根据当前好友id，查询共同加入的服务器数量
+     * @param {number} friendId 好友id
+     * @returns {Promise<Response<{ data:ICommonServerCountResponse }>>}
+     */
+    public async getCommonServerCount(friendId: string): Promise<
+        Response<{
+            data: ICommonServerCountResponse;
+        }>
+    > {
+        return await http.get(USER_GET_SERVER_COUNT, { friendId });
     }
 }
 
