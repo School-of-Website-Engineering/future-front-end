@@ -2,6 +2,8 @@
     <el-main class="main-box-right-main2-main1">
         <!--聊天记录列表：头像、名称、日期、内容-->
         <div class="chat-record-list">
+            <ChatHead :chatRecord="chatRecord" />
+
             <div class="chat-record-list-item" v-for="item in messageRecord" :key="item.messageId">
                 <div class="chat-record-list-item-left">
                     <el-image
@@ -44,6 +46,7 @@ import { Promotion } from '@element-plus/icons-vue';
 import ChatService, { IChatRecordMessageResponse, IChatRecordResponse } from '@/api/chat';
 import { asyncTryCatch } from '@/utils/exceptionHandling';
 import { useUserLoginRegisterStore } from '@/store';
+import ChatHead from '@/views/Chat/components/common/ChatHead.vue';
 
 const searchValue = ref<string>('');
 // 聊天记录,空对象

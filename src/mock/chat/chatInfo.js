@@ -19,7 +19,7 @@ export default {
                     // 用户名
                     name   : 'All Badges% Speedrunner',
                     // 用户头像
-                    avatar : 'https://cdn.discordapp.com/avatars/482216415147982848/c2b04dce7319282ff2cdc6275e13d52a.webp?size=128',
+                    avatar : 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
                     // 消息内容
                     message: [
                         {
@@ -82,7 +82,7 @@ export default {
                     // 用户名
                     name   : 'All Badges% Speedrunner',
                     // 用户头像
-                    avatar : 'https://cdn.discordapp.com/avatars/482216415147982848/c2b04dce7319282ff2cdc6275e13d52a.webp?size=128',
+                    avatar : 'https://cdn.discordapp.com/avatars/891419145592266812/c8578ca93da963aa9edfdae6111a1a23.webp?size=128',
                     // 消息内容
                     message: [
                         {
@@ -145,7 +145,7 @@ export default {
                     // 用户名
                     name   : 'All Badges% Speedrunner',
                     // 用户头像
-                    avatar : 'https://cdn.discordapp.com/avatars/482216415147982848/c2b04dce7319282ff2cdc6275e13d52a.webp?size=128',
+                    avatar : 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=48',
                     // 消息内容
                     message: [
                         {
