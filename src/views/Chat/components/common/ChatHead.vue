@@ -17,11 +17,14 @@
                 </div>
                 <div class="info">
                     <span></span>
-                    <!--<span>个共同服务器</span>-->
-                    <span>个共同服务器</span>
+                    <span v-if="!commonServiceCount.commonServer.length">没有共同的服务器</span>
+                    <span v-else>
+                        {{ commonServiceCount.commonServer.length }}
+                        个共同的服务器
+                    </span>
                     <div class="button">
-                        <el-button size="small" @click="deleteFriend" class="delete"> 删除好友</el-button>
-                        <el-button size="small" @click="shield" class="shield"> 屏蔽</el-button>
+                        <el-button size="small" @click="deleteFriend" class="delete"> 删除好友 </el-button>
+                        <el-button size="small" @click="shield" class="shield"> 屏蔽 </el-button>
                     </div>
                 </div>
             </div>
@@ -30,34 +33,50 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, defineProps, onMounted, reactive } from 'vue';
+import { defineComponent, defineProps, reactive } from 'vue';
 import { IChatRecordResponse } from '@/api/chat';
 import UserService, { ICommonServerCountResponse } from '@/api/user';
 import { asyncTryCatch } from '@/utils/exceptionHandling';
 
-const commonServiceCount = reactive<ICommonServerCountResponse>({ count: 0 });
-
-defineComponent({
-    name : 'ChatHead',
-    props: {
-        chatRecord: {
-            type    : Object as () => IChatRecordResponse,
-            required: true
+const commonServiceCount = reactive<ICommonServerCountResponse>({
+    commonServer: [
+        {
+            id  : '1',
+            name: '1',
+            icon: '1'
         }
-    }
+    ]
 });
 
-defineProps<{
+defineComponent({
+    name: 'ChatHead'
+});
+const props = defineProps<{
     chatRecord: IChatRecordResponse;
 }>();
 
-onMounted(() => {
-    commonService();
-});
+// onMounted(() => {
+//     commonService();
+// });
+
+watch(
+    () => props.chatRecord.id,
+    () => {
+        commonService();
+    }
+);
 
 const commonService = asyncTryCatch(async() => {
-    const { data } = await UserService.getCommonServerCount('123');
-    commonServiceCount.count = (data as unknown as { count: number }).count;
+    const { data } = await UserService.getCommonServerCount(props.chatRecord.id);
+    data
+        ? (commonServiceCount.commonServer = (
+              data as unknown as {
+                  commonServer: ICommonServerCountResponse['commonServer'];
+              }
+        ).commonServer)
+        : (commonServiceCount.commonServer = []);
+    console.log('commonServiceCount.commonServer', commonServiceCount.commonServer);
+    console.log(commonServiceCount.commonServer.length);
 });
 
 const deleteFriend = () => {
@@ -126,10 +145,11 @@ const shield = () => {
             .info {
                 font-size: 16px;
                 transition: all 0.3s;
-                width: 20vw;
+                width: 100%;
                 height: 30px;
                 display: flex;
                 align-items: center;
+                justify-content: space-evenly;
 
                 span {
                     color: #b1b5bc;

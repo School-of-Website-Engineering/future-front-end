@@ -33,10 +33,18 @@ export interface IGetCurrentUserResponse {
 /**
  * 查询当前登录用户信息响应结果接口定义
  * @interface ICommonServerCountResponse
- * @property {number} count 共同加入的服务器数量
+ * @property {ICommonServerItem[]} commonServer 共同加入的服务器
+ * @property {string} commonServer[].id 服务器id
+ * @property {string} commonServer[].name 服务器名称
+ * @property {string} commonServer[].icon 服务器图标
  */
 export interface ICommonServerCountResponse {
-    count: number | string;
+    commonServer: ICommonServerItem[];
+}
+export interface ICommonServerItem {
+    id: string;
+    name: string;
+    icon: string;
 }
 
 /**
