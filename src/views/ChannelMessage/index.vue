@@ -107,7 +107,7 @@ import { MessageBox, UserFilled } from '@element-plus/icons-vue';
 import { useUserFriendsStore } from '@/store';
 import { asyncTryCatch } from '@/utils/exceptionHandling';
 import router from '@/router';
-import UserInfo from '@/components/common/userInfo.vue';
+import UserInfo from '@/components/common/UserInfo.vue';
 
 const userFriends = useUserFriendsStore();
 

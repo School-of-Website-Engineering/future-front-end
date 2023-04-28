@@ -20,7 +20,13 @@
                     </div>
                     <div class="chat-record-list-item-right-bottom">
                         <p>
-                            {{ item.content }}
+                            <hover-edit
+                                :display="item.messageFrom !== 'me'"
+                                @onEdit="editContent(e)"
+                                @onSave="saveContent(e)"
+                            >
+                                {{ item.content }}
+                            </hover-edit>
                         </p>
                     </div>
                 </div>
@@ -40,6 +46,7 @@
 </template>
 
 <script setup lang="ts">
+import HoverEdit from '@/components/common/HoverEdit.vue';
 import { onMounted, reactive, ref, watch } from 'vue';
 import router from '@/router';
 import { Promotion } from '@element-plus/icons-vue';
@@ -85,6 +92,13 @@ const chatList = asyncTryCatch(async(id: string) => {
     console.log('------------聊天记录-------------');
     // console.log(chatRecord);
 });
+
+const editContent = (e: MouseEvent) => {
+    console.log(e);
+};
+const saveContent = (e: MouseEvent) => {
+    console.log(e);
+};
 
 // 使用watch监听路由变化
 watch(
@@ -174,8 +188,11 @@ watch(
         justify-content: space-between;
         align-items: flex-start;
         padding: 10px 10px;
-        margin: 10px 0;
         border-top: 1.5px solid #3f4147;
+        //hover样式背景色为2E3035
+        &:hover {
+            background-color: #2e3035;
+        }
 
         .chat-record-list-item-left {
             width: 40px;
@@ -187,7 +204,6 @@ watch(
                 border-radius: 50%;
             }
         }
-
         .chat-record-list-item-right {
             width: calc(98% - 40px);
             height: auto;

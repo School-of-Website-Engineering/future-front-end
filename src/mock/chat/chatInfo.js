@@ -151,35 +151,35 @@ export default {
                         {
                             content    : '你好',
                             messageType: 'text',
-                            time       : '2022-7',
+                            time       : '2022-7-10 10:10:10',
                             messageFrom: 'self',
                             messageId  : '3456234114357677918'
                         },
                         {
                             content    : '晚上好',
                             messageType: 'text',
-                            time       : '2022-11',
+                            time       : '2022-11-10 10:10:10',
                             messageFrom: 'self',
                             messageId  : '3456234114357677919'
                         },
                         {
                             content    : '哈喽',
                             messageType: 'text',
-                            time       : '2023-3',
+                            time       : '2023-3-10 10:10:10',
                             messageFrom: 'me',
                             messageId  : '3456234114357677920'
                         },
                         {
                             content    : '早安',
                             messageType: 'text',
-                            time       : '2023-1',
+                            time       : '2023-10-10 10:10:10',
                             messageFrom: 'me',
                             messageId  : '3456234114357677921'
                         },
                         {
                             content    : '吃饭了吗？',
                             messageType: 'text',
-                            time       : '2022-9',
+                            time       : '2022-9-10 10:10:10',
                             messageFrom: 'self',
                             messageId  : '3456234114357677922'
                         }
