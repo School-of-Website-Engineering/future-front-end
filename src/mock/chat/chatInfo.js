@@ -856,9 +856,7 @@ export default {
                 data   : null
             };
         }
-        // 根据用户id获取聊天记录
-        const data = chatData[id];
         // 返回聊天记录
-        return data;
+        return chatData[id];
     }
 };
