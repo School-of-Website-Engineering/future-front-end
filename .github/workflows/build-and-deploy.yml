@@ -30,7 +30,7 @@ jobs:
       #   if: ${{ !cancelled() && success() }}
       #   uses: bingblue/send-nodemailer@master
       #   with:
-      #     user: '${{ secrets.EMAIL_USERNAME }}'
+      #     userFriends: '${{ secrets.EMAIL_USERNAME }}'
       #     pass: '${{ secrets.EMAIL_PASSWORD }}'
       #     host: 'smtp.gmail.com'
       #     port: 465

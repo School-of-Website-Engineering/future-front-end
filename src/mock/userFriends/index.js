@@ -3,8 +3,8 @@ export default [
     {
         // 请求方式: 'get',
         method  : 'get',
-        // 请求路径: '/user/getCurrentUser',
-        url     : '/user/getCurrentUser',
+        // 请求路径: '/userFriends/getCurrentUser',
+        url     : '/userFriends/getCurrentUser',
         //响应数据
         response: () => {
             return {
@@ -26,7 +26,7 @@ export default [
     },
     //     根据当前好友id，查询共同加入的服务器数量与好友数量
     {
-        url     : '/user/getCommonServerCount',
+        url     : '/userFriends/getCommonServerCount',
         method  : 'get',
         response: ({ query }) => {
             const { friendId } = query;
@@ -74,6 +74,19 @@ export default [
                                     name: '只因',
                                     icon: 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
                                 }
+                            ],
+                            commonFriend: [
+                                {
+                                    id    : '345623411435767900',
+                                    name  : '[ECM]HamSter',
+                                    // 头像
+                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                },
+                                {
+                                    id    : '760729927552729119',
+                                    name  : 'liuliu',
+                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                }
                             ]
                         }
                     };
@@ -97,6 +110,19 @@ export default [
                                     id  : '437456121056741326',
                                     name: 'rw',
                                     icon: 'https://cdn.discordapp.com/icons/721156457630007316/4428a5c5f5d740b0280415fa2f16d247.webp?size=160'
+                                }
+                            ],
+                            commonFriend: [
+                                {
+                                    id    : '345623411435767900',
+                                    name  : '[ECM]HamSter',
+                                    // 头像
+                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                },
+                                {
+                                    id    : '760729927552729119',
+                                    name  : 'liuliu',
+                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
                                 }
                             ]
                         }
@@ -127,6 +153,19 @@ export default [
                                     name: 'cube',
                                     icon: 'https://cdn.discordapp.com/avatars/744562248101396611/da75138093c6594eee95135c955cb972.webp?size=128'
                                 }
+                            ],
+                            commonFriend: [
+                                {
+                                    id    : '345623411435767900',
+                                    name  : '[ECM]HamSter',
+                                    // 头像
+                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                },
+                                {
+                                    id    : '760729927552729119',
+                                    name  : 'liuliu',
+                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                }
                             ]
                         }
                     };
@@ -146,6 +185,19 @@ export default [
                                     name: '只因',
                                     icon: 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
                                 }
+                            ],
+                            commonFriend: [
+                                {
+                                    id    : '345623411435767900',
+                                    name  : '[ECM]HamSter',
+                                    // 头像
+                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                },
+                                {
+                                    id    : '760729927552729119',
+                                    name  : 'liuliu',
+                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                }
                             ]
                         }
                     };
@@ -154,7 +206,8 @@ export default [
                         code   : 200,
                         message: 'success',
                         data   : {
-                            commonServer: []
+                            commonServer: [],
+                            commonFriend: []
                         }
                     };
             }
@@ -245,6 +298,15 @@ export default [
                                     }
                                 ]
                             }
+                        }
+                    };
+                default:
+                    //查不到好友信息
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {}
                         }
                     };
             }

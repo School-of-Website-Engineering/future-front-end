@@ -1,9 +1,9 @@
 import http, { Response } from '@/utils/http';
 import { classAsyncTryCatch } from '@/utils/exceptionHandling';
 //查询当前登录用户信息
-export const USER_GET_CURRENT_USER = '/user/getCurrentUser';
+export const USER_GET_CURRENT_USER = '/userFriends/getCurrentUser';
 //根据当前好友id，查询共同加入的服务器数量
-export const USER_GET_SERVER_COUNT = '/user/getCommonServerCount';
+export const USER_GET_SERVER_COUNT = '/userFriends/getCommonServerCount';
 
 /**
  *  查询当前登录用户信息响应结果接口定义
@@ -36,26 +36,6 @@ export interface IGetCurrentUserResponse {
  * @property {ICommonServerItem[]} commonServer 共同加入的服务器
  * @property {ICommonFriendItem[]} commonFriend 共同好友
  */
-//  commonServer: [
-//                                 {
-//                                     id  : '437456121056741327',
-//                                     name: 'gpt',
-//                                     icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
-//                                 }
-//                             ],
-//                             commonFriend: [
-//                                 {
-//                                     id    : '345623411435767900',
-//                                     name  : '[ECM]HamSter',
-//                                     // 头像
-//                                     avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
-//                                 },
-//                                 {
-//                                     id    : '760729927552729119',
-//                                     name  : 'liuliu',
-//                                     avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
-//                                 }
-//                             ]
 export interface ICommonServerCountResponse {
     commonServer: ICommonServerItem[];
     commonFriend: ICommonFriendItem[];

@@ -8,6 +8,8 @@ export const USER_FRIENDS_PENDING = '/user/friends/pending';
 export const USER_FRIENDS_BLOCKED = '/user/friends/blocked';
 // 通过用户id查询用户信息
 export const USER_INFO = '/relationships/getFriendByUserId2';
+//     根据当前好友id，查询好友的信息
+export const USER_INFO_BY_FRIEND_ID = '/user/getFriendInfo';
 
 // 通过用户id添加用户为好友
 
@@ -89,6 +91,22 @@ export interface IUserInfoResponse {
     };
 }
 
+/**
+ * 通过好友id查询好友信息响应结果接口定义
+ */
+export interface IUserInfoByFriendIdResponse {
+    friendInfo: {
+        username: string;
+        introduction: string;
+        avatar: string;
+        registerTime: string;
+        background: string;
+        tags: {
+            tag: string;
+        }[];
+    };
+}
+
 // 用户好友 API 接口定义
 export interface IUserFriendsApi {
     getUserFriends(): Promise<Response<IUserFriendsResponse>>;
@@ -98,6 +116,8 @@ export interface IUserFriendsApi {
     getUserFriendsBlocked(): Promise<Response<IUserFriendsBlockedResponse>>;
 
     getUserInfo(id: string): Promise<Response<IUserInfoResponse>>;
+
+    getUserInfoByFriendId(id: string): Promise<Response<IUserInfoByFriendIdResponse>>;
 }
 
 /**
@@ -137,6 +157,17 @@ class UserFriendsService implements IUserFriendsApi {
     public async getUserInfo(userId: string): Promise<Response<IUserInfoResponse>> {
         return await http.post<Response<IUserInfoResponse>>(USER_INFO, {
             userId
+        });
+    }
+
+    /**
+     * 通过好友id查询好友信息
+     * @param friendId 好友id
+     * @returns Promise 对象，解析为类型为 Response<{ data: IUserInfoByFriendIdResponse }> 的响应结果
+     */
+    public async getUserInfoByFriendId(friendId: string): Promise<Response<IUserInfoByFriendIdResponse>> {
+        return await http.get<Response<IUserInfoByFriendIdResponse>>(USER_INFO_BY_FRIEND_ID, {
+            friendId
         });
     }
 }
