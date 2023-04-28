@@ -28,16 +28,19 @@
         </div>
         <!--发送消息框-->
         <div class="chat-search-box">
-            <input placeholder="消息@手动阀" v-model="searchValue" @clear="searchValue = ''" />
+            <input :placeholder="`消息@${chatRecord.name}`" v-model="searchValue" @clear="searchValue = ''" />
             <el-button type="primary" @click="search"
-                >发送<el-icon><Promotion /></el-icon
-            ></el-button>
+                >发送
+                <el-icon>
+                    <Promotion />
+                </el-icon>
+            </el-button>
         </div>
     </el-main>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch, reactive } from 'vue';
+import { onMounted, reactive, ref, watch } from 'vue';
 import router from '@/router';
 import { Promotion } from '@element-plus/icons-vue';
 import ChatService, { IChatRecordMessageResponse, IChatRecordResponse } from '@/api/chat';
