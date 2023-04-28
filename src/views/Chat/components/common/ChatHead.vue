@@ -41,9 +41,16 @@ import { asyncTryCatch } from '@/utils/exceptionHandling';
 const commonServiceCount = reactive<ICommonServerCountResponse>({
     commonServer: [
         {
-            id  : '1',
-            name: '1',
-            icon: '1'
+            id  : '',
+            name: '',
+            icon: ''
+        }
+    ],
+    commonFriend: [
+        {
+            id    : '',
+            name  : '',
+            avatar: ''
         }
     ]
 });
@@ -65,7 +72,11 @@ watch(
         commonService();
     }
 );
-
+/**
+ * 获取共同的服务器
+ * @param id 用户id
+ * @returns 共同的服务器
+ */
 const commonService = asyncTryCatch(async() => {
     const { data } = await UserService.getCommonServerCount(props.chatRecord.id);
     data

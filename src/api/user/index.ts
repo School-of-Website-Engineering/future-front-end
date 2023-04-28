@@ -31,20 +31,60 @@ export interface IGetCurrentUserResponse {
 }
 
 /**
- * 查询当前登录用户信息响应结果接口定义
+ * 查询共同加入的服务器与好友数量响应结果接口定义
  * @interface ICommonServerCountResponse
  * @property {ICommonServerItem[]} commonServer 共同加入的服务器
- * @property {string} commonServer[].id 服务器id
- * @property {string} commonServer[].name 服务器名称
- * @property {string} commonServer[].icon 服务器图标
+ * @property {ICommonFriendItem[]} commonFriend 共同好友
  */
+//  commonServer: [
+//                                 {
+//                                     id  : '437456121056741327',
+//                                     name: 'gpt',
+//                                     icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+//                                 }
+//                             ],
+//                             commonFriend: [
+//                                 {
+//                                     id    : '345623411435767900',
+//                                     name  : '[ECM]HamSter',
+//                                     // 头像
+//                                     avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+//                                 },
+//                                 {
+//                                     id    : '760729927552729119',
+//                                     name  : 'liuliu',
+//                                     avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+//                                 }
+//                             ]
 export interface ICommonServerCountResponse {
     commonServer: ICommonServerItem[];
+    commonFriend: ICommonFriendItem[];
 }
+
+/**
+ * 共同加入的服务器与好友数量响应结果接口定义
+ * @interface ICommonServerItem
+ * @property {string} id 服务器id
+ * @property {string} name 服务器名称
+ * @property {string} icon 服务器图标
+ */
 export interface ICommonServerItem {
     id: string;
     name: string;
     icon: string;
+}
+
+/**
+ * 共同好友响应结果接口定义
+ * @interface ICommonFriendItem
+ * @property {string} id 好友id
+ * @property {string} name 好友名称
+ * @property {string} avatar 好友头像
+ */
+export interface ICommonFriendItem {
+    id: string;
+    name: string;
+    avatar: string;
 }
 
 /**
