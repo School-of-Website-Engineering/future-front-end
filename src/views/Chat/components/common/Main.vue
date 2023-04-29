@@ -4,11 +4,16 @@
         <div class="chat-record-list">
             <ChatHead :chatRecord="chatRecord" />
 
-            <div class="chat-record-list-item" v-for="item in messageRecord" :key="item.messageId">
+            <div
+                class="chat-record-list-item"
+                v-for="item in messageRecord"
+                :key="item.messageId"
+                @mouseenter="Themouseover(item.messageFrom)"
+                @mouseleave="Themouseout(item.messageFrom)"
+            >
                 <div class="chat-record-list-item-left">
                     <el-image
                         :src="item.messageFrom === 'me' ? chatRecord.avatar : userLoginRegisterStore.getUserAvatar"
-                        alt=""
                     />
                 </div>
                 <div class="chat-record-list-item-right">
@@ -22,8 +27,10 @@
                         <p>
                             <hover-edit
                                 :display="item.messageFrom !== 'me'"
-                                @onEdit="editContent(e)"
-                                @onSave="saveContent(e)"
+                                @onEdit="editContent(item.messageId)"
+                                @onSave="saveContent(item.messageId)"
+                                :mouseenter="mouseover"
+                                :mouseleave="mouseout"
                             >
                                 {{ item.content }}
                             </hover-edit>
@@ -64,11 +71,26 @@ const chatRecord = reactive<IChatRecordResponse>({
     name   : '',
     time   : ''
 });
-
 // 聊天消息
 const messageRecord = reactive<IChatRecordMessageResponse[]>([]);
 // 获取用户信息
 const userLoginRegisterStore = useUserLoginRegisterStore();
+// 鼠标移入状态
+const mouseover = ref<boolean>(false);
+// 鼠标移出状态
+const mouseout = ref<boolean>(true);
+const Themouseover = (item) => {
+    // messageFrom !== 'me'就是对方，不显示按钮
+    if (item !== 'me') return;
+    console.log('鼠标移入');
+    mouseover.value = true;
+};
+const Themouseout = (item) => {
+    if (item !== 'me') return;
+    console.log('鼠标移出');
+    mouseover.value = false;
+};
+
 // 请求用户信息
 onMounted(() => {
     userLoginRegisterStore.getUserInfo();
@@ -93,13 +115,12 @@ const chatList = asyncTryCatch(async(id: string) => {
     // console.log(chatRecord);
 });
 
-const editContent = (e: MouseEvent) => {
-    console.log(e);
+const editContent = (msgId: string) => {
+    console.log(msgId);
 };
-const saveContent = (e: MouseEvent) => {
-    console.log(e);
+const saveContent = (msgId: string) => {
+    console.log(msgId);
 };
-
 // 使用watch监听路由变化
 watch(
     () => router.currentRoute.value.params.id,
