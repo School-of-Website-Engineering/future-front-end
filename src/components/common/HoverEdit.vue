@@ -9,9 +9,22 @@
     <div class="hover-edit-wrapper">
         <div class="hover-edit-wrapper-content" v-if="!showInput">
             <slot></slot>
-            <el-icon @click="edit" v-if="props.display && props.mouseenter && props.item?.isShow"
-                ><i class="fa-solid fa-pencil"></i>
-            </el-icon>
+            <el-tooltip effect="dark" content="编辑" placement="top" :hide-after="0" :open-delay="50">
+                <el-container class="hover-edit-wrapper-content-edit">
+                    <el-icon @click="edit" v-if="props.display && props.mouseenter && props.item?.isShow"
+                        ><i class="fa-solid fa-pencil"></i>
+                    </el-icon>
+                </el-container>
+            </el-tooltip>
+        </div>
+        <div class="input-container" v-if="showInput">
+            <textarea class="edit-input" type="text" v-model="inputValue" />
+            <div class="keyboard-tips">
+                <span>按</span
+                ><span class="edit-input-key" @keydown.esc="showInput = false" @click="showInput = false">ESC</span
+                ><span>取消</span> <span>按</span
+                ><span class="edit-input-key" @keydown.enter="save" @click="save">Enter</span><span>保存</span>
+            </div>
         </div>
     </div>
 </template>
@@ -23,13 +36,12 @@ import { defineComponent, defineProps, ref } from 'vue';
 // 是否显示输入框
 const showInput = ref<boolean>(false);
 // 输入框内容
-const inputValue = ref<string>('');
+const inputValue = ref<string>('阿瑟的发水电费感受');
 const show = ref(false);
 
 defineComponent({
     name: 'HoverEdit'
 });
-// display: 是否显示编辑按钮,默认为false
 const props = defineProps({
     display: {
         type   : Boolean,
@@ -49,10 +61,90 @@ const props = defineProps({
     }
 });
 
-// 点击编辑按钮
+// 点击编辑按钮,显示输入框，原内容隐藏
 const edit = () => {
     showInput.value = true;
 };
+// 保存
+const save = () => {
+    showInput.value = false;
+    show.value = true;
+    // 触发父组件的保存事件
+    // emit("save", inputValue.value);
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.hover-edit-wrapper {
+    .input-container {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-start;
+        .keyboard-tips {
+            font-size: 12px;
+            color: #999;
+            margin-right: 15px;
+            .edit-input-key {
+                color: #409eff;
+                margin: 0 5px;
+                cursor: pointer;
+                &:hover {
+                    color: #66b1ff;
+                }
+            }
+        }
+    }
+    //根据文字长度自动换行与高度
+    .edit-input {
+        width: 100%;
+        height: auto;
+        min-height: 100px;
+        resize: none;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding: 0;
+        font-size: 14px;
+        line-height: 20px;
+        word-break: break-all;
+        word-wrap: break-word;
+        overflow: auto;
+        white-space: pre-wrap;
+        margin-bottom: 15px;
+        //    滚动条
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: #ccc;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 5px;
+            background-color: #fff;
+        }
+    }
+
+    .hover-edit-wrapper-content {
+        .hover-edit-wrapper-content-edit {
+            //    去除<el-container>自带的样式
+            display: inline;
+        }
+
+        .fa-pencil {
+            font-size: 12px;
+            cursor: pointer;
+            margin-left: 15px;
+            padding: 1px;
+
+            &:hover {
+                color: #999;
+            }
+        }
+    }
+}
+</style>

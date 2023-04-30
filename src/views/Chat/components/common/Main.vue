@@ -80,6 +80,12 @@ const userLoginRegisterStore = useUserLoginRegisterStore();
 const mouseover = ref<boolean>(false);
 // 鼠标移出状态
 const mouseout = ref<boolean>(true);
+/**
+ * 鼠标移入
+ * @param item 聊天记录
+ * @constructor 鼠标移入
+ * @return void
+ */
 const Themouseover = (item: IChatRecordMessageResponse) => {
     item.isShow = true;
     if (item.messageFrom !== 'me') {
@@ -89,6 +95,12 @@ const Themouseover = (item: IChatRecordMessageResponse) => {
     console.log('鼠标移入');
     mouseover.value = false;
 };
+/**
+ * 鼠标移出
+ * @param item 聊天记录
+ * @constructor 鼠标移出
+ * @return void
+ */
 const Themouseout = (item: IChatRecordMessageResponse) => {
     item.isShow = false;
     if (item.messageFrom !== 'me') {
