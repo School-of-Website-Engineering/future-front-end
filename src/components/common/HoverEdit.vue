@@ -9,13 +9,16 @@
     <div class="hover-edit-wrapper">
         <div class="hover-edit-wrapper-content" v-if="!showInput">
             <slot></slot>
-            <el-icon @click="edit" v-if="props.mouseenter && props.display"><i class="fa-solid fa-pencil"></i></el-icon>
+            <el-icon @click="edit" v-if="props.display && props.mouseenter && props.item?.isShow"
+                ><i class="fa-solid fa-pencil"></i>
+            </el-icon>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { defineComponent, defineProps, ref, watch } from 'vue';
+import { IChatRecordMessageResponse } from '@/api/chat';
+import { defineComponent, defineProps, ref } from 'vue';
 
 // 是否显示输入框
 const showInput = ref<boolean>(false);
@@ -39,6 +42,10 @@ const props = defineProps({
     mouseleave: {
         type   : Boolean,
         default: true
+    },
+    item: {
+        type   : Object as () => IChatRecordMessageResponse,
+        default: null
     }
 });
 

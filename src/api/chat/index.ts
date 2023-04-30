@@ -18,6 +18,7 @@ export interface IChatRecordMessageResponse {
     time: string;
     messageFrom: string;
     messageId: string;
+    isShow?: boolean;
 }
 
 /**

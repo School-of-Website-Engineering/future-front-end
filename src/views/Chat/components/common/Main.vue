@@ -8,8 +8,8 @@
                 class="chat-record-list-item"
                 v-for="item in messageRecord"
                 :key="item.messageId"
-                @mouseenter="Themouseover(item.messageFrom)"
-                @mouseleave="Themouseout(item.messageFrom)"
+                @mouseenter="Themouseover(item)"
+                @mouseleave="Themouseout(item)"
             >
                 <div class="chat-record-list-item-left">
                     <el-image
@@ -31,6 +31,7 @@
                                 @onSave="saveContent(item.messageId)"
                                 :mouseenter="mouseover"
                                 :mouseleave="mouseout"
+                                :item="item"
                             >
                                 {{ item.content }}
                             </hover-edit>
@@ -79,14 +80,21 @@ const userLoginRegisterStore = useUserLoginRegisterStore();
 const mouseover = ref<boolean>(false);
 // 鼠标移出状态
 const mouseout = ref<boolean>(true);
-const Themouseover = (item) => {
-    // messageFrom !== 'me'就是对方，不显示按钮
-    if (item !== 'me') return;
+const Themouseover = (item: IChatRecordMessageResponse) => {
+    item.isShow = true;
+    if (item.messageFrom !== 'me') {
+        mouseover.value = true;
+        return;
+    }
     console.log('鼠标移入');
-    mouseover.value = true;
+    mouseover.value = false;
 };
-const Themouseout = (item) => {
-    if (item !== 'me') return;
+const Themouseout = (item: IChatRecordMessageResponse) => {
+    item.isShow = false;
+    if (item.messageFrom !== 'me') {
+        mouseover.value = false;
+        return;
+    }
     console.log('鼠标移出');
     mouseover.value = false;
 };
@@ -225,6 +233,7 @@ watch(
                 border-radius: 50%;
             }
         }
+
         .chat-record-list-item-right {
             width: calc(98% - 40px);
             height: auto;
