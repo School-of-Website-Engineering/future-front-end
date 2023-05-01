@@ -16,6 +16,7 @@
                     </el-icon>
                 </el-container>
             </el-tooltip>
+            <p class="is-edit" v-if="props.item?.isEdit">(已编辑)</p>
         </div>
         <div class="input-container" v-if="showInput">
             <textarea class="edit-input" type="text" v-model="inputValue" />
@@ -64,18 +65,19 @@ const props = defineProps({
 const edit = () => {
     // 将新的内容赋值给输入框
     inputValue.value = props.item?.content;
-
     showInput.value = true;
-    show.value = false;
-    // 触发父组件的编辑事件
-    // emit("edit", props.item);
 };
 // 保存
 const save = () => {
     showInput.value = false;
-    show.value = true;
-    // 触发父组件的保存事件
-    // emit("save", inputValue.value);
+    // 将新的内容赋值给slot
+    // eslint-disable-next-line vue/no-mutating-props
+    props.item.content = inputValue.value;
+    console.log('保存', props.item);
+    // 为当前的item添加属性是否编辑过
+    // eslint-disable-next-line vue/no-mutating-props
+    props.item.isEdit = true;
+    console.log('保存', props.item);
 };
 </script>
 
@@ -140,7 +142,6 @@ const save = () => {
 
     .hover-edit-wrapper-content {
         .hover-edit-wrapper-content-edit {
-            //    去除<el-container>自带的样式
             display: inline;
         }
 
@@ -154,6 +155,10 @@ const save = () => {
                 color: #999;
             }
         }
+    }
+    .is-edit {
+        color: #999;
+        font-size: 12px;
     }
 }
 </style>

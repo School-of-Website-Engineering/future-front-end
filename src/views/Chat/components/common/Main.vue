@@ -27,8 +27,6 @@
                         <p>
                             <hover-edit
                                 :display="item.messageFrom !== 'me'"
-                                @onEdit="editContent(item.messageId)"
-                                @onSave="saveContent(item.messageId)"
                                 :mouseenter="mouseover"
                                 :mouseleave="mouseout"
                                 :item="item"
@@ -135,12 +133,6 @@ const chatList = asyncTryCatch(async(id: string) => {
     // console.log(chatRecord);
 });
 
-const editContent = (msgId: string) => {
-    console.log(msgId);
-};
-const saveContent = (msgId: string) => {
-    console.log(msgId);
-};
 // 使用watch监听路由变化
 watch(
     () => router.currentRoute.value.params.id,
