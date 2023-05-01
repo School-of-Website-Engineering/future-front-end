@@ -20,10 +20,8 @@
         <div class="input-container" v-if="showInput">
             <textarea class="edit-input" type="text" v-model="inputValue" />
             <div class="keyboard-tips">
-                <span>按</span
-                ><span class="edit-input-key" @keydown.esc="showInput = false" @click="showInput = false">ESC</span
-                ><span>取消</span> <span>按</span
-                ><span class="edit-input-key" @keydown.enter="save" @click="save">Enter</span><span>保存</span>
+                <span class="edit-input-key" @keydown.esc.stop="showInput = false" @click="showInput = false">取消</span
+                ><span class="edit-input-key" @keydown.enter="save" @click="save">保存</span>
             </div>
         </div>
     </div>
@@ -35,8 +33,9 @@ import { defineComponent, defineProps, ref } from 'vue';
 
 // 是否显示输入框
 const showInput = ref<boolean>(false);
-// 输入框内容
-const inputValue = ref<string>('阿瑟的发水电费感受');
+// 输入框内容为slot内容
+const inputValue = ref<string>('');
+// 是否显示编辑按钮
 const show = ref(false);
 
 defineComponent({
@@ -63,7 +62,13 @@ const props = defineProps({
 
 // 点击编辑按钮,显示输入框，原内容隐藏
 const edit = () => {
+    // 将新的内容赋值给输入框
+    inputValue.value = props.item?.content;
+
     showInput.value = true;
+    show.value = false;
+    // 触发父组件的编辑事件
+    // emit("edit", props.item);
 };
 // 保存
 const save = () => {
@@ -81,20 +86,24 @@ const save = () => {
         justify-content: flex-end;
         flex-direction: column;
         align-items: flex-start;
+
         .keyboard-tips {
             font-size: 12px;
             color: #999;
             margin-right: 15px;
+
             .edit-input-key {
                 color: #409eff;
                 margin: 0 5px;
                 cursor: pointer;
+
                 &:hover {
                     color: #66b1ff;
                 }
             }
         }
     }
+
     //根据文字长度自动换行与高度
     .edit-input {
         width: 100%;
