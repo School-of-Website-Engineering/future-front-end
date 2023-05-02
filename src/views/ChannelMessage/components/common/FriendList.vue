@@ -57,42 +57,42 @@ import { computed, defineProps, reactive, toRefs } from 'vue';
 const { item, statusMap, isInitiativeMap, iconLeft, iconRight, status } = toRefs(props);
 const props = defineProps({
     item: {
-        type   : Object,
+        type: Object,
         default: () => ({
-            id          : 0,
-            name        : '',
-            avatar      : '',
-            status      : 'online',
-            isInitiative: false
-        })
+            id: 0,
+            name: '',
+            avatar: '',
+            status: 'online',
+            isInitiative: false,
+        }),
     },
-    statusMap      : Object,
+    statusMap: Object,
     isInitiativeMap: Object,
-    iconLeft       : {
-        type   : String,
-        default: ''
+    iconLeft: {
+        type: String,
+        default: '',
     },
     iconRight: {
-        type   : String,
-        default: ''
+        type: String,
+        default: '',
     },
     status: {
-        type   : String,
-        default: ''
-    }
+        type: String,
+        default: '',
+    },
 });
 const STATUS_PROPS = {
     ToBeDetermined: {
-        iconLeftMessage : '接受',
-        iconRightMessage: '忽略'
+        iconLeftMessage: '接受',
+        iconRightMessage: '忽略',
     },
     all: {
-        iconLeftMessage : '消息',
-        iconRightMessage: '更多'
+        iconLeftMessage: '消息',
+        iconRightMessage: '更多',
     },
     blocked: {
-        iconRightMessage: '解除屏蔽'
-    }
+        iconRightMessage: '解除屏蔽',
+    },
 };
 
 /**
@@ -101,10 +101,10 @@ const STATUS_PROPS = {
  */
 const statusProps = computed(() => ({
     ...STATUS_PROPS,
-    [status.value]: STATUS_PROPS[status.value]
+    [status.value]: STATUS_PROPS[status.value],
 }));
 const state = reactive({
-    STATUS_PROPS
+    STATUS_PROPS,
 });
 
 // 阻止事件冒泡

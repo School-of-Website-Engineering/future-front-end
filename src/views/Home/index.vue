@@ -9,13 +9,11 @@
             <div class="homepage_menu">
                 <ul>
                     <li>主页</li>
-                    <li>主页</li>
-                    <li>主页</li>
-                    <li>主页</li>
-                    <li>主页</li>
-                    <li>主页</li>
-                    <li>主页</li>
-                    <li>主页</li>
+                    <li>下载App</li>
+                    <li>发现</li>
+                    <li>博客</li>
+                    <li>服务</li>
+                    <li>客服</li>
                 </ul>
             </div>
             <button class="homepage_button" @click="$router.push('login')">登录</button>
