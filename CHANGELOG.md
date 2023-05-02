@@ -2,6 +2,14 @@
 
 ## [1.4.8](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.7...v1.4.8) (2023-05-02)
 
+
+### Styling
+
+* format code with prettier ([6294176](https://github.com/School-of-Website-Engineering/future-front-end/commit/6294176e3c45a37a8a9bc252081f551bbdcc7a68))
+* Format code with prettier ([72303fc](https://github.com/School-of-Website-Engineering/future-front-end/commit/72303fcef80fc4941f706dea2b73c6a7147135d6))
+
+## [1.4.8](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.7...v1.4.8) (2023-05-02)
+
 ### Styling
 
 -   Format code with prettier ([72303fc](https://github.com/School-of-Website-Engineering/future-front-end/commit/72303fcef80fc4941f706dea2b73c6a7147135d6))
