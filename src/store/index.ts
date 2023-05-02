@@ -6,3 +6,4 @@ export default pinia;
 
 export * from './modules/friends';
 export * from './modules/privateLetter';
+export * from './modules/user';

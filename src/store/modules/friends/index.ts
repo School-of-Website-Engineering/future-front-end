@@ -2,7 +2,8 @@ import { defineStore } from 'pinia';
 import UserFriendsService, {
     IUserFriendsBlockedResponse,
     IUserFriendsPendingResponse,
-    IUserFriendsResponse
+    IUserFriendsResponse,
+    IUserInfoByFriendIdResponse
 } from '@/api/friends';
 
 /**
@@ -33,7 +34,11 @@ export const useUserFriendsStore = defineStore('friends', {
         /**
          * 用户屏蔽的好友列表
          * @type {IUserFriendsBlockedResponse[]}
-         * */ blockedFriends           : <IUserFriendsBlockedResponse[]>[]
+         * */ blockedFriends           : <IUserFriendsBlockedResponse[]>[],
+        /**
+         * 好友信息
+         * @type {IUserInfoByFriendIdResponse}
+         * */ friendInfo               : <IUserInfoByFriendIdResponse>{}
     }),
 
     getters: {
@@ -60,6 +65,7 @@ export const useUserFriendsStore = defineStore('friends', {
         /**
          * 异步从 API 检索用户好友列表，并设置“friends”状态属性。
          * @async
+         * @returns {Promise<void>} - 无返回值。
          */
         async getFriends() {
             /**
@@ -77,6 +83,7 @@ export const useUserFriendsStore = defineStore('friends', {
         /**
          * 异步从 API 检索用户待定好友列表，并设置“pendingFriends”状态属性。
          * @async
+         * @returns {Promise<void>} - 无返回值。
          */
         async getPendingFriends() {
             /**
@@ -98,6 +105,7 @@ export const useUserFriendsStore = defineStore('friends', {
         /**
          * 异步从 API 检索用户屏蔽的好友列表，并设置“blockedFriends”状态属性。
          * @async
+         * @returns {Promise<void>} - 无返回值。
          */
         async getBlockedFriends() {
             /**
@@ -109,6 +117,24 @@ export const useUserFriendsStore = defineStore('friends', {
             const { data, code } = await UserFriendsService.getUserFriendsBlocked();
             if (code === 0) {
                 this.blockedFriends = data.friends || [];
+            }
+        },
+        /**
+         * 异步从 API 检索用户好友信息，并设置“friendInfo”状态属性。
+         * @async
+         * @param {number} friendId - 好友id
+         * @returns {Promise<void>} - 无返回值。
+         */
+        async getFriendInfo(friendId: string) {
+            /**
+             * 检索用户好友信息 API 调用的响应对象。
+             */
+            const { data, code } = await UserFriendsService.getUserInfoByFriendId(friendId);
+            if (code === 200) {
+                console.log('---------好友信息---------');
+                console.log('data', data);
+                console.log('friendInfo', data.friendInfo);
+                this.friendInfo = data.friendInfo as unknown as IUserInfoByFriendIdResponse;
             }
         }
     }

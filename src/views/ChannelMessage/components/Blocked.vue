@@ -3,7 +3,7 @@
     <FriendsDisplay
         :status="'blocked'"
         :list="userFriends.blockedFriends"
-        :icon-right="'fa-solid fa-user-xmark'"
+        :icon-right="'fa-solid fa-userFriends-xmark'"
         :title-text="'已屏蔽数'"
         v-if="ListLength"
     />

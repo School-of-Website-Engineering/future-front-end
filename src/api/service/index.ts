@@ -117,6 +117,7 @@ export interface IServerControl {
 
 /**
  * 服务器控制API接口类，用于获取服务器列表
+ * @class ServerControlService
  */
 @classAsyncTryCatch
 class ServerControlService implements IServerControl {
@@ -124,7 +125,7 @@ class ServerControlService implements IServerControl {
      * 获取服务器列表
      * @returns Promise 对象，解析为类型为 Response 的响应结果
      */
-    async getServerList(): Promise<Response> {
+    public async getServerList(): Promise<Response> {
         return await http.post(SERVICE_ADD_SERVER);
     }
 
@@ -133,7 +134,7 @@ class ServerControlService implements IServerControl {
      * @param id 创建者用户id
      * @returns Promise 对象，解析为类型为 Response<IGetServerByCreatorIdResponse> 的响应结果
      */
-    async getServerByCreatorId(id: number): Promise<Response<IGetServerByCreatorIdResponse>> {
+    public async getServerByCreatorId(id: number): Promise<Response<IGetServerByCreatorIdResponse>> {
         return await http.post(SERVICE_GET_SERVER_BY_CREATOR_ID, { id });
     }
 
@@ -143,7 +144,7 @@ class ServerControlService implements IServerControl {
      * @param category 服务器类型
      * @returns Promise 对象，解析为类型为 Response 的响应结果
      */
-    async getServerUpdateCategoryById(id: number, category: string): Promise<Response> {
+    public async getServerUpdateCategoryById(id: number, category: string): Promise<Response> {
         return await http.post(SERVICE_UPDATE_SERVER_CATEGORY_BY_ID, {
             id,
             category
@@ -155,7 +156,7 @@ class ServerControlService implements IServerControl {
      * @param id 服务器id
      * @returns Promise 对象，解析为类型为 Response<IJoinServerByIdResponse> 的响应结果
      */
-    async getJoinServerById(id: number): Promise<Response<IJoinServerByIdResponse>> {
+    public async getJoinServerById(id: number): Promise<Response<IJoinServerByIdResponse>> {
         return await http.post(SERVICE_JOIN_SERVER + id + SERVICE_JOIN_SERVER_BY_ID);
     }
 
@@ -164,7 +165,7 @@ class ServerControlService implements IServerControl {
      * @param id 服务器id
      * @returns Promise 对象，解析为类型为 Response<IQuitServerByIdResponse> 的响应结果
      */
-    async getQuitServerById(id: number): Promise<Response<IQuitServerByIdResponse>> {
+    public async getQuitServerById(id: number): Promise<Response<IQuitServerByIdResponse>> {
         return await http.post(SERVICE_QUIT_SERVER + id + SERVICE_QUIT_SERVER_BY_ID);
     }
 
@@ -173,7 +174,7 @@ class ServerControlService implements IServerControl {
      * @param id 当前用户id
      * @returns Promise 对象，解析为类型为 Response<IGetServerByUserIdResponse> 的响应结果
      */
-    async getServerByUserId(id: number): Promise<Response<IGetServerByUserIdResponse>> {
+    public async getServerByUserId(id: number): Promise<Response<IGetServerByUserIdResponse>> {
         return await http.post(SERVICE_GET_SERVER_BY_USER_ID, { id });
     }
 }

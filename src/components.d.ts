@@ -30,9 +30,10 @@ declare module '@vue/runtime-core' {
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     FriendStatus: typeof import('./components/common/FriendStatus.vue')['default']
+    HoverEdit: typeof import('./components/common/HoverEdit.vue')['default']
     NotFound: typeof import('./components/NotFound.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    UserInfo: typeof import('./components/common/userInfo.vue')['default']
+    UserInfo: typeof import('./components/common/UserInfo.vue')['default']
   }
 }

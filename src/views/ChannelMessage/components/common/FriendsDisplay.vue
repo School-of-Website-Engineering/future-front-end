@@ -300,6 +300,7 @@ const toChat = asyncTryCatch(async(item) => {
         font-size: 14px;
         color: #333;
         background-color: #1e1f22;
+        outline: none;
 
         .is-focus {
             box-shadow: unset;

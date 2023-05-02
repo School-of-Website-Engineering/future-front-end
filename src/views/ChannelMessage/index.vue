@@ -73,7 +73,7 @@
                             @click="toChat(item)"
                             :key="item.id"
                         >
-                            <div class="private-message-user-box">
+                            <div class="private-message-user-box" :class="isActive(item.id)">
                                 <div class="private-message-user-box-flex">
                                     <div class="private-message-user-box-flex-left">
                                         <el-avatar :src="item.avatar" />
@@ -107,7 +107,7 @@ import { MessageBox, UserFilled } from '@element-plus/icons-vue';
 import { useUserFriendsStore } from '@/store';
 import { asyncTryCatch } from '@/utils/exceptionHandling';
 import router from '@/router';
-import UserInfo from '@/components/common/userInfo.vue';
+import UserInfo from '@/components/common/UserInfo.vue';
 
 const userFriends = useUserFriendsStore();
 
@@ -167,6 +167,14 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
     console.log(item);
     await router.push(`/main/@me/${item.id}`);
 });
+/**
+ * 判断是否是当前聊天对象
+ * @param {string} id 当前聊天对象id
+ * return {string} 返回class
+ * */
+const isActive = (id: string | number) => {
+    return id === router.currentRoute.value.params.id ? 'friendListActive' : '';
+};
 </script>
 
 <style lang="scss" scoped>
@@ -236,6 +244,7 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
                 //第二个元素高度
                 &:nth-child(2) {
                     height: 100vh;
+
                     .friends-top-title {
                         height: 30px;
                         line-height: 30px;
@@ -282,11 +291,13 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
                         }
                     }
                 }
+
                 .friends-list {
                     &:last-child {
                         margin-bottom: 200px;
                     }
                 }
+
                 .friends-top-flex {
                     width: 100%;
                     display: flex;
@@ -349,7 +360,7 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
 
                     .private-message-user-box {
                         .private-message-user-box-flex {
-                            margin: 5px 0px;
+                            margin: 5px 0;
                             height: 40px;
                             display: flex;
                             align-items: center;
@@ -588,5 +599,23 @@ const toChat = asyncTryCatch(async(item: IAsideLPrivateResponse) => {
     background-color: #f23f42;
     color: #fff;
     font-size: 12px;
+}
+
+//好友列表选中样式private-message-user-box
+.friendListActive {
+    span {
+        color: #fff !important;
+    }
+
+    .private-message-user-box-flex-right {
+        .private-message-user-box-flex-right-top {
+            span {
+                color: #fff !important;
+            }
+        }
+    }
+
+    background-color: #404249;
+    border-radius: 5px;
 }
 </style>
