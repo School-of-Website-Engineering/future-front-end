@@ -135,39 +135,6 @@ export default [
                             // 用户状态
                             status    : 'busy',
                             statusText: '忙碌'
-                        },
-                        {
-                            // 用户id
-                            id        : '3456234114357679088',
-                            // 用户名
-                            name      : '484 Baahlkia',
-                            // 用户头像
-                            avatar    : 'https://cdn.discordapp.com/avatars/390649893661966351/0da35f7486e4d7cb86b28454978c8376.webp?size=128',
-                            // 用户状态
-                            status    : 'busy',
-                            statusText: '忙碌'
-                        },
-                        {
-                            // 用户id
-                            id        : '3456234114357679087',
-                            // 用户名
-                            name      : 'Wand of hahaa 2.0',
-                            // 用户头像
-                            avatar    : 'https://cdn.discordapp.com/guilds/296399356196552705/users/895571799956410388/avatars/b22dedba1dac0fbcb9fc274e62238b08.webp?size=128',
-                            // 用户状态
-                            status    : 'busy',
-                            statusText: '忙碌'
-                        },
-                        {
-                            // 用户id
-                            id        : '3456234114357679082',
-                            // 用户名
-                            name      : 'Trashbox Bobylev',
-                            // 用户头像
-                            avatar    : 'https://cdn.discordapp.com/avatars/337268327896317962/59f764a760a1c96850f26e630f74aa42.webp?size=128',
-                            // 用户状态
-                            status    : 'busy',
-                            statusText: '忙碌'
                         }
                     ]
                 }
