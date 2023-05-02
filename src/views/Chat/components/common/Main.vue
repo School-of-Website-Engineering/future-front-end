@@ -64,11 +64,11 @@ import ChatHead from '@/views/Chat/components/common/ChatHead.vue';
 const searchValue = ref<string>('');
 // 聊天记录,空对象
 const chatRecord = reactive<IChatRecordResponse>({
-    avatar : '',
-    id     : '',
+    avatar: '',
+    id: '',
     message: [],
-    name   : '',
-    time   : ''
+    name: '',
+    time: '',
 });
 // 聊天消息
 const messageRecord = reactive<IChatRecordMessageResponse[]>([]);
@@ -118,7 +118,7 @@ const search = () => {
 };
 
 // 获取聊天记录
-const chatList = asyncTryCatch(async(id: string) => {
+const chatList = asyncTryCatch(async (id: string) => {
     // 如果没有id，就不请求
     if (!id) return;
     const { data } = (await ChatService.getChatRecord(id)) as unknown as {
@@ -143,7 +143,7 @@ watch(
         console.log('------------messageRecord-------------');
         console.log(messageRecord);
     },
-    { immediate: true }
+    { immediate: true },
 );
 </script>
 

@@ -14,7 +14,7 @@ watch(
     (id) => {
         friendsStore.getFriendInfo(id as string);
     },
-    { immediate: true }
+    { immediate: true },
 );
 </script>
 
