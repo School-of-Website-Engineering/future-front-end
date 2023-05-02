@@ -2,43 +2,37 @@
 
 ## [1.4.7](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.6...v1.4.7) (2023-05-02)
 
-
 ### Styling
 
-* Format code with prettier ([331d9f5](https://github.com/School-of-Website-Engineering/future-front-end/commit/331d9f54c8d1c2426b6083f7f303d43586e33864))
+-   Format code with prettier ([331d9f5](https://github.com/School-of-Website-Engineering/future-front-end/commit/331d9f54c8d1c2426b6083f7f303d43586e33864))
 
 ## [1.4.6](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.5...v1.4.6) (2023-04-16)
 
-
 ### Styling
 
-* Format code with prettier ([fbbce9f](https://github.com/School-of-Website-Engineering/future-front-end/commit/fbbce9f545d57379c2b4df1233389d8b47c97380))
-
+-   Format code with prettier ([fbbce9f](https://github.com/School-of-Website-Engineering/future-front-end/commit/fbbce9f545d57379c2b4df1233389d8b47c97380))
 
 ### Code Refactoring
 
-* ：添加聊天界面样式 ([0aab2af](https://github.com/School-of-Website-Engineering/future-front-end/commit/0aab2afa7b4e9fdd2ae977b7fbf54069783769c2))
+-   ：添加聊天界面样式 ([0aab2af](https://github.com/School-of-Website-Engineering/future-front-end/commit/0aab2afa7b4e9fdd2ae977b7fbf54069783769c2))
 
 ## [1.4.5](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.4...v1.4.5) (2023-04-15)
 
-
 ### update
 
-* 添加服务器端口 ([c768636](https://github.com/School-of-Website-Engineering/future-front-end/commit/c768636862c04ff1f936a06f2699b74c0992c435))
+-   添加服务器端口 ([c768636](https://github.com/School-of-Website-Engineering/future-front-end/commit/c768636862c04ff1f936a06f2699b74c0992c435))
 
 ## [1.4.4](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.3...v1.4.4) (2023-04-15)
 
-
 ### Styling
 
-* Format code with prettier ([d44c1de](https://github.com/School-of-Website-Engineering/future-front-end/commit/d44c1def1c427516a5b6a56f48cdc4a168c1d2d5))
+-   Format code with prettier ([d44c1de](https://github.com/School-of-Website-Engineering/future-front-end/commit/d44c1def1c427516a5b6a56f48cdc4a168c1d2d5))
 
 ## [1.4.3](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.2...v1.4.3) (2023-04-13)
 
-
 ### update
 
-* 更新好友聊天跳转 ([3179fed](https://github.com/School-of-Website-Engineering/future-front-end/commit/3179fed553f1e0bdb7e10b7c6cd0c06856555c93))
+-   更新好友聊天跳转 ([3179fed](https://github.com/School-of-Website-Engineering/future-front-end/commit/3179fed553f1e0bdb7e10b7c6cd0c06856555c93))
 
 ## [1.4.2](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.1...v1.4.2) (2023-04-11)
 
