@@ -41,22 +41,22 @@ import { asyncTryCatch } from '@/utils/exceptionHandling';
 const commonServiceCount = reactive<ICommonServerCountResponse>({
     commonServer: [
         {
-            id: '',
+            id  : '',
             name: '',
-            icon: '',
-        },
+            icon: ''
+        }
     ],
     commonFriend: [
         {
-            id: '',
-            name: '',
-            avatar: '',
-        },
-    ],
+            id    : '',
+            name  : '',
+            avatar: ''
+        }
+    ]
 });
 
 defineComponent({
-    name: 'ChatHead',
+    name: 'ChatHead'
 });
 const props = defineProps<{
     chatRecord: IChatRecordResponse;
@@ -70,21 +70,21 @@ watch(
     () => props.chatRecord.id,
     () => {
         commonService();
-    },
+    }
 );
 /**
  * 获取共同的服务器
  * @param id 用户id
  * @returns 共同的服务器
  */
-const commonService = asyncTryCatch(async () => {
+const commonService = asyncTryCatch(async() => {
     const { data } = await UserService.getCommonServerCount(props.chatRecord.id);
     data
         ? (commonServiceCount.commonServer = (
               data as unknown as {
                   commonServer: ICommonServerCountResponse['commonServer'];
               }
-          ).commonServer)
+        ).commonServer)
         : (commonServiceCount.commonServer = []);
     console.log('commonServiceCount.commonServer', commonServiceCount.commonServer);
     console.log(commonServiceCount.commonServer.length);
@@ -100,7 +100,7 @@ const shield = () => {
 
 <style lang="scss" scoped>
 .chat-head {
-    width: 51vw;
+    width: 100%;
     overflow: hidden;
     height: 160px;
     background-color: #313338;
@@ -108,7 +108,8 @@ const shield = () => {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    padding: 0;
+    padding: 0 0 20px;
+    border-bottom: 1px solid #4e5058;
 
     .chat-head-left {
         display: flex;

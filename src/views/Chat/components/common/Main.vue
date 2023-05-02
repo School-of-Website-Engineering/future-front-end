@@ -3,7 +3,6 @@
         <!--聊天记录列表：头像、名称、日期、内容-->
         <div class="chat-record-list">
             <ChatHead :chatRecord="chatRecord" />
-
             <div
                 class="chat-record-list-item"
                 v-for="item in messageRecord"
@@ -38,6 +37,10 @@
                 </div>
             </div>
         </div>
+        <div class="chat-record-list-none" v-if="!messageRecord.length">
+            <el-image src="https://img.icons8.com/ios/452/nothing-found.png" />
+            <span>暂无聊天记录,快来和好友聊天吧</span>
+        </div>
         <!--发送消息框-->
         <div class="chat-search-box">
             <input :placeholder="`消息@${chatRecord.name}`" v-model="searchValue" @clear="searchValue = ''" />
@@ -64,11 +67,11 @@ import ChatHead from '@/views/Chat/components/common/ChatHead.vue';
 const searchValue = ref<string>('');
 // 聊天记录,空对象
 const chatRecord = reactive<IChatRecordResponse>({
-    avatar: '',
-    id: '',
+    avatar : '',
+    id     : '',
     message: [],
-    name: '',
-    time: '',
+    name   : '',
+    time   : ''
 });
 // 聊天消息
 const messageRecord = reactive<IChatRecordMessageResponse[]>([]);
@@ -118,7 +121,7 @@ const search = () => {
 };
 
 // 获取聊天记录
-const chatList = asyncTryCatch(async (id: string) => {
+const chatList = asyncTryCatch(async(id: string) => {
     // 如果没有id，就不请求
     if (!id) return;
     const { data } = (await ChatService.getChatRecord(id)) as unknown as {
@@ -143,11 +146,34 @@ watch(
         console.log('------------messageRecord-------------');
         console.log(messageRecord);
     },
-    { immediate: true },
+    { immediate: true }
 );
 </script>
 
 <style lang="scss" scoped>
+.chat-record-list-none {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    color: #6d6f78;
+    font-size: 14px;
+    font-weight: 500;
+    //定位居中
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+    span {
+        margin-top: 10px;
+    }
+}
 .main-box-right-main2-main1 {
     &.main-box-right-main2-main1 {
         background-color: #313338;
