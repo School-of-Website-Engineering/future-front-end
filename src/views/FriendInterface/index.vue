@@ -66,7 +66,7 @@
                 <el-container>
                     <el-main class="main-box-right-main2-main1">
                         <template v-for="(component, index) in components">
-                            <el-row v-if="activeIndex === index + 1" :key="index">
+                            <el-row class="friends-item-list" v-if="activeIndex === index + 1" :key="index">
                                 <component :is="component" />
                             </el-row>
                         </template>
@@ -288,6 +288,9 @@ watch(
         &::-webkit-scrollbar-track {
             background-color: #313338;
             border-radius: 4px;
+        }
+        .friends-item-list {
+            margin-bottom: 120px !important;
         }
     }
 
