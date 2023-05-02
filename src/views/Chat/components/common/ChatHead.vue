@@ -41,22 +41,22 @@ import { asyncTryCatch } from '@/utils/exceptionHandling';
 const commonServiceCount = reactive<ICommonServerCountResponse>({
     commonServer: [
         {
-            id  : '',
+            id: '',
             name: '',
-            icon: ''
-        }
+            icon: '',
+        },
     ],
     commonFriend: [
         {
-            id    : '',
-            name  : '',
-            avatar: ''
-        }
-    ]
+            id: '',
+            name: '',
+            avatar: '',
+        },
+    ],
 });
 
 defineComponent({
-    name: 'ChatHead'
+    name: 'ChatHead',
 });
 const props = defineProps<{
     chatRecord: IChatRecordResponse;
@@ -70,21 +70,21 @@ watch(
     () => props.chatRecord.id,
     () => {
         commonService();
-    }
+    },
 );
 /**
  * 获取共同的服务器
  * @param id 用户id
  * @returns 共同的服务器
  */
-const commonService = asyncTryCatch(async() => {
+const commonService = asyncTryCatch(async () => {
     const { data } = await UserService.getCommonServerCount(props.chatRecord.id);
     data
         ? (commonServiceCount.commonServer = (
               data as unknown as {
                   commonServer: ICommonServerCountResponse['commonServer'];
               }
-        ).commonServer)
+          ).commonServer)
         : (commonServiceCount.commonServer = []);
     console.log('commonServiceCount.commonServer', commonServiceCount.commonServer);
     console.log(commonServiceCount.commonServer.length);

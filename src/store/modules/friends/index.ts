@@ -3,7 +3,7 @@ import UserFriendsService, {
     IUserFriendsBlockedResponse,
     IUserFriendsPendingResponse,
     IUserFriendsResponse,
-    IUserInfoByFriendIdResponse
+    IUserInfoByFriendIdResponse,
 } from '@/api/friends';
 
 /**
@@ -14,15 +14,15 @@ export const useUserFriendsStore = defineStore('friends', {
         /**
          * 用户好友列表。
          * @type {IUserFriendsResponse[]}
-         **/ friends                  : <IUserFriendsResponse[]>[],
+         **/ friends: <IUserFriendsResponse[]>[],
         /**
          * 用户待定好友列表。
          * @type {IUserFriendsPendingResponse[]}
-         */ pendingFriends           : <IUserFriendsPendingResponse[]>[],
+         */ pendingFriends: <IUserFriendsPendingResponse[]>[],
         /**
          * 用户待定好友排序后的列表
          * @type {IUserFriendsPendingResponse[]}
-         * */ pendingFriendsList       : <IUserFriendsPendingResponse[]>[],
+         * */ pendingFriendsList: <IUserFriendsPendingResponse[]>[],
         /**
          * 待定好友列表中的好友请求列表
          * @type {IUserFriendsPendingResponse[]}
@@ -30,15 +30,15 @@ export const useUserFriendsStore = defineStore('friends', {
         /**
          * 在线好友列表
          * @type {IUserFriendsResponse[]}
-         * */ onlineFriendsList        : <IUserFriendsResponse[]>[],
+         * */ onlineFriendsList: <IUserFriendsResponse[]>[],
         /**
          * 用户屏蔽的好友列表
          * @type {IUserFriendsBlockedResponse[]}
-         * */ blockedFriends           : <IUserFriendsBlockedResponse[]>[],
+         * */ blockedFriends: <IUserFriendsBlockedResponse[]>[],
         /**
          * 好友信息
          * @type {IUserInfoByFriendIdResponse}
-         * */ friendInfo               : <IUserInfoByFriendIdResponse>{}
+         * */ friendInfo: <IUserInfoByFriendIdResponse>{},
     }),
 
     getters: {
@@ -58,7 +58,7 @@ export const useUserFriendsStore = defineStore('friends', {
         handleOnlineFriendsList(state): IUserFriendsResponse[] {
             state.onlineFriendsList = state.friends.filter((item) => item.status !== 'offline');
             return state.onlineFriendsList;
-        }
+        },
     },
 
     actions: {
@@ -136,6 +136,6 @@ export const useUserFriendsStore = defineStore('friends', {
                 console.log('friendInfo', data.friendInfo);
                 this.friendInfo = data.friendInfo as unknown as IUserInfoByFriendIdResponse;
             }
-        }
-    }
+        },
+    },
 });
