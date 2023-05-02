@@ -156,7 +156,7 @@ class UserFriendsService implements IUserFriendsApi {
      */
     public async getUserInfo(userId: string): Promise<Response<IUserInfoResponse>> {
         return await http.post<Response<IUserInfoResponse>>(USER_INFO, {
-            userId
+            userId,
         });
     }
 
@@ -167,7 +167,7 @@ class UserFriendsService implements IUserFriendsApi {
      */
     public async getUserInfoByFriendId(friendId: string): Promise<Response<IUserInfoByFriendIdResponse>> {
         return await http.get<Response<IUserInfoByFriendIdResponse>>(USER_INFO_BY_FRIEND_ID, {
-            friendId
+            friendId,
         });
     }
 }
