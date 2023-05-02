@@ -40,25 +40,25 @@ const inputValue = ref<string>('');
 const show = ref(false);
 
 defineComponent({
-    name: 'HoverEdit'
+    name: 'HoverEdit',
 });
 const props = defineProps({
     display: {
-        type   : Boolean,
-        default: false
+        type: Boolean,
+        default: false,
     },
     mouseenter: {
-        type   : Boolean,
-        default: false
+        type: Boolean,
+        default: false,
     },
     mouseleave: {
-        type   : Boolean,
-        default: true
+        type: Boolean,
+        default: true,
     },
     item: {
-        type   : Object as () => IChatRecordMessageResponse,
-        default: null
-    }
+        type: Object as () => IChatRecordMessageResponse,
+        default: null,
+    },
 });
 
 // 点击编辑按钮,显示输入框，原内容隐藏

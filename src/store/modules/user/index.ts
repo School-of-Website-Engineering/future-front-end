@@ -11,9 +11,9 @@ import UserService, { IGetCurrentUserResponse } from '@/api/user';
 export const useUserLoginRegisterStore = defineStore('user', {
     state: () => ({
         // 用户信息
-        user    : {} as ILoginResponse,
+        user: {} as ILoginResponse,
         // 用户详细信息
-        userInfo: {} as IGetCurrentUserResponse
+        userInfo: {} as IGetCurrentUserResponse,
     }),
     getters: {
         //获取用户id
@@ -23,7 +23,7 @@ export const useUserLoginRegisterStore = defineStore('user', {
         //获取用户头像
         getUserAvatar(): string {
             return this.userInfo.avatar;
-        }
+        },
     },
     actions: {
         /**
@@ -55,6 +55,6 @@ export const useUserLoginRegisterStore = defineStore('user', {
             } else {
                 ElMessage.error(reason);
             }
-        }
-    }
+        },
+    },
 });
