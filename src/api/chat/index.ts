@@ -67,7 +67,7 @@ export interface IChatSendResponse {
  */
 export interface IChatApi {
     getChatRecord: (id: string) => Promise<Response<{ data: IChatRecordResponse }>>;
-    getChatSend: (id: string) => Promise<Response<{ data: IChatSendResponse }>>;
+    getChatSend: (data: object) => Promise<Response<{ data: IChatSendResponse }>>;
 }
 
 /**
@@ -86,11 +86,11 @@ class ChatService implements IChatApi {
 
     /**
      * 发送消息
-     * @param id 聊天id
+     * @param data 聊天内容
      * @returns {Promise<Response<{ data: IChatSendResponse }>>}
      */
-    public async getChatSend(id: string): Promise<Response<{ data: IChatSendResponse }>> {
-        return await http.post(CHAT_SEND, { id }, { headers: { 'Content-Type': 'application/json' } });
+    public async getChatSend(data: object): Promise<Response<{ data: IChatSendResponse }>> {
+        return await http.post(CHAT_SEND, { ...data }, { headers: { 'Content-Type': 'application/json' } });
     }
 }
 

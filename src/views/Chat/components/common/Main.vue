@@ -1,7 +1,7 @@
 <template>
     <el-main class="main-box-right-main2-main1">
         <!--聊天记录列表：头像、名称、日期、内容-->
-        <div class="chat-record-list">
+        <div class="chat-record-list" ref="chatRecordList">
             <ChatHead :chatRecord="chatRecord" />
             <div
                 class="chat-record-list-item"
@@ -68,7 +68,9 @@ import ChatService, { IChatRecordMessageResponse, IChatRecordResponse } from '@/
 import { asyncTryCatch } from '@/utils/exceptionHandling';
 import { useUserLoginRegisterStore } from '@/store';
 import ChatHead from '@/views/Chat/components/common/ChatHead.vue';
+// 实现chatRecordList往下滚动的拽动效果，到底部时，可以滚动200px，越往下，滚动越慢
 
+// 新内容
 const searchValue = ref<string>('');
 // 聊天记录,空对象
 const chatRecord = reactive<IChatRecordResponse>({
@@ -137,10 +139,24 @@ const search = () => {
         const chatRecordList = document.querySelector('.chat-record-list');
         chatRecordList?.scrollTo(0, chatRecordList.scrollHeight);
     }, 0);
+    console.log(messageRecord);
+    // 调用getChatSend(id)方法，发送消息,将当前的路由id与内容传入,为一个对象
+    // ChatService.getChatSend({
+    //     id: router.currentRoute.value.params.id,
+    //     content: searchValue.value
+    // });
+    newChat(router.currentRoute.value.params.id, searchValue.value);
+    console.log(router.currentRoute.value.params.id);
     //     清空
     searchValue.value = '';
-    console.log(messageRecord);
 };
+// 获取新聊天消息
+const newChat = asyncTryCatch(async(id: string, content: string) => {
+    // 如果没有id或者content，就不请求
+    if (!id || !content) return;
+    const { data } = await ChatService.getChatSend({ id, content });
+    console.log(data);
+});
 
 // 获取聊天记录
 const chatList = asyncTryCatch(async(id: string) => {
@@ -173,6 +189,10 @@ watch(
 </script>
 
 <style lang="scss" scoped>
+.main-box-right-main2-main1 {
+    padding-right: unset;
+}
+
 .chat-record-list-none {
     display: flex;
     flex-direction: column;
@@ -272,6 +292,11 @@ watch(
         align-items: flex-start;
         padding: 10px 10px;
         border-top: 1.5px solid #3f4147;
+
+        &:last-child {
+            margin-bottom: 50px;
+        }
+
         //hover样式背景色为2E3035
         &:hover {
             background-color: #2e3035;
