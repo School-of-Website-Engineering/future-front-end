@@ -43,7 +43,12 @@
         </div>
         <!--发送消息框-->
         <div class="chat-search-box">
-            <input :placeholder="`消息@${chatRecord.name}`" v-model="searchValue" @clear="searchValue = ''" />
+            <input
+                :placeholder="`消息@${chatRecord.name}`"
+                v-model="searchValue"
+                @clear="searchValue = ''"
+                @keydown.enter="search"
+            />
             <el-button type="primary" @click="search"
                 >发送
                 <el-icon>
@@ -118,8 +123,23 @@ onMounted(() => {
 });
 const search = () => {
     console.log(searchValue.value);
+    console.log(messageRecord);
+    // 将当前的消息添加到聊天记录中
+    messageRecord.push({
+        content    : searchValue.value,
+        messageType: 'text',
+        messageFrom: 'self',
+        messageId  : '',
+        time       : new Date().toLocaleString()
+    });
+    // 将滚动条滚动到最底部,异步
+    setTimeout(() => {
+        const chatRecordList = document.querySelector('.chat-record-list');
+        chatRecordList?.scrollTo(0, chatRecordList.scrollHeight);
+    }, 0);
     //     清空
     searchValue.value = '';
+    console.log(messageRecord);
 };
 
 // 获取聊天记录
@@ -172,10 +192,12 @@ watch(
         width: 100px;
         height: 100px;
     }
+
     span {
         margin-top: 10px;
     }
 }
+
 .main-box-right-main2-main1 {
     &.main-box-right-main2-main1 {
         background-color: #313338;

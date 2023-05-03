@@ -40,7 +40,7 @@ export default {
                 content    : '你好，我是小助手，有什么可以帮助你的吗？',
                 messageType: 'text',
                 time       : new Date().getTime(),
-                messageFrom: 'self',
+                messageFrom: 'me',
                 messageId  : '345623411435767656'
             };
         } else {
@@ -49,7 +49,7 @@ export default {
                 content    : '暂时无法识别您的意图，请换种方式表达。',
                 messageType: 'text',
                 time       : new Date().getTime(),
-                messageFrom: 'self',
+                messageFrom: 'me',
                 messageId  : '345623411435767999'
             };
         }

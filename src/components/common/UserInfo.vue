@@ -1,7 +1,7 @@
 <template>
     <el-col :span="12" class="bottom-profile-avatar">
         <el-avatar
-            src="https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48"
+            src="https://cdn.discordapp.com/avatars/615354796781862913/11ec6f364a0e4b6ceef007fe18c382b3.webp?size=240"
             class="bottom-profile-avatar-img"
         />
         <span>
