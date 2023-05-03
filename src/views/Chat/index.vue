@@ -111,7 +111,7 @@ import Main from '@/views/Chat/components/common/Main.vue';
         padding-top: unset;
         //    固定定位
         position: absolute;
-        width: 820px;
+        width: 858px;
         height: 100%;
         //    使其不会被遮挡
         z-index: 1;
