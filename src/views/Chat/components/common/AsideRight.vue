@@ -1,5 +1,5 @@
 <template>
-    <el-main class="main-box-right-main2-main2">Main</el-main>
+    <el-main class="main-box-right-main2-main2">ZXCZXCZXCZXCASDFGSDGSDFG水电费广东省广东佛山</el-main>
 </template>
 
 <script setup lang="ts">
@@ -14,7 +14,7 @@ watch(
     (id) => {
         friendsStore.getFriendInfo(id as string);
     },
-    { immediate: true },
+    { immediate: true }
 );
 </script>
 

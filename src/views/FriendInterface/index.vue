@@ -75,7 +75,13 @@
             </el-col>
             <el-col :span="7">
                 <el-container>
-                    <el-main class="main-box-right-main2-main2">Main</el-main>
+                    <el-main class="main-box-right-main2-main2">
+                        <h2>当前的活动</h2>
+                        <div class="status">
+                            <h3>现在很安静……</h3>
+                            <p>当好友开始活动时（比如玩游戏或进行语音聊天的时候），他们的状态都会显示在这里！</p>
+                        </div>
+                    </el-main>
                 </el-container>
             </el-col>
         </el-row>
@@ -289,6 +295,7 @@ watch(
             background-color: #313338;
             border-radius: 4px;
         }
+
         .friends-item-list {
             margin-bottom: 120px !important;
         }
@@ -303,6 +310,25 @@ watch(
 
         &.main-box-right-main2-main2 {
             background-color: #313338;
+            color: #f2f3f5;
+
+            h2 {
+                text-align: left;
+            }
+            .status {
+                margin-top: 50px;
+                h3 {
+                    margin-bottom: 7px;
+                }
+
+                p {
+                    color: #b5bac1;
+                    display: inline-block;
+                    word-wrap: break-word;
+                    word-break: break-all;
+                    white-space: normal;
+                }
+            }
         }
     }
 }
