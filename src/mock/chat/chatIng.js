@@ -13,6 +13,30 @@ export default {
 
         const { id, content } = body;
         let data = {};
+        // 无法识别的消息随机返回一个消息
+        const randomMessage = [
+            '???',
+            '?',
+            '??',
+            '你干嘛',
+            '你发的什么？',
+            '你说啥',
+            '你说的啥',
+            '你说的是啥',
+            '你说的是什么',
+            '你说的是什么？',
+            '你说的是什么意思',
+            '你说的是什么意思？',
+            '你说的是什么意思啊',
+            '你说的是什么意思啊？',
+            '你说的是什么意思啊？？',
+            '你说的是什么意思啊？？？',
+            '你说的是什么意思啊？？？？',
+            '你说的是什么意思啊？？？？？',
+            '你说的是什么意思啊？？？？？？',
+            '你说的是什么意思啊？？？？？？？'
+        ];
+        const randomIndex = Math.floor(Math.random() * randomMessage.length);
         // 根据content进行不同的处理
         if (content.match(/^(你好|您好|hello|hi|哈喽|早上好|下午好|晚上好)$/i)) {
             // 处理问好语句的逻辑
@@ -26,16 +50,25 @@ export default {
                 //     messageId: string;随机生成
                 //     isShow?: boolean;
                 //     isEdit?: boolean;
-                content    : '你好，我是小助手，有什么可以帮助你的吗？',
+                content    : '你好',
                 messageType: 'text',
                 time       : new Date().getTime(),
                 messageFrom: 'me',
                 messageId  : generateRandomId().toString()
             };
+        } else if (content.match(/^(你是谁|你叫什么名字|你叫啥|你是谁啊|你是谁呀|你是谁呢|你是谁的|\?\|你是)$/i)) {
+            // 处理问名字的逻辑
+            data = {
+                content    : '我是xxx',
+                messageType: 'text',
+                time       : new Date().getTime(),
+                messageFrom: 'me',
+                messageId  : generateRandomId
+            };
         } else {
             // 处理其他消息的逻辑
             data = {
-                content    : '暂时无法识别您的意图，请换种方式表达。',
+                content    : randomMessage[randomIndex],
                 messageType: 'text',
                 time       : new Date().getTime(),
                 messageFrom: 'me',

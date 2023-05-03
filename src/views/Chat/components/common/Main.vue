@@ -118,7 +118,13 @@ const Themouseout = (item: IChatRecordMessageResponse) => {
     console.log('鼠标移出');
     mouseover.value = false;
 };
-
+const asyncBottom = () => {
+    // 将滚动条滚动到最底部,异步
+    setTimeout(() => {
+        const chatRecordList = document.querySelector('.chat-record-list');
+        chatRecordList?.scrollTo(0, chatRecordList.scrollHeight);
+    }, 0);
+};
 // 请求用户信息
 onMounted(() => {
     userLoginRegisterStore.getUserInfo();
@@ -134,17 +140,10 @@ const search = () => {
         messageId  : '',
         time       : new Date().toLocaleString()
     });
-    // 将滚动条滚动到最底部,异步
-    setTimeout(() => {
-        const chatRecordList = document.querySelector('.chat-record-list');
-        chatRecordList?.scrollTo(0, chatRecordList.scrollHeight);
-    }, 0);
+    // 将滚动条滚动到最底部
+    asyncBottom();
     console.log(messageRecord);
-    // 调用getChatSend(id)方法，发送消息,将当前的路由id与内容传入,为一个对象
-    // ChatService.getChatSend({
-    //     id: router.currentRoute.value.params.id,
-    //     content: searchValue.value
-    // });
+    // 调用发送消息接口
     newChat(router.currentRoute.value.params.id, searchValue.value);
     console.log(router.currentRoute.value.params.id);
     //     清空
@@ -154,8 +153,16 @@ const search = () => {
 const newChat = asyncTryCatch(async(id: string, content: string) => {
     // 如果没有id或者content，就不请求
     if (!id || !content) return;
-    const { data } = await ChatService.getChatSend({ id, content });
+    const { data } = (await ChatService.getChatSend({ id, content })) as unknown as {
+        data: IChatRecordMessageResponse;
+    };
     console.log(data);
+    //将新的消息添加到聊天记录中，随机延迟0.5s~2.5s
+    setTimeout(() => {
+        messageRecord.push(data);
+        // 将滚动条滚动到最底部
+        asyncBottom();
+    }, Math.random() * 2000 + 500);
 });
 
 // 获取聊天记录
