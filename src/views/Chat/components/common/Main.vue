@@ -118,6 +118,8 @@ onMounted(() => {
 });
 const search = () => {
     console.log(searchValue.value);
+    //     清空
+    searchValue.value = '';
 };
 
 // 获取聊天记录
