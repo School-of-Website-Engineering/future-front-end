@@ -12,13 +12,13 @@
             >
                 <div class="chat-record-list-item-left">
                     <el-image
-                        :src="item.messageFrom === 'me' ? chatRecord.avatar : userLoginRegisterStore.getUserAvatar"
+                        :src="item.messageFrom === 'self' ? chatRecord.avatar : userLoginRegisterStore.getUserAvatar"
                     />
                 </div>
                 <div class="chat-record-list-item-right">
                     <div class="chat-record-list-item-right-top">
                         <div class="chat-record-list-item-right-top-left">
-                            <span>{{ chatRecord.name }}</span>
+                            <span>{{ item.name || chatRecord.name }}</span>
                             <span>{{ item.time }}</span>
                         </div>
                     </div>
@@ -129,6 +129,8 @@ const asyncBottom = () => {
 onMounted(() => {
     userLoginRegisterStore.getUserInfo();
 });
+// 生成随机数
+const randomNum = Math.floor(Math.random() * 100000000000);
 const search = () => {
     console.log(searchValue.value);
     console.log(messageRecord);
@@ -136,10 +138,12 @@ const search = () => {
     messageRecord.push({
         content    : searchValue.value,
         messageType: 'text',
-        messageFrom: 'self',
-        messageId  : '',
-        time       : new Date().toLocaleString()
+        messageFrom: 'me',
+        messageId  : randomNum.toString(),
+        time       : new Date().toLocaleString(),
+        name       : 'JDSA Ling'
     });
+
     // 将滚动条滚动到最底部
     asyncBottom();
     console.log(messageRecord);
@@ -154,15 +158,21 @@ const newChat = asyncTryCatch(async(id: string, content: string) => {
     // 如果没有id或者content，就不请求
     if (!id || !content) return;
     const { data } = (await ChatService.getChatSend({ id, content })) as unknown as {
-        data: IChatRecordMessageResponse;
+        data: IChatRecordResponse;
     };
     console.log(data);
     //将新的消息添加到聊天记录中，随机延迟0.5s~2.5s
     setTimeout(() => {
-        messageRecord.push(data);
+        // chatRecord重新赋值
+        chatRecord.avatar = data.avatar;
+        chatRecord.id = data.id;
+        chatRecord.name = data.name;
+        chatRecord.time = data.time;
+        messageRecord.push({ ...data.message } as unknown as IChatRecordMessageResponse);
         // 将滚动条滚动到最底部
         asyncBottom();
     }, Math.random() * 2000 + 500);
+    console.log(messageRecord);
 });
 
 // 获取聊天记录
@@ -228,7 +238,6 @@ watch(
 .main-box-right-main2-main1 {
     &.main-box-right-main2-main1 {
         background-color: #313338;
-        border-right: 1.5px solid #3f4147;
     }
 }
 
@@ -242,6 +251,7 @@ watch(
     background-color: #3f4147;
     border-bottom: 1.5px solid #3f4147;
     border-radius: 5px;
+    width: 95%;
 
     input {
         width: 80%;

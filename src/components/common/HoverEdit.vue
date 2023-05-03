@@ -11,7 +11,7 @@
             <slot></slot>
             <el-tooltip effect="dark" content="编辑" placement="top" :hide-after="0" :open-delay="50">
                 <el-container class="hover-edit-wrapper-content-edit">
-                    <el-icon @click="edit" v-if="props.display && props.mouseenter && props.item?.isShow"
+                    <el-icon @click="edit" v-if="!props.display && !props.mouseenter && props.item?.isShow"
                         ><i class="fa-solid fa-pencil"></i>
                     </el-icon>
                 </el-container>

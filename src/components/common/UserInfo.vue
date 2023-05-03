@@ -5,7 +5,7 @@
             class="bottom-profile-avatar-img"
         />
         <span>
-            <p>鸡你太美</p>
+            <p>JDSA Ling</p>
             <p>#1237</p>
         </span>
     </el-col>
@@ -68,9 +68,6 @@ defineComponent({
                     &:first-child {
                         overflow: hidden;
                         text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 1;
-                        -webkit-box-orient: vertical;
                         color: #f2f3f5;
                         font-weight: bold;
                     }

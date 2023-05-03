@@ -17,7 +17,7 @@ export default {
                     // 用户id
                     id     : '345623411435767708',
                     // 用户名
-                    name   : 'All Badges% Speedrunner',
+                    name   : 'liuliu',
                     // 用户头像
                     avatar : 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
                     // 消息内容
@@ -30,7 +30,7 @@ export default {
                             // 消息发送时间
                             time       : '2020-10-10 10:10:10',
                             // 消息发送方
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             // 消息id
                             messageId  : '34562341914357677908'
                         },
@@ -38,32 +38,39 @@ export default {
                             content    : 'How are you?',
                             messageType: 'text',
                             time       : '2020-10-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '356234114357677909'
                         },
                         {
                             content    : "I'm fine, thank you!",
                             messageType: 'text',
                             time       : '2020-10-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '34562341143576077908'
                         },
                         {
                             content    : 'And you?',
                             messageType: 'text',
                             time       : '2020-4-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '345623411435777909'
                         },
                         {
                             content    : "I'm fine, thank you!",
                             messageType: 'text',
                             time       : '2020-10-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677910'
                         },
                         {
                             content    : 'And you?',
+                            messageType: 'text',
+                            time       : '2020-4-10 10:10:10',
+                            messageFrom: 'me',
+                            messageId  : '3456234114357677911'
+                        },
+                        {
+                            content    : 'what’s up?',
                             messageType: 'text',
                             time       : '2020-4-10 10:10:10',
                             messageFrom: 'self',

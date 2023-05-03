@@ -22,6 +22,7 @@ export interface IChatRecordMessageResponse {
     messageId: string;
     isShow?: boolean;
     isEdit?: boolean;
+    name?: string;
 }
 
 /**

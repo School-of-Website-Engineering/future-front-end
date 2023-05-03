@@ -1,4 +1,5 @@
 // 实时聊天数据
+
 export default {
     // 收到的消息，并根据id进行不同的处理
     url     : '/chat/ing',
@@ -7,7 +8,7 @@ export default {
     response: ({ body }) => {
         // 返回一个随机id的函数，返回id如345623411435767999
         function generateRandomId() {
-            const randomNum = Math.floor(Math.random() * 1000000000000000); // 生成一个14位的随机整数
+            const randomNum = Math.floor(Math.random() * 100000000000); // 生成一个14位的随机整数
             return '345623411435767' + randomNum.toString().substring(3); // 返回id
         }
 
@@ -41,37 +42,28 @@ export default {
         if (content.match(/^(你好|您好|hello|hi|哈喽|早上好|下午好|晚上好)$/i)) {
             // 处理问好语句的逻辑
             data = {
-                // message: "你好，我是小助手，有什么可以帮助你的吗？"
-                //     遵守类型
-                //     content: string;
-                //     messageType: string;
-                //     time: string;
-                //     messageFrom: string;
-                //     messageId: string;随机生成
-                //     isShow?: boolean;
-                //     isEdit?: boolean;
-                content    : '你好',
+                content    : '我是xxx',
                 messageType: 'text',
                 time       : new Date().getTime(),
-                messageFrom: 'me',
+                messageFrom: 'self',
                 messageId  : generateRandomId().toString()
             };
-        } else if (content.match(/^(你是谁|你叫什么名字|你叫啥|你是谁啊|你是谁呀|你是谁呢|你是谁的|\?\|你是)$/i)) {
+        } else if (content.match(/^(你是谁|你叫什么名字|你叫啥|你是谁啊|你是谁呀|你是谁呢|你是谁的|你是)$/i)) {
             // 处理问名字的逻辑
             data = {
                 content    : '我是xxx',
                 messageType: 'text',
                 time       : new Date().getTime(),
-                messageFrom: 'me',
-                messageId  : generateRandomId
+                messageFrom: 'self',
+                messageId  : generateRandomId().toString()
             };
         } else {
             // 处理其他消息的逻辑
             data = {
                 content    : randomMessage[randomIndex],
                 messageType: 'text',
-                time       : new Date().getTime(),
-                messageFrom: 'me',
+                time       : new Date().getTime().toLocaleString(),
+                messageFrom: 'self',
                 messageId  : generateRandomId().toString()
             };
         }
@@ -95,14 +87,27 @@ export default {
                 return {
                     code   : 200,
                     message: 'success',
-                    data
+                    // 修改data的avatar与name
+                    data   : {
+                        avatar : 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
+                        id     : '345623411435767898',
+                        message: data,
+                        name   : 'liuliu',
+                        time   : new Date().getTime().toLocaleString()
+                    }
                 };
             },
             '345623411435767899': () => {
                 return {
                     code   : 200,
                     message: 'success',
-                    data
+                    data   : {
+                        avatar : 'https://cdn.discordapp.com/avatars/891419145592266812/c8578ca93da963aa9edfdae6111a1a23.webp?size=128',
+                        id     : '345623411435767898',
+                        message: data,
+                        name   : 'Ye Ldzy>>',
+                        time   : new Date().getTime().toLocaleString()
+                    }
                 };
             },
             '345623411435767901': () => {
