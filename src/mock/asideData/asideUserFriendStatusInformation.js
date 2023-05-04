@@ -45,8 +45,8 @@ export default [
                             // 用户头像
                             avatar    : 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=48',
                             // 用户状态
-                            status    : 'offline',
-                            statusText: '离线'
+                            status    : 'online',
+                            statusText: '在线'
                         },
                         {
                             // 用户id
@@ -67,8 +67,8 @@ export default [
                             // 用户头像
                             avatar    : 'https://cdn.discordapp.com/avatars/598588658177671188/df122ff3d7dfa25674aed205a043684f.webp?size=128',
                             // 用户状态
-                            status    : 'busy',
-                            statusText: '忙碌'
+                            status    : 'online',
+                            statusText: '在线'
                         },
                         {
                             // 用户id
@@ -78,8 +78,8 @@ export default [
                             // 用户头像
                             avatar    : 'https://cdn.discordapp.com/avatars/763293201062035486/5396342ba4e3bf24661c146cdae526a1.webp?size=100',
                             // 用户状态
-                            status    : 'busy',
-                            statusText: '忙碌'
+                            status    : 'online',
+                            statusText: '在线'
                         },
                         {
                             // 用户id
@@ -89,8 +89,8 @@ export default [
                             // 用户头像
                             avatar    : 'https://cdn.discordapp.com/avatars/1049673722434437160/23653805be14a796eb0fab4795cc6f7a.webp?size=100',
                             // 用户状态
-                            status    : 'busy',
-                            statusText: '忙碌'
+                            status    : 'idle',
+                            statusText: '闲置'
                         },
                         {
                             // 用户id
@@ -111,8 +111,8 @@ export default [
                             // 用户头像
                             avatar    : 'https://cdn.discordapp.com/avatars/763298729762488330/6d1ec1e2b226fab6ee79231604cd87a7.webp?size=100',
                             // 用户状态
-                            status    : 'busy',
-                            statusText: '忙碌'
+                            status    : 'online',
+                            statusText: '在线'
                         },
                         {
                             // 用户id
@@ -122,8 +122,8 @@ export default [
                             // 用户头像
                             avatar    : 'https://cdn.discordapp.com/avatars/511265015647436820/6db4e889181655645d92b70e53542dba.webp?size=100',
                             // 用户状态
-                            status    : 'busy',
-                            statusText: '忙碌'
+                            status    : 'idle',
+                            statusText: '闲置'
                         },
                         {
                             // 用户id
