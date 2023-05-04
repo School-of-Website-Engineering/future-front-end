@@ -4,18 +4,17 @@
             <div class="head-box" style="display: flex">
                 <el-image class="headstyle" :src="friendsStore.friendInfo.avatar" />
                 <el-tooltip class="headstyle" effect="dark" :content="friendStatus" placement="top">
-                    <div class="status-online"></div>
+                    <FriendsStatus :status="friendsStore.friendInfo.status" class="status-"></FriendsStatus>
+                    <FriendsStatus :status="friendsStore.friendInfo.status" class="status"></FriendsStatus>
                 </el-tooltip>
                 <img class="background-img" :src="friendsStore.friendInfo.background" alt="" />
             </div>
         </div>
         <div class="badgeList">
-            <a>
-                <img
-                    alt="Null"
-                    class="imgStyle"
-                    src="https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png"
-                />
+            <a v-for="(item, index) in friendsStore.friendInfo.tags" :key="index">
+                <el-tooltip effect="dark" :content="friendsStore.friendInfo.tags[index].tag" placement="top">
+                    <img alt="Null" class="imgStyle" :src="friendsStore.friendInfo.tags[index].link" />
+                </el-tooltip>
             </a>
         </div>
         <div class="right-card">
@@ -112,6 +111,7 @@
 import { useUserFriendsStore } from '@/store/modules/friends';
 import router from '@/router';
 import { computed, watch } from 'vue';
+import FriendsStatus from '@/components/common/FriendStatus.vue';
 
 const friendsStore = useUserFriendsStore();
 /**
@@ -145,6 +145,8 @@ watch(
     () => router.currentRoute.value.params.id,
     (id) => {
         friendsStore.getFriendInfo(id as string);
+        console.log('--->-------------------------------------');
+        console.log(friendsStore);
     },
     { immediate: true }
 );
@@ -193,6 +195,7 @@ watch(
     width: 25%;
     height: 60%;
     z-index: 1;
+    position: relative;
 }
 
 .iconWrapper {
@@ -215,7 +218,8 @@ watch(
     flex: 1 1 auto;
     //可以滚动
     overflow-y: auto;
-
+    //从上到下渐变
+    background: linear-gradient(180deg, #000 0%, #3e0a3e 100%);
     //滚动条样式
     &::-webkit-scrollbar {
         width: 8px;
@@ -239,14 +243,10 @@ watch(
 }
 
 //在线状态显示组件样式
-.status-online {
-    width: 15px;
-    height: 15px;
-    background-color: #43b581;
-    border-radius: 50%;
-    border: 2px solid #43b580;
+.status- {
     margin-top: 143px;
     z-index: 1;
+    border-radius: 50%;
     margin-left: -26px;
 }
 
@@ -264,9 +264,10 @@ watch(
     margin-left: 24px;
     margin-top: 18px;
     line-height: 24px;
-    background-color: #1f2123;
     border-color: #b1b5bc;
     padding: 12px 12px 12px;
+    //从右上角开始到左下角渐变
+    background: linear-gradient(135deg, #19061a 0%, #000 100%);
 
     .note {
         margin-top: 8px;
@@ -445,7 +446,7 @@ watch(
     box-sizing: border-box;
     max-width: 203px;
     width: fit-content;
-    margin-left: 280px;
+    margin-left: 220px;
     height: 31px;
     padding: 4px;
     margin-top: 10px;

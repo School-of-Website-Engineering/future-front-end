@@ -109,6 +109,7 @@ export interface IUserInfoByFriendsIdResponse {
     discriminator: string;
     tags: {
         tag: string;
+        link: string;
     }[];
 }
 

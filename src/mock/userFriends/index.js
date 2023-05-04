@@ -248,18 +248,27 @@ export default [
                                 // 备注
                                 remark       : '干嘛~',
                                 // 状态
+                                /**
+                                 * 在线 online
+                                 * 离线 offline
+                                 * 闲置 idle
+                                 * 忙碌 dnd
+                                 */
                                 status       : 'online',
                                 discriminator: '4546',
                                 //个人标签
                                 tags         : [
                                     {
-                                        tag: '爱旅游'
+                                        tag : '爱旅游',
+                                        link: 'https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png'
                                     },
                                     {
-                                        tag: '美食'
+                                        tag : '美食',
+                                        link: 'https://cdn.discordapp.com/badge-icons/2ba85e8026a8614b640c2837bcdfe21b.png'
                                     },
                                     {
-                                        tag: '自由职业者'
+                                        tag : '自由职业者',
+                                        link: 'https://cdn.discordapp.com/badge-icons/51040c70d4f20a921ad6674ff86fc95c.png'
                                     }
                                 ]
                             }

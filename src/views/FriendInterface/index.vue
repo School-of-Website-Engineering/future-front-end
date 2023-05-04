@@ -112,7 +112,6 @@ onMounted(() => {
     userFriends.getPendingFriends();
     userFriends.getBlockedFriends();
 });
-
 watch(
     activeIndex,
     (newVal) => {
