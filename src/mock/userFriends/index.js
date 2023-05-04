@@ -282,6 +282,7 @@ export default [
                     return {
                         code   : 200,
                         message: 'success',
+                        status : 'idle',
                         data   : {
                             friendInfo: {
                                 username    : 'Ye Ldzy>>',
@@ -357,6 +358,7 @@ export default [
                         data   : {
                             friendInfo: {
                                 username    : 'Catand',
+                                status      : 'dnd',
                                 //自我介绍
                                 introduction: '我是一只大老鼠，我最喜欢奶油和奶酪。',
                                 //头像
@@ -475,6 +477,7 @@ export default [
                                 username    : 'NaRiver',
                                 //自我介绍
                                 introduction: '和Ling一起玩文明VI，这是计划的一部分',
+                                status      : 'idle',
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/1049673722434437160/23653805be14a796eb0fab4795cc6f7a.webp?size=100',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
@@ -486,7 +489,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : '',
+                                background   : 'https://datoumaomi.github.io/pic/www/wenming6/logo.jpg',
                                 discriminator: '8731',
                                 //个人标签
                                 tags         : [
@@ -509,6 +512,7 @@ export default [
                         data   : {
                             friendInfo: {
                                 username    : 'Deep Water',
+                                status      : 'dnd',
                                 //自我介绍
                                 introduction: '',
                                 //头像
@@ -580,6 +584,7 @@ export default [
                         data   : {
                             friendInfo: {
                                 username: 'Mr.Smith',
+                                status  : 'idle',
                                 //自我介绍
                                 introduction:
                                     '"We could be born to anything and now, and now\n' +
@@ -622,9 +627,10 @@ export default [
                     return {
                         code   : 200,
                         message: 'success',
+                        status : 'dnd',
                         data   : {
                             friendInfo: {
-                                username    : 'Mr.Smith',
+                                username    : 'Ms.Timesiana',
                                 //自我介绍
                                 introduction: '首先要认清自己，然后才能进步。',
                                 //头像

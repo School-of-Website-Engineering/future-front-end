@@ -243,7 +243,7 @@ watch(
 
 //在线状态显示组件样式
 .status- {
-    margin-top: 143px;
+    margin-top: 150px;
     z-index: 1;
     border-radius: 50%;
     margin-left: -26px;
