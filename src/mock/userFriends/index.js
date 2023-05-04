@@ -38,9 +38,10 @@ export default [
                         data   : {
                             commonServer: [
                                 {
-                                    id  : '437456121056741327',
-                                    name: 'gpt',
-                                    icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                                    id   : '437456121056741327',
+                                    name : 'gpt',
+                                    icon : 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160',
+                                    tagId: '1152'
                                 }
                             ],
                             commonFriend: [
@@ -48,12 +49,14 @@ export default [
                                     id    : '345623411435767900',
                                     name  : '[ECM]HamSter',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60',
+                                    tagId : '1192'
                                 },
                                 {
                                     id    : '760729927552729119',
                                     name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
+                                    tagId : '1492'
                                 }
                             ]
                         }
@@ -176,14 +179,17 @@ export default [
                         data   : {
                             commonServer: [
                                 {
-                                    id  : '437456121056741327',
-                                    name: 'gpt',
-                                    icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                                    id   : '437456121056741327',
+                                    name : 'gpt',
+                                    icon : 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160',
+                                    //     标签id
+                                    tagId: '1152'
                                 },
                                 {
-                                    id  : '437456121056741329',
-                                    name: '只因',
-                                    icon: 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
+                                    id   : '437456121056741329',
+                                    name : '只因',
+                                    icon : 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160',
+                                    tagId: '1492'
                                 }
                             ],
                             commonFriend: [

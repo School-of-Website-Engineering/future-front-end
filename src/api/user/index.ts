@@ -52,6 +52,7 @@ export interface ICommonServerItem {
     id: string;
     name: string;
     icon: string;
+    tagId: string;
 }
 
 /**
@@ -65,6 +66,7 @@ export interface ICommonFriendItem {
     id: string;
     name: string;
     avatar: string;
+    tagId: string;
 }
 
 /**

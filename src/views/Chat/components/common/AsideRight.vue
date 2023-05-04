@@ -53,9 +53,13 @@
                 <!--                <i class="fa-solid fa-chevron-down"></i>-->
                 <div class="commentServer">
                     <div class="commentServerItem">
-                        <div class="commentServerItemImg" v-for="item in friendsStore.friendInfo" :key="item">
-                            <img :src="item.avatar" alt="Null" />
-                            <span>{{ item.username }}</span>
+                        <div
+                            class="commentServerItemImg"
+                            v-for="item in commonServiceCount.commonServer"
+                            :key="item.id"
+                        >
+                            <img :src="item.icon" alt="Null" />
+                            <span>{{ item.name }}</span>
                         </div>
                     </div>
                 </div>
@@ -67,37 +71,14 @@
                     <span class="commentServer-num">1个共同的服务器</span>
                     <i class="fa-solid fa-chevron-right"></i>
                     <div class="commentFriendItem">
-                        <div class="commentFriendItemImg">
-                            <img
-                                src="https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60"
-                                alt="Null"
-                            />
-                            <span>ECM-Hamster</span>
-                            <span>#1356</span>
-                        </div>
-                        <div class="commentFriendItemImg">
-                            <img
-                                src="https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60"
-                                alt="Null"
-                            />
-                            <span>ECM-Hamster</span>
-                            <span>#1356</span>
-                        </div>
-                        <div class="commentFriendItemImg">
-                            <img
-                                src="https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60"
-                                alt="Null"
-                            />
-                            <span>ECM-Hamster</span>
-                            <span>#1356</span>
-                        </div>
-                        <div class="commentFriendItemImg">
-                            <img
-                                src="https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60"
-                                alt="Null"
-                            />
-                            <span>ECM-Hamster</span>
-                            <span>#1356</span>
+                        <div
+                            class="commentFriendItemImg"
+                            v-for="item in commonServiceCount.commonFriend"
+                            :key="item.id"
+                        >
+                            <img :src="item.avatar" alt="Null" />
+                            <span>{{ item.name }}</span>
+                            <span>#{{ item.tagId }}</span>
                         </div>
                     </div>
                 </div>
@@ -110,8 +91,27 @@
 <script setup lang="ts">
 import { useUserFriendsStore } from '@/store/modules/friends';
 import router from '@/router';
-import { computed, watch } from 'vue';
+import { computed, reactive, watch } from 'vue';
 import FriendsStatus from '@/components/common/FriendStatus.vue';
+import UserService, { ICommonServerCountResponse } from '@/api/user';
+import { asyncTryCatch } from '@/utils/exceptionHandling';
+
+const commonServiceCount = reactive<ICommonServerCountResponse>({
+    commonServer: [],
+    commonFriend: []
+});
+/**
+ * 获取共同的服务器
+ * @param id 用户id
+ * @returns 共同的服务器
+ */
+const commonService = asyncTryCatch(async(id) => {
+    const { data } = (await UserService.getCommonServerCount(id)) as unknown as any;
+    commonServiceCount.commonServer = data.commonServer;
+    commonServiceCount.commonFriend = data.commonFriend;
+    console.log('--------------commonServiceCount--------------');
+    console.log(commonServiceCount);
+});
 
 const friendsStore = useUserFriendsStore();
 /**
@@ -145,8 +145,7 @@ watch(
     () => router.currentRoute.value.params.id,
     (id) => {
         friendsStore.getFriendInfo(id as string);
-        console.log('--->-------------------------------------');
-        console.log(friendsStore);
+        commonService(id as string);
     },
     { immediate: true }
 );
@@ -273,9 +272,8 @@ watch(
         margin-top: 8px;
 
         .textarea {
-            background-color: #1f2123;
             border: none;
-            color: white;
+            color: #b5bac1;
             resize: none;
             outline: none;
             width: 100%;
