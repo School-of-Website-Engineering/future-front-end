@@ -628,7 +628,7 @@ export default [
                                 //自我介绍
                                 introduction: '首先要认清自己，然后才能进步。',
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/511265015647436820/6db4e889181655645d92b70e53542dba.webp?size=100',
+                                avatar      : 'https://cdn.discordapp.com/avatars/809486916612653129/95831cc675c39c894cc7c43af398c5f4.webp?size=100',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -639,7 +639,7 @@ export default [
                                     Math.floor(Math.random() * 30),
                                 // 背景
                                 background:
-                                    'https://cdn.discordapp.com/banners/511265015647436820/b8ef6dddb0b1fb3762ba642558ca401c.png?size=600',
+                                    'https://cdn.discordapp.com/banners/165047934113677312/ce18db518c121a6259e6ff7c49b0bada.png?size=600',
                                 discriminator: '9285',
                                 //个人标签
                                 tags         : [

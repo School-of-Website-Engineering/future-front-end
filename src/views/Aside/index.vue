@@ -20,7 +20,7 @@
                 >
                     <img
                         class="channel-img"
-                        src="https://cdn.discordapp.com/icons/464395429392678912/401026c51da58472a16c650ee263701d.webp?size=160"
+                        src="https://cdn.discordapp.com/icons/400983101507108874/a_9068da7844679c80b2cd728064b31303.webp?size=128"
                         alt=""
                     />
                 </el-tooltip>
