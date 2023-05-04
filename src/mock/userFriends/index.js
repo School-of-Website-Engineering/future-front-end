@@ -122,7 +122,8 @@ export default [
                                     id    : '345623411435767901',
                                     name  : 'Catand',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/616810767773335552/d730cfb881a0dbb685067cfa328f4bec.webp?size=100'
+                                    avatar: 'https://cdn.discordapp.com/avatars/616810767773335552/d730cfb881a0dbb685067cfa328f4bec.webp?size=100',
+                                    tagId : '6531'
                                 }
                             ]
                         }
@@ -227,12 +228,14 @@ export default [
                                 {
                                     id    : '345623411435767900',
                                     name  : '[ECM]HamSter',
+                                    tagId : '1145',
                                     // 头像
                                     avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
                                 },
                                 {
                                     id    : '345623411435767901',
                                     name  : 'Catand',
+                                    tagId : '6531',
                                     avatar: 'https://cdn.discordapp.com/avatars/616810767773335552/d730cfb881a0dbb685067cfa328f4bec.webp?size=100'
                                 }
                             ]
@@ -529,6 +532,10 @@ export default [
                                     {
                                         tag : 'Future-年度会员徽章',
                                         link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                    },
+                                    {
+                                        tag : '文明VI-捍卫者徽章(本体版全帝国胜利)',
+                                        link: 'https://cdn.discordapp.com/badge-icons/fee1624003e2fee35cb398e125dc479b.png'
                                     }
                                 ]
                             }
