@@ -48,7 +48,7 @@
         <div class="right-card">
             <!--            共同好友列表-->
             <div class="userTagNoNickname">
-                <span class="commentServer-num">1个共同的服务器</span>
+                <span class="commentServer-num">{{ commonServiceCount.commonServer.length }}个共同的服务器</span>
                 <i class="fa-solid fa-chevron-right"></i>
                 <!--                <i class="fa-solid fa-chevron-down"></i>-->
                 <div class="commentServer">
@@ -68,7 +68,7 @@
             <div class="userTagNoNickname">
                 <!--                共同好友-->
                 <div class="commentFriend">
-                    <span class="commentServer-num">1个共同的服务器</span>
+                    <span class="commentServer-num">{{ commonServiceCount.commonFriend.length }}个共同的好友</span>
                     <i class="fa-solid fa-chevron-right"></i>
                     <div class="commentFriendItem">
                         <div
