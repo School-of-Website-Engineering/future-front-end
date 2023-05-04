@@ -75,12 +75,57 @@
                             />
                             <span>Terraria</span>
                         </div>
+                        <div class="commentServerItemImg">
+                            <img
+                                src="https://cdn.discordapp.com/icons/251072485095636994/a_37069f32ec5e98ad8bf0e8334df18594.webp?size=60"
+                                alt="Null"
+                            />
+                            <span>Terraria</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="line"></div>
             <div class="userTagNoNickname">
-                <span>暂无共同好友</span>
+                <!--                共同好友-->
+                <div class="commentFriend">
+                    <span class="commentServer-num">1个共同的服务器</span>
+                    <div class="commentFriendItem">
+                        <div class="commentFriendItemImg">
+                            <img
+                                src="https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60"
+                                alt="Null"
+                            />
+                            <span>ECM-Hamster</span>
+                            <span>#1356</span>
+                        </div>
+                        <div class="commentFriendItemImg">
+                            <img
+                                src="https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60"
+                                alt="Null"
+                            />
+                            <span>ECM-Hamster</span>
+                            <span>#1356</span>
+                        </div>
+                        <div class="commentFriendItemImg">
+                            <img
+                                src="https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60"
+                                alt="Null"
+                            />
+                            <span>ECM-Hamster</span>
+                            <span>#1356</span>
+                        </div>
+                        <div class="commentFriendItemImg">
+                            <img
+                                src="https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60"
+                                alt="Null"
+                            />
+                            <span>ECM-Hamster</span>
+                            <span>#1356</span>
+                        </div>
+                    </div>
+                </div>
+                <!--                <span>暂无共同好友</span>-->
             </div>
         </div>
     </div>
@@ -154,6 +199,7 @@ const openVn = () => {
 
 //最大的外面盒子的样式表
 .main-message {
+    height: 100vh;
     position: relative;
     box-sizing: border-box;
     min-height: 0;
@@ -216,8 +262,10 @@ const openVn = () => {
     background-color: #1f2123;
     border-color: #b1b5bc;
     padding: 12px 12px 12px;
+
     .note {
         margin-top: 8px;
+
         .textarea {
             background-color: #1f2123;
             border: none;
@@ -248,20 +296,33 @@ const openVn = () => {
     align-items: flex-end;
     color: white;
 }
+
 .right-card {
+    &:last-child {
+        margin-bottom: 80px;
+    }
+
     .userTagNoNickname {
-        //最后一个子元素和最后第二个子元素的样式
-        &:last-child,
-        &:nth-last-child(2) {
+        &:last-child {
             font-size: 14px;
         }
+
         .commentServer-num {
+            display: inline-block;
             font-size: 14px;
             color: #dbdee1;
+            margin-bottom: 10px;
+            &:hover {
+                cursor: pointer;
+            }
         }
-        .commentServer {
-            .commentServerItem {
-                .commentServerItemImg {
+
+        .commentServer,
+        .commentFriend {
+            .commentServerItem,
+            .commentFriendItem {
+                .commentServerItemImg,
+                .commentFriendItemImg {
                     img {
                         width: 40px;
                         height: 40px;
@@ -269,13 +330,54 @@ const openVn = () => {
                         margin-right: 8px;
                         padding: 6px;
                     }
+
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
+
                     span {
                         font-size: 16px;
                         color: #dbdee1;
                     }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #2f3136;
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+
+        .commentFriend {
+            .commentServer-num {
+                height: 40px;
+                line-height: 40px;
+            }
+            .commentFriendItem {
+                .commentFriendItemImg {
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 26%;
+                        margin-right: 8px;
+                        padding: 6px;
+                    }
+
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    span {
+                        font-size: 16px;
+                        color: #dbdee1;
+
+                        &:last-child {
+                            font-size: 12px;
+                            color: #72767d;
+                        }
+                    }
+
                     &:hover {
                         cursor: pointer;
                         background-color: #2f3136;
@@ -286,6 +388,7 @@ const openVn = () => {
         }
     }
 }
+
 //分界线样式
 .line {
     margin-top: 12px;
