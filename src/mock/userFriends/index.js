@@ -272,7 +272,7 @@ export default [
                                     },
                                     {
                                         tag : '钻石测试人员',
-                                        link: 'https://cdn.discordapp.com/badge-icons/51040c70d4f20a921ad6674ff86fc95c.png'
+                                        link: 'https://cdn.discordapp.com/badge-icons/ec92202290b48d0879b7413d2dde3bab.png'
                                     }
                                 ]
                             }
@@ -307,7 +307,7 @@ export default [
                                         link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
                                     },
                                     {
-                                        tag : '开发人员',
+                                        tag : 'Python开发-[已认证]',
                                         link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
                                     }
                                 ]
@@ -417,6 +417,243 @@ export default [
                                     {
                                         tag : 'Future-合作开发者',
                                         link: 'https://cdn.discordapp.com/badge-icons/6df5892e0f35b051f8b61eace34f4967.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '345623411435767907':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'Cold Mint',
+                                //自我介绍
+                                introduction: '认识你很高兴。\n' + 'Nice to meet you.',
+                                //头像
+                                avatar      : 'https://cdn.discordapp.com/avatars/763293201062035486/5396342ba4e3bf24661c146cdae526a1.webp?size=100',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 4) +
+                                    '-' +
+                                    Math.floor(Math.random() * 12) +
+                                    '-' +
+                                    Math.floor(Math.random() * 30),
+                                // 背景
+                                background   : '',
+                                discriminator: '7321',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-飞翔',
+                                        link: 'https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png'
+                                    },
+                                    {
+                                        tag : 'Future-合作开发者',
+                                        link: 'https://cdn.discordapp.com/badge-icons/6df5892e0f35b051f8b61eace34f4967.png'
+                                    },
+                                    {
+                                        tag : 'Java高级开发-[已认证]',
+                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234161435767908':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'NaRiver',
+                                //自我介绍
+                                introduction: '和Ling一起玩文明VI，这是计划的一部分',
+                                //头像
+                                avatar      : 'https://cdn.discordapp.com/avatars/1049673722434437160/23653805be14a796eb0fab4795cc6f7a.webp?size=100',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 4) +
+                                    '-' +
+                                    Math.floor(Math.random() * 12) +
+                                    '-' +
+                                    Math.floor(Math.random() * 30),
+                                // 背景
+                                background   : '',
+                                discriminator: '8731',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-勇气',
+                                        link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234114357677908':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'Deep Water',
+                                //自我介绍
+                                introduction: '',
+                                //头像
+                                avatar      : 'https://cdn.discordapp.com/avatars/482216415147982848/c2b04dce7319282ff2cdc6275e13d52a.webp?size=128',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 4) +
+                                    '-' +
+                                    Math.floor(Math.random() * 12) +
+                                    '-' +
+                                    Math.floor(Math.random() * 30),
+                                // 背景
+                                background   : '',
+                                discriminator: '9250',
+                                //个人标签
+                                tags         : []
+                            }
+                        }
+                    };
+                case '3456234114357679088':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'EElainaya',
+                                //自我介绍
+                                introduction: '呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐……',
+                                //头像
+                                avatar      : 'https://cdn.discordapp.com/avatars/763298729762488330/6d1ec1e2b226fab6ee79231604cd87a7.webp?size=100',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 4) +
+                                    '-' +
+                                    Math.floor(Math.random() * 12) +
+                                    '-' +
+                                    Math.floor(Math.random() * 30),
+                                // 背景
+                                background   : '',
+                                discriminator: '8312',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-飞翔',
+                                        link: 'https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png'
+                                    },
+                                    {
+                                        tag : 'Future-合作开发者',
+                                        link: 'https://cdn.discordapp.com/badge-icons/6df5892e0f35b051f8b61eace34f4967.png'
+                                    },
+                                    {
+                                        tag : 'Java高级开发-[已认证]',
+                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234114357679087':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username: 'Mr.Smith',
+                                //自我介绍
+                                introduction:
+                                    '"We could be born to anything and now, and now\n' +
+                                    'What you have done is terrible\n' +
+                                    'And now you, and now you\n' +
+                                    'Now you carry it with you"',
+                                //头像
+                                avatar: 'https://cdn.discordapp.com/avatars/511265015647436820/6db4e889181655645d92b70e53542dba.webp?size=100',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 4) +
+                                    '-' +
+                                    Math.floor(Math.random() * 12) +
+                                    '-' +
+                                    Math.floor(Math.random() * 30),
+                                // 背景
+                                background:
+                                    'https://cdn.discordapp.com/banners/511265015647436820/b8ef6dddb0b1fb3762ba642558ca401c.png?size=600',
+                                discriminator: '3312',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-飞翔',
+                                        link: 'https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png'
+                                    },
+                                    {
+                                        tag : 'Java高级开发-[已认证]',
+                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234114357679082':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'Mr.Smith',
+                                //自我介绍
+                                introduction: '首先要认清自己，然后才能进步。',
+                                //头像
+                                avatar      : 'https://cdn.discordapp.com/avatars/511265015647436820/6db4e889181655645d92b70e53542dba.webp?size=100',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 4) +
+                                    '-' +
+                                    Math.floor(Math.random() * 12) +
+                                    '-' +
+                                    Math.floor(Math.random() * 30),
+                                // 背景
+                                background:
+                                    'https://cdn.discordapp.com/banners/511265015647436820/b8ef6dddb0b1fb3762ba642558ca401c.png?size=600',
+                                discriminator: '9285',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-勇气',
+                                        link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
+                                    },
+                                    {
+                                        tag : 'Java&C++全栈高级开发-[已认证]',
+                                        link: 'https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
                                     }
                                 ]
                             }

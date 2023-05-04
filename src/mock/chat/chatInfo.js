@@ -303,7 +303,7 @@ export default {
                     // 用户id
                     id     : '345623411435767903',
                     // 用户名
-                    name   : 'Cold Day',
+                    name   : 'Cold Mint',
                     // 用户头像
                     avatar : 'https://cdn.discordapp.com/avatars/763293201062035486/5396342ba4e3bf24661c146cdae526a1.webp?size=100',
                     // 消息内容
@@ -837,7 +837,7 @@ export default {
                     // 用户id
                     id     : '345623411435767907',
                     // 用户名
-                    name   : 'Cold Day',
+                    name   : 'Cold Mint',
                     // 用户头像
                     avatar : 'https://cdn.discordapp.com/avatars/763293201062035486/5396342ba4e3bf24661c146cdae526a1.webp?size=100',
                     // 消息内容
