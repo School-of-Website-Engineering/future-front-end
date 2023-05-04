@@ -1,5 +1,14 @@
 <template>
     <div class="main-message" style="overflow: hidden scroll; padding-right: 0">
+        <div class="panelBanner bannerPremium" style="background-color: #1f2123">
+            <div class="head-box" style="display: flex">
+                <el-image
+                    class="headstyle"
+                    src="https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=48"
+                />
+                <div class="status-online"></div>
+            </div>
+        </div>
         <div class="badgeList">
             <a @click="openVn" class="anchorUnderlineOnHover">
                 <img
@@ -39,63 +48,7 @@
                 ></textarea>
             </div>
         </div>
-        <div class="right-card">
-            <div class="mutualGuildsList">
-                <button type="button" class="collapseBtn">
-                    <div class="contents">
-                        <div class="defaultColor">16 个共同服务器中</div>
-                        <div class="iconWrapper">
-                            <svg
-                                class="transition"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                                role="img"
-                            >
-                                <path
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M7 10L12 15 17 10"
-                                    aria-hidden="true"
-                                ></path>
-                            </svg>
-                        </div>
-                    </div>
-                </button>
-            </div>
-            <br />
-            <div class="mutualGuildsList">
-                <button type="button" class="collapseBtn">
-                    <div class="contents">
-                        <div class="defaultColor">7 个共同好友</div>
-                        <div class="iconWrapper">
-                            <svg
-                                class="transition"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                                role="img"
-                            >
-                                <path
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M7 10L12 15 17 10"
-                                    aria-hidden="true"
-                                ></path>
-                            </svg>
-                        </div>
-                    </div>
-                </button>
-            </div>
-        </div>
+        <div class="right-card">待定</div>
     </div>
 </template>
 
@@ -132,18 +85,34 @@ const openVn = () => {
     color: var(--text-normal);
 }
 
-.collapseBtn {
-    background-color: transparent;
-    border-radius: 0;
-    height: 28px;
-    padding: 13px 12px 11px;
-    width: 90%;
+.iconWrapper {
+    color: var(--text-normal);
+    justify-content: right;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 100%;
+}
+
+.el-image {
+    margin-top: 75px;
+    margin-left: 23px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #1f1f1f;
+}
+
+.headstyle {
+    width: 25%;
+    height: 60%;
 }
 
 .iconWrapper {
     color: var(--text-normal);
     justify-content: right;
-    -ms-flex-item-align: right;
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -163,6 +132,18 @@ const openVn = () => {
 //上面Banner的样式表
 .panelBanner {
     height: 120px;
+}
+
+//在线状态显示组件样式
+.status-online {
+    width: 15px;
+    height: 15px;
+    background-color: #43b581;
+    border-radius: 50%;
+    border: 2px solid #43b580;
+    margin-top: 143px;
+    z-index: 1;
+    margin-left: -26px;
 }
 
 //一致的 也影响Banner
@@ -242,7 +223,6 @@ const openVn = () => {
 
 //蒙版样式
 .mask {
-    margin-top: 12px;
     position: relative;
     display: block;
     border-radius: 50%;
