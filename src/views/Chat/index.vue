@@ -17,7 +17,7 @@
                         <Main />
                     </el-container>
                 </el-col>
-                <el-col :span="7">
+                <el-col :span="7" class="aside-box-right">
                     <el-container>
                         <AsideRight />
                     </el-container>
@@ -38,6 +38,7 @@ import Main from '@/views/Chat/components/common/Main.vue';
 .el-row {
     justify-content: space-between;
 }
+
 .header-right {
     .header-right-right {
         display: flex;
@@ -111,7 +112,7 @@ import Main from '@/views/Chat/components/common/Main.vue';
         padding-top: unset;
         //    固定定位
         position: absolute;
-        width: 858px;
+        width: 840px;
         height: 100%;
         //    使其不会被遮挡
         z-index: 1;

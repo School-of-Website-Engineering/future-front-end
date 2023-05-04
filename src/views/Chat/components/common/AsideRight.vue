@@ -1,5 +1,5 @@
 <template>
-    <div class="main-message" style="overflow: hidden scroll; padding-right: 0">
+    <div class="main-message" style="padding-right: 0">
         <div class="panelBanner bannerPremium" style="background-color: #1f2123">
             <div class="head-box" style="display: flex">
                 <el-image
@@ -27,8 +27,8 @@
             <h2 class="userDes">自我介绍</h2>
             <div style="-webkit-line-clamp: 6">
                 <span class="userText"
-                    >我想和你在一起，无须遨游远方，只要执手相依，<br />到处都是风景： 我们在一起，不必锦衣玉食，<br />哪怕粗布淡饭，亦是阳光满天：
-                    我们在一起，<br />远离曲折是非，领略风平浪静，平淡也是幸福。<br />
+                    >我想和你在一起，无须遨游远方，只要执手相依，到处都是风景：
+                    我们在一起，不必锦衣玉食，哪怕粗布淡饭，亦是阳光满天：我们在一起，远离曲折是非，领略风平浪静，平淡也是幸福。
                 </span>
             </div>
             <div class="line"></div>
@@ -48,7 +48,41 @@
                 ></textarea>
             </div>
         </div>
-        <div class="right-card">待定</div>
+        <div class="right-card">
+            <!--            共同好友列表-->
+            <div class="userTagNoNickname">
+                <span class="commentServer-num">1个共同的服务器</span>
+                <div class="commentServer">
+                    <div class="commentServerItem">
+                        <div class="commentServerItemImg">
+                            <img
+                                src="https://cdn.discordapp.com/icons/251072485095636994/a_37069f32ec5e98ad8bf0e8334df18594.webp?size=60"
+                                alt="Null"
+                            />
+                            <span>Terraria</span>
+                        </div>
+                        <div class="commentServerItemImg">
+                            <img
+                                src="https://cdn.discordapp.com/icons/251072485095636994/a_37069f32ec5e98ad8bf0e8334df18594.webp?size=60"
+                                alt="Null"
+                            />
+                            <span>Terraria</span>
+                        </div>
+                        <div class="commentServerItemImg">
+                            <img
+                                src="https://cdn.discordapp.com/icons/251072485095636994/a_37069f32ec5e98ad8bf0e8334df18594.webp?size=60"
+                                alt="Null"
+                            />
+                            <span>Terraria</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="userTagNoNickname">
+                <span>暂无共同好友</span>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -98,7 +132,6 @@ const openVn = () => {
     margin-top: 75px;
     margin-left: 23px;
     display: inline-block;
-    overflow: hidden;
     border-radius: 50%;
     border-style: solid;
     border-width: 3px;
@@ -127,6 +160,24 @@ const openVn = () => {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
+    //可以滚动
+    overflow-y: auto;
+
+    //滚动条样式
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #1a1b1e;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: #2b2d31;
+    }
 }
 
 //上面Banner的样式表
@@ -151,11 +202,13 @@ const openVn = () => {
     -webkit-transition: background-color 0.1s;
     transition: background-color 0.1s;
     width: 100%;
+    background-image: url(https://cdn.discordapp.com/banners/615354796781862913/282618b6abb252e59ec1acc0ba1dbc20.png?size=1024);
+    background-size: cover;
 }
 
 //右边的卡片样式表
 .right-card {
-    border-radius: 23px;
+    border-radius: 8px;
     width: 80%;
     margin-left: 24px;
     margin-top: 18px;
@@ -163,6 +216,25 @@ const openVn = () => {
     background-color: #1f2123;
     border-color: #b1b5bc;
     padding: 12px 12px 12px;
+    .note {
+        margin-top: 8px;
+        .textarea {
+            background-color: #1f2123;
+            border: none;
+            color: white;
+            resize: none;
+            outline: none;
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+            //    获取焦点时的样式
+            &:focus {
+                border: none;
+                outline: none;
+                background-color: #0f0410;
+            }
+        }
+    }
 }
 
 //非昵称名字的样式表
@@ -176,7 +248,44 @@ const openVn = () => {
     align-items: flex-end;
     color: white;
 }
-
+.right-card {
+    .userTagNoNickname {
+        //最后一个子元素和最后第二个子元素的样式
+        &:last-child,
+        &:nth-last-child(2) {
+            font-size: 14px;
+        }
+        .commentServer-num {
+            font-size: 14px;
+            color: #dbdee1;
+        }
+        .commentServer {
+            .commentServerItem {
+                .commentServerItemImg {
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 26%;
+                        margin-right: 8px;
+                        padding: 6px;
+                    }
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    span {
+                        font-size: 16px;
+                        color: #dbdee1;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #2f3136;
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+    }
+}
 //分界线样式
 .line {
     margin-top: 12px;
@@ -200,6 +309,9 @@ const openVn = () => {
     line-height: 16px;
     margin-top: 8px;
     color: #949ba4;
+    //    自动换行
+    word-break: break-word;
+    white-space: normal;
 }
 
 //图片样式
