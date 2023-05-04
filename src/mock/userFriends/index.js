@@ -233,7 +233,7 @@ export default [
                                     'I mainly code in Web and Java. \n' +
                                     'Recently.I am learning C# in Study.',
                                 //头像
-                                avatar: 'https://cdn.discordapp.com/avatars/615354796781862913/11ec6f364a0e4b6ceef007fe18c382b3.webp?size=128',
+                                avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -245,8 +245,13 @@ export default [
                                 // 背景
                                 background:
                                     'https://cdn.discordapp.com/banners/615354796781862913/282618b6abb252e59ec1acc0ba1dbc20.png?size=1024',
+                                // 备注
+                                remark       : '干嘛~',
+                                // 状态
+                                status       : 'online',
+                                discriminator: '4546',
                                 //个人标签
-                                tags: [
+                                tags         : [
                                     {
                                         tag: '爱旅游'
                                     },

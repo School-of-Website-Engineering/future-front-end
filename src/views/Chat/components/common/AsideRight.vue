@@ -2,15 +2,15 @@
     <div class="main-message" style="padding-right: 0">
         <div class="panelBanner bannerPremium" style="background-color: #1f2123">
             <div class="head-box" style="display: flex">
-                <el-image
-                    class="headstyle"
-                    src="https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=48"
-                />
-                <div class="status-online"></div>
+                <el-image class="headstyle" :src="friendsStore.friendInfo.avatar" />
+                <el-tooltip class="headstyle" effect="dark" :content="friendStatus" placement="top">
+                    <div class="status-online"></div>
+                </el-tooltip>
+                <img class="background-img" :src="friendsStore.friendInfo.background" alt="" />
             </div>
         </div>
         <div class="badgeList">
-            <a @click="openVn" class="anchorUnderlineOnHover">
+            <a>
                 <img
                     alt="Null"
                     class="imgStyle"
@@ -20,21 +20,18 @@
         </div>
         <div class="right-card">
             <div class="userTagNoNickname">
-                <span>ECM-Hamster</span>
-                <span>#1145</span>
+                <span>{{ friendsStore.friendInfo.username }}</span>
+                <span>#{{ friendsStore.friendInfo.discriminator }}</span>
             </div>
             <div class="line"></div>
             <h2 class="userDes">自我介绍</h2>
             <div style="-webkit-line-clamp: 6">
-                <span class="userText"
-                    >我想和你在一起，无须遨游远方，只要执手相依，到处都是风景：
-                    我们在一起，不必锦衣玉食，哪怕粗布淡饭，亦是阳光满天：我们在一起，远离曲折是非，领略风平浪静，平淡也是幸福。
-                </span>
+                <span class="userText">{{ friendsStore.friendInfo.introduction }} </span>
             </div>
             <div class="line"></div>
             <h2 class="userDes">Future用户注册时间</h2>
             <div style="-webkit-line-clamp: 6">
-                <span class="userText">2021-07-01 04:00:00</span>
+                <span class="userText">{{ friendsStore.friendInfo.registerTime }}</span>
             </div>
             <div class="line"></div>
             <h2 class="userDes">备注</h2>
@@ -45,6 +42,7 @@
                     maxlength="256"
                     class="textarea"
                     style="height: 24px"
+                    :value="remark"
                 ></textarea>
             </div>
         </div>
@@ -56,33 +54,9 @@
                 <!--                <i class="fa-solid fa-chevron-down"></i>-->
                 <div class="commentServer">
                     <div class="commentServerItem">
-                        <div class="commentServerItemImg">
-                            <img
-                                src="https://cdn.discordapp.com/icons/251072485095636994/a_37069f32ec5e98ad8bf0e8334df18594.webp?size=60"
-                                alt="Null"
-                            />
-                            <span>Terraria</span>
-                        </div>
-                        <div class="commentServerItemImg">
-                            <img
-                                src="https://cdn.discordapp.com/icons/251072485095636994/a_37069f32ec5e98ad8bf0e8334df18594.webp?size=60"
-                                alt="Null"
-                            />
-                            <span>Terraria</span>
-                        </div>
-                        <div class="commentServerItemImg">
-                            <img
-                                src="https://cdn.discordapp.com/icons/251072485095636994/a_37069f32ec5e98ad8bf0e8334df18594.webp?size=60"
-                                alt="Null"
-                            />
-                            <span>Terraria</span>
-                        </div>
-                        <div class="commentServerItemImg">
-                            <img
-                                src="https://cdn.discordapp.com/icons/251072485095636994/a_37069f32ec5e98ad8bf0e8334df18594.webp?size=60"
-                                alt="Null"
-                            />
-                            <span>Terraria</span>
+                        <div class="commentServerItemImg" v-for="item in friendsStore.friendInfo" :key="item">
+                            <img :src="item.avatar" alt="Null" />
+                            <span>{{ item.username }}</span>
                         </div>
                     </div>
                 </div>
@@ -137,11 +111,36 @@
 <script setup lang="ts">
 import { useUserFriendsStore } from '@/store/modules/friends';
 import router from '@/router';
-import { ElMessage } from 'element-plus';
+import { computed, watch } from 'vue';
 
 const friendsStore = useUserFriendsStore();
-// 用户信息在friendsStore.friendInfo中，直接调用即可
-// 使用watch监听路由变化，获取当前路由的id，然后调用friendsStore.getFriendInfo(id)方法获取用户信息
+/**
+ * 好友备注
+ * @type {ComputedRef<string>}
+ */
+const remark = computed(() => friendsStore.friendInfo.remark);
+
+const friendStatus = computed(() => {
+    /**
+     * 在线 online
+     * 离线 offline
+     * 闲置 idle
+     * 忙碌 dnd
+     */
+    const statusMap: { [key: string]: string } = {
+        online : '在线',
+        offline: '离线',
+        idle   : '闲置',
+        dnd    : '忙碌'
+    };
+    return statusMap[friendsStore.friendInfo.status];
+});
+
+/**
+ * 监听路由变化
+ * @param id 路由参数
+ * @returns {void} 无返回值
+ */
 watch(
     () => router.currentRoute.value.params.id,
     (id) => {
@@ -149,14 +148,18 @@ watch(
     },
     { immediate: true }
 );
-const openVn = () => {
-    ElMessage({
-        message: h('p', null, [h('i', { style: 'color:green' }, 'Future-Support-会员标记')])
-    });
-};
 </script>
 
 <style lang="scss" scoped>
+.background-img {
+    //    填满上一级
+    width: 334px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .main-box-right-main2-main2 {
     &.main-box-right-main2-main2 {
         background-color: #313338;
@@ -189,6 +192,7 @@ const openVn = () => {
 .headstyle {
     width: 25%;
     height: 60%;
+    z-index: 1;
 }
 
 .iconWrapper {
@@ -251,8 +255,6 @@ const openVn = () => {
     -webkit-transition: background-color 0.1s;
     transition: background-color 0.1s;
     width: 100%;
-    background-image: url(https://cdn.discordapp.com/banners/615354796781862913/282618b6abb252e59ec1acc0ba1dbc20.png?size=1024);
-    background-size: cover;
 }
 
 //右边的卡片样式表
@@ -298,6 +300,7 @@ const openVn = () => {
     -ms-flex-align: end;
     color: white;
 }
+
 .fa-chevron-right,
 .fa-chevron-down {
     color: #b1b5bc;

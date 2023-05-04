@@ -3,7 +3,8 @@ import UserFriendsService, {
     IUserFriendsBlockedResponse,
     IUserFriendsPendingResponse,
     IUserFriendsResponse,
-    IUserInfoByFriendIdResponse
+    IUserInfoByFriendIdResponse,
+    IUserInfoByFriendsIdResponse
 } from '@/api/friends';
 
 /**
@@ -37,8 +38,8 @@ export const useUserFriendsStore = defineStore('friends', {
          * */ blockedFriends           : <IUserFriendsBlockedResponse[]>[],
         /**
          * 好友信息
-         * @type {IUserInfoByFriendIdResponse}
-         * */ friendInfo               : <IUserInfoByFriendIdResponse>{}
+         * @type {IUserInfoByFriendsIdResponse}
+         * */ friendInfo               : <IUserInfoByFriendsIdResponse>{}
     }),
 
     getters: {
@@ -134,7 +135,9 @@ export const useUserFriendsStore = defineStore('friends', {
                 console.log('---------好友信息---------');
                 console.log('data', data);
                 console.log('friendInfo', data.friendInfo);
-                this.friendInfo = data.friendInfo as unknown as IUserInfoByFriendIdResponse;
+                this.friendInfo = data.friendInfo as unknown as IUserInfoByFriendsIdResponse;
+                console.log('---------好友信息---------');
+                console.log('friendInfo', this.friendInfo);
             }
         }
     }
