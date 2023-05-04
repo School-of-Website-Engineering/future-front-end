@@ -44,7 +44,7 @@ export default {
             data = {
                 content    : '我是xxx',
                 messageType: 'text',
-                time       : new Date().getTime(),
+                time       : new Date().toLocaleString(),
                 messageFrom: 'self',
                 messageId  : generateRandomId().toString()
             };
