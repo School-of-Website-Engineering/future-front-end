@@ -157,23 +157,23 @@ export default [
                             ],
                             commonFriend: [
                                 {
-                                    id           : '345623411435767900',
-                                    name         : '[ECM]HamSter',
-                                    discriminator: '1145',
+                                    id    : '345623411435767900',
+                                    name  : '[ECM]HamSter',
+                                    tagId : '1145',
                                     // 头像
-                                    avatar       : 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
                                 },
                                 {
-                                    id           : '3456234161435767908',
-                                    name         : 'NaRiver',
-                                    discriminator: '8731',
-                                    avatar       : 'https://cdn.discordapp.com/avatars/1049673722434437160/23653805be14a796eb0fab4795cc6f7a.webp?size=100'
+                                    id    : '3456234161435767908',
+                                    name  : 'NaRiver',
+                                    tagId : '8731',
+                                    avatar: 'https://cdn.discordapp.com/avatars/1049673722434437160/23653805be14a796eb0fab4795cc6f7a.webp?size=100'
                                 },
                                 {
-                                    id           : '3456234114357679088',
-                                    name         : 'EElainaya',
-                                    discriminator: '8312',
-                                    avatar       : 'https://cdn.discordapp.com/avatars/763298729762488330/6d1ec1e2b226fab6ee79231604cd87a7.webp?size=100'
+                                    id    : '3456234114357679088',
+                                    name  : 'EElainaya',
+                                    tagId : '8312',
+                                    avatar: 'https://cdn.discordapp.com/avatars/763298729762488330/6d1ec1e2b226fab6ee79231604cd87a7.webp?size=100'
                                 }
                             ]
                         }
@@ -200,17 +200,17 @@ export default [
                             ],
                             commonFriend: [
                                 {
-                                    id           : '345623411435767900',
-                                    name         : '[ECM]HamSter',
-                                    discriminator: '1145',
+                                    id    : '345623411435767900',
+                                    name  : '[ECM]HamSter',
+                                    tagId : '1145',
                                     // 头像
-                                    avatar       : 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
                                 },
                                 {
-                                    id           : '760729927552729119',
-                                    name         : 'liuliu',
-                                    discriminator: '4546',
-                                    avatar       : 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    id    : '760729927552729119',
+                                    name  : 'liuliu',
+                                    tagId : '4546',
+                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
                                 }
                             ]
                         }
