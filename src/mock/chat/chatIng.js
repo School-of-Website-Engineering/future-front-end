@@ -110,6 +110,19 @@ export default {
                     }
                 };
             },
+            345623411435767900: () => {
+                return {
+                    code   : 200,
+                    message: 'success',
+                    data   : {
+                        avatar : 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=48',
+                        id     : '345623411435767900',
+                        message: data,
+                        name   : '[ECM]HamSter',
+                        time   : new Date().getTime().toLocaleString()
+                    }
+                };
+            },
             '345623411435767901': () => {
                 return {
                     code   : 200,
@@ -141,7 +154,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'https://cdn.discordapp.com/guilds/296399356196552705/users/895571799956410388/avatars/b22dedba1dac0fbcb9fc274e62238b08.webp?size=128',
+                        avatar : 'https://cdn.discordapp.com/avatars/598588658177671188/df122ff3d7dfa25674aed205a043684f.webp?size=128',
                         id     : '3456234114357679023',
                         message: data,
                         name   : 'Humfrey',
