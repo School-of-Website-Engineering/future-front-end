@@ -41,16 +41,18 @@ import { asyncTryCatch } from '@/utils/exceptionHandling';
 const commonServiceCount = reactive<ICommonServerCountResponse>({
     commonServer: [
         {
-            id  : '',
-            name: '',
-            icon: ''
+            id   : '',
+            name : '',
+            icon : '',
+            tagId: ''
         }
     ],
     commonFriend: [
         {
             id    : '',
             name  : '',
-            avatar: ''
+            avatar: '',
+            tagId : ''
         }
     ]
 });
