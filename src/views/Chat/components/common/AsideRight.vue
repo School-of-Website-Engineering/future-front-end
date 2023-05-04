@@ -52,6 +52,8 @@
             <!--            共同好友列表-->
             <div class="userTagNoNickname">
                 <span class="commentServer-num">1个共同的服务器</span>
+                <i class="fa-solid fa-chevron-right"></i>
+                <!--                <i class="fa-solid fa-chevron-down"></i>-->
                 <div class="commentServer">
                     <div class="commentServerItem">
                         <div class="commentServerItemImg">
@@ -90,6 +92,7 @@
                 <!--                共同好友-->
                 <div class="commentFriend">
                     <span class="commentServer-num">1个共同的服务器</span>
+                    <i class="fa-solid fa-chevron-right"></i>
                     <div class="commentFriendItem">
                         <div class="commentFriendItemImg">
                             <img
@@ -293,8 +296,15 @@ const openVn = () => {
     white-space: normal;
     -webkit-box-align: end;
     -ms-flex-align: end;
-    align-items: flex-end;
     color: white;
+}
+.fa-chevron-right,
+.fa-chevron-down {
+    color: #b1b5bc;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 12px;
+    text-align: right;
 }
 
 .right-card {
@@ -312,6 +322,7 @@ const openVn = () => {
             font-size: 14px;
             color: #dbdee1;
             margin-bottom: 10px;
+
             &:hover {
                 cursor: pointer;
             }
@@ -354,6 +365,7 @@ const openVn = () => {
                 height: 40px;
                 line-height: 40px;
             }
+
             .commentFriendItem {
                 .commentFriendItemImg {
                     img {
