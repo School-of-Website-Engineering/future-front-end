@@ -844,9 +844,9 @@ export default {
                     // 用户id
                     id     : '345623411435767907',
                     // 用户名
-                    name   : 'All Badges% Speedrunner',
+                    name   : 'Cold Day',
                     // 用户头像
-                    avatar : 'https://cdn.discordapp.com/avatars/482216415147982848/c2b04dce7319282ff2cdc6275e13d52a.webp?size=128',
+                    avatar : 'https://cdn.discordapp.com/avatars/763293201062035486/5396342ba4e3bf24661c146cdae526a1.webp?size=100',
                     // 消息内容
                     message: [],
                     time   : new Date().getTime()
