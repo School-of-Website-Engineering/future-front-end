@@ -50,13 +50,13 @@ export default [
                                     name  : '[ECM]HamSter',
                                     // 头像
                                     avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60',
-                                    tagId : '1192'
+                                    tagId : '1145'
                                 },
                                 {
                                     id    : '760729927552729119',
                                     name  : 'liuliu',
                                     avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
-                                    tagId : '1492'
+                                    tagId : '4546'
                                 }
                             ]
                         }
@@ -83,12 +83,14 @@ export default [
                                     id    : '345623411435767900',
                                     name  : '[ECM]HamSter',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60',
+                                    tagId : '1145'
                                 },
                                 {
                                     id    : '760729927552729119',
                                     name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
+                                    tagId : '4546'
                                 }
                             ]
                         }
@@ -117,15 +119,10 @@ export default [
                             ],
                             commonFriend: [
                                 {
-                                    id    : '345623411435767900',
-                                    name  : '[ECM]HamSter',
+                                    id    : '345623411435767901',
+                                    name  : 'Catand',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
-                                },
-                                {
-                                    id    : '760729927552729119',
-                                    name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    avatar: 'https://cdn.discordapp.com/avatars/616810767773335552/d730cfb881a0dbb685067cfa328f4bec.webp?size=100'
                                 }
                             ]
                         }
@@ -165,9 +162,14 @@ export default [
                                     avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
                                 },
                                 {
-                                    id    : '760729927552729119',
-                                    name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    id    : '3456234161435767908',
+                                    name  : 'NaRiver',
+                                    avatar: 'https://cdn.discordapp.com/avatars/1049673722434437160/23653805be14a796eb0fab4795cc6f7a.webp?size=100'
+                                },
+                                {
+                                    id    : '3456234114357679088',
+                                    name  : 'EElainaya',
+                                    avatar: 'https://cdn.discordapp.com/avatars/763298729762488330/6d1ec1e2b226fab6ee79231604cd87a7.webp?size=100'
                                 }
                             ]
                         }
@@ -234,7 +236,7 @@ export default [
                             friendInfo: {
                                 username    : 'liuliu',
                                 //自我介绍
-                                introduction: "Hello, I'm Liuliu. \n" + 'I mainly code in Web and JS.',
+                                introduction: '书山有路勤为径，学海无涯苦作舟。',
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
@@ -248,7 +250,7 @@ export default [
                                 // 背景
                                 background   : '',
                                 // 备注
-                                remark       : '学海无涯苦作舟，书山有路勤为径。',
+                                remark       : '',
                                 // 状态
                                 /**
                                  * 在线 online
@@ -261,7 +263,7 @@ export default [
                                 //个人标签
                                 tags         : [
                                     {
-                                        tag : 'Future Fly会员',
+                                        tag : 'Future-飞翔',
                                         link: 'https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png'
                                     },
                                     {
@@ -296,18 +298,125 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background:
-                                    'https://cdn.discordapp.com/banners/615354796781862913/282618b6abb252e59ec1acc0ba1dbc20.png?size=1024',
+                                background   : '',
+                                discriminator: '2412',
                                 //个人标签
-                                tags: [
+                                tags         : [
                                     {
-                                        tag: '爱旅游'
+                                        tag : 'Future-勇气',
+                                        link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
                                     },
                                     {
-                                        tag: '美食'
+                                        tag : '开发人员',
+                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '345623411435767900':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : '[ECM]HamSter',
+                                //自我介绍
+                                introduction: '你好，我是仓鼠。',
+                                //头像
+                                avatar      : 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=48',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 4) +
+                                    '-' +
+                                    Math.floor(Math.random() * 12) +
+                                    '-' +
+                                    Math.floor(Math.random() * 30),
+                                // 背景
+                                background   : '',
+                                discriminator: '1145',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-勇气',
+                                        link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
                                     },
                                     {
-                                        tag: '自由职业者'
+                                        tag : 'C++开发-[已认证]',
+                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '345623411435767901':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'Catand',
+                                //自我介绍
+                                introduction: '我是一只大老鼠，我最喜欢奶油和奶酪。',
+                                //头像
+                                avatar      : 'https://cdn.discordapp.com/avatars/616810767773335552/d730cfb881a0dbb685067cfa328f4bec.webp?size=100',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 4) +
+                                    '-' +
+                                    Math.floor(Math.random() * 12) +
+                                    '-' +
+                                    Math.floor(Math.random() * 30),
+                                // 背景
+                                background   : '',
+                                discriminator: '6531',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-智慧',
+                                        link: 'https://cdn.discordapp.com/badge-icons/011940fd013da3f7fb926e4a1cd2e618.png'
+                                    },
+                                    {
+                                        tag : 'Java高级开发-[已认证]',
+                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234114357679023':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'Humfrey',
+                                //自我介绍
+                                introduction: '诗与远方',
+                                //头像
+                                avatar      : 'https://cdn.discordapp.com/avatars/598588658177671188/df122ff3d7dfa25674aed205a043684f.webp?size=128',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 4) +
+                                    '-' +
+                                    Math.floor(Math.random() * 12) +
+                                    '-' +
+                                    Math.floor(Math.random() * 30),
+                                // 背景
+                                background   : '',
+                                discriminator: '6531',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-智慧',
+                                        link: 'https://cdn.discordapp.com/badge-icons/011940fd013da3f7fb926e4a1cd2e618.png'
+                                    },
+                                    {
+                                        tag : 'Future-合作开发者',
+                                        link: 'https://cdn.discordapp.com/badge-icons/6df5892e0f35b051f8b61eace34f4967.png'
                                     }
                                 ]
                             }

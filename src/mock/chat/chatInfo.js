@@ -527,21 +527,21 @@ export default {
                     // 消息内容
                     message: [
                         {
-                            content    : '你今天心情怎样？',
+                            content    : '对于这个问题，你重启终端试试',
                             messageType: 'text',
                             time       : '2023-5',
                             messageFrom: 'self',
                             messageId  : '3456234114357677932'
                         },
                         {
-                            content    : '想不想来一场说走就走的旅行？',
+                            content    : '还是不行吗？可能是配置错了？(',
                             messageType: 'text',
                             time       : '2022-10',
                             messageFrom: 'self',
                             messageId  : '3456234114357677933'
                         },
                         {
-                            content    : '如果有一百万，你会怎么花？',
+                            content    : '唔……看起来这个问题超过了我的解决范围……',
                             messageType: 'text',
                             time       : '2023-4',
                             messageFrom: 'self',
@@ -553,13 +553,6 @@ export default {
                             time       : '2023-3',
                             messageFrom: 'self',
                             messageId  : '3456234114357677935'
-                        },
-                        {
-                            content    : '今天午饭吃什么好呢？',
-                            messageType: 'text',
-                            time       : '2022-12',
-                            messageFrom: 'self',
-                            messageId  : '3456234114357677936'
                         }
                     ],
                     time: new Date().getTime()
