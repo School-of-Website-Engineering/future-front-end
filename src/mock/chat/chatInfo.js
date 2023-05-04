@@ -390,88 +390,32 @@ export default {
                     // 消息内容
                     message: [
                         {
-                            content    : '你在哪里？',
+                            content    : 'Ling,有空吗？',
                             messageType: 'text',
                             time       : '2023-5',
                             messageFrom: 'self',
                             messageId  : '3456234114357677940'
                         },
                         {
-                            content    : '我有点忙，待会儿再聊？',
+                            content    : '今天可以打文明6吗？',
                             messageType: 'text',
                             time       : '2022-10',
                             messageFrom: 'self',
                             messageId  : '3456234114357677941'
                         },
                         {
-                            content    : '明天一起去看电影吧',
+                            content    : 'XGP我的快过期了，你可以找找@Catand#6531要一下',
                             messageType: 'text',
                             time       : '2023-4',
                             messageFrom: 'self',
                             messageId  : '3456234114357677942'
                         },
                         {
-                            content    : '周末有什么安排？',
+                            content    : '如果有空的话，记得回复我哦，Ling!',
                             messageType: 'text',
                             time       : '2023-3',
                             messageFrom: 'self',
                             messageId  : '3456234114357677943'
-                        },
-                        {
-                            content    : '好久不见了，近况怎么样？',
-                            messageType: 'text',
-                            time       : '2022-12',
-                            messageFrom: 'self',
-                            messageId  : '3456234114357677944'
-                        },
-                        {
-                            content    : '中午一起去吃饭吧',
-                            messageType: 'text',
-                            time       : '2023-1',
-                            messageFrom: 'self',
-                            messageId  : '3456234114357677945'
-                        },
-                        {
-                            content    : '你喜欢喝茶还是咖啡？',
-                            messageType: 'text',
-                            time       : '2022-8',
-                            messageFrom: 'self',
-                            messageId  : '3456234114357677946'
-                        },
-                        {
-                            content    : '加油，你可以的！',
-                            messageType: 'text',
-                            time       : '2022-6',
-                            messageFrom: 'self',
-                            messageId  : '3456234114357677947'
-                        },
-                        {
-                            content    : '我在看书，你呢？',
-                            messageType: 'text',
-                            time       : '2023-2',
-                            messageFrom: 'self',
-                            messageId  : '3456234114357677948'
-                        },
-                        {
-                            content    : '晚上一起吃饭吧',
-                            messageType: 'text',
-                            time       : '2022-9',
-                            messageFrom: 'self',
-                            messageId  : '3456234114357677949'
-                        },
-                        {
-                            content    : '最近有什么新鲜事？',
-                            messageType: 'text',
-                            time       : '2023-7',
-                            messageFrom: 'self',
-                            messageId  : '3456234114357677950'
-                        },
-                        {
-                            content    : '今天的工作完成了吗？',
-                            messageType: 'text',
-                            time       : '2023-8',
-                            messageFrom: 'self',
-                            messageId  : '3456234114357677951'
                         }
                     ],
                     time: new Date().getTime()
