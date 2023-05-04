@@ -276,11 +276,13 @@ export default [
                                     '202' +
                                     Math.floor(Math.random() * 4) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
-                                background   : '',
+                                background:
+                                    'https://cdn.discordapp.com/banners/136253107213565952/a_b456014f796de50cd7abf328458a227b.gif',
                                 // 备注
                                 remark       : '',
                                 // 状态
@@ -331,7 +333,8 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : '',
+                                background:
+                                    'https://cdn.discordapp.com/banners/189990173222764545/56cf7de243f9c51904b8a16c4351d8ae.png?size=600',
                                 discriminator: '2412',
                                 //个人标签
                                 tags         : [
