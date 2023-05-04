@@ -73,7 +73,7 @@ export default {
                             content    : 'what’s up?',
                             messageType: 'text',
                             time       : '2020-4-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677911'
                         }
                     ],
@@ -100,7 +100,7 @@ export default {
                             // 消息发送时间
                             time       : '2020-10-10 10:10:10',
                             // 消息发送方
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             // 消息id
                             messageId  : '3456234114357677912'
                         },
@@ -108,35 +108,35 @@ export default {
                             content    : 'How are you?',
                             messageType: 'text',
                             time       : '2020-10-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677913'
                         },
                         {
                             content    : "I'm fine, thank you!",
                             messageType: 'text',
                             time       : '2020-10-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677914'
                         },
                         {
                             content    : 'And you?',
                             messageType: 'text',
                             time       : '2020-4-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677915'
                         },
                         {
                             content    : "I'm fine, thank you!",
                             messageType: 'text',
                             time       : '2020-10-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677916'
                         },
                         {
                             content    : 'And you?',
                             messageType: 'text',
                             time       : '2020-4-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677917'
                         }
                     ],
@@ -159,14 +159,14 @@ export default {
                             content    : '你好',
                             messageType: 'text',
                             time       : '2022-7-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677918'
                         },
                         {
                             content    : '晚上好',
                             messageType: 'text',
                             time       : '2022-11-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677919'
                         },
                         {
@@ -187,7 +187,7 @@ export default {
                             content    : '吃饭了吗？',
                             messageType: 'text',
                             time       : '2022-9-10 10:10:10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677922'
                         }
                     ],
@@ -240,14 +240,14 @@ export default {
                             content    : '约吗？',
                             messageType: 'text',
                             time       : '2023-5',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677925'
                         },
                         {
                             content    : '出去走走吧',
                             messageType: 'text',
                             time       : '2022-10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677926'
                         },
                         {
@@ -261,35 +261,35 @@ export default {
                             content    : '你喜欢吃什么？',
                             messageType: 'text',
                             time       : '2023-3',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677928'
                         },
                         {
                             content    : '我在看电影，你呢？',
                             messageType: 'text',
                             time       : '2022-12',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677929'
                         },
                         {
                             content    : '天气不错',
                             messageType: 'text',
                             time       : '2023-1',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677930'
                         },
                         {
                             content    : '有时间一起吃饭吧',
                             messageType: 'text',
                             time       : '2022-8',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677931'
                         },
                         {
                             content    : '上午好',
                             messageType: 'text',
                             time       : '2022-6',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677932'
                         }
                     ],
@@ -326,14 +326,14 @@ export default {
                             content    : '下雪了',
                             messageType: 'text',
                             time       : '2023-4',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677935'
                         },
                         {
                             content    : '回家了',
                             messageType: 'text',
                             time       : '2023-3',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677936'
                         }
                     ],
@@ -393,84 +393,84 @@ export default {
                             content    : '你在哪里？',
                             messageType: 'text',
                             time       : '2023-5',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677940'
                         },
                         {
                             content    : '我有点忙，待会儿再聊？',
                             messageType: 'text',
                             time       : '2022-10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677941'
                         },
                         {
                             content    : '明天一起去看电影吧',
                             messageType: 'text',
                             time       : '2023-4',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677942'
                         },
                         {
                             content    : '周末有什么安排？',
                             messageType: 'text',
                             time       : '2023-3',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677943'
                         },
                         {
                             content    : '好久不见了，近况怎么样？',
                             messageType: 'text',
                             time       : '2022-12',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677944'
                         },
                         {
                             content    : '中午一起去吃饭吧',
                             messageType: 'text',
                             time       : '2023-1',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677945'
                         },
                         {
                             content    : '你喜欢喝茶还是咖啡？',
                             messageType: 'text',
                             time       : '2022-8',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677946'
                         },
                         {
                             content    : '加油，你可以的！',
                             messageType: 'text',
                             time       : '2022-6',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677947'
                         },
                         {
                             content    : '我在看书，你呢？',
                             messageType: 'text',
                             time       : '2023-2',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677948'
                         },
                         {
                             content    : '晚上一起吃饭吧',
                             messageType: 'text',
                             time       : '2022-9',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677949'
                         },
                         {
                             content    : '最近有什么新鲜事？',
                             messageType: 'text',
                             time       : '2023-7',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677950'
                         },
                         {
                             content    : '今天的工作完成了吗？',
                             messageType: 'text',
                             time       : '2023-8',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677951'
                         }
                     ],
@@ -493,7 +493,7 @@ export default {
                             content    : '早上好，今天该干什么呢？',
                             messageType: 'text',
                             time       : '2023-5',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '345234114357677932'
                         },
                         {
@@ -507,7 +507,7 @@ export default {
                             content    : '晚上有空一起去打台球吗？',
                             messageType: 'text',
                             time       : '2023-4',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '345624114357677934'
                         }
                     ],
@@ -530,7 +530,7 @@ export default {
                             content    : '你今天心情怎样？',
                             messageType: 'text',
                             time       : '2023-5',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677932'
                         },
                         {
@@ -544,14 +544,14 @@ export default {
                             content    : '如果有一百万，你会怎么花？',
                             messageType: 'text',
                             time       : '2023-4',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677934'
                         },
                         {
                             content    : '在你的人生中，最重要的事情是什么？',
                             messageType: 'text',
                             time       : '2023-3',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677935'
                         },
                         {
@@ -582,7 +582,7 @@ export default {
                                 '最近忙得有点疲惫，但还是坚持每天多花一点时间学习。学到的新知识让我感到异常兴奋，也让我更有信心应对未来的挑战。',
                             messageType: 'text',
                             time       : '2023-5',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677037'
                         },
                         {
@@ -598,7 +598,7 @@ export default {
                                 '做任何事情都需要有目标和计划，但也需要随时调整。适当的改变和调整可以让我们更好地适应环境，实现更大的进步。',
                             messageType: 'text',
                             time       : '2023-4',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677039'
                         },
                         {
@@ -638,7 +638,7 @@ export default {
                                 '有梦想和追求是非常重要的事情。人生短暂，我们需要在自己能力范围内尽可能地去追求自己想要的东西。',
                             messageType: 'text',
                             time       : '2022-10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '345234114357677038'
                         },
                         {
@@ -654,7 +654,7 @@ export default {
                                 '有时候我们需要跳出自己的舒适区，尝试新的事物。这样做既可以帮助我们更好地了解自己，也可以让我们更快地成长。',
                             messageType: 'text',
                             time       : '2023-3',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '345234114357677040'
                         },
                         {
@@ -694,7 +694,7 @@ export default {
                                 '成长需要付出代价，但这也是人生中最值得做的事情之一。打磨自己，追求进步，不断学习和探索，让自己变得更加出色。',
                             messageType: 'text',
                             time       : '2022-10',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677043'
                         },
                         {
@@ -710,7 +710,7 @@ export default {
                                 '每个人都有自己的长处和短处，我们需要学会认识并包容自己。不要去比较和攀比，每个人都是独一无二的，都有自己的价值和意义。',
                             messageType: 'text',
                             time       : '2023-3',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677045'
                         },
                         {
@@ -726,7 +726,7 @@ export default {
                                 '时间是最珍贵的财富，我们需要学会合理利用自己的时间。把握当下，做自己想做的事情，让自己的人生更加充实和有意义。',
                             messageType: 'text',
                             time       : '2023-8',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677047'
                         },
                         {
@@ -742,7 +742,7 @@ export default {
                                 '每个人都有自己的故事和经历，我们需要多一些理解和包容。尊重别人的价值观和选择，让自己更加开放和宽容。',
                             messageType: 'text',
                             time       : '2023-2',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677049'
                         },
                         {
@@ -758,7 +758,7 @@ export default {
                                 '生命真的很短暂，我们需要珍惜每一刻。放下心中的怨念和负面情绪，让自己过得更加美好和幸福。',
                             messageType: 'text',
                             time       : '2022-9',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677051'
                         },
                         {
@@ -774,7 +774,7 @@ export default {
                                 '人生中最重要的事情就是呵护自己的心灵。学会宽容和感恩，保持内心的平和和冷静，让自己过得更加美好和有意义。',
                             messageType: 'text',
                             time       : '2023-7',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '3456234114357677053'
                         }
                     ],
@@ -806,7 +806,7 @@ export default {
                                 '有时候，我们的人生道路上会遇到很多的波折和坎坷，但是，只要我们坚持自己的信念，积极面对生活中的挑战，就一定能够走过难关，迎接美好的未来。',
                             messageType: 'text',
                             time       : '2023-04-25 09:25:48',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '345623411435767858'
                         },
                         {
@@ -822,7 +822,7 @@ export default {
                                 '成功需要不断地努力和积累，只有在你拥有了足够的知识和技能之后，才能够在工作和生活中游刃有余。所以，无论何时，都应该努力学习，提升自己的个人素质。',
                             messageType: 'text',
                             time       : '2023-04-25 12:06:31',
-                            messageFrom: 'self',
+                            messageFrom: 'me',
                             messageId  : '345623411435767860'
                         },
                         {
