@@ -209,6 +209,35 @@ export default [
                             ]
                         }
                     };
+                case '3456234161435767908':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            commonServer: [
+                                {
+                                    id   : '437456121056741327',
+                                    name : "Sid Meier's Civilization VI",
+                                    icon : 'https://img-macjb.mac89.com/ico/201804/19122848_d3fb92409b.png',
+                                    //     标签id
+                                    tagId: '1152'
+                                }
+                            ],
+                            commonFriend: [
+                                {
+                                    id    : '345623411435767900',
+                                    name  : '[ECM]HamSter',
+                                    // 头像
+                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                },
+                                {
+                                    id    : '345623411435767901',
+                                    name  : 'Catand',
+                                    avatar: 'https://cdn.discordapp.com/avatars/616810767773335552/d730cfb881a0dbb685067cfa328f4bec.webp?size=100'
+                                }
+                            ]
+                        }
+                    };
                 default:
                     return {
                         code   : 200,
