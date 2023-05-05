@@ -36,14 +36,7 @@ export default [
                         code   : 200,
                         message: 'success',
                         data   : {
-                            commonServer: [
-                                {
-                                    id   : '437456121056741327',
-                                    name : 'Open AI Server',
-                                    icon : 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160',
-                                    tagId: '1152'
-                                }
-                            ],
+                            commonServer: [],
                             commonFriend: [
                                 {
                                     id    : '345623411435767900',
@@ -276,10 +269,10 @@ export default [
                                 introduction: '书山有路勤为径，学海无涯苦作舟。',
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
-                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
                                     // 系统从0开始，因此+1
                                     (Math.floor(Math.random() * 12) + 1) +
@@ -329,14 +322,15 @@ export default [
                                 introduction: "Hello, I'm cat",
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/891419145592266812/c8578ca93da963aa9edfdae6111a1a23.webp?size=128',
-                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background:
                                     'https://cdn.discordapp.com/banners/189990173222764545/56cf7de243f9c51904b8a16c4351d8ae.png?size=600',
@@ -367,14 +361,15 @@ export default [
                                 introduction: '你好，我是仓鼠。',
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=48',
-                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background:
                                     'https://img.mp.itc.cn/upload/20160929/e0ad6e7fb6714b0eb2f6b60598f124b9_th.jpg',
@@ -405,14 +400,15 @@ export default [
                                 introduction: '我是一只大老鼠，我最喜欢奶油和奶酪。',
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/616810767773335552/d730cfb881a0dbb685067cfa328f4bec.webp?size=100',
-                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'https://images.chinatimes.com/newsphoto/2016-07-19/656/20160719006500.jpg',
                                 discriminator: '6531',
@@ -447,13 +443,15 @@ export default [
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/598588658177671188/df122ff3d7dfa25674aed205a043684f.webp?size=128',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'https://img.soogif.com/zz5o9U8NVHjJ8sw8kdPawzqG2OvIV25L.gif',
                                 discriminator: '6531',
@@ -488,13 +486,15 @@ export default [
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/763293201062035486/5396342ba4e3bf24661c146cdae526a1.webp?size=100',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background:
                                     'https://steamuserimages-a.akamaihd.net/ugc/854982622967037616/BD9B30C53B4FCC29CBA1C51924BE65D562E545DE/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false',
@@ -533,14 +533,15 @@ export default [
                                 status      : 'idle',
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/1049673722434437160/23653805be14a796eb0fab4795cc6f7a.webp?size=100',
-                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'https://datoumaomi.github.io/pic/www/wenming6/logo.jpg',
                                 discriminator: '8731',
@@ -574,14 +575,15 @@ export default [
                                 introduction: '',
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/482216415147982848/c2b04dce7319282ff2cdc6275e13d52a.webp?size=128',
-                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background:
                                     'https://cdn.sputniknews.cn/img/102766/34/1027663447_0:257:2731:1793_1920x0_80_0_0_e115217d774edd7ab0314c48ba40b63a.jpg',
@@ -612,14 +614,15 @@ export default [
                                 introduction: '呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐……',
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/763298729762488330/6d1ec1e2b226fab6ee79231604cd87a7.webp?size=100',
-                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background:
                                     'https://i.pinimg.com/originals/c1/93/04/c193049e8bd34b6b11f3b704ea390cc4.gif',
@@ -662,14 +665,15 @@ export default [
                                     'Now you carry it with you"',
                                 //头像
                                 avatar: 'https://cdn.discordapp.com/avatars/511265015647436820/6db4e889181655645d92b70e53542dba.webp?size=100',
-                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background:
                                     'https://cdn.discordapp.com/banners/511265015647436820/b8ef6dddb0b1fb3762ba642558ca401c.png?size=600',
@@ -704,14 +708,15 @@ export default [
                                 introduction: '首先要认清自己，然后才能进步。',
                                 //头像
                                 avatar      : 'https://cdn.discordapp.com/avatars/809486916612653129/95831cc675c39c894cc7c43af398c5f4.webp?size=100',
-                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                //注册时间，返回一个随机的时间，范围在2020-2022年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background:
                                     'https://cdn.discordapp.com/banners/165047934113677312/ce18db518c121a6259e6ff7c49b0bada.png?size=600',

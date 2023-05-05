@@ -17,7 +17,7 @@
                 </div>
                 <div class="info">
                     <span></span>
-                    <span v-if="!commonServiceCount.commonServer.length">没有共同的服务器</span>
+                    <span v-if="commonServiceCount.commonServer.length === 0">没有共同的服务器</span>
                     <span v-else>
                         {{ commonServiceCount.commonServer.length }}
                         个共同的服务器
