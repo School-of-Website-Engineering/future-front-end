@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="right-card">
-            <!--            共同好友列表-->
+            <!--            共同服务器列表-->
             <div class="userTagNoNickname">
                 <div v-if="commonServiceCount.commonServer.length">
                     <span class="commentServer-num">{{ commonServiceCount.commonServer.length }}个共同的服务器</span>

@@ -67,7 +67,7 @@ export default {
                             messageType: 'text',
                             time       : '2020-4-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677911'
+                            messageId  : '34562341143576779171'
                         },
                         {
                             content    : 'what’s up?',
