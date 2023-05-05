@@ -238,6 +238,7 @@ watch(
 .main-box-right-main2-main1 {
     &.main-box-right-main2-main1 {
         background-color: #313338;
+        border-right: 1.5px solid #3f4147;
     }
 }
 
