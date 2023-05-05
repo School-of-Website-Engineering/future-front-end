@@ -23,7 +23,7 @@
 import { defineComponent } from 'vue';
 
 defineComponent({
-    name: 'UserInfo'
+    name: 'UserInfo',
 });
 </script>
 

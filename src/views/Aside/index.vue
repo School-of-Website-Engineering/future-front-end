@@ -133,7 +133,7 @@ const goToChannel = (item: IAsideSidebarList) => {
  * @function
  * @returns {Promise<void>}
  */
-const getChannelList = asyncTryCatch(async() => {
+const getChannelList = asyncTryCatch(async () => {
     const res = await AsideLPrivateService.getAsideSidebarList();
     asideSidebarList.push(...(res.data as any));
     console.log('-------侧边栏频道列表数据---------');

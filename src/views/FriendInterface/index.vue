@@ -121,13 +121,13 @@ watch(
             2: '全部',
             3: '待定',
             4: '已屏蔽',
-            5: '添加好友'
+            5: '添加好友',
         };
         userFriends.getFriends();
         console.log('-------------好友切换--------------');
         console.log('切换至' + statusMap[newVal]);
     },
-    { immediate: true }
+    { immediate: true },
 );
 </script>
 
