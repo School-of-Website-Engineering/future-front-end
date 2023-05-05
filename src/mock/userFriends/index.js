@@ -40,7 +40,7 @@ export default [
                                 {
                                     id   : '437456121056741327',
                                     name : 'Open AI Server',
-                                    icon : 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160',
+                                    icon : 'http://39.105.229.249/ftp/ling/future/server/gpt.webp',
                                     tagId: '1152'
                                 }
                             ],
@@ -70,7 +70,7 @@ export default [
                                 {
                                     id  : '437456121056741327',
                                     name: 'Open AI Server',
-                                    icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/gpt.webp'
                                 },
                                 {
                                     id  : '437456121056741329',
@@ -104,7 +104,7 @@ export default [
                                 {
                                     id  : '437456121056741327',
                                     name: 'Open AI Server',
-                                    icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/gpt.webp'
                                 },
                                 {
                                     id  : '437456121056741329',
@@ -137,7 +137,7 @@ export default [
                                 {
                                     id  : '437456121056741327',
                                     name: 'Open AI Server',
-                                    icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/gpt.webp'
                                 },
                                 {
                                     id  : '437456121056741329',
@@ -187,7 +187,7 @@ export default [
                                 {
                                     id   : '437456121056741327',
                                     name : 'Open AI Server',
-                                    icon : 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160',
+                                    icon : 'http://39.105.229.249/ftp/ling/future/server/gpt.webp',
                                     //     标签id
                                     tagId: '1152'
                                 },
@@ -337,8 +337,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background:
-                                    'https://cdn.discordapp.com/banners/189990173222764545/56cf7de243f9c51904b8a16c4351d8ae.png?size=600',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/cat.png',
                                 discriminator: '2412',
                                 //个人标签
                                 tags         : [
@@ -375,8 +374,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background:
-                                    'https://img.mp.itc.cn/upload/20160929/e0ad6e7fb6714b0eb2f6b60598f124b9_th.jpg',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/road.jpg',
                                 discriminator: '1145',
                                 //个人标签
                                 tags         : [
@@ -413,7 +411,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : 'https://images.chinatimes.com/newsphoto/2016-07-19/656/20160719006500.jpg',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/xp.jpg',
                                 discriminator: '6531',
                                 //个人标签
                                 tags         : [
@@ -454,7 +452,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : 'https://img.soogif.com/zz5o9U8NVHjJ8sw8kdPawzqG2OvIV25L.gif',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/gqj.gif',
                                 discriminator: '6531',
                                 //个人标签
                                 tags         : [
@@ -495,8 +493,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background:
-                                    'https://steamuserimages-a.akamaihd.net/ugc/854982622967037616/BD9B30C53B4FCC29CBA1C51924BE65D562E545DE/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/bg.jpg',
                                 discriminator: '7321',
                                 //个人标签
                                 tags         : [
@@ -541,7 +538,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : 'https://datoumaomi.github.io/pic/www/wenming6/logo.jpg',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/vi.jpg',
                                 discriminator: '8731',
                                 //个人标签
                                 tags         : [
@@ -582,8 +579,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background:
-                                    'https://cdn.sputniknews.cn/img/102766/34/1027663447_0:257:2731:1793_1920x0_80_0_0_e115217d774edd7ab0314c48ba40b63a.jpg',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/water.jpg',
                                 discriminator: '9250',
                                 //个人标签
                                 tags         : [
@@ -620,8 +616,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background:
-                                    'https://i.pinimg.com/originals/c1/93/04/c193049e8bd34b6b11f3b704ea390cc4.gif',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/eel.gif',
                                 discriminator: '8312',
                                 //个人标签
                                 tags         : [
@@ -670,8 +665,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background:
-                                    'https://cdn.discordapp.com/banners/511265015647436820/b8ef6dddb0b1fb3762ba642558ca401c.png?size=600',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/crosscode.png',
                                 discriminator: '3312',
                                 //个人标签
                                 tags         : [
@@ -712,8 +706,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background:
-                                    'https://cdn.discordapp.com/banners/165047934113677312/ce18db518c121a6259e6ff7c49b0bada.png?size=600',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/red.png',
                                 discriminator: '9285',
                                 //个人标签
                                 tags         : [
