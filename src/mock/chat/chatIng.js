@@ -2,8 +2,8 @@
 
 export default {
     // 收到的消息，并根据id进行不同的处理
-    url     : '/chat/ing',
-    method  : 'post',
+    url: '/chat/ing',
+    method: 'post',
     //post的参数为：content:"阿瑟的发生大",id:"3456234114357679088",public async getChatSend(data: object): Promise<Response<{ data: IChatSendResponse }>> {
     response: ({ body }) => {
         // 返回一个随机id的函数，返回id如345623411435767999
@@ -29,18 +29,18 @@ export default {
             '哇，你问得真是有深度！让我想一想怎么最好回答。',
             '这个问题确实让我有点难以回答，不过我会尽快给你答复。',
             '啊，让我想想怎么回答比较好。',
-            '呜呜...这个问题不太好回答啊！'
+            '呜呜...这个问题不太好回答啊！',
         ];
         const randomIndex = Math.floor(Math.random() * randomMessage.length);
         // 根据content进行不同的处理
         if (content.match(/^(你好|您好|hello|hi|哈喽|早上好|下午好|晚上好)$/i)) {
             // 处理问好语句的逻辑
             data = {
-                content    : '你好，JDSALing。',
+                content: '你好，JDSALing。',
                 messageType: 'text',
-                time       : new Date().toLocaleString(),
+                time: new Date().toLocaleString(),
                 messageFrom: 'self',
-                messageId  : generateRandomId().toString()
+                messageId: generateRandomId().toString(),
             };
         } else if (content.match(/^(静态)$/i)) {
             // 处理问名字的逻辑
@@ -58,27 +58,27 @@ export default {
                     '\n' +
                     '需要注意的是，不推荐在静态方法和静态代码块中使用非静态的变量和方法，因为它们在该类第一次初始化时被调用，而此时非静态成员还没有被创建出来。\n',
                 messageType: 'text',
-                time       : new Date().toLocaleString(),
+                time: new Date().toLocaleString(),
                 messageFrom: 'self',
-                messageId  : generateRandomId().toString()
+                messageId: generateRandomId().toString(),
             };
         } else if (content.match(/^(学习)$/i)) {
             // 处理问名字的逻辑
             data = {
-                content    : '我觉得，你需要持之以恒：坚持在学习上花费时间和精力，不断自我提高和进步。',
+                content: '我觉得，你需要持之以恒：坚持在学习上花费时间和精力，不断自我提高和进步。',
                 messageType: 'text',
-                time       : new Date().toLocaleString(),
+                time: new Date().toLocaleString(),
                 messageFrom: 'self',
-                messageId  : generateRandomId().toString()
+                messageId: generateRandomId().toString(),
             };
         } else {
             // 处理其他消息的逻辑
             data = {
-                content    : randomMessage[randomIndex],
+                content: randomMessage[randomIndex],
                 messageType: 'text',
-                time       : new Date().toLocaleString(),
+                time: new Date().toLocaleString(),
                 messageFrom: 'self',
-                messageId  : generateRandomId().toString()
+                messageId: generateRandomId().toString(),
             };
         }
         //     根据id进行不同的处理
@@ -99,155 +99,155 @@ export default {
         const strategy = {
             '345623411435767898': () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
                     // 修改data的avatar与name
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
-                        id     : '345623411435767898',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
+                        id: '345623411435767898',
                         message: data,
-                        name   : 'liuliu',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: 'liuliu',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             '345623411435767899': () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
-                        id     : '345623411435767899',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
+                        id: '345623411435767899',
                         message: data,
-                        name   : 'Ye Ldzy>>',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: 'Ye Ldzy>>',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             345623411435767900: () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
-                        id     : '345623411435767900',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
+                        id: '345623411435767900',
                         message: data,
-                        name   : '[ECM]HamSter',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: '[ECM]HamSter',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             '345623411435767901': () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
-                        id     : '345623411435767901',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
+                        id: '345623411435767901',
                         message: data,
-                        name   : 'Catand',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: 'Catand',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             '3456234114357679023': () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/humry.webp',
-                        id     : '3456234114357679023',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/humry.webp',
+                        id: '3456234114357679023',
                         message: data,
-                        name   : 'Humfrey',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: 'Humfrey',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             '3456234161435767908': () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/nr.webp',
-                        id     : '3456234161435767908',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/nr.webp',
+                        id: '3456234161435767908',
                         message: data,
-                        name   : 'NaRiver',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: 'NaRiver',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             '3456234114357677908': () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
-                        id     : '3456234161435767908',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
+                        id: '3456234161435767908',
                         message: data,
-                        name   : 'Deep Water',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: 'Deep Water',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             '345623411435767907': () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
-                        id     : '345623411435767907',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
+                        id: '345623411435767907',
                         message: data,
-                        name   : 'Cold Mint',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: 'Cold Mint',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             '3456234114357679088': () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/eely.webp',
-                        id     : '3456234114357679088',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/eely.webp',
+                        id: '3456234114357679088',
                         message: data,
-                        name   : 'EElainaya',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: 'EElainaya',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             '3456234114357679087': () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/mrs.webp',
-                        id     : '3456234114357679087',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/mrs.webp',
+                        id: '3456234114357679087',
                         message: data,
-                        name   : 'Mr.Smith',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: 'Mr.Smith',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             '3456234114357679082': () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/msx.webp',
-                        id     : '3456234114357679082',
+                    data: {
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/msx.webp',
+                        id: '3456234114357679082',
                         message: data,
-                        name   : 'Ms.Timesiana',
-                        time   : new Date().getTime().toLocaleString()
-                    }
+                        name: 'Ms.Timesiana',
+                        time: new Date().getTime().toLocaleString(),
+                    },
                 };
             },
             default: () => {
                 return {
-                    code   : 200,
+                    code: 200,
                     message: 'success',
-                    data
+                    data,
                 };
-            }
+            },
         };
 
         const handleId = (id) => {
@@ -257,5 +257,5 @@ export default {
 
         const result = handleId(id);
         return result;
-    }
+    },
 };

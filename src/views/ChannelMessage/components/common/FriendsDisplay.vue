@@ -52,70 +52,70 @@ const dialogTableVisible = ref<boolean>(false);
 // 表格数据
 const gridData = [
     {
-        date   : '2016-05-02',
-        name   : 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District'
+        date: '2016-05-02',
+        name: 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District',
     },
     {
-        date   : '2016-05-04',
-        name   : 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District'
+        date: '2016-05-04',
+        name: 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District',
     },
     {
-        date   : '2016-05-01',
-        name   : 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District'
+        date: '2016-05-01',
+        name: 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District',
     },
     {
-        date   : '2016-05-03',
-        name   : 'John Smith',
-        address: 'No.1518,  Jinshajiang Road, Putuo District'
-    }
+        date: '2016-05-03',
+        name: 'John Smith',
+        address: 'No.1518,  Jinshajiang Road, Putuo District',
+    },
 ];
 
 defineComponent({
-    name      : 'FriendsDisplay',
+    name: 'FriendsDisplay',
     components: {
-        Friend
-    }
+        Friend,
+    },
 });
 
 const props = defineProps({
     titleText: {
-        type   : String,
-        default: ''
+        type: String,
+        default: '',
     },
     status: {
-        type   : String,
-        default: 'online'
+        type: String,
+        default: 'online',
     },
     list: {
-        type   : Array as () => Array<any>,
-        default: () => []
+        type: Array as () => Array<any>,
+        default: () => [],
     },
     iconLeft: {
-        type   : String,
-        default: ''
+        type: String,
+        default: '',
     },
     iconRight: {
-        type   : String,
-        default: 'fa-solid fa-user-xmark'
-    }
+        type: String,
+        default: 'fa-solid fa-user-xmark',
+    },
 });
 
 /**
  @description: 用于存储不同状态下的文字信息
  */ const statusMap = {
-    online : '在线',
+    online: '在线',
     offline: '离线',
-    busy   : '忙碌',
-    away   : '离开'
+    busy: '忙碌',
+    away: '离开',
 };
 /**
  @description: 用于存储待定好友的文字信息
  */ const isInitiativeMap = {
-    true : '送出的好友请求',
-    false: '收到好友请求'
+    true: '送出的好友请求',
+    false: '收到好友请求',
 };
 
 const searchFriend = () => {
@@ -127,7 +127,7 @@ const searchFriend = () => {
  * @param {IAsideLPrivateResponse} item
  * @returns {Promise<void>}
  * */
-const toChat = asyncTryCatch(async(item) => {
+const toChat = asyncTryCatch(async (item) => {
     console.log('----------跳转到聊天页面---------');
     console.log(item);
     // 如果是待定好友和已屏蔽就不跳转

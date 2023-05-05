@@ -1,9 +1,9 @@
 // 聊天记录
 export default {
     // 根据id查询聊天记录请求地址
-    url     : '/chat/:id',
+    url: '/chat/:id',
     // 请求方法
-    method  : 'get',
+    method: 'get',
     // 响应数据
     response: (options) => {
         // 根据id查询聊天记录逻辑
@@ -11,724 +11,724 @@ export default {
         const chatData = {
             // 345623411435767855
             '345623411435767898': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '345623411435767708',
+                    id: '345623411435767708',
                     // 用户名
-                    name   : 'liuliu',
+                    name: 'liuliu',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
                     // 消息内容
                     message: [
                         {
                             // 消息内容
-                            content    : 'Hello',
+                            content: 'Hello',
                             // 消息类型
                             messageType: 'text',
                             // 消息发送时间
-                            time       : '2020-10-10 10:10:10',
+                            time: '2020-10-10 10:10:10',
                             // 消息发送方
                             messageFrom: 'self',
                             // 消息id
-                            messageId  : '34562341914357677908'
+                            messageId: '34562341914357677908',
                         },
                         {
-                            content    : 'How are you?',
+                            content: 'How are you?',
                             messageType: 'text',
-                            time       : '2020-10-10 10:10:10',
+                            time: '2020-10-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '356234114357677909'
+                            messageId: '356234114357677909',
                         },
                         {
-                            content    : "I'm fine, thank you!",
+                            content: "I'm fine, thank you!",
                             messageType: 'text',
-                            time       : '2020-10-10 10:10:10',
+                            time: '2020-10-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '34562341143576077908'
+                            messageId: '34562341143576077908',
                         },
                         {
-                            content    : 'And you?',
+                            content: 'And you?',
                             messageType: 'text',
-                            time       : '2020-4-10 10:10:10',
+                            time: '2020-4-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '345623411435777909'
+                            messageId: '345623411435777909',
                         },
                         {
-                            content    : "I'm fine, thank you!",
+                            content: "I'm fine, thank you!",
                             messageType: 'text',
-                            time       : '2020-10-10 10:10:10',
+                            time: '2020-10-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677910'
+                            messageId: '3456234114357677910',
                         },
                         {
-                            content    : 'And you?',
+                            content: 'And you?',
                             messageType: 'text',
-                            time       : '2020-4-10 10:10:10',
+                            time: '2020-4-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '34562341143576779171'
+                            messageId: '34562341143576779171',
                         },
                         {
-                            content    : 'what’s up?',
+                            content: 'what’s up?',
                             messageType: 'text',
-                            time       : '2020-4-10 10:10:10',
+                            time: '2020-4-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677911'
-                        }
+                            messageId: '3456234114357677911',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '345623411435767899': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '345623411435767899',
+                    id: '345623411435767899',
                     // 用户名
-                    name   : 'Ye Ldzy>>',
+                    name: 'Ye Ldzy>>',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
                     // 消息内容
                     message: [
                         {
                             // 消息内容
-                            content    : 'Hello',
+                            content: 'Hello',
                             // 消息类型
                             messageType: 'text',
                             // 消息发送时间
-                            time       : '2020-10-10 10:10:10',
+                            time: '2020-10-10 10:10:10',
                             // 消息发送方
                             messageFrom: 'self',
                             // 消息id
-                            messageId  : '3456234114357677912'
+                            messageId: '3456234114357677912',
                         },
                         {
-                            content    : 'How are you?',
+                            content: 'How are you?',
                             messageType: 'text',
-                            time       : '2020-10-10 10:10:10',
+                            time: '2020-10-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677913'
+                            messageId: '3456234114357677913',
                         },
                         {
-                            content    : "I'm fine, thank you!",
+                            content: "I'm fine, thank you!",
                             messageType: 'text',
-                            time       : '2020-10-10 10:10:10',
+                            time: '2020-10-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677914'
+                            messageId: '3456234114357677914',
                         },
                         {
-                            content    : 'And you?',
+                            content: 'And you?',
                             messageType: 'text',
-                            time       : '2020-4-10 10:10:10',
+                            time: '2020-4-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677915'
+                            messageId: '3456234114357677915',
                         },
                         {
-                            content    : "I'm fine, thank you!",
+                            content: "I'm fine, thank you!",
                             messageType: 'text',
-                            time       : '2020-10-10 10:10:10',
+                            time: '2020-10-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677916'
+                            messageId: '3456234114357677916',
                         },
                         {
-                            content    : 'And you?',
+                            content: 'And you?',
                             messageType: 'text',
-                            time       : '2020-4-10 10:10:10',
+                            time: '2020-4-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677917'
-                        }
+                            messageId: '3456234114357677917',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             345623411435767900: {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '34562341143i57677908',
+                    id: '34562341143i57677908',
                     // 用户名
-                    name   : '[ECM]HamSter',
+                    name: '[ECM]HamSter',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
                     // 消息内容
                     message: [
                         {
-                            content    : '你好',
+                            content: '你好',
                             messageType: 'text',
-                            time       : '2022-7-10 10:10:10',
+                            time: '2022-7-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677918'
+                            messageId: '3456234114357677918',
                         },
                         {
-                            content    : '晚上好',
+                            content: '晚上好',
                             messageType: 'text',
-                            time       : '2022-11-10 10:10:10',
+                            time: '2022-11-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677919'
+                            messageId: '3456234114357677919',
                         },
                         {
-                            content    : '哈喽',
+                            content: '哈喽',
                             messageType: 'text',
-                            time       : '2023-3-10 10:10:10',
+                            time: '2023-3-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677920'
+                            messageId: '3456234114357677920',
                         },
                         {
-                            content    : '早安',
+                            content: '早安',
                             messageType: 'text',
-                            time       : '2023-10-10 10:10:10',
+                            time: '2023-10-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677921'
+                            messageId: '3456234114357677921',
                         },
                         {
-                            content    : '吃饭了吗？',
+                            content: '吃饭了吗？',
                             messageType: 'text',
-                            time       : '2022-9-10 10:10:10',
+                            time: '2022-9-10 10:10:10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677922'
-                        }
+                            messageId: '3456234114357677922',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '345623411435767901': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '345623411435767901',
+                    id: '345623411435767901',
                     // 用户名
-                    name   : 'Catand',
+                    name: 'Catand',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
                     // 消息内容
                     message: [
                         {
-                            content    : '好久不见',
+                            content: '好久不见',
                             messageType: 'text',
-                            time       : '2023-4',
+                            time: '2023-4',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677923'
+                            messageId: '3456234114357677923',
                         },
                         {
-                            content    : '想你了',
+                            content: '想你了',
                             messageType: 'text',
-                            time       : '2023-2',
+                            time: '2023-2',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677924'
-                        }
+                            messageId: '3456234114357677924',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '345623411435767903': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '345623411435767903',
+                    id: '345623411435767903',
                     // 用户名
-                    name   : 'Cold Mint',
+                    name: 'Cold Mint',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
                     // 消息内容
                     message: [
                         {
-                            content    : '你在干什么呢？',
+                            content: '你在干什么呢？',
                             messageType: 'text',
-                            time       : '2023-5',
+                            time: '2023-5',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677933'
+                            messageId: '3456234114357677933',
                         },
                         {
-                            content    : '有新消息吗？',
+                            content: '有新消息吗？',
                             messageType: 'text',
-                            time       : '2022-10',
+                            time: '2022-10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677934'
+                            messageId: '3456234114357677934',
                         },
                         {
-                            content    : '下雪了',
+                            content: '下雪了',
                             messageType: 'text',
-                            time       : '2023-4',
+                            time: '2023-4',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677935'
+                            messageId: '3456234114357677935',
                         },
                         {
-                            content    : '回家了',
+                            content: '回家了',
                             messageType: 'text',
-                            time       : '2023-3',
+                            time: '2023-3',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677936'
-                        }
+                            messageId: '3456234114357677936',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '3456234114357679023': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '3456234114357679023',
+                    id: '3456234114357679023',
                     // 用户名
-                    name   : 'Humfrey',
+                    name: 'Humfrey',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/humry.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/humry.webp',
                     // 消息内容
                     message: [
                         {
-                            content    : '你吃了吗？',
+                            content: '你吃了吗？',
                             messageType: 'text',
-                            time       : '2023-5',
+                            time: '2023-5',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677937'
+                            messageId: '3456234114357677937',
                         },
                         {
-                            content    : '今天天气怎么样？',
+                            content: '今天天气怎么样？',
                             messageType: 'text',
-                            time       : '2022-10',
+                            time: '2022-10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677938'
+                            messageId: '3456234114357677938',
                         },
                         {
-                            content    : '好久不见了，最近怎么样？',
+                            content: '好久不见了，最近怎么样？',
                             messageType: 'text',
-                            time       : '2023-4',
+                            time: '2023-4',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677939'
-                        }
+                            messageId: '3456234114357677939',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '3456234161435767908': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '3456234161435767908',
+                    id: '3456234161435767908',
                     // 用户名
-                    name   : 'NaRiver',
+                    name: 'NaRiver',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/nr.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/nr.webp',
                     // 消息内容
                     message: [
                         {
-                            content    : 'Ling,有空吗？',
+                            content: 'Ling,有空吗？',
                             messageType: 'text',
-                            time       : '2023-5-5',
+                            time: '2023-5-5',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677940'
+                            messageId: '3456234114357677940',
                         },
                         {
-                            content    : '今天可以打文明6吗？',
+                            content: '今天可以打文明6吗？',
                             messageType: 'text',
-                            time       : '2023-5-5',
+                            time: '2023-5-5',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677941'
+                            messageId: '3456234114357677941',
                         },
                         {
-                            content    : 'XGP我的快过期了，你可以找找@Catand#6531要一下',
+                            content: 'XGP我的快过期了，你可以找找@Catand#6531要一下',
                             messageType: 'text',
-                            time       : '2023-5-5',
+                            time: '2023-5-5',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677942'
+                            messageId: '3456234114357677942',
                         },
                         {
-                            content    : '如果有空的话，记得回复我哦，Ling!',
+                            content: '如果有空的话，记得回复我哦，Ling!',
                             messageType: 'text',
-                            time       : '2023-5-5',
+                            time: '2023-5-5',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677943'
-                        }
+                            messageId: '3456234114357677943',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '3456234114357677908': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '3456234114357677908',
+                    id: '3456234114357677908',
                     // 用户名
-                    name   : 'Deep Water',
+                    name: 'Deep Water',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
                     // 消息内容
                     message: [
                         {
-                            content    : '早上好，今天该干什么呢？',
+                            content: '早上好，今天该干什么呢？',
                             messageType: 'text',
-                            time       : '2023-5',
+                            time: '2023-5',
                             messageFrom: 'self',
-                            messageId  : '345234114357677932'
+                            messageId: '345234114357677932',
                         },
                         {
-                            content    : '下午有时间一起喝茶吗？',
+                            content: '下午有时间一起喝茶吗？',
                             messageType: 'text',
-                            time       : '2022-10',
+                            time: '2022-10',
                             messageFrom: 'self',
-                            messageId  : '345634114357677933'
+                            messageId: '345634114357677933',
                         },
                         {
-                            content    : '晚上有空一起去打台球吗？',
+                            content: '晚上有空一起去打台球吗？',
                             messageType: 'text',
-                            time       : '2023-4',
+                            time: '2023-4',
                             messageFrom: 'self',
-                            messageId  : '345624114357677934'
-                        }
+                            messageId: '345624114357677934',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '3456234114357679088': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '3456234114357679088',
+                    id: '3456234114357679088',
                     // 用户名
-                    name   : 'EElainaya',
+                    name: 'EElainaya',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/eely.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/eely.webp',
                     // 消息内容
                     message: [
                         {
-                            content    : '对于这个问题，你重启终端试试',
+                            content: '对于这个问题，你重启终端试试',
                             messageType: 'text',
-                            time       : '2023-5',
+                            time: '2023-5',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677932'
+                            messageId: '3456234114357677932',
                         },
                         {
-                            content    : '还是不行吗？可能是配置错了？(',
+                            content: '还是不行吗？可能是配置错了？(',
                             messageType: 'text',
-                            time       : '2022-10',
+                            time: '2022-10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677933'
+                            messageId: '3456234114357677933',
                         },
                         {
-                            content    : '唔……看起来这个问题超过了我的解决范围……',
+                            content: '唔……看起来这个问题超过了我的解决范围……',
                             messageType: 'text',
-                            time       : '2023-4',
+                            time: '2023-4',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677934'
+                            messageId: '3456234114357677934',
                         },
                         {
-                            content    : '在你的人生中，最重要的事情是什么？',
+                            content: '在你的人生中，最重要的事情是什么？',
                             messageType: 'text',
-                            time       : '2023-3',
+                            time: '2023-3',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677935'
-                        }
+                            messageId: '3456234114357677935',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '3456234114357679087': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '3456234114357679087',
+                    id: '3456234114357679087',
                     // 用户名
-                    name   : 'Mr.Smith',
+                    name: 'Mr.Smith',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/mrs.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/mrs.webp',
                     // 消息内容
                     message: [
                         {
                             content:
                                 '最近忙得有点疲惫，但还是坚持每天多花一点时间学习。学到的新知识让我感到异常兴奋，也让我更有信心应对未来的挑战。',
                             messageType: 'text',
-                            time       : '2023-5',
+                            time: '2023-5',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677037'
+                            messageId: '3456234114357677037',
                         },
                         {
                             content:
                                 '生活中有很多难以避免的起伏和波折，但这也是成长的过程。我们需要学会相信自己，保持积极向上的态度，勇敢面对挑战。',
                             messageType: 'text',
-                            time       : '2022-10',
+                            time: '2022-10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677038'
+                            messageId: '3456234114357677038',
                         },
                         {
                             content:
                                 '做任何事情都需要有目标和计划，但也需要随时调整。适当的改变和调整可以让我们更好地适应环境，实现更大的进步。',
                             messageType: 'text',
-                            time       : '2023-4',
+                            time: '2023-4',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677039'
+                            messageId: '3456234114357677039',
                         },
                         {
                             content:
                                 '人生的旅途中，我们会遇到各种各样的人。有些人只是短暂的路人，有些人却能和我们一起走很远很远的路。无论是哪种人，都值得我们珍惜和感激。',
                             messageType: 'text',
-                            time       : '2023-3',
+                            time: '2023-3',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677040'
-                        }
+                            messageId: '3456234114357677040',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '3456234114357679082': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '3456234114357679082',
+                    id: '3456234114357679082',
                     // 用户名
-                    name   : 'Ms.Timesiana',
+                    name: 'Ms.Timesiana',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/msx.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/msx.webp',
                     // 消息内容
                     message: [
                         {
                             content:
                                 '生命中的每一个瞬间都是宝贵的，我们需要学会珍惜每一个当下。无论是快乐的时刻还是痛苦的挣扎，都是我们成长路上的重要一步。',
                             messageType: 'text',
-                            time       : '2023-5',
+                            time: '2023-5',
                             messageFrom: 'self',
-                            messageId  : '345234114357677037'
+                            messageId: '345234114357677037',
                         },
                         {
                             content:
                                 '有梦想和追求是非常重要的事情。人生短暂，我们需要在自己能力范围内尽可能地去追求自己想要的东西。',
                             messageType: 'text',
-                            time       : '2022-10',
+                            time: '2022-10',
                             messageFrom: 'self',
-                            messageId  : '345234114357677038'
+                            messageId: '345234114357677038',
                         },
                         {
                             content:
                                 '成功的背后往往隐藏着不为人知的故事。要想成功，就必须要有毅力和耐心，始终保持对目标的坚定信念。',
                             messageType: 'text',
-                            time       : '2023-4',
+                            time: '2023-4',
                             messageFrom: 'self',
-                            messageId  : '345234114357677039'
+                            messageId: '345234114357677039',
                         },
                         {
                             content:
                                 '有时候我们需要跳出自己的舒适区，尝试新的事物。这样做既可以帮助我们更好地了解自己，也可以让我们更快地成长。',
                             messageType: 'text',
-                            time       : '2023-3',
+                            time: '2023-3',
                             messageFrom: 'self',
-                            messageId  : '345234114357677040'
+                            messageId: '345234114357677040',
                         },
                         {
                             content:
                                 '人生是一场漫长的旅途，我们需要学会承受孤独和寂寞。孤独并不可怕，它可以让我们更好地思考和认识自己。',
                             messageType: 'text',
-                            time       : '2022-12',
+                            time: '2022-12',
                             messageFrom: 'self',
-                            messageId  : '345234114357677041'
-                        }
+                            messageId: '345234114357677041',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '345623411435767855': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '345623411435767855',
+                    id: '345623411435767855',
                     // 用户名
-                    name   : 'All Badges% Speedrunner',
+                    name: 'All Badges% Speedrunner',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
                     // 消息内容
                     message: [
                         {
                             content:
                                 '生活中会有很多无法预料的事情发生，但我们可以掌握自己的态度。保持积极乐观的心态，让自己更有信心应对未来的挑战。',
                             messageType: 'text',
-                            time       : '2023-5',
+                            time: '2023-5',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677042'
+                            messageId: '3456234114357677042',
                         },
                         {
                             content:
                                 '成长需要付出代价，但这也是人生中最值得做的事情之一。打磨自己，追求进步，不断学习和探索，让自己变得更加出色。',
                             messageType: 'text',
-                            time       : '2022-10',
+                            time: '2022-10',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677043'
+                            messageId: '3456234114357677043',
                         },
                         {
                             content:
                                 '在追求梦想的路上，我们会遭遇种种困难和挫折。但正是这些挫折让我们更加坚定自己的目标，让我们更加热爱追求自己的梦想。',
                             messageType: 'text',
-                            time       : '2023-4',
+                            time: '2023-4',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677044'
+                            messageId: '3456234114357677044',
                         },
                         {
                             content:
                                 '每个人都有自己的长处和短处，我们需要学会认识并包容自己。不要去比较和攀比，每个人都是独一无二的，都有自己的价值和意义。',
                             messageType: 'text',
-                            time       : '2023-3',
+                            time: '2023-3',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677045'
+                            messageId: '3456234114357677045',
                         },
                         {
                             content:
                                 '人生中有很多值得我们感恩的时刻。感恩的心态可以让我们更加开心和满足，让我们更好地看待自己的生活和成就。',
                             messageType: 'text',
-                            time       : '2022-12',
+                            time: '2022-12',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677046'
+                            messageId: '3456234114357677046',
                         },
                         {
                             content:
                                 '时间是最珍贵的财富，我们需要学会合理利用自己的时间。把握当下，做自己想做的事情，让自己的人生更加充实和有意义。',
                             messageType: 'text',
-                            time       : '2023-8',
+                            time: '2023-8',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677047'
+                            messageId: '3456234114357677047',
                         },
                         {
                             content:
                                 '学习是一种终身的追求，我们需要不断地更新自己的知识和技能。只有不断提升自己，才能在这个竞争激烈的社会中立于不败之地。',
                             messageType: 'text',
-                            time       : '2022-11',
+                            time: '2022-11',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677048'
+                            messageId: '3456234114357677048',
                         },
                         {
                             content:
                                 '每个人都有自己的故事和经历，我们需要多一些理解和包容。尊重别人的价值观和选择，让自己更加开放和宽容。',
                             messageType: 'text',
-                            time       : '2023-2',
+                            time: '2023-2',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677049'
+                            messageId: '3456234114357677049',
                         },
                         {
                             content:
                                 '人生中有很多机会和挑战，我们需要学会把握机遇，挑战自己的极限。只有不断地向前迈进，才能实现自己的梦想和目标。',
                             messageType: 'text',
-                            time       : '2023-6',
+                            time: '2023-6',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677050'
+                            messageId: '3456234114357677050',
                         },
                         {
                             content:
                                 '生命真的很短暂，我们需要珍惜每一刻。放下心中的怨念和负面情绪，让自己过得更加美好和幸福。',
                             messageType: 'text',
-                            time       : '2022-9',
+                            time: '2022-9',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677051'
+                            messageId: '3456234114357677051',
                         },
                         {
                             content:
                                 '在追求自己的梦想和目标的路上，我们需要有冷静和定力。任何事情都需要付出时间和努力，只有坚持不懈，才能实现自己的理想。',
                             messageType: 'text',
-                            time       : '2023-1',
+                            time: '2023-1',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677052'
+                            messageId: '3456234114357677052',
                         },
                         {
                             content:
                                 '人生中最重要的事情就是呵护自己的心灵。学会宽容和感恩，保持内心的平和和冷静，让自己过得更加美好和有意义。',
                             messageType: 'text',
-                            time       : '2023-7',
+                            time: '2023-7',
                             messageFrom: 'self',
-                            messageId  : '3456234114357677053'
-                        }
+                            messageId: '3456234114357677053',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '345623411435767856': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '345623411435767856',
+                    id: '345623411435767856',
                     // 用户名
-                    name   : 'All Badges% Speedrunner',
+                    name: 'All Badges% Speedrunner',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
                     // 消息内容
                     message: [
                         {
                             content:
                                 '我们生活在一个快节奏的社会中，每个人都需要承担不少的压力和责任。但是，当你感到有些力不从心的时候，不妨停下来好好休息一下，用一些方法来缓解自己的压力。',
                             messageType: 'text',
-                            time       : '2023-04-25 08:12:36',
+                            time: '2023-04-25 08:12:36',
                             messageFrom: 'self',
-                            messageId  : '345623411435767857'
+                            messageId: '345623411435767857',
                         },
                         {
                             content:
                                 '有时候，我们的人生道路上会遇到很多的波折和坎坷，但是，只要我们坚持自己的信念，积极面对生活中的挑战，就一定能够走过难关，迎接美好的未来。',
                             messageType: 'text',
-                            time       : '2023-04-25 09:25:48',
+                            time: '2023-04-25 09:25:48',
                             messageFrom: 'self',
-                            messageId  : '345623411435767858'
+                            messageId: '345623411435767858',
                         },
                         {
                             content:
                                 '家庭是我们在这个世界上最温暖、最安全的港湾，是我们成长路上必不可少的支撑。无论何时何地，只要我们坚定地守护着这份感情，就一定能够让家庭更加幸福、温馨。',
                             messageType: 'text',
-                            time       : '2023-04-25 10:58:21',
+                            time: '2023-04-25 10:58:21',
                             messageFrom: 'self',
-                            messageId  : '345623411435767859'
+                            messageId: '345623411435767859',
                         },
                         {
                             content:
                                 '成功需要不断地努力和积累，只有在你拥有了足够的知识和技能之后，才能够在工作和生活中游刃有余。所以，无论何时，都应该努力学习，提升自己的个人素质。',
                             messageType: 'text',
-                            time       : '2023-04-25 12:06:31',
+                            time: '2023-04-25 12:06:31',
                             messageFrom: 'self',
-                            messageId  : '345623411435767860'
+                            messageId: '345623411435767860',
                         },
                         {
                             content:
                                 '爱是一种美好而又神圣的情感，在我们的生命中起到了不可替代的作用。无论是家人、朋友还是恋人，只有在我们充满爱心的关怀下，他们才能够感受到真正的幸福。',
                             messageType: 'text',
-                            time       : '2023-04-25 13:45:09',
+                            time: '2023-04-25 13:45:09',
                             messageFrom: 'self',
-                            messageId  : '345623411435767861'
-                        }
+                            messageId: '345623411435767861',
+                        },
                     ],
-                    time: new Date().getTime()
-                }
+                    time: new Date().getTime(),
+                },
             },
             '345623411435767907': {
-                code   : 200,
+                code: 200,
                 message: 'success',
-                data   : {
+                data: {
                     // 用户id
-                    id     : '345623411435767907',
+                    id: '345623411435767907',
                     // 用户名
-                    name   : 'Cold Mint',
+                    name: 'Cold Mint',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
+                    avatar: 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
                     // 消息内容
                     message: [],
-                    time   : new Date().getTime()
-                }
-            }
+                    time: new Date().getTime(),
+                },
+            },
         };
         // 获取用户id
         const id = options.url.match(/\/chat\/(\d+)/)[1];
         // 为 null 或 undefined 时返回错误信息
         if (!id) {
             return {
-                code   : 404,
+                code: 404,
                 message: '用户id不能为空',
-                data   : null
+                data: null,
             };
         }
         // 返回聊天记录
         return chatData[id];
-    }
+    },
 };

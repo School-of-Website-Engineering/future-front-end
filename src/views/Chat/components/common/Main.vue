@@ -74,11 +74,11 @@ import ChatHead from '@/views/Chat/components/common/ChatHead.vue';
 const searchValue = ref<string>('');
 // 聊天记录,空对象
 const chatRecord = reactive<IChatRecordResponse>({
-    avatar : '',
-    id     : '',
+    avatar: '',
+    id: '',
     message: [],
-    name   : '',
-    time   : ''
+    name: '',
+    time: '',
 });
 // 聊天消息
 const messageRecord = reactive<IChatRecordMessageResponse[]>([]);
@@ -136,12 +136,12 @@ const search = () => {
     console.log(messageRecord);
     // 将当前的消息添加到聊天记录中
     messageRecord.push({
-        content    : searchValue.value,
+        content: searchValue.value,
         messageType: 'text',
         messageFrom: 'me',
-        messageId  : randomNum.toString(),
-        time       : new Date().toLocaleString(),
-        name       : 'JDSA Ling'
+        messageId: randomNum.toString(),
+        time: new Date().toLocaleString(),
+        name: 'JDSA Ling',
     });
 
     // 将滚动条滚动到最底部
@@ -154,7 +154,7 @@ const search = () => {
     searchValue.value = '';
 };
 // 获取新聊天消息
-const newChat = asyncTryCatch(async(id: string, content: string) => {
+const newChat = asyncTryCatch(async (id: string, content: string) => {
     // 如果没有id或者content，就不请求
     if (!id || !content) return;
     const { data } = (await ChatService.getChatSend({ id, content })) as unknown as {
@@ -176,7 +176,7 @@ const newChat = asyncTryCatch(async(id: string, content: string) => {
 });
 
 // 获取聊天记录
-const chatList = asyncTryCatch(async(id: string) => {
+const chatList = asyncTryCatch(async (id: string) => {
     // 如果没有id，就不请求
     if (!id) return;
     const { data } = (await ChatService.getChatRecord(id)) as unknown as {
@@ -201,7 +201,7 @@ watch(
         console.log('------------messageRecord-------------');
         console.log(messageRecord);
     },
-    { immediate: true }
+    { immediate: true },
 );
 </script>
 

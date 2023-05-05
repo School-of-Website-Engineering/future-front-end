@@ -100,14 +100,14 @@ import { asyncTryCatch } from '@/utils/exceptionHandling';
 
 const commonServiceCount = reactive<ICommonServerCountResponse>({
     commonServer: [],
-    commonFriend: []
+    commonFriend: [],
 });
 /**
  * 获取共同的服务器
  * @param id 用户id
  * @returns 共同的服务器
  */
-const commonService = asyncTryCatch(async(id) => {
+const commonService = asyncTryCatch(async (id) => {
     const { data } = (await UserService.getCommonServerCount(id)) as unknown as any;
     commonServiceCount.commonServer = data.commonServer;
     commonServiceCount.commonFriend = data.commonFriend;
@@ -130,10 +130,10 @@ const friendStatus = computed(() => {
      * 忙碌 dnd
      */
     const statusMap: { [key: string]: string } = {
-        online : '在线',
+        online: '在线',
         offline: '离线',
-        idle   : '闲置',
-        dnd    : '忙碌'
+        idle: '闲置',
+        dnd: '忙碌',
     };
     return statusMap[friendsStore.friendInfo.status];
 });
@@ -149,7 +149,7 @@ watch(
         friendsStore.getFriendInfo(id as string);
         commonService(id as string);
     },
-    { immediate: true }
+    { immediate: true },
 );
 </script>
 
