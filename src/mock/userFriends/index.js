@@ -321,10 +321,10 @@ export default [
                     return {
                         code   : 200,
                         message: 'success',
-                        status : 'idle',
                         data   : {
                             friendInfo: {
                                 username    : 'Ye Ldzy>>',
+                                status      : 'idle',
                                 //自我介绍
                                 introduction: "Hello, I'm cat",
                                 //头像
@@ -362,6 +362,7 @@ export default [
                         data   : {
                             friendInfo: {
                                 username    : '[ECM]HamSter',
+                                status      : 'online',
                                 //自我介绍
                                 introduction: '你好，我是仓鼠。',
                                 //头像
@@ -440,6 +441,7 @@ export default [
                         data   : {
                             friendInfo: {
                                 username    : 'Humfrey',
+                                status      : 'online',
                                 //自我介绍
                                 introduction: '诗与远方',
                                 //头像
@@ -480,6 +482,7 @@ export default [
                         data   : {
                             friendInfo: {
                                 username    : 'Cold Mint',
+                                status      : 'online',
                                 //自我介绍
                                 introduction: '认识你很高兴。\n' + 'Nice to meet you.',
                                 //头像
@@ -604,6 +607,7 @@ export default [
                         data   : {
                             friendInfo: {
                                 username    : 'EElainaya',
+                                status      : 'online',
                                 //自我介绍
                                 introduction: '呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐……',
                                 //头像
@@ -692,10 +696,10 @@ export default [
                     return {
                         code   : 200,
                         message: 'success',
-                        status : 'dnd',
                         data   : {
                             friendInfo: {
                                 username    : 'Ms.Timesiana',
+                                status      : 'online',
                                 //自我介绍
                                 introduction: '首先要认清自己，然后才能进步。',
                                 //头像
