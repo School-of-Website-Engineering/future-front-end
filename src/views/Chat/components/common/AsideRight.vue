@@ -3,10 +3,7 @@
         <div class="panelBanner bannerPremium" style="background-color: #1f2123">
             <div class="head-box" style="display: flex">
                 <el-image class="headstyle" :src="friendsStore.friendInfo.avatar" />
-                <el-tooltip class="headstyle" effect="dark" :content="friendStatus" placement="top">
-                    <FriendsStatus :status="friendsStore.friendInfo.status" class="status-"></FriendsStatus>
-                    <FriendsStatus :status="friendsStore.friendInfo.status" class="status"></FriendsStatus>
-                </el-tooltip>
+                <FriendsStatus :status="friendsStore.friendInfo.status" class="status-"></FriendsStatus>
                 <img class="background-img" :src="friendsStore.friendInfo.background" alt="" />
             </div>
         </div>
@@ -48,26 +45,29 @@
         <div class="right-card">
             <!--            共同好友列表-->
             <div class="userTagNoNickname">
-                <span class="commentServer-num">{{ commonServiceCount.commonServer.length }}个共同的服务器</span>
-                <i class="fa-solid fa-chevron-right"></i>
-                <!--                <i class="fa-solid fa-chevron-down"></i>-->
-                <div class="commentServer">
-                    <div class="commentServerItem">
-                        <div
-                            class="commentServerItemImg"
-                            v-for="item in commonServiceCount.commonServer"
-                            :key="item.id"
-                        >
-                            <img :src="item.icon" alt="Null" />
-                            <span>{{ item.name }}</span>
+                <div v-if="commonServiceCount.commonServer.length">
+                    <span class="commentServer-num">{{ commonServiceCount.commonServer.length }}个共同的服务器</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <!--                <i class="fa-solid fa-chevron-down"></i>-->
+                    <div class="commentServer">
+                        <div class="commentServerItem">
+                            <div
+                                class="commentServerItemImg"
+                                v-for="item in commonServiceCount.commonServer"
+                                :key="item.id"
+                            >
+                                <img :src="item.icon" alt="Null" />
+                                <span>{{ item.name }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <span v-else>暂无共同服务器</span>
             </div>
             <div class="line"></div>
             <div class="userTagNoNickname">
                 <!--                共同好友-->
-                <div class="commentFriend">
+                <div class="commentFriend" v-if="commonServiceCount.commonFriend.length">
                     <span class="commentServer-num">{{ commonServiceCount.commonFriend.length }}个共同的好友</span>
                     <i class="fa-solid fa-chevron-right"></i>
                     <div class="commentFriendItem">
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <!--                <span>暂无共同好友</span>-->
+                <span v-else>暂无共同好友</span>
             </div>
         </div>
     </div>
@@ -316,6 +316,11 @@ watch(
     }
 
     .userTagNoNickname {
+        span {
+            font-size: 16px;
+            color: #dbdee1;
+        }
+
         &:last-child {
             font-size: 14px;
         }
@@ -406,7 +411,7 @@ watch(
 
 //分界线样式
 .line {
-    margin-top: 12px;
+    margin: 10px 0;
     height: 1px;
     position: sticky;
     top: 0;
