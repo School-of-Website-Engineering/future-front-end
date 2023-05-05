@@ -3,7 +3,9 @@
         <div class="panelBanner bannerPremium" style="background-color: #1f2123">
             <div class="head-box" style="display: flex">
                 <el-image class="headstyle" :src="friendsStore.friendInfo.avatar" />
-                <FriendsStatus :status="friendsStore.friendInfo.status" class="status-"></FriendsStatus>
+                <el-tooltip effect="dark" :content="friendStatus" placement="top" style="margin-left: 10px">
+                    <FriendsStatus :status="friendsStore.friendInfo.status" class="status-"></FriendsStatus>
+                </el-tooltip>
                 <img class="background-img" :src="friendsStore.friendInfo.background" alt="" />
             </div>
         </div>
