@@ -299,10 +299,10 @@ watch(
             margin-bottom: 120px !important;
         }
     }
-
     .main-box-right-main2-main1,
     .main-box-right-main2-main2 {
         &.main-box-right-main2-main1 {
+            border-right: 1.5px solid #3f4147;
             background-color: #313338;
         }
 
