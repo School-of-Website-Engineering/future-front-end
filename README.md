@@ -83,6 +83,13 @@ Progressive-Tune 遵循 [Contributor Covenant](http://contributor-covenant.org/v
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/LingASDJ">
+            <img src="https://avatars.githubusercontent.com/u/70191651?v=4" width="100;" alt="LingASDJ"/>
+            <br />
+            <sub><b>JDSA Ling</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/liusxs">
             <img src="https://avatars.githubusercontent.com/u/101164913?v=4" width="100;" alt="liusxs"/>
             <br />

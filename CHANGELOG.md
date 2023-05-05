@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.4.9](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.8...v1.4.9) (2023-05-05)
+
+### update
+
+-   修复细节、添加加载动画 ([785974e](https://github.com/School-of-Website-Engineering/future-front-end/commit/785974e2b2aba449e2b830d13207443db29c13ad))
+
+### Docs
+
+-   **contributor:** contrib-readme-action has updated readme ([8cbcdfb](https://github.com/School-of-Website-Engineering/future-front-end/commit/8cbcdfbc767a1914792ab450ec9908defe9c22f1))
+
 ## [1.4.8](https://github.com/School-of-Website-Engineering/future-front-end/compare/v1.4.7...v1.4.8) (2023-05-02)
 
 ### Styling
