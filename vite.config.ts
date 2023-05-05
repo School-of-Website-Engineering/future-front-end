@@ -106,7 +106,7 @@ function defineConfig({ command, mode }: BaseConfigOptions) {
                 debounce : 150,
                 src      : 'http://39.105.229.249/ftp/ling/future/loadingx.gif',
                 devEnable: true,
-                tipText  : 'Future Chat',
+                tipText  : 'Future Chatter,未来聊天,Is Time Now……',
                 css      : `
                     .loading-container,.svg-loading{
                         background-color: #333333 !important;
