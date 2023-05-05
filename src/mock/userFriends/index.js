@@ -375,7 +375,8 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : '',
+                                background:
+                                    'https://img.mp.itc.cn/upload/20160929/e0ad6e7fb6714b0eb2f6b60598f124b9_th.jpg',
                                 discriminator: '1145',
                                 //个人标签
                                 tags         : [
@@ -412,7 +413,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : '',
+                                background   : 'https://images.chinatimes.com/newsphoto/2016-07-19/656/20160719006500.jpg',
                                 discriminator: '6531',
                                 //个人标签
                                 tags         : [
@@ -423,6 +424,10 @@ export default [
                                     {
                                         tag : 'Java高级开发-[已认证]',
                                         link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
                                     }
                                 ]
                             }
@@ -459,6 +464,10 @@ export default [
                                     {
                                         tag : 'Future-合作开发者',
                                         link: 'https://cdn.discordapp.com/badge-icons/6df5892e0f35b051f8b61eace34f4967.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
                                     }
                                 ]
                             }
@@ -484,7 +493,8 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : '',
+                                background:
+                                    'https://steamuserimages-a.akamaihd.net/ugc/854982622967037616/BD9B30C53B4FCC29CBA1C51924BE65D562E545DE/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false',
                                 discriminator: '7321',
                                 //个人标签
                                 tags         : [
@@ -570,10 +580,20 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : '',
+                                background:
+                                    'https://cdn.sputniknews.cn/img/102766/34/1027663447_0:257:2731:1793_1920x0_80_0_0_e115217d774edd7ab0314c48ba40b63a.jpg',
                                 discriminator: '9250',
                                 //个人标签
-                                tags         : []
+                                tags         : [
+                                    {
+                                        tag : 'Future-勇气',
+                                        link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                    }
+                                ]
                             }
                         }
                     };
@@ -597,7 +617,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : '',
+                                background   : 'https://media.tenor.com/cDj7LwvQ70IAAAAd/elaina.gif',
                                 discriminator: '8312',
                                 //个人标签
                                 tags         : [
