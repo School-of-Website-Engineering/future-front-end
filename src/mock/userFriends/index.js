@@ -224,7 +224,7 @@ export default [
                                 {
                                     id   : '437456121056741327',
                                     name : "Sid Meier's Civilization VI",
-                                    icon : 'http://39.105.229.249/ftp/ling/future/server/vi.png',
+                                    icon : 'http://39.105.229.249/ftp/ling/future/server/svi.png',
                                     //     标签id
                                     tagId: '1152'
                                 }

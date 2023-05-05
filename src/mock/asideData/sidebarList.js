@@ -19,7 +19,7 @@ export default [
                         //     消息数量
                         count: 0,
                         //     图标
-                        img  : 'https://cdn.discordapp.com/icons/330141901279985665/14c13550d95d23ad7d3ab772dfbba89d.webp?size=160'
+                        img  : 'http://39.105.229.249/ftp/ling/future/server/rusted.webp'
                     },
                     {
                         id   : '437456121056741324',

@@ -24,6 +24,16 @@ export default [
                         },
                         {
                             // 用户id
+                            id    : '345623411435767899',
+                            // 用户名
+                            name  : 'Ye Ldzy>>',
+                            // 用户头像
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
+                            // 用户状态
+                            status: 'online'
+                        },
+                        {
+                            // 用户id
                             id    : '345623411435767900',
                             // 用户名
                             name  : '[ECM]HamSter',

@@ -13,13 +13,13 @@ export default [
                 {
                     id          : '345623411435767852',
                     name        : '484 Phking',
-                    avatar      : 'https://cdn.discordapp.com/avatars/307917208460460033/a_8e5acc68e72c83cba21286a27c4bbfa0.webp?size=128',
+                    avatar      : 'http://39.105.229.249/ftp/ling/future/user/484.webp',
                     isInitiative: false
                 },
                 {
                     id          : '345623411435767855',
                     name        : 'Just an assassin enjoyer',
-                    avatar      : 'https://cdn.discordapp.com/avatars/714393480645967985/ebe1b411f87e82ae43822d1b157d8a2c.webp?size=128',
+                    avatar      : 'http://39.105.229.249/ftp/ling/future/user/blx.webp',
                     isInitiative: true
                 }
             ];

@@ -14,27 +14,22 @@ export default {
                     {
                         id    : '345623411435767858',
                         name  : 'Verify',
-                        avatar: 'https://cdn.discordapp.com/avatars/548410451818708993/7e6dc28f38ae71f76c6dcdd879ddbe29.webp?size=128'
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/dx.webp'
                     },
                     {
                         id    : '345623411435767856',
                         name  : 'RankBot',
-                        avatar: 'https://cdn.discordapp.com/avatars/384768829684711434/01e0e6fd58445abb947b02f4d6118ed7.webp?size=48'
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/ed.webp'
                     },
                     {
                         id    : '345623411435767898',
                         name  : 'Uchufox GD',
-                        avatar: 'https://cdn.discordapp.com/avatars/748558833143644211/cbbdfa6dfe322437ab5239b0baab826b.webp?size=48'
-                    },
-                    {
-                        id    : '345623411435767899',
-                        name  : 'Zepparian',
-                        avatar: 'https://cdn.discordapp.com/icons/541484311354933258/cfc562be431184efc63ce67daf2fe646.webp?size=160'
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/fox.webp'
                     },
                     {
                         id    : '345623411435767900',
                         name  : 'Stoikk',
-                        avatar: 'https://cdn.discordapp.com/avatars/900411299010334780/dbc93759a66504edf078ec273c6b074a.webp?size=48'
+                        avatar: 'http://39.105.229.249/ftp/ling/future/user/ok.webp'
                     }
                 ]
             }

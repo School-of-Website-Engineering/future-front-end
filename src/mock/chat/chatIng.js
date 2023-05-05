@@ -150,19 +150,6 @@ export default {
                     }
                 };
             },
-            '345623411435767902': () => {
-                return {
-                    code   : 200,
-                    message: 'success',
-                    data   : {
-                        avatar : 'https://cdn.discordapp.com/guilds/296399356196552705/users/895571799956410388/avatars/b22dedba1dac0fbcb9fc274e62238b08.webp?size=128',
-                        id     : '345623411435767902',
-                        message: data,
-                        name   : 'Wand Of Haha 2.0',
-                        time   : new Date().getTime().toLocaleString()
-                    }
-                };
-            },
             '3456234114357679023': () => {
                 return {
                     code   : 200,
@@ -250,19 +237,6 @@ export default {
                         id     : '3456234114357679082',
                         message: data,
                         name   : 'Ms.Timesiana',
-                        time   : new Date().getTime().toLocaleString()
-                    }
-                };
-            },
-            '345623411435767855': () => {
-                return {
-                    code   : 200,
-                    message: 'success',
-                    data   : {
-                        avatar : 'https://cdn.discordapp.com/avatars/951779489984151622/11a40f8c62e5c0ec02e2dc49e6289642.webp?size=100',
-                        id     : '345623411435767855',
-                        message: data,
-                        name   : 'Mizuki',
                         time   : new Date().getTime().toLocaleString()
                     }
                 };
