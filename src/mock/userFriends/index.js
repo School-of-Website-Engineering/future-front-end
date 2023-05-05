@@ -453,7 +453,7 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : '',
+                                background   : 'https://img.soogif.com/zz5o9U8NVHjJ8sw8kdPawzqG2OvIV25L.gif',
                                 discriminator: '6531',
                                 //个人标签
                                 tags         : [
@@ -617,7 +617,8 @@ export default [
                                     '-' +
                                     Math.floor(Math.random() * 30),
                                 // 背景
-                                background   : 'https://media.tenor.com/cDj7LwvQ70IAAAAd/elaina.gif',
+                                background:
+                                    'https://i.pinimg.com/originals/c1/93/04/c193049e8bd34b6b11f3b704ea390cc4.gif',
                                 discriminator: '8312',
                                 //个人标签
                                 tags         : [

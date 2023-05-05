@@ -154,7 +154,8 @@ watch(
 <style lang="scss" scoped>
 .background-img {
     //    填满上一级
-    width: 334px;
+    width: 100%;
+    height: 17%;
     object-fit: cover;
     position: absolute;
     top: 0;
