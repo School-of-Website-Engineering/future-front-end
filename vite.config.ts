@@ -12,6 +12,7 @@ import { viteMockServe } from 'vite-plugin-mock';
 import { VitePWA } from 'vite-plugin-pwa';
 import preload from 'vite-plugin-preload';
 import { terser } from 'rollup-plugin-terser';
+import { spaLoading } from 'vite-plugin-spa-loading';
 
 // 接口定义
 interface BaseConfigOptions {
@@ -100,7 +101,18 @@ function defineConfig({ command, mode }: BaseConfigOptions) {
                     ]
                 }
             }),
-            preload()
+            preload(),
+            spaLoading('svg', {
+                debounce : 150,
+                path     : './src/assets/loading.svg',
+                devEnable: true,
+                tipText  : '系统不应该是冷冰冰的，应该给用户带来乐趣和温...',
+                css      : `
+                    .loading-container,.svg-loading{
+                        background-color: #2B2D31 !important;
+                        color: #fff !important;
+                    }`
+            })
         ],
         base: env.VITE_PUBLIC_PATH,
         css : {
