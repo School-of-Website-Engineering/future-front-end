@@ -1,9 +1,8 @@
 <template>
     <el-main class="main-box-right-main2-main1">
         <!--聊天记录列表：头像、名称、日期、内容-->
-        <div class="chat-record-list">
+        <div class="chat-record-list" ref="chatRecordList">
             <ChatHead :chatRecord="chatRecord" />
-
             <div
                 class="chat-record-list-item"
                 v-for="item in messageRecord"
@@ -13,13 +12,13 @@
             >
                 <div class="chat-record-list-item-left">
                     <el-image
-                        :src="item.messageFrom === 'me' ? chatRecord.avatar : userLoginRegisterStore.getUserAvatar"
+                        :src="item.messageFrom === 'self' ? chatRecord.avatar : userLoginRegisterStore.getUserAvatar"
                     />
                 </div>
                 <div class="chat-record-list-item-right">
                     <div class="chat-record-list-item-right-top">
                         <div class="chat-record-list-item-right-top-left">
-                            <span>{{ chatRecord.name }}</span>
+                            <span>{{ item.name || chatRecord.name }}</span>
                             <span>{{ item.time }}</span>
                         </div>
                     </div>
@@ -38,9 +37,18 @@
                 </div>
             </div>
         </div>
+        <div class="chat-record-list-none" v-if="!messageRecord.length">
+            <el-image src="https://img.icons8.com/ios/452/nothing-found.png" />
+            <span>暂无聊天记录,快来和好友聊天吧</span>
+        </div>
         <!--发送消息框-->
         <div class="chat-search-box">
-            <input :placeholder="`消息@${chatRecord.name}`" v-model="searchValue" @clear="searchValue = ''" />
+            <input
+                :placeholder="`消息@${chatRecord.name}`"
+                v-model="searchValue"
+                @clear="searchValue = ''"
+                @keydown.enter="search"
+            />
             <el-button type="primary" @click="search"
                 >发送
                 <el-icon>
@@ -60,7 +68,9 @@ import ChatService, { IChatRecordMessageResponse, IChatRecordResponse } from '@/
 import { asyncTryCatch } from '@/utils/exceptionHandling';
 import { useUserLoginRegisterStore } from '@/store';
 import ChatHead from '@/views/Chat/components/common/ChatHead.vue';
+// 实现chatRecordList往下滚动的拽动效果，到底部时，可以滚动200px，越往下，滚动越慢
 
+// 新内容
 const searchValue = ref<string>('');
 // 聊天记录,空对象
 const chatRecord = reactive<IChatRecordResponse>({
@@ -108,14 +118,62 @@ const Themouseout = (item: IChatRecordMessageResponse) => {
     console.log('鼠标移出');
     mouseover.value = false;
 };
-
+const asyncBottom = () => {
+    // 将滚动条滚动到最底部,异步
+    setTimeout(() => {
+        const chatRecordList = document.querySelector('.chat-record-list');
+        chatRecordList?.scrollTo(0, chatRecordList.scrollHeight);
+    }, 0);
+};
 // 请求用户信息
 onMounted(() => {
     userLoginRegisterStore.getUserInfo();
 });
+// 生成随机数
+const randomNum = Math.floor(Math.random() * 100000000000);
 const search = () => {
     console.log(searchValue.value);
+    console.log(messageRecord);
+    // 将当前的消息添加到聊天记录中
+    messageRecord.push({
+        content    : searchValue.value,
+        messageType: 'text',
+        messageFrom: 'me',
+        messageId  : randomNum.toString(),
+        time       : new Date().toLocaleString(),
+        name       : 'JDSA Ling'
+    });
+
+    // 将滚动条滚动到最底部
+    asyncBottom();
+    console.log(messageRecord);
+    // 调用发送消息接口
+    newChat(router.currentRoute.value.params.id, searchValue.value);
+    console.log(router.currentRoute.value.params.id);
+    //     清空
+    searchValue.value = '';
 };
+// 获取新聊天消息
+const newChat = asyncTryCatch(async(id: string, content: string) => {
+    // 如果没有id或者content，就不请求
+    if (!id || !content) return;
+    const { data } = (await ChatService.getChatSend({ id, content })) as unknown as {
+        data: IChatRecordResponse;
+    };
+    console.log(data);
+    //将新的消息添加到聊天记录中，随机延迟0.5s~2.5s
+    setTimeout(() => {
+        // chatRecord重新赋值
+        chatRecord.avatar = data.avatar;
+        chatRecord.id = data.id;
+        chatRecord.name = data.name;
+        chatRecord.time = data.time;
+        messageRecord.push({ ...data.message } as unknown as IChatRecordMessageResponse);
+        // 将滚动条滚动到最底部
+        asyncBottom();
+    }, Math.random() * 2000 + 500);
+    console.log(messageRecord);
+});
 
 // 获取聊天记录
 const chatList = asyncTryCatch(async(id: string) => {
@@ -149,6 +207,35 @@ watch(
 
 <style lang="scss" scoped>
 .main-box-right-main2-main1 {
+    padding-right: unset;
+}
+
+.chat-record-list-none {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    color: #6d6f78;
+    font-size: 14px;
+    font-weight: 500;
+    //定位居中
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    span {
+        margin-top: 10px;
+    }
+}
+
+.main-box-right-main2-main1 {
     &.main-box-right-main2-main1 {
         background-color: #313338;
         border-right: 1.5px solid #3f4147;
@@ -165,6 +252,7 @@ watch(
     background-color: #3f4147;
     border-bottom: 1.5px solid #3f4147;
     border-radius: 5px;
+    width: 95%;
 
     input {
         width: 80%;
@@ -222,6 +310,11 @@ watch(
         align-items: flex-start;
         padding: 10px 10px;
         border-top: 1.5px solid #3f4147;
+
+        &:last-child {
+            margin-bottom: 50px;
+        }
+
         //hover样式背景色为2E3035
         &:hover {
             background-color: #2e3035;

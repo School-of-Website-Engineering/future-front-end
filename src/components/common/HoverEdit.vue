@@ -11,7 +11,7 @@
             <slot></slot>
             <el-tooltip effect="dark" content="编辑" placement="top" :hide-after="0" :open-delay="50">
                 <el-container class="hover-edit-wrapper-content-edit">
-                    <el-icon @click="edit" v-if="props.display && props.mouseenter && props.item?.isShow"
+                    <el-icon @click="edit" v-if="!props.display && !props.mouseenter && props.item?.isShow"
                         ><i class="fa-solid fa-pencil"></i>
                     </el-icon>
                 </el-container>
@@ -19,10 +19,16 @@
             <p class="is-edit" v-if="props.item?.isEdit">(已编辑)</p>
         </div>
         <div class="input-container" v-if="showInput">
-            <textarea class="edit-input" type="text" v-model="inputValue" />
+            <textarea
+                class="edit-input"
+                type="text"
+                v-model="inputValue"
+                @keydown.enter="save"
+                @keydown.esc.stop="showInput = false"
+            />
             <div class="keyboard-tips">
-                <span class="edit-input-key" @keydown.esc.stop="showInput = false" @click="showInput = false">取消</span
-                ><span class="edit-input-key" @keydown.enter="save" @click="save">保存</span>
+                <span>ESC键</span><span class="edit-input-key" @click="showInput = false">取消</span
+                ><span> &nbsp;•&nbsp; </span><span>回车键</span><span class="edit-input-key" @click="save">保存</span>
             </div>
         </div>
     </div>
@@ -91,12 +97,13 @@ const save = () => {
 
         .keyboard-tips {
             font-size: 12px;
-            color: #999;
-            margin-right: 15px;
-
+            width: 145px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            color: #dbdee1;
             .edit-input-key {
                 color: #409eff;
-                margin: 0 5px;
                 cursor: pointer;
 
                 &:hover {
@@ -123,6 +130,7 @@ const save = () => {
         overflow: auto;
         white-space: pre-wrap;
         margin-bottom: 15px;
+        color: #d1d3d7;
         //    滚动条
         &::-webkit-scrollbar {
             width: 5px;

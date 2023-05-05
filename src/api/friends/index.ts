@@ -95,16 +95,22 @@ export interface IUserInfoResponse {
  * 通过好友id查询好友信息响应结果接口定义
  */
 export interface IUserInfoByFriendIdResponse {
-    friendInfo: {
-        username: string;
-        introduction: string;
-        avatar: string;
-        registerTime: string;
-        background: string;
-        tags: {
-            tag: string;
-        }[];
-    };
+    friendInfo: IUserInfoByFriendsIdResponse;
+}
+
+export interface IUserInfoByFriendsIdResponse {
+    username: string;
+    introduction: string;
+    avatar: string;
+    registerTime: string;
+    background: string;
+    remark: string;
+    status: string;
+    discriminator: string;
+    tags: {
+        tag: string;
+        link: string;
+    }[];
 }
 
 // 用户好友 API 接口定义

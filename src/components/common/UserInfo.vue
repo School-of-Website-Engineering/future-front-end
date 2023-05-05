@@ -1,11 +1,8 @@
 <template>
     <el-col :span="12" class="bottom-profile-avatar">
-        <el-avatar
-            src="https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48"
-            class="bottom-profile-avatar-img"
-        />
+        <el-avatar src="http://39.105.229.249/ftp/ling/future/user/ling.webp" class="bottom-profile-avatar-img" />
         <span>
-            <p>鸡你太美</p>
+            <p>JDSA Ling</p>
             <p>#1237</p>
         </span>
     </el-col>
@@ -68,9 +65,6 @@ defineComponent({
                     &:first-child {
                         overflow: hidden;
                         text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 1;
-                        -webkit-box-orient: vertical;
                         color: #f2f3f5;
                         font-weight: bold;
                     }

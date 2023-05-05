@@ -99,7 +99,7 @@ const props = defineProps({
     },
     iconRight: {
         type   : String,
-        default: ''
+        default: 'fa-solid fa-user-xmark'
     }
 });
 

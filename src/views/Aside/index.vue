@@ -18,11 +18,7 @@
                     placement="right"
                     :enterable="false"
                 >
-                    <img
-                        class="channel-img"
-                        src="https://cdn.discordapp.com/icons/464395429392678912/401026c51da58472a16c650ee263701d.webp?size=160"
-                        alt=""
-                    />
+                    <img class="channel-img" src="http://39.105.229.249/ftp/ling/future/server/head.webp" alt="" />
                 </el-tooltip>
                 <el-badge
                     :max="99"
@@ -47,6 +43,7 @@
                     <span>{{ item.name }}</span>
                 </template>
             </el-menu-item>
+            <!--            创建组-->
             <el-tooltip
                 :hide-after="50"
                 class="box-item"
@@ -55,12 +52,13 @@
                 placement="right"
                 :enterable="false"
             >
-                <el-menu-item index="1" class="add-icon">
+                <el-menu-item class="add-icon">
                     <el-icon>
                         <Plus class="icon" />
                     </el-icon>
                 </el-menu-item>
             </el-tooltip>
+            <!--            探索-->
             <el-tooltip
                 :hide-after="50"
                 class="box-item"
@@ -69,7 +67,7 @@
                 placement="right"
                 :enterable="false"
             >
-                <el-menu-item index="2" class="add-icon">
+                <el-menu-item class="add-icon">
                     <el-icon>
                         <Compass class="icon" />
                     </el-icon>
@@ -78,6 +76,7 @@
             <div class="listItem-3SmSlK">
                 <div class="guildSeparator-a4uisj"></div>
             </div>
+            <!--            下载app-->
             <el-tooltip
                 :hide-after="50"
                 class="box-item"
@@ -86,7 +85,7 @@
                 placement="right"
                 :enterable="false"
             >
-                <el-menu-item index="3" class="add-icon">
+                <el-menu-item class="add-icon">
                     <el-icon>
                         <Download class="icon" />
                     </el-icon>

@@ -16,7 +16,7 @@ export default {
                     createdAt    : '2020-05-01T08:00:00.000Z',
                     updatedAt    : '2020-05-01T08:00:00.000Z',
                     role         : 'user',
-                    img          : 'https://cdn.discordapp.com/avatars/107490111414882304/63e409984bde44efca2ba1889b863ed6.webp?size=128'
+                    img          : 'http://39.105.229.249/ftp/ling/future/server/head.webp'
                 }
             }
         };

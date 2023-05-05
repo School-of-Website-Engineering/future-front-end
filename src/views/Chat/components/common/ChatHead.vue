@@ -17,7 +17,7 @@
                 </div>
                 <div class="info">
                     <span></span>
-                    <span v-if="!commonServiceCount.commonServer.length">没有共同的服务器</span>
+                    <span v-if="commonServiceCount.commonServer.length === 0">没有共同的服务器</span>
                     <span v-else>
                         {{ commonServiceCount.commonServer.length }}
                         个共同的服务器
@@ -41,16 +41,18 @@ import { asyncTryCatch } from '@/utils/exceptionHandling';
 const commonServiceCount = reactive<ICommonServerCountResponse>({
     commonServer: [
         {
-            id  : '',
-            name: '',
-            icon: ''
+            id   : '',
+            name : '',
+            icon : '',
+            tagId: ''
         }
     ],
     commonFriend: [
         {
             id    : '',
             name  : '',
-            avatar: ''
+            avatar: '',
+            tagId : ''
         }
     ]
 });
@@ -100,7 +102,7 @@ const shield = () => {
 
 <style lang="scss" scoped>
 .chat-head {
-    width: 51vw;
+    width: 100%;
     overflow: hidden;
     height: 160px;
     background-color: #313338;
@@ -108,7 +110,8 @@ const shield = () => {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    padding: 0;
+    padding: 0 0 20px;
+    border-bottom: 1px solid #4e5058;
 
     .chat-head-left {
         display: flex;

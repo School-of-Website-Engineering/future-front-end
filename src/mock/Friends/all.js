@@ -13,24 +13,12 @@ export default [
                 data   : {
                     friends: [
                         {
-                            id    : '345623411435767855',
-                            name  : 'Just an assassin enjoyer',
-                            avatar: 'https://cdn.discordapp.com/avatars/905665362400518224/21c6153c25cdbe4fc7499f558fe9dff8.webp?size=48',
-                            status: 'offline'
-                        },
-                        {
-                            id    : '345623411435767856',
-                            name  : '@lighthouse64',
-                            avatar: 'https://cdn.discordapp.com/avatars/217322331385757697/14dad810261ecdbcdcc8f78f6818c7f4.webp?size=128',
-                            status: 'online'
-                        },
-                        {
                             // 用户id
                             id    : '345623411435767898',
                             // 用户名
                             name  : 'liuliu',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
                             // 用户状态
                             status: 'online'
                         },
@@ -40,9 +28,9 @@ export default [
                             // 用户名
                             name  : 'Ye Ldzy>>',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/891419145592266812/c8578ca93da963aa9edfdae6111a1a23.webp?size=128',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
                             // 用户状态
-                            status: 'idle'
+                            status: 'online'
                         },
                         {
                             // 用户id
@@ -50,7 +38,7 @@ export default [
                             // 用户名
                             name  : '[ECM]HamSter',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=48',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
                             // 用户状态
                             status: 'offline'
                         },
@@ -58,29 +46,19 @@ export default [
                             // 用户id
                             id    : '345623411435767901',
                             // 用户名
-                            name  : 'JDSA Ling',
+                            name  : 'Catand',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/615354796781862913/11ec6f364a0e4b6ceef007fe18c382b3.webp?size=48',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
                             // 用户状态
                             status: 'busy'
                         },
                         {
                             // 用户id
-                            id    : '345623411435767902',
+                            id    : '345623411435767907',
                             // 用户名
-                            name  : 'Mason',
+                            name  : 'Cold Mint',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/905665362400518224/21c6153c25cdbe4fc7499f558fe9dff8.webp?size=48',
-                            // 用户状态
-                            status: 'busy'
-                        },
-                        {
-                            // 用户id
-                            id    : '345623411435767903',
-                            // 用户名
-                            name  : 'duelists samwise gamgee',
-                            // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/625933842263572490/5d2595d9e7b7b48bef909e90242cee89.webp?size=128',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
                             // 用户状态
                             status: 'busy'
                         },
@@ -90,37 +68,27 @@ export default [
                             // 用户名
                             name  : 'Humfrey',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/598588658177671188/df122ff3d7dfa25674aed205a043684f.webp?size=128',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/humry.webp',
                             // 用户状态
                             status: 'offline'
-                        },
-                        {
-                            // 用户id
-                            id    : '345623411435767907',
-                            // 用户名
-                            name  : 'KLjaksdjf',
-                            // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/958631735489359882/de9b28a508261d4e547d0a38e2d1ba72.webp?size=128',
-                            // 用户状态
-                            status: 'busy'
                         },
                         {
                             // 用户id
                             id    : '3456234161435767908',
                             // 用户名
-                            name  : 'Wand of hahaa 2.0',
+                            name  : 'NaRiver',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/guilds/296399356196552705/users/895571799956410388/avatars/b22dedba1dac0fbcb9fc274e62238b08.webp?size=128',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/nr.webp',
                             // 用户状态
-                            status: 'offline'
+                            status: 'idle'
                         },
                         {
                             // 用户id
                             id    : '3456234114357677908',
                             // 用户名
-                            name  : 'All Badges% Speedrunner',
+                            name  : 'Deep Water',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/482216415147982848/c2b04dce7319282ff2cdc6275e13d52a.webp?size=128',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
                             // 用户状态
                             status: 'busy'
                         },
@@ -128,9 +96,9 @@ export default [
                             // 用户id
                             id    : '3456234114357679088',
                             // 用户名
-                            name  : '484 Baahlkia',
+                            name  : 'EElainaya',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/390649893661966351/0da35f7486e4d7cb86b28454978c8376.webp?size=128',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/eely.webp',
                             // 用户状态
                             status: 'busy'
                         },
@@ -138,9 +106,9 @@ export default [
                             // 用户id
                             id    : '3456234114357679087',
                             // 用户名
-                            name  : 'Wand of hahaa 2.0',
+                            name  : 'Mr.Smith',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/guilds/296399356196552705/users/895571799956410388/avatars/b22dedba1dac0fbcb9fc274e62238b08.webp?size=128',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/mrs.webp',
                             // 用户状态
                             status: 'busy'
                         },
@@ -148,11 +116,11 @@ export default [
                             // 用户id
                             id    : '3456234114357679082',
                             // 用户名
-                            name  : 'Trashbox Bobylev',
+                            name  : 'Ms.Timesiana',
                             // 用户头像
-                            avatar: 'https://cdn.discordapp.com/avatars/337268327896317962/59f764a760a1c96850f26e630f74aa42.webp?size=128',
+                            avatar: 'http://39.105.229.249/ftp/ling/future/user/msx.webp',
                             // 用户状态
-                            status: 'busy'
+                            status: 'online'
                         }
                     ]
                 }

@@ -16,7 +16,7 @@ export default [
                     email       : '123@gmail.com',
                     createdAt   : '2020-12-12',
                     updatedAt   : '2020-12-12',
-                    avatar      : 'https://cdn.discordapp.com/avatars/615354796781862913/11ec6f364a0e4b6ceef007fe18c382b3.webp?size=240',
+                    avatar      : 'http://39.105.229.249/ftp/ling/future/user/ling.webp',
                     introduction: 'test',
                     role        : 'admin',
                     status      : 'online'
@@ -38,9 +38,10 @@ export default [
                         data   : {
                             commonServer: [
                                 {
-                                    id  : '437456121056741327',
-                                    name: 'gpt',
-                                    icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                                    id   : '437456121056741327',
+                                    name : 'Open AI Server',
+                                    icon : 'http://39.105.229.249/ftp/ling/future/server/gpt.webp',
+                                    tagId: '1152'
                                 }
                             ],
                             commonFriend: [
@@ -48,12 +49,14 @@ export default [
                                     id    : '345623411435767900',
                                     name  : '[ECM]HamSter',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
+                                    tagId : '1145'
                                 },
                                 {
                                     id    : '760729927552729119',
                                     name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
+                                    tagId : '4546'
                                 }
                             ]
                         }
@@ -66,13 +69,13 @@ export default [
                             commonServer: [
                                 {
                                     id  : '437456121056741327',
-                                    name: 'gpt',
-                                    icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                                    name: 'Open AI Server',
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/gpt.webp'
                                 },
                                 {
                                     id  : '437456121056741329',
-                                    name: '只因',
-                                    icon: 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
+                                    name: 'Red2-Dot Game',
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/l2.webp'
                                 }
                             ],
                             commonFriend: [
@@ -80,12 +83,14 @@ export default [
                                     id    : '345623411435767900',
                                     name  : '[ECM]HamSter',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
+                                    tagId : '1145'
                                 },
                                 {
                                     id    : '760729927552729119',
                                     name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
+                                    tagId : '4546'
                                 }
                             ]
                         }
@@ -98,31 +103,27 @@ export default [
                             commonServer: [
                                 {
                                     id  : '437456121056741327',
-                                    name: 'gpt',
-                                    icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                                    name: 'Open AI Server',
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/gpt.webp'
                                 },
                                 {
                                     id  : '437456121056741329',
-                                    name: '只因',
-                                    icon: 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
+                                    name: 'Red Dot-Game',
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/l2.webp'
                                 },
                                 {
                                     id  : '437456121056741326',
-                                    name: 'rw',
-                                    icon: 'https://cdn.discordapp.com/icons/721156457630007316/4428a5c5f5d740b0280415fa2f16d247.webp?size=160'
+                                    name: 'RwMod-StarRiver',
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/star.webp'
                                 }
                             ],
                             commonFriend: [
                                 {
-                                    id    : '345623411435767900',
-                                    name  : '[ECM]HamSter',
+                                    id    : '345623411435767901',
+                                    name  : 'Catand',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
-                                },
-                                {
-                                    id    : '760729927552729119',
-                                    name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
+                                    tagId : '6531'
                                 }
                             ]
                         }
@@ -135,36 +136,44 @@ export default [
                             commonServer: [
                                 {
                                     id  : '437456121056741327',
-                                    name: 'gpt',
-                                    icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                                    name: 'Open AI Server',
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/gpt.webp'
                                 },
                                 {
                                     id  : '437456121056741329',
-                                    name: '只因',
-                                    icon: 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
+                                    name: 'Red Dot-Game',
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/l2.webp'
                                 },
                                 {
                                     id  : '437456121056741326',
-                                    name: 'rw',
-                                    icon: 'https://cdn.discordapp.com/icons/721156457630007316/4428a5c5f5d740b0280415fa2f16d247.webp?size=160'
+                                    name: 'RwMod-StarRiver',
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/star.webp'
                                 },
                                 {
                                     id  : '437456121056741328',
-                                    name: 'cube',
-                                    icon: 'https://cdn.discordapp.com/avatars/744562248101396611/da75138093c6594eee95135c955cb972.webp?size=128'
+                                    name: 'Cube',
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/cube.webp'
                                 }
                             ],
                             commonFriend: [
                                 {
                                     id    : '345623411435767900',
                                     name  : '[ECM]HamSter',
+                                    tagId : '1145',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp'
                                 },
                                 {
-                                    id    : '760729927552729119',
-                                    name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    id    : '3456234161435767908',
+                                    name  : 'NaRiver',
+                                    tagId : '8731',
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/nr.webp'
+                                },
+                                {
+                                    id    : '3456234114357679088',
+                                    name  : 'EElainaya',
+                                    tagId : '8312',
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/eely.webp'
                                 }
                             ]
                         }
@@ -176,27 +185,63 @@ export default [
                         data   : {
                             commonServer: [
                                 {
-                                    id  : '437456121056741327',
-                                    name: 'gpt',
-                                    icon: 'https://cdn.discordapp.com/icons/974519864045756446/d7ec4ed5884437bae0333aa345a97160.webp?size=160'
+                                    id   : '437456121056741327',
+                                    name : 'Open AI Server',
+                                    icon : 'http://39.105.229.249/ftp/ling/future/server/gpt.webp',
+                                    //     标签id
+                                    tagId: '1152'
                                 },
                                 {
-                                    id  : '437456121056741329',
-                                    name: '只因',
-                                    icon: 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
+                                    id   : '437456121056741329',
+                                    name : 'Red-Dot Game',
+                                    icon : 'http://39.105.229.249/ftp/ling/future/server/l2.webp',
+                                    tagId: '1492'
                                 }
                             ],
                             commonFriend: [
                                 {
                                     id    : '345623411435767900',
                                     name  : '[ECM]HamSter',
+                                    tagId : '1145',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp'
                                 },
                                 {
                                     id    : '760729927552729119',
                                     name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    tagId : '4546',
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp'
+                                }
+                            ]
+                        }
+                    };
+                case '3456234161435767908':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            commonServer: [
+                                {
+                                    id   : '437456121056741327',
+                                    name : "Sid Meier's Civilization VI",
+                                    icon : 'http://39.105.229.249/ftp/ling/future/server/svi.png',
+                                    //     标签id
+                                    tagId: '1152'
+                                }
+                            ],
+                            commonFriend: [
+                                {
+                                    id    : '345623411435767900',
+                                    name  : '[ECM]HamSter',
+                                    tagId : '1145',
+                                    // 头像
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp'
+                                },
+                                {
+                                    id    : '345623411435767901',
+                                    name  : 'Catand',
+                                    tagId : '6531',
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/catand.webp'
                                 }
                             ]
                         }
@@ -226,35 +271,46 @@ export default [
                         message: 'success',
                         data   : {
                             friendInfo: {
-                                username: 'liuliu',
+                                username    : 'liuliu',
                                 //自我介绍
-                                introduction:
-                                    "Hello, I'm Ling. \n" +
-                                    'I mainly code in Web and Java. \n' +
-                                    'Recently.I am learning C# in Study.',
+                                introduction: '书山有路勤为径，学海无涯苦作舟。',
                                 //头像
-                                avatar: 'https://cdn.discordapp.com/avatars/615354796781862913/11ec6f364a0e4b6ceef007fe18c382b3.webp?size=128',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
-                                background:
-                                    'https://cdn.discordapp.com/banners/615354796781862913/282618b6abb252e59ec1acc0ba1dbc20.png?size=1024',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/fox.gif',
+                                // 备注
+                                remark       : '',
+                                // 状态
+                                /**
+                                 * 在线 online
+                                 * 离线 offline
+                                 * 闲置 idle
+                                 * 忙碌 dnd
+                                 */
+                                status       : 'online',
+                                discriminator: '4546',
                                 //个人标签
-                                tags: [
+                                tags         : [
                                     {
-                                        tag: '爱旅游'
+                                        tag : 'Future-飞翔',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/fly.png'
                                     },
                                     {
-                                        tag: '美食'
+                                        tag : 'Speed 徽章',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/spend.png'
                                     },
                                     {
-                                        tag: '自由职业者'
+                                        tag : '钻石测试人员',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/dimand.png'
                                     }
                                 ]
                             }
@@ -266,35 +322,415 @@ export default [
                         message: 'success',
                         data   : {
                             friendInfo: {
-                                username: '只因',
+                                username    : 'Ye Ldzy>>',
+                                status      : 'idle',
                                 //自我介绍
-                                introduction:
-                                    "Hello, I'm Ling. \n" +
-                                    'I mainly code in Web and Java. \n' +
-                                    'Recently.I am learning C# in Study.',
+                                introduction: "Hello, I'm cat",
                                 //头像
-                                avatar: 'https://cdn.discordapp.com/avatars/615354796781862913/11ec6f364a0e4b6ceef007fe18c382b3.webp?size=128',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
-                                background:
-                                    'https://cdn.discordapp.com/banners/615354796781862913/282618b6abb252e59ec1acc0ba1dbc20.png?size=1024',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/cat.png',
+                                discriminator: '2412',
                                 //个人标签
-                                tags: [
+                                tags         : [
                                     {
-                                        tag: '爱旅游'
+                                        tag : 'Future-勇气',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/good.png'
                                     },
                                     {
-                                        tag: '美食'
+                                        tag : 'Python开发-[已认证]',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '345623411435767900':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : '[ECM]HamSter',
+                                status      : 'online',
+                                //自我介绍
+                                introduction: '你好，我是仓鼠。',
+                                //头像
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 3) +
+                                    '-' +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
+                                    '-' +
+                                    (Math.floor(Math.random() * 30) + 1),
+                                // 背景
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/road.jpg',
+                                discriminator: '1145',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-勇气',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/good.png'
                                     },
                                     {
-                                        tag: '自由职业者'
+                                        tag : 'C++开发-[已认证]',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '345623411435767901':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'Catand',
+                                status      : 'dnd',
+                                //自我介绍
+                                introduction: '我是一只大老鼠，我最喜欢奶油和奶酪。',
+                                //头像
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 3) +
+                                    '-' +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
+                                    '-' +
+                                    (Math.floor(Math.random() * 30) + 1),
+                                // 背景
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/xp.jpg',
+                                discriminator: '6531',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-智慧',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/smart.png'
+                                    },
+                                    {
+                                        tag : 'Java高级开发-[已认证]',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234114357679023':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'Humfrey',
+                                status      : 'online',
+                                //自我介绍
+                                introduction: '诗与远方',
+                                //头像
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/humry.webp',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 3) +
+                                    '-' +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
+                                    '-' +
+                                    (Math.floor(Math.random() * 30) + 1),
+                                // 背景
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/gqj.gif',
+                                discriminator: '6531',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-智慧',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/smart.png'
+                                    },
+                                    {
+                                        tag : 'Future-合作开发者',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/collents.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '345623411435767907':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'Cold Mint',
+                                status      : 'online',
+                                //自我介绍
+                                introduction: '认识你很高兴。\n' + 'Nice to meet you.',
+                                //头像
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 3) +
+                                    '-' +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
+                                    '-' +
+                                    (Math.floor(Math.random() * 30) + 1),
+                                // 背景
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/bg.jpg',
+                                discriminator: '7321',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-飞翔',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/fly.png'
+                                    },
+                                    {
+                                        tag : 'Future-合作开发者',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/collents.png'
+                                    },
+                                    {
+                                        tag : 'Java高级开发-[已认证]',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234161435767908':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'NaRiver',
+                                //自我介绍
+                                introduction: '和Ling一起玩文明VI，这是计划的一部分',
+                                status      : 'idle',
+                                //头像
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/nr.webp',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 3) +
+                                    '-' +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
+                                    '-' +
+                                    (Math.floor(Math.random() * 30) + 1),
+                                // 背景
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/vi.jpg',
+                                discriminator: '8731',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-勇气',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/good.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
+                                    },
+                                    {
+                                        tag : '文明VI-捍卫者徽章(本体版全帝国胜利)',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vi.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234114357677908':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'Deep Water',
+                                status      : 'dnd',
+                                //自我介绍
+                                introduction: '',
+                                //头像
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 3) +
+                                    '-' +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
+                                    '-' +
+                                    (Math.floor(Math.random() * 30) + 1),
+                                // 背景
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/water.jpg',
+                                discriminator: '9250',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-勇气',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/good.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234114357679088':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'EElainaya',
+                                status      : 'online',
+                                //自我介绍
+                                introduction: '呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐……',
+                                //头像
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/eely.webp',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 3) +
+                                    '-' +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
+                                    '-' +
+                                    (Math.floor(Math.random() * 30) + 1),
+                                // 背景
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/eel.gif',
+                                discriminator: '8312',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-飞翔',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/fly.png'
+                                    },
+                                    {
+                                        tag : 'Future-合作开发者',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/collents.png'
+                                    },
+                                    {
+                                        tag : 'Java高级开发-[已认证]',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234114357679087':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username: 'Mr.Smith',
+                                status  : 'idle',
+                                //自我介绍
+                                introduction:
+                                    '"We could be born to anything and now, and now\n' +
+                                    'What you have done is terrible\n' +
+                                    'And now you, and now you\n' +
+                                    'Now you carry it with you"',
+                                //头像
+                                avatar: 'http://39.105.229.249/ftp/ling/future/user/mrs.webp',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 3) +
+                                    '-' +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
+                                    '-' +
+                                    (Math.floor(Math.random() * 30) + 1),
+                                // 背景
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/crosscode.png',
+                                discriminator: '3312',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-飞翔',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/fly.png'
+                                    },
+                                    {
+                                        tag : 'Java高级开发-[已认证]',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                case '3456234114357679082':
+                    return {
+                        code   : 200,
+                        message: 'success',
+                        data   : {
+                            friendInfo: {
+                                username    : 'Ms.Timesiana',
+                                status      : 'online',
+                                //自我介绍
+                                introduction: '首先要认清自己，然后才能进步。',
+                                //头像
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/msx.webp',
+                                //注册时间，返回一个随机的时间，范围在2020-2023年
+                                registerTime:
+                                    '202' +
+                                    Math.floor(Math.random() * 3) +
+                                    '-' +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
+                                    '-' +
+                                    (Math.floor(Math.random() * 30) + 1),
+                                // 背景
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/red.png',
+                                discriminator: '9285',
+                                //个人标签
+                                tags         : [
+                                    {
+                                        tag : 'Future-勇气',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/good.png'
+                                    },
+                                    {
+                                        tag : 'Java&C++全栈高级开发-[已认证]',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/allcode.png'
+                                    },
+                                    {
+                                        tag : 'Future-年度会员徽章',
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
                                     }
                                 ]
                             }
