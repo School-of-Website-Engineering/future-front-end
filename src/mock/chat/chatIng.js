@@ -215,45 +215,6 @@ export default {
                     }
                 };
             },
-            '345623411435767856': () => {
-                return {
-                    code   : 200,
-                    message: 'success',
-                    data   : {
-                        avatar : 'https://cdn.discordapp.com/avatars/1005775211590860840/d2daab62c08bd91e3d2ac55487748819.webp?size=100',
-                        id     : '345623411435767856',
-                        message: data,
-                        name   : 'KaiDe-E',
-                        time   : new Date().getTime().toLocaleString()
-                    }
-                };
-            },
-            '345623411435767903': () => {
-                return {
-                    code   : 200,
-                    message: 'success',
-                    data   : {
-                        avatar : 'https://cdn.discordapp.com/avatars/815320694229434389/edee656091571282d3feef2edfd9e1f4.webp?size=100',
-                        id     : '345623411435767903',
-                        message: data,
-                        name   : 'YoSaRi',
-                        time   : new Date().getTime().toLocaleString()
-                    }
-                };
-            },
-            '345623411435767904': () => {
-                return {
-                    code   : 200,
-                    message: 'success',
-                    data   : {
-                        avatar : 'https://cdn.discordapp.com/avatars/741484940893487175/e698fba6dd66c30abd648cb23c3f5ee7.webp?size=100',
-                        id     : '345623411435767904',
-                        message: data,
-                        name   : 'Ob-Sir',
-                        time   : new Date().getTime().toLocaleString()
-                    }
-                };
-            },
             '3456234114357679088': () => {
                 return {
                     code   : 200,

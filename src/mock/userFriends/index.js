@@ -49,7 +49,7 @@ export default [
                                     id    : '345623411435767900',
                                     name  : '[ECM]HamSter',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60',
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
                                     tagId : '1145'
                                 },
                                 {
@@ -75,7 +75,7 @@ export default [
                                 {
                                     id  : '437456121056741329',
                                     name: 'Red2-Dot Game',
-                                    icon: 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/l2.webp'
                                 }
                             ],
                             commonFriend: [
@@ -83,7 +83,7 @@ export default [
                                     id    : '345623411435767900',
                                     name  : '[ECM]HamSter',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60',
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
                                     tagId : '1145'
                                 },
                                 {
@@ -109,12 +109,12 @@ export default [
                                 {
                                     id  : '437456121056741329',
                                     name: 'Red Dot-Game',
-                                    icon: 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/l2.webp'
                                 },
                                 {
                                     id  : '437456121056741326',
                                     name: 'RwMod-StarRiver',
-                                    icon: 'https://cdn.discordapp.com/icons/721156457630007316/4428a5c5f5d740b0280415fa2f16d247.webp?size=160'
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/star.webp'
                                 }
                             ],
                             commonFriend: [
@@ -142,17 +142,17 @@ export default [
                                 {
                                     id  : '437456121056741329',
                                     name: 'Red Dot-Game',
-                                    icon: 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160'
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/l2.webp'
                                 },
                                 {
                                     id  : '437456121056741326',
                                     name: 'RwMod-StarRiver',
-                                    icon: 'https://cdn.discordapp.com/icons/721156457630007316/4428a5c5f5d740b0280415fa2f16d247.webp?size=160'
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/star.webp'
                                 },
                                 {
                                     id  : '437456121056741328',
                                     name: 'Cube',
-                                    icon: 'https://cdn.discordapp.com/avatars/744562248101396611/da75138093c6594eee95135c955cb972.webp?size=128'
+                                    icon: 'http://39.105.229.249/ftp/ling/future/server/cube.webp'
                                 }
                             ],
                             commonFriend: [
@@ -161,7 +161,7 @@ export default [
                                     name  : '[ECM]HamSter',
                                     tagId : '1145',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp'
                                 },
                                 {
                                     id    : '3456234161435767908',
@@ -194,7 +194,7 @@ export default [
                                 {
                                     id   : '437456121056741329',
                                     name : 'Red-Dot Game',
-                                    icon : 'https://cdn.discordapp.com/icons/356833056562348042/a_7908c43b1e2f91125a7404c7adcb7372.webp?size=160',
+                                    icon : 'http://39.105.229.249/ftp/ling/future/server/l2.webp',
                                     tagId: '1492'
                                 }
                             ],
@@ -204,7 +204,7 @@ export default [
                                     name  : '[ECM]HamSter',
                                     tagId : '1145',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp'
                                 },
                                 {
                                     id    : '760729927552729119',
@@ -224,7 +224,7 @@ export default [
                                 {
                                     id   : '437456121056741327',
                                     name : "Sid Meier's Civilization VI",
-                                    icon : 'https://img-macjb.mac89.com/ico/201804/19122848_d3fb92409b.png',
+                                    icon : 'http://39.105.229.249/ftp/ling/future/server/vi.png',
                                     //     标签id
                                     tagId: '1152'
                                 }
@@ -235,7 +235,7 @@ export default [
                                     name  : '[ECM]HamSter',
                                     tagId : '1145',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=60'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp'
                                 },
                                 {
                                     id    : '345623411435767901',
@@ -279,7 +279,7 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
                                     // 系统从0开始，因此+1
                                     (Math.floor(Math.random() * 12) + 1) +
@@ -331,11 +331,12 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'http://39.105.229.249/ftp/ling/future/background/cat.png',
                                 discriminator: '2412',
@@ -368,11 +369,12 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'http://39.105.229.249/ftp/ling/future/background/road.jpg',
                                 discriminator: '1145',
@@ -405,11 +407,12 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'http://39.105.229.249/ftp/ling/future/background/xp.jpg',
                                 discriminator: '6531',
@@ -446,11 +449,12 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'http://39.105.229.249/ftp/ling/future/background/gqj.gif',
                                 discriminator: '6531',
@@ -487,11 +491,12 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'http://39.105.229.249/ftp/ling/future/background/bg.jpg',
                                 discriminator: '7321',
@@ -532,11 +537,12 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'http://39.105.229.249/ftp/ling/future/background/vi.jpg',
                                 discriminator: '8731',
@@ -573,11 +579,12 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'http://39.105.229.249/ftp/ling/future/background/water.jpg',
                                 discriminator: '9250',
@@ -610,11 +617,12 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'http://39.105.229.249/ftp/ling/future/background/eel.gif',
                                 discriminator: '8312',
@@ -659,11 +667,12 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'http://39.105.229.249/ftp/ling/future/background/crosscode.png',
                                 discriminator: '3312',
@@ -700,11 +709,12 @@ export default [
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
-                                    Math.floor(Math.random() * 4) +
+                                    Math.floor(Math.random() * 3) +
                                     '-' +
-                                    Math.floor(Math.random() * 12) +
+                                    // 系统从0开始，因此+1
+                                    (Math.floor(Math.random() * 12) + 1) +
                                     '-' +
-                                    Math.floor(Math.random() * 30),
+                                    (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background   : 'http://39.105.229.249/ftp/ling/future/background/red.png',
                                 discriminator: '9285',
