@@ -1,9 +1,6 @@
 <template>
     <el-col :span="12" class="bottom-profile-avatar">
-        <el-avatar
-            src="https://cdn.discordapp.com/avatars/615354796781862913/11ec6f364a0e4b6ceef007fe18c382b3.webp?size=240"
-            class="bottom-profile-avatar-img"
-        />
+        <el-avatar src="http://39.105.229.249/ftp/ling/future/user/ling.webp" class="bottom-profile-avatar-img" />
         <span>
             <p>JDSA Ling</p>
             <p>#1237</p>

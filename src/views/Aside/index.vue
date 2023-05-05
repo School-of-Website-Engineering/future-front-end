@@ -18,11 +18,7 @@
                     placement="right"
                     :enterable="false"
                 >
-                    <img
-                        class="channel-img"
-                        src="https://cdn.discordapp.com/icons/400983101507108874/a_9068da7844679c80b2cd728064b31303.webp?size=128"
-                        alt=""
-                    />
+                    <img class="channel-img" src="http://39.105.229.249/ftp/ling/future/server/head.webp" alt="" />
                 </el-tooltip>
                 <el-badge
                     :max="99"

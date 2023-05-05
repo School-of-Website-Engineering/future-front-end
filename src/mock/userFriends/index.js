@@ -16,7 +16,7 @@ export default [
                     email       : '123@gmail.com',
                     createdAt   : '2020-12-12',
                     updatedAt   : '2020-12-12',
-                    avatar      : 'https://cdn.discordapp.com/avatars/615354796781862913/11ec6f364a0e4b6ceef007fe18c382b3.webp?size=240',
+                    avatar      : 'http://39.105.229.249/ftp/ling/future/user/ling.webp',
                     introduction: 'test',
                     role        : 'admin',
                     status      : 'online'
@@ -55,7 +55,7 @@ export default [
                                 {
                                     id    : '760729927552729119',
                                     name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
                                     tagId : '4546'
                                 }
                             ]
@@ -89,7 +89,7 @@ export default [
                                 {
                                     id    : '760729927552729119',
                                     name  : 'liuliu',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
                                     tagId : '4546'
                                 }
                             ]
@@ -122,7 +122,7 @@ export default [
                                     id    : '345623411435767901',
                                     name  : 'Catand',
                                     // 头像
-                                    avatar: 'https://cdn.discordapp.com/avatars/616810767773335552/d730cfb881a0dbb685067cfa328f4bec.webp?size=100',
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
                                     tagId : '6531'
                                 }
                             ]
@@ -167,13 +167,13 @@ export default [
                                     id    : '3456234161435767908',
                                     name  : 'NaRiver',
                                     tagId : '8731',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1049673722434437160/23653805be14a796eb0fab4795cc6f7a.webp?size=100'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/nr.webp'
                                 },
                                 {
                                     id    : '3456234114357679088',
                                     name  : 'EElainaya',
                                     tagId : '8312',
-                                    avatar: 'https://cdn.discordapp.com/avatars/763298729762488330/6d1ec1e2b226fab6ee79231604cd87a7.webp?size=100'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/eely.webp'
                                 }
                             ]
                         }
@@ -210,7 +210,7 @@ export default [
                                     id    : '760729927552729119',
                                     name  : 'liuliu',
                                     tagId : '4546',
-                                    avatar: 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp'
                                 }
                             ]
                         }
@@ -241,7 +241,7 @@ export default [
                                     id    : '345623411435767901',
                                     name  : 'Catand',
                                     tagId : '6531',
-                                    avatar: 'https://cdn.discordapp.com/avatars/616810767773335552/d730cfb881a0dbb685067cfa328f4bec.webp?size=100'
+                                    avatar: 'http://39.105.229.249/ftp/ling/future/user/catand.webp'
                                 }
                             ]
                         }
@@ -275,7 +275,7 @@ export default [
                                 //自我介绍
                                 introduction: '书山有路勤为径，学海无涯苦作舟。',
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/1042734257149329418/5ab3131122ac145db5f2edf29e5a7730.webp?size=48',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -286,8 +286,7 @@ export default [
                                     '-' +
                                     (Math.floor(Math.random() * 30) + 1),
                                 // 背景
-                                background:
-                                    'https://imgs.aixifan.com/newUpload/32226413_1d1791b36bb14a94b81ee95ebdb0dec8.jpg.gif',
+                                background   : 'http://39.105.229.249/ftp/ling/future/background/fox.gif',
                                 // 备注
                                 remark       : '',
                                 // 状态
@@ -303,15 +302,15 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-飞翔',
-                                        link: 'https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/fly.png'
                                     },
                                     {
                                         tag : 'Speed 徽章',
-                                        link: 'https://cdn.discordapp.com/badge-icons/2ba85e8026a8614b640c2837bcdfe21b.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/spend.png'
                                     },
                                     {
                                         tag : '钻石测试人员',
-                                        link: 'https://cdn.discordapp.com/badge-icons/ec92202290b48d0879b7413d2dde3bab.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/dimand.png'
                                     }
                                 ]
                             }
@@ -328,7 +327,7 @@ export default [
                                 //自我介绍
                                 introduction: "Hello, I'm cat",
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/891419145592266812/c8578ca93da963aa9edfdae6111a1a23.webp?size=128',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -345,11 +344,11 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-勇气',
-                                        link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/good.png'
                                     },
                                     {
                                         tag : 'Python开发-[已认证]',
-                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
                                     }
                                 ]
                             }
@@ -366,7 +365,7 @@ export default [
                                 //自我介绍
                                 introduction: '你好，我是仓鼠。',
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/760729927552729119/20167f95c93ef46167737aee7201cb92.webp?size=48',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -383,11 +382,11 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-勇气',
-                                        link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/good.png'
                                     },
                                     {
                                         tag : 'C++开发-[已认证]',
-                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
                                     }
                                 ]
                             }
@@ -404,7 +403,7 @@ export default [
                                 //自我介绍
                                 introduction: '我是一只大老鼠，我最喜欢奶油和奶酪。',
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/616810767773335552/d730cfb881a0dbb685067cfa328f4bec.webp?size=100',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -420,15 +419,15 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-智慧',
-                                        link: 'https://cdn.discordapp.com/badge-icons/011940fd013da3f7fb926e4a1cd2e618.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/smart.png'
                                     },
                                     {
                                         tag : 'Java高级开发-[已认证]',
-                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
                                     },
                                     {
                                         tag : 'Future-年度会员徽章',
-                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
                                     }
                                 ]
                             }
@@ -445,7 +444,7 @@ export default [
                                 //自我介绍
                                 introduction: '诗与远方',
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/598588658177671188/df122ff3d7dfa25674aed205a043684f.webp?size=128',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/humry.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -461,15 +460,15 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-智慧',
-                                        link: 'https://cdn.discordapp.com/badge-icons/011940fd013da3f7fb926e4a1cd2e618.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/smart.png'
                                     },
                                     {
                                         tag : 'Future-合作开发者',
-                                        link: 'https://cdn.discordapp.com/badge-icons/6df5892e0f35b051f8b61eace34f4967.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/collents.png'
                                     },
                                     {
                                         tag : 'Future-年度会员徽章',
-                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
                                     }
                                 ]
                             }
@@ -486,7 +485,7 @@ export default [
                                 //自我介绍
                                 introduction: '认识你很高兴。\n' + 'Nice to meet you.',
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/763293201062035486/5396342ba4e3bf24661c146cdae526a1.webp?size=100',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -503,19 +502,19 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-飞翔',
-                                        link: 'https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/fly.png'
                                     },
                                     {
                                         tag : 'Future-合作开发者',
-                                        link: 'https://cdn.discordapp.com/badge-icons/6df5892e0f35b051f8b61eace34f4967.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/collents.png'
                                     },
                                     {
                                         tag : 'Java高级开发-[已认证]',
-                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
                                     },
                                     {
                                         tag : 'Future-年度会员徽章',
-                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
                                     }
                                 ]
                             }
@@ -532,7 +531,7 @@ export default [
                                 introduction: '和Ling一起玩文明VI，这是计划的一部分',
                                 status      : 'idle',
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/1049673722434437160/23653805be14a796eb0fab4795cc6f7a.webp?size=100',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/nr.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -548,15 +547,15 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-勇气',
-                                        link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/good.png'
                                     },
                                     {
                                         tag : 'Future-年度会员徽章',
-                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
                                     },
                                     {
                                         tag : '文明VI-捍卫者徽章(本体版全帝国胜利)',
-                                        link: 'https://cdn.discordapp.com/badge-icons/fee1624003e2fee35cb398e125dc479b.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vi.png'
                                     }
                                 ]
                             }
@@ -573,7 +572,7 @@ export default [
                                 //自我介绍
                                 introduction: '',
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/482216415147982848/c2b04dce7319282ff2cdc6275e13d52a.webp?size=128',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -590,11 +589,11 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-勇气',
-                                        link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/good.png'
                                     },
                                     {
                                         tag : 'Future-年度会员徽章',
-                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
                                     }
                                 ]
                             }
@@ -611,7 +610,7 @@ export default [
                                 //自我介绍
                                 introduction: '呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐呐……',
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/763298729762488330/6d1ec1e2b226fab6ee79231604cd87a7.webp?size=100',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/eely.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -628,19 +627,19 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-飞翔',
-                                        link: 'https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/fly.png'
                                     },
                                     {
                                         tag : 'Future-合作开发者',
-                                        link: 'https://cdn.discordapp.com/badge-icons/6df5892e0f35b051f8b61eace34f4967.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/collents.png'
                                     },
                                     {
                                         tag : 'Java高级开发-[已认证]',
-                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
                                     },
                                     {
                                         tag : 'Future-年度会员徽章',
-                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
                                     }
                                 ]
                             }
@@ -661,7 +660,7 @@ export default [
                                     'And now you, and now you\n' +
                                     'Now you carry it with you"',
                                 //头像
-                                avatar: 'https://cdn.discordapp.com/avatars/511265015647436820/6db4e889181655645d92b70e53542dba.webp?size=100',
+                                avatar: 'http://39.105.229.249/ftp/ling/future/user/mrs.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -678,15 +677,15 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-飞翔',
-                                        link: 'https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/fly.png'
                                     },
                                     {
                                         tag : 'Java高级开发-[已认证]',
-                                        link: 'https://cdn.discordapp.com/badge-icons/6f9e37f9029ff57aef81db857890005e.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/code.png'
                                     },
                                     {
                                         tag : 'Future-年度会员徽章',
-                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
                                     }
                                 ]
                             }
@@ -703,7 +702,7 @@ export default [
                                 //自我介绍
                                 introduction: '首先要认清自己，然后才能进步。',
                                 //头像
-                                avatar      : 'https://cdn.discordapp.com/avatars/809486916612653129/95831cc675c39c894cc7c43af398c5f4.webp?size=100',
+                                avatar      : 'http://39.105.229.249/ftp/ling/future/user/msx.webp',
                                 //注册时间，返回一个随机的时间，范围在2020-2023年
                                 registerTime:
                                     '202' +
@@ -720,15 +719,15 @@ export default [
                                 tags         : [
                                     {
                                         tag : 'Future-勇气',
-                                        link: 'https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/good.png'
                                     },
                                     {
                                         tag : 'Java&C++全栈高级开发-[已认证]',
-                                        link: 'https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/allcode.png'
                                     },
                                     {
                                         tag : 'Future-年度会员徽章',
-                                        link: 'https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png'
+                                        link: 'http://39.105.229.249/ftp/ling/future/badges/vip.png'
                                     }
                                 ]
                             }
