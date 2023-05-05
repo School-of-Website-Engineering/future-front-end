@@ -287,7 +287,7 @@ export default [
                                     (Math.floor(Math.random() * 30) + 1),
                                 // 背景
                                 background:
-                                    'https://cdn.discordapp.com/banners/136253107213565952/a_b456014f796de50cd7abf328458a227b.gif',
+                                    'https://imgs.aixifan.com/newUpload/32226413_1d1791b36bb14a94b81ee95ebdb0dec8.jpg.gif',
                                 // 备注
                                 remark       : '',
                                 // 状态
