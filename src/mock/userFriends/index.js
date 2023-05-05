@@ -36,14 +36,7 @@ export default [
                         code   : 200,
                         message: 'success',
                         data   : {
-                            commonServer: [
-                                {
-                                    id   : '437456121056741327',
-                                    name : 'Open AI Server',
-                                    icon : 'http://39.105.229.249/ftp/ling/future/server/gpt.webp',
-                                    tagId: '1152'
-                                }
-                            ],
+                            commonServer: [],
                             commonFriend: [
                                 {
                                     id    : '345623411435767900',
