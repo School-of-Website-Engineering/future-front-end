@@ -106,7 +106,7 @@ function defineConfig({ command, mode }: BaseConfigOptions) {
                 debounce : 150,
                 path     : './src/assets/loading.svg',
                 devEnable: true,
-                tipText  : '系统不应该是冷冰冰的，应该给用户带来乐趣和温...',
+                tipText  : '系统不应该是冷冰冰的，应该给用户带来乐趣和温度...',
                 css      : `
                     .loading-container,.svg-loading{
                         background-color: #2B2D31 !important;
