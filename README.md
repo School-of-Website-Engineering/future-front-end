@@ -35,7 +35,6 @@ future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似 discor
         -   [特别感谢：](#特别感谢)
     -   [使用许可](#使用许可)
 
-
 ---
 
 ## 项目现阶段预览
