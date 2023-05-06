@@ -111,7 +111,10 @@ function defineConfig({ command, mode }: BaseConfigOptions) {
                     .loading-container,.svg-loading{
                         background-color: #333333 !important;
                         color: #fff !important;
-                    }`
+                    }`,
+                error: {
+                    tip: 'Future Chatter,未来聊天,Is Time Now……'
+                }
             })
         ],
         base: env.VITE_PUBLIC_PATH,
