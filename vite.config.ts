@@ -102,16 +102,19 @@ function defineConfig({ command, mode }: BaseConfigOptions) {
                 }
             }),
             preload(),
-            spaLoading('svg', {
+            spaLoading('img', {
                 debounce : 150,
-                path     : './src/assets/loading.svg',
+                src      : 'http://39.105.229.249/ftp/ling/future/loadingx.gif',
                 devEnable: true,
-                tipText  : '系统不应该是冷冰冰的，应该给用户带来乐趣和温度...',
+                tipText  : 'Future Chatter,未来聊天,Is Time Now……',
                 css      : `
                     .loading-container,.svg-loading{
-                        background-color: #2B2D31 !important;
+                        background-color: #333333 !important;
                         color: #fff !important;
-                    }`
+                    }`,
+                error: {
+                    tip: 'Future Chatter,未来聊天,Is Time Now……'
+                }
             })
         ],
         base: env.VITE_PUBLIC_PATH,
