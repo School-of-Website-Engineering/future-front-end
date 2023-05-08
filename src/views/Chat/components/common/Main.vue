@@ -157,9 +157,7 @@ const search = () => {
 const newChat = asyncTryCatch(async(id: string, content: string) => {
     // 如果没有id或者content，就不请求
     if (!id || !content) return;
-    const { data } = (await ChatService.getChatSend({ id, content })) as unknown as {
-        data: IChatRecordResponse;
-    };
+    const { data } = (await ChatService.getChatSend({ id, content })) as unknown as { data: IChatRecordResponse };
     console.log(data);
     //将新的消息添加到聊天记录中，随机延迟0.5s~2.5s
     setTimeout(() => {
@@ -179,9 +177,7 @@ const newChat = asyncTryCatch(async(id: string, content: string) => {
 const chatList = asyncTryCatch(async(id: string) => {
     // 如果没有id，就不请求
     if (!id) return;
-    const { data } = (await ChatService.getChatRecord(id)) as unknown as {
-        data: IChatRecordResponse;
-    };
+    const { data } = (await ChatService.getChatRecord(id)) as unknown as { data: IChatRecordResponse };
     chatRecord.avatar = data.avatar;
     chatRecord.id = data.id;
     chatRecord.name = data.name;
