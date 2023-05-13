@@ -26,13 +26,13 @@ future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似 discor
 
 - [future-front-end](#future-front-end)
   - [项目简介](#项目简介)
+  - [项目现阶段预览](#项目现阶段预览)
+  - [相关仓库](#相关仓库)
   - [Git 规范](#git-规范)
     - [Git 分支命名](#git-分支命名)
   - [Git Commit Message 格式](#git-commit-message-格式)
     - [type 提交类型：](#type-提交类型)
     - [subject 提交描述](#subject-提交描述)
-  - [项目现阶段预览](#项目现阶段预览)
-  - [相关仓库](#相关仓库)
   - [维护者](#维护者)
   - [如何贡献](#如何贡献)
     - [贡献者](#贡献者)
@@ -40,8 +40,18 @@ future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似 discor
     - [特别感谢：](#特别感谢)
   - [使用许可](#使用许可)
 
-
 ---
+
+## 项目现阶段预览
+
+![demo](demo.gif)
+
+## 相关仓库
+
+-   [Rosy-DR-Code-Ling](https://github.com/School-of-Website-Engineering/Rosy-DR-Code-Ling) — 💌 Rosy-DR-Code-Ling 的 Web 页面
+-   [STARART](https://github.com/School-of-Website-Engineering/STARART) - 星之往昔-STARART【文字冒险生存跑团游戏】---点击下方链接开始游戏【项目正在开发中，敬请期待】
+-   [Vue3-project-template](https://github.com/School-of-Website-Engineering/STARART) - Vue3.x 工程模板,Vue3+Vite+TS+Pinia，强迫症专属 eslint 检查修复、基础样式、封装 axios、GitHub Action 自动发版等
+
 ## Git 规范
 
 ### Git 分支命名
@@ -75,14 +85,6 @@ future-front-end 是一个基于 Vue3 + Vite + TypeScript 的前端类似 discor
 **对应内容是 commit 目的的简短描述，不超过 50 个字符**
 
 ---
-
-## 项目现阶段预览
-
-![demo](demo.gif)
-
-## 相关仓库
-
--   [Rosy-DR-Code-Ling](https://github.com/School-of-Website-Engineering/Rosy-DR-Code-Ling) — 💌 Rosy-DR-Code-Ling 的 Web 页面
 
 ## 维护者
 
