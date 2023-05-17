@@ -104,7 +104,7 @@ function defineConfig({ command, mode }: BaseConfigOptions) {
             preload(),
             spaLoading('img', {
                 debounce : 150,
-                src      : 'http://39.105.229.249/ftp/ling/future/loadingx.gif',
+                src      : 'https://rust.coldmint.top/ftp/ling/future/loadingx.gif',
                 devEnable: true,
                 tipText  : 'Future Chatter,未来聊天,Is Time Now……',
                 css      : `

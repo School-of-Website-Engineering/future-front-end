@@ -18,7 +18,7 @@
                     placement="right"
                     :enterable="false"
                 >
-                    <img class="channel-img" src="http://39.105.229.249/ftp/ling/future/server/head.webp" alt="" />
+                    <img class="channel-img" src="https://rust.coldmint.top/ftp/ling/future/server/head.webp" alt="" />
                 </el-tooltip>
                 <el-badge
                     :max="99"

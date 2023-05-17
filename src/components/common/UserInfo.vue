@@ -1,6 +1,6 @@
 <template>
     <el-col :span="12" class="bottom-profile-avatar">
-        <el-avatar src="http://39.105.229.249/ftp/ling/future/user/ling.webp" class="bottom-profile-avatar-img" />
+        <el-avatar src="https://rust.coldmint.top/ftp/ling/future/user/ling.webp" class="bottom-profile-avatar-img" />
         <span>
             <p>JDSA Ling</p>
             <p>#1237</p>

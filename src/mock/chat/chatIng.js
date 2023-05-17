@@ -103,7 +103,7 @@ export default {
                     message: 'success',
                     // 修改data的avatar与name
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/liuliu.webp',
                         id     : '345623411435767898',
                         message: data,
                         name   : 'liuliu',
@@ -116,7 +116,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/yedz.webp',
                         id     : '345623411435767899',
                         message: data,
                         name   : 'Ye Ldzy>>',
@@ -129,7 +129,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/ecm.webp',
                         id     : '345623411435767900',
                         message: data,
                         name   : '[ECM]HamSter',
@@ -142,7 +142,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/catand.webp',
                         id     : '345623411435767901',
                         message: data,
                         name   : 'Catand',
@@ -155,7 +155,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/humry.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/humry.webp',
                         id     : '3456234114357679023',
                         message: data,
                         name   : 'Humfrey',
@@ -168,7 +168,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/nr.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/nr.webp',
                         id     : '3456234161435767908',
                         message: data,
                         name   : 'NaRiver',
@@ -181,7 +181,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/dw.webp',
                         id     : '3456234161435767908',
                         message: data,
                         name   : 'Deep Water',
@@ -194,7 +194,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/cm.webp',
                         id     : '345623411435767907',
                         message: data,
                         name   : 'Cold Mint',
@@ -207,7 +207,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/eely.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/eely.webp',
                         id     : '3456234114357679088',
                         message: data,
                         name   : 'EElainaya',
@@ -220,7 +220,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/mrs.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/mrs.webp',
                         id     : '3456234114357679087',
                         message: data,
                         name   : 'Mr.Smith',
@@ -233,7 +233,7 @@ export default {
                     code   : 200,
                     message: 'success',
                     data   : {
-                        avatar : 'http://39.105.229.249/ftp/ling/future/user/msx.webp',
+                        avatar : 'https://rust.coldmint.top/ftp/ling/future/user/msx.webp',
                         id     : '3456234114357679082',
                         message: data,
                         name   : 'Ms.Timesiana',

@@ -14,22 +14,22 @@ export default {
                     {
                         id    : '345623411435767858',
                         name  : 'Verify',
-                        avatar: 'http://39.105.229.249/ftp/ling/future/user/dx.webp'
+                        avatar: 'https://rust.coldmint.top/ftp/ling/future/user/dx.webp'
                     },
                     {
                         id    : '345623411435767856',
                         name  : 'RankBot',
-                        avatar: 'http://39.105.229.249/ftp/ling/future/user/ed.webp'
+                        avatar: 'https://rust.coldmint.top/ftp/ling/future/user/ed.webp'
                     },
                     {
                         id    : '345623411435767898',
                         name  : 'Uchufox GD',
-                        avatar: 'http://39.105.229.249/ftp/ling/future/user/fox.webp'
+                        avatar: 'https://rust.coldmint.top/ftp/ling/future/user/fox.webp'
                     },
                     {
                         id    : '345623411435767900',
                         name  : 'Stoikk',
-                        avatar: 'http://39.105.229.249/ftp/ling/future/user/ok.webp'
+                        avatar: 'https://rust.coldmint.top/ftp/ling/future/user/ok.webp'
                     }
                 ]
             }

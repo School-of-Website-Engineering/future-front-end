@@ -18,7 +18,7 @@ export default [
                             // 用户名
                             name  : 'liuliu',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/liuliu.webp',
                             // 用户状态
                             status: 'online'
                         },
@@ -28,7 +28,7 @@ export default [
                             // 用户名
                             name  : 'Ye Ldzy>>',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/yedz.webp',
                             // 用户状态
                             status: 'online'
                         },
@@ -38,7 +38,7 @@ export default [
                             // 用户名
                             name  : '[ECM]HamSter',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/ecm.webp',
                             // 用户状态
                             status: 'offline'
                         },
@@ -48,7 +48,7 @@ export default [
                             // 用户名
                             name  : 'Catand',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/catand.webp',
                             // 用户状态
                             status: 'busy'
                         },
@@ -58,7 +58,7 @@ export default [
                             // 用户名
                             name  : 'Cold Mint',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/cm.webp',
                             // 用户状态
                             status: 'busy'
                         },
@@ -68,7 +68,7 @@ export default [
                             // 用户名
                             name  : 'Humfrey',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/humry.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/humry.webp',
                             // 用户状态
                             status: 'offline'
                         },
@@ -78,7 +78,7 @@ export default [
                             // 用户名
                             name  : 'NaRiver',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/nr.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/nr.webp',
                             // 用户状态
                             status: 'idle'
                         },
@@ -88,7 +88,7 @@ export default [
                             // 用户名
                             name  : 'Deep Water',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/dw.webp',
                             // 用户状态
                             status: 'busy'
                         },
@@ -98,7 +98,7 @@ export default [
                             // 用户名
                             name  : 'EElainaya',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/eely.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/eely.webp',
                             // 用户状态
                             status: 'busy'
                         },
@@ -108,7 +108,7 @@ export default [
                             // 用户名
                             name  : 'Mr.Smith',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/mrs.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/mrs.webp',
                             // 用户状态
                             status: 'busy'
                         },
@@ -118,7 +118,7 @@ export default [
                             // 用户名
                             name  : 'Ms.Timesiana',
                             // 用户头像
-                            avatar: 'http://39.105.229.249/ftp/ling/future/user/msx.webp',
+                            avatar: 'https://rust.coldmint.top/ftp/ling/future/user/msx.webp',
                             // 用户状态
                             status: 'online'
                         }

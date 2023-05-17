@@ -16,7 +16,7 @@ export default {
                     createdAt    : '2020-05-01T08:00:00.000Z',
                     updatedAt    : '2020-05-01T08:00:00.000Z',
                     role         : 'user',
-                    img          : 'http://39.105.229.249/ftp/ling/future/server/head.webp'
+                    img          : 'https://rust.coldmint.top/ftp/ling/future/server/head.webp'
                 }
             }
         };

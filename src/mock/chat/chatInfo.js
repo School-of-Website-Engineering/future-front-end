@@ -19,7 +19,7 @@ export default {
                     // 用户名
                     name   : 'liuliu',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/liuliu.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/liuliu.webp',
                     // 消息内容
                     message: [
                         {
@@ -89,7 +89,7 @@ export default {
                     // 用户名
                     name   : 'Ye Ldzy>>',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/yedz.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/yedz.webp',
                     // 消息内容
                     message: [
                         {
@@ -152,7 +152,7 @@ export default {
                     // 用户名
                     name   : '[ECM]HamSter',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/ecm.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/ecm.webp',
                     // 消息内容
                     message: [
                         {
@@ -203,7 +203,7 @@ export default {
                     // 用户名
                     name   : 'Catand',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/catand.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/catand.webp',
                     // 消息内容
                     message: [
                         {
@@ -233,7 +233,7 @@ export default {
                     // 用户名
                     name   : 'Cold Mint',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/cm.webp',
                     // 消息内容
                     message: [
                         {
@@ -277,7 +277,7 @@ export default {
                     // 用户名
                     name   : 'Humfrey',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/humry.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/humry.webp',
                     // 消息内容
                     message: [
                         {
@@ -314,7 +314,7 @@ export default {
                     // 用户名
                     name   : 'NaRiver',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/nr.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/nr.webp',
                     // 消息内容
                     message: [
                         {
@@ -358,7 +358,7 @@ export default {
                     // 用户名
                     name   : 'Deep Water',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/dw.webp',
                     // 消息内容
                     message: [
                         {
@@ -395,7 +395,7 @@ export default {
                     // 用户名
                     name   : 'EElainaya',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/eely.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/eely.webp',
                     // 消息内容
                     message: [
                         {
@@ -439,7 +439,7 @@ export default {
                     // 用户名
                     name   : 'Mr.Smith',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/mrs.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/mrs.webp',
                     // 消息内容
                     message: [
                         {
@@ -487,7 +487,7 @@ export default {
                     // 用户名
                     name   : 'Ms.Timesiana',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/msx.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/msx.webp',
                     // 消息内容
                     message: [
                         {
@@ -543,7 +543,7 @@ export default {
                     // 用户名
                     name   : 'All Badges% Speedrunner',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/dw.webp',
                     // 消息内容
                     message: [
                         {
@@ -655,7 +655,7 @@ export default {
                     // 用户名
                     name   : 'All Badges% Speedrunner',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/dw.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/dw.webp',
                     // 消息内容
                     message: [
                         {
@@ -711,7 +711,7 @@ export default {
                     // 用户名
                     name   : 'Cold Mint',
                     // 用户头像
-                    avatar : 'http://39.105.229.249/ftp/ling/future/user/cm.webp',
+                    avatar : 'https://rust.coldmint.top/ftp/ling/future/user/cm.webp',
                     // 消息内容
                     message: [],
                     time   : new Date().getTime()

@@ -13,13 +13,13 @@ export default [
                 {
                     id          : '345623411435767852',
                     name        : '484 Phking',
-                    avatar      : 'http://39.105.229.249/ftp/ling/future/user/484.webp',
+                    avatar      : 'https://rust.coldmint.top/ftp/ling/future/user/484.webp',
                     isInitiative: false
                 },
                 {
                     id          : '345623411435767855',
                     name        : 'Just an assassin enjoyer',
-                    avatar      : 'http://39.105.229.249/ftp/ling/future/user/blx.webp',
+                    avatar      : 'https://rust.coldmint.top/ftp/ling/future/user/blx.webp',
                     isInitiative: true
                 }
             ];
