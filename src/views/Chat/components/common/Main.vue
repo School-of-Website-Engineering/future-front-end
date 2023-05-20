@@ -1,62 +1,99 @@
 <template>
-    <el-main class="main-box-right-main2-main1">
-        <!--聊天记录列表：头像、名称、日期、内容-->
-        <div class="chat-record-list" ref="chatRecordList">
-            <ChatHead :chatRecord="chatRecord" />
-            <div
-                class="chat-record-list-item"
-                v-for="item in messageRecord"
-                :key="item.messageId"
-                @mouseenter="Themouseover(item)"
-                @mouseleave="Themouseout(item)"
+    <el-skeleton :loading="loading" animated throttle="400">
+        <template #template>
+            <br />
+            <el-skeleton
+                style="--el-skeleton-circle-size: 80px; display: flex; align-items: center"
+                animated
+                width="100%"
             >
-                <div class="chat-record-list-item-left">
-                    <el-image
-                        :src="item.messageFrom === 'self' ? chatRecord.avatar : userLoginRegisterStore.getUserAvatar"
-                    />
-                </div>
-                <div class="chat-record-list-item-right">
-                    <div class="chat-record-list-item-right-top">
-                        <div class="chat-record-list-item-right-top-left">
-                            <span>{{ item.name || chatRecord.name }}</span>
-                            <span>{{ item.time }}</span>
+                <template #template>
+                    <el-skeleton-item variant="circle" style="margin: 5px 0 0 18px" />
+                    <el-skeleton-item variant="h1" style="width: 10%; margin: 0 0 0 18px" />
+                </template>
+            </el-skeleton>
+            <el-skeleton animated width="100%" style="margin-top: 10px">
+                <template #template>
+                    <el-skeleton-item variant="h3" style="margin: 5px 0 0 18px; width: 35%" />
+                </template>
+            </el-skeleton>
+            <el-skeleton-item variant="h1" style="width: 15%; margin: 10px 0 0 68px" />
+            <el-skeleton-item variant="button" style="height: 24px; width: 71px; margin: 0 0 0 35px" />
+            <el-skeleton-item variant="p" style="height: 24px; width: 41px; margin: 0 0 0 35px" />
+            <br />
+            <el-skeleton-item animated variant="h1" style="width: 80%; height: 20px; margin: 50px 0 0 80px" />
+            <br />
+            <el-skeleton-item variant="h1" style="width: 80%; height: 20px; margin: 50px 0 0 80px" />
+            <br />
+            <el-skeleton-item variant="h1" style="width: 80%; height: 20px; margin: 50px 0 0 80px" />
+            <br />
+            <el-skeleton-item variant="h1" style="width: 80%; height: 20px; margin: 50px 0 0 80px" />
+        </template>
+        <template #default>
+            <el-main class="main-box-right-main2-main1">
+                <!--聊天记录列表：头像、名称、日期、内容-->
+                <div class="chat-record-list" ref="chatRecordList">
+                    <ChatHead :chatRecord="chatRecord" />
+                    <div
+                        class="chat-record-list-item"
+                        v-for="item in messageRecord"
+                        :key="item.messageId"
+                        @mouseenter="Themouseover(item)"
+                        @mouseleave="Themouseout(item)"
+                    >
+                        <div class="chat-record-list-item-left">
+                            <el-image
+                                :src="
+                                    item.messageFrom === 'self'
+                                        ? chatRecord.avatar
+                                        : userLoginRegisterStore.getUserAvatar
+                                "
+                            />
+                        </div>
+                        <div class="chat-record-list-item-right">
+                            <div class="chat-record-list-item-right-top">
+                                <div class="chat-record-list-item-right-top-left">
+                                    <span>{{ item.name || chatRecord.name }}</span>
+                                    <span>{{ item.time }}</span>
+                                </div>
+                            </div>
+                            <div class="chat-record-list-item-right-bottom">
+                                <p>
+                                    <hover-edit
+                                        :display="item.messageFrom !== 'me'"
+                                        :mouseenter="mouseover"
+                                        :mouseleave="mouseout"
+                                        :item="item"
+                                    >
+                                        {{ item.content }}
+                                    </hover-edit>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="chat-record-list-item-right-bottom">
-                        <p>
-                            <hover-edit
-                                :display="item.messageFrom !== 'me'"
-                                :mouseenter="mouseover"
-                                :mouseleave="mouseout"
-                                :item="item"
-                            >
-                                {{ item.content }}
-                            </hover-edit>
-                        </p>
-                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="chat-record-list-none" v-if="!messageRecord.length">
-            <el-image src="https://img.icons8.com/ios/452/nothing-found.png" />
-            <span>暂无聊天记录,快来和好友聊天吧</span>
-        </div>
-        <!--发送消息框-->
-        <div class="chat-search-box">
-            <input
-                :placeholder="`消息@${chatRecord.name}`"
-                v-model="searchValue"
-                @clear="searchValue = ''"
-                @keydown.enter="search"
-            />
-            <el-button type="primary" @click="search"
-                >发送
-                <el-icon>
-                    <Promotion />
-                </el-icon>
-            </el-button>
-        </div>
-    </el-main>
+                <div class="chat-record-list-none" v-if="!messageRecord.length">
+                    <el-image src="https://img.icons8.com/ios/452/nothing-found.png" />
+                    <span>暂无聊天记录,快来和好友聊天吧</span>
+                </div>
+                <!--发送消息框-->
+                <div class="chat-search-box">
+                    <input
+                        :placeholder="`消息@${chatRecord.name}`"
+                        v-model="searchValue"
+                        @clear="searchValue = ''"
+                        @keydown.enter="search"
+                    />
+                    <el-button type="primary" @click="search"
+                        >发送
+                        <el-icon>
+                            <Promotion />
+                        </el-icon>
+                    </el-button>
+                </div>
+            </el-main>
+        </template>
+    </el-skeleton>
 </template>
 
 <script setup lang="ts">
@@ -68,8 +105,9 @@ import ChatService, { IChatRecordMessageResponse, IChatRecordResponse } from '@/
 import { asyncTryCatch } from '@/utils/exceptionHandling';
 import { useUserLoginRegisterStore } from '@/store';
 import ChatHead from '@/views/Chat/components/common/ChatHead.vue';
-// 实现chatRecordList往下滚动的拽动效果，到底部时，可以滚动200px，越往下，滚动越慢
 
+// 加载状态
+const loading = ref(true);
 // 新内容
 const searchValue = ref<string>('');
 // 聊天记录,空对象
@@ -185,12 +223,14 @@ const chatList = asyncTryCatch(async(id: string) => {
     messageRecord.splice(0, messageRecord.length, ...data.message);
     console.log('------------聊天记录-------------');
     // console.log(chatRecord);
+    loading.value = false;
 });
 
 // 使用watch监听路由变化
 watch(
     () => router.currentRoute.value.params.id,
     (id) => {
+        loading.value = true;
         console.log('------------当前路由传的id-------------');
         console.log(id);
         chatList(id);
@@ -202,8 +242,14 @@ watch(
 </script>
 
 <style lang="scss" scoped>
+.el-skeleton__item {
+    background-color: #313338 !important;
+    color: #313338 !important;
+}
+
 .main-box-right-main2-main1 {
     padding-right: unset;
+    position: relative;
 }
 
 .chat-record-list-none {
@@ -215,11 +261,11 @@ watch(
     color: #6d6f78;
     font-size: 14px;
     font-weight: 500;
-    //定位居中
+    //垂直居中
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-30vw, 0);
 
     img {
         width: 100px;

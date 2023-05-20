@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
         ElAvatar: typeof import('element-plus/es')['ElAvatar'];
         ElBadge: typeof import('element-plus/es')['ElBadge'];
         ElButton: typeof import('element-plus/es')['ElButton'];
+        ElCard: typeof import('element-plus/es')['ElCard'];
         ElCol: typeof import('element-plus/es')['ElCol'];
         ElContainer: typeof import('element-plus/es')['ElContainer'];
         ElDialog: typeof import('element-plus/es')['ElDialog'];
@@ -26,6 +27,10 @@ declare module '@vue/runtime-core' {
         ElMenu: typeof import('element-plus/es')['ElMenu'];
         ElMenuItem: typeof import('element-plus/es')['ElMenuItem'];
         ElRow: typeof import('element-plus/es')['ElRow'];
+        ElSkeleton: typeof import('element-plus/es')['ElSkeleton'];
+        ElSkeletonItem: typeof import('element-plus/es')['ElSkeletonItem'];
+        ElSpace: typeof import('element-plus/es')['ElSpace'];
+        ElSwitch: typeof import('element-plus/es')['ElSwitch'];
         ElTable: typeof import('element-plus/es')['ElTable'];
         ElTableColumn: typeof import('element-plus/es')['ElTableColumn'];
         ElTooltip: typeof import('element-plus/es')['ElTooltip'];
