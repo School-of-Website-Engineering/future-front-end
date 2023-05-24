@@ -2,6 +2,9 @@
     "name": "future",
     "private": true,
     "version": "1.4.10",
+    "resolutions": {
+        "graceful-fs": "^4.2.4"
+    },
     "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",

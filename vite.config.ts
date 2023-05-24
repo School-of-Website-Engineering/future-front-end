@@ -13,6 +13,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 import preload from 'vite-plugin-preload';
 import { terser } from 'rollup-plugin-terser';
 import { spaLoading } from 'vite-plugin-spa-loading';
+import chalk from 'chalk';
+import { splitVendorChunkPlugin } from 'vite';
 
 // 接口定义
 interface BaseConfigOptions {
@@ -29,6 +31,7 @@ function defineConfig({ command, mode }: BaseConfigOptions) {
         plugins: [
             vue(),
             vueJsx(),
+            splitVendorChunkPlugin(),
             AutoImport({
                 imports  : ['vue', 'vue-router', 'pinia'],
                 // 指定引入根目录下的 requests，config，utils 目录内的所有函数
@@ -169,10 +172,11 @@ function defineConfig({ command, mode }: BaseConfigOptions) {
             minify       : 'terser',
             rollupOptions: {
                 output: {
-                    manualChunks: (id: string) => {
-                        // 将 node_modules 中的代码单独打包成一个 JS 文件
+                    manualChunks(id: string) {
+                        // 将项目的模块拆分成单独的chunk，这样可以实现按需加载
                         if (id.includes('node_modules')) {
-                            return 'vendor';
+                            console.log(chalk.blueBright(`正在拆分模块：${id}`));
+                            return id.toString().split('node_modules/')[1].split('/')[0].toString();
                         }
                     }
                 },
