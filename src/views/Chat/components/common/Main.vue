@@ -1,5 +1,5 @@
 <template>
-    <el-skeleton :loading="loading" animated throttle="400">
+    <el-skeleton :loading="loading" animated :throttle="400">
         <template #template>
             <br />
             <el-skeleton
