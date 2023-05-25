@@ -175,7 +175,6 @@ function defineConfig({ command, mode }: BaseConfigOptions) {
                     manualChunks(id: string) {
                         // 将项目的模块拆分成单独的chunk，这样可以实现按需加载
                         if (id.includes('node_modules')) {
-                            console.log(chalk.blueBright(`正在拆分模块：${id}`));
                             return id.toString().split('node_modules/')[1].split('/')[0].toString();
                         }
                     }
