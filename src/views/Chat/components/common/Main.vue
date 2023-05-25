@@ -242,9 +242,8 @@ watch(
 </script>
 
 <style lang="scss" scoped>
-.el-skeleton__item {
-    background-color: #313338 !important;
-    color: #313338 !important;
+:deep(.el-skeleton__item) {
+    background: #3b3d43 !important;
 }
 
 .main-box-right-main2-main1 {
